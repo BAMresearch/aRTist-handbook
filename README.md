@@ -17,7 +17,11 @@ The source files are all located in the `source` folder. To create the HTML docu
 
     make html
 
-Github Pages expects the HTML documentation in a folder called `docs`. You can run the compile script to automatically copy the content from `build/html` to `docs` and create the necessary `.nojekyll` file.
+To build everything anew from scratch, delete the `build` folder or run
+
+    make clean
+
+Github Pages expects the HTML documentation in a folder called `docs`. You can run the deploy script to automatically copy the content from `build/html` to `docs` and create the necessary `.nojekyll` file.
 
     deploy.bat (Windows)
     ./deploy.sh (Linux)
