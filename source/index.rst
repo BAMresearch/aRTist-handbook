@@ -36,6 +36,13 @@ The information in this manual is for reference and informational use only. We a
    installation
    gui
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials:
+
+   tutorial_introduction
+   tutorial_objects_and_scene
+
 
 Indices and tables
 ==================
