@@ -42,11 +42,3 @@ The information in this manual is for reference and informational use only. We a
 
    tutorial_introduction
    tutorial_objects_and_scene
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

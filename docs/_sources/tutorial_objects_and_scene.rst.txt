@@ -4,7 +4,13 @@ The Virtual Scene
 A Blank Scene
 -------------
 
-When you start *aRT*\ ist, it will show you an empty **scene.** There is a **detector** and a **source**, and the rest is invisibly filled with **air**, the standard *environment material*.
+When you start *aRT*\ ist, it will show you an empty **scene** (:numref:`blankScene`). There is a **detector** and a **source**, and the rest is invisibly filled with **air**, the standard *environment material*.
+
+.. _blankScene:
+.. figure:: pictures/tutorial-virtualscene-artist-blank.png
+    :width: 100%
+
+    The *aRT*\ ist window with a blank scene.
 
 *aRT*\ ist's standard coordinate system is shown in :numref:`standardCoordinateSystem`. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the *z* axis. For a standard CT set-up, the axis of rotation would point in the direction of the *y* axis.
 
@@ -137,7 +143,7 @@ You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom
 
 .. |icon-zoom-to-selection-small| image:: pictures/icons/16x16/zoom-select.png
 
-.. note:: Change the view to |icon-view-topright| **top right,** then |icon-zoom-to-selection| **zoom in** to the selected rotor.
+.. note:: Change the view to |icon-view-topright| **top right,** then |icon-zoom-to-selection| **zoom in** to the selected rotor (:numref:`zoomedIn`).
 
 .. _zoomedIn:
 .. figure:: pictures/tutorial-virtualscene-view-top-right.png
@@ -152,7 +158,7 @@ You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom
 
 You can use this button to draw a permanent bounding box around the object. At moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object's colour.
 
-|icon-view-axes| Axes view
+|icon-view-axes| Axes View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. |icon-view-axes| image:: pictures/icons/32x32/view-axes.png
 
@@ -162,7 +168,7 @@ Each part has its own, local coordinate system. With this button, you make the l
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. |icon-wireframe| image:: pictures/icons/32x32/switch-wireframe.png
 
-Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh. On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
+Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (:numref:`wireframe`). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
 
 .. _wireframe:
 .. figure:: pictures/tutorial-virtualscene-wireframe.png

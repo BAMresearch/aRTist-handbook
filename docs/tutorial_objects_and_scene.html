@@ -103,7 +103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#view-directions">View Directions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#icon-zoom-to-selection-zoom-to-selection"> Zoom to Selection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#icon-bounding-box-bounding-box"> Bounding Box</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#icon-view-axes-axes-view"> Axes view</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#icon-view-axes-axes-view"> Axes View</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#icon-wireframe-wireframe-and-solid-view"> Wireframe and Solid View</a></li>
 </ul>
 </li>
@@ -180,11 +180,15 @@
 <h1>The Virtual Scene<a class="headerlink" href="#the-virtual-scene" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="a-blank-scene">
 <h2>A Blank Scene<a class="headerlink" href="#a-blank-scene" title="Permalink to this headline">¶</a></h2>
-<p>When you start <em>aRT</em>ist, it will show you an empty <strong>scene.</strong> There is a <strong>detector</strong> and a <strong>source</strong>, and the rest is invisibly filled with <strong>air</strong>, the standard <em>environment material</em>.</p>
-<p><em>aRT</em>ist’s standard coordinate system is shown in <a class="reference internal" href="#standardcoordinatesystem"><span class="std std-numref">Fig. 8</span></a>. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the <em>z</em> axis. For a standard CT set-up, the axis of rotation would point in the direction of the <em>y</em> axis.</p>
+<p>When you start <em>aRT</em>ist, it will show you an empty <strong>scene</strong> (<a class="reference internal" href="#blankscene"><span class="std std-numref">Fig. 8</span></a>). There is a <strong>detector</strong> and a <strong>source</strong>, and the rest is invisibly filled with <strong>air</strong>, the standard <em>environment material</em>.</p>
 <div class="figure align-default" id="id1">
+<span id="blankscene"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-artist-blank.png"><img alt="_images/tutorial-virtualscene-artist-blank.png" src="_images/tutorial-virtualscene-artist-blank.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">The <em>aRT</em>ist window with a blank scene.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>aRT</em>ist’s standard coordinate system is shown in <a class="reference internal" href="#standardcoordinatesystem"><span class="std std-numref">Fig. 9</span></a>. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the <em>z</em> axis. For a standard CT set-up, the axis of rotation would point in the direction of the <em>y</em> axis.</p>
+<div class="figure align-default" id="id2">
 <span id="standardcoordinatesystem"></span><a class="reference internal image-reference" href="_images/coordinate-system.svg"><img alt="aRTist standard coordinate system" src="_images/coordinate-system.svg" width="75%" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">aRTist’s standard coordinate system</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">aRTist’s standard coordinate system</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>You are free to change the position and orientation of any of the components in a scene, including the source and the detector. Some modules, like the <em>CtScan</em> module that we will use later, assume a certain coordinate system, for example that the <em>y</em> axis is the axis of rotation. To stay on the safe side, it may be a good idea to stick with this convention.</p>
 <div class="admonition note">
@@ -201,10 +205,10 @@
 <p>Click the <img alt="icon-library" src="_images/library1.png" /> <span class="guilabel">Library</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Open Library…</span>.</p>
 <p>Load the “Rotor” surface model from <code class="file docutils literal notranslate"><span class="pre">ExampleParts</span></code> → <code class="file docutils literal notranslate"><span class="pre">Rotor.ply</span></code>.</p>
 </div>
-<p>The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (<a class="reference internal" href="#rotorloaded"><span class="std std-numref">Fig. 9</span></a>). Additionally, the rotor appears on the left-hand side in the <em>Assembly list</em> of the <em>Parameter panel</em>. It gets a random colour and the default material is iron (Fe).</p>
-<div class="figure align-default" id="id2">
+<p>The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (<a class="reference internal" href="#rotorloaded"><span class="std std-numref">Fig. 10</span></a>). Additionally, the rotor appears on the left-hand side in the <em>Assembly list</em> of the <em>Parameter panel</em>. It gets a random colour and the default material is iron (Fe).</p>
+<div class="figure align-default" id="id3">
 <span id="rotorloaded"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-rotor-loaded.png"><img alt="_images/tutorial-virtualscene-rotor-loaded.png" src="_images/tutorial-virtualscene-rotor-loaded.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">The rotor is loaded into the scene.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The rotor is loaded into the scene.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you want to load a surface model at its native position (as defined in the file) instead of centred at the origin of the coordinate system, turn off the button <img alt="icon-centernew" src="_images/center-new1.png" /> <span class="guilabel">Center new parts</span> in the toolbar or turn it off in the menu: <span class="guilabel">Geometry</span> → <span class="guilabel">Center New Parts</span>.</p>
 </div>
@@ -215,18 +219,18 @@
 <p class="admonition-title">Note</p>
 <p>Double-click on the rotor’s colour.</p>
 </div>
-<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 10</span></a>). There, you can choose a new colour by clicking the <img alt="icon-colorwheel" src="_images/colorwheel.png" /> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
-<div class="figure align-default" id="id3">
+<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 11</span></a>). There, you can choose a new colour by clicking the <img alt="icon-colorwheel" src="_images/colorwheel.png" /> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
+<div class="figure align-default" id="id4">
 <span id="displayparameters"></span><a class="reference internal image-reference" href="_images/tutorial-display-parameters.png"><img alt="_images/tutorial-display-parameters.png" src="_images/tutorial-display-parameters.png" style="width: 324.75px; height: 303.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The <em>Display Parameters</em> let you change the colour and appearance of an object.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Display Parameters</em> let you change the colour and appearance of an object.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Select a colour that you like for the rotor. I’ll choose blue.</p>
 </div>
-<div class="figure align-default" id="id4">
+<div class="figure align-default" id="id5">
 <span id="colorchanged"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-color-changed.png"><img alt="_images/tutorial-virtualscene-color-changed.png" src="_images/tutorial-virtualscene-color-changed.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">We have changed the colour of the rotor.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">We have changed the colour of the rotor.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="saving-a-project">
@@ -244,11 +248,11 @@
 <p>Some of these only work once a part is selected.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Select the rotor: either click on it in the <em>Assembly List</em> or click on it in the scene. It should now be highlighted in the <em>Assembly List</em> and a bounding box with yellow corners should appear that encloses the rotor (<a class="reference internal" href="#rotorselected"><span class="std std-numref">Fig. 12</span></a>).</p>
+<p>Select the rotor: either click on it in the <em>Assembly List</em> or click on it in the scene. It should now be highlighted in the <em>Assembly List</em> and a bounding box with yellow corners should appear that encloses the rotor (<a class="reference internal" href="#rotorselected"><span class="std std-numref">Fig. 13</span></a>).</p>
 </div>
-<div class="figure align-default" id="id5">
+<div class="figure align-default" id="id6">
 <span id="rotorselected"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-rotor-selected.png"><img alt="_images/tutorial-virtualscene-rotor-selected.png" src="_images/tutorial-virtualscene-rotor-selected.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">The rotor is selected: it is highlighted with a blue background in the <em>Assembly List</em> and enclosed in a yellow-cornered bounding box.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">The rotor is selected: it is highlighted with a blue background in the <em>Assembly List</em> and enclosed in a yellow-cornered bounding box.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="view-directions">
 <h3>View Directions<a class="headerlink" href="#view-directions" title="Permalink to this headline">¶</a></h3>
@@ -265,11 +269,11 @@
 <p>You can also find this function in the menu bar: <span class="guilabel">View</span> → <img alt="icon-zoom-to-selection-small" src="_images/zoom-select1.png" /> <span class="guilabel">Zoom to Selection</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Change the view to <img alt="icon-view-topright" src="_images/default-view-top-right.png" /> <strong>top right,</strong> then <img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> <strong>zoom in</strong> to the selected rotor.</p>
+<p>Change the view to <img alt="icon-view-topright" src="_images/default-view-top-right.png" /> <strong>top right,</strong> then <img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> <strong>zoom in</strong> to the selected rotor (<a class="reference internal" href="#zoomedin"><span class="std std-numref">Fig. 14</span></a>).</p>
 </div>
-<div class="figure align-default" id="id6">
+<div class="figure align-default" id="id7">
 <span id="zoomedin"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-view-top-right.png"><img alt="_images/tutorial-virtualscene-view-top-right.png" src="_images/tutorial-virtualscene-view-top-right.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">We have zoomed in to see the selected rotor and changed the view direction to <em>top right</em>.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">We have zoomed in to see the selected rotor and changed the view direction to <em>top right</em>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="icon-bounding-box-bounding-box">
@@ -277,15 +281,15 @@
 <p>You can use this button to draw a permanent bounding box around the object. At moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object’s colour.</p>
 </div>
 <div class="section" id="icon-view-axes-axes-view">
-<h3><img alt="icon-view-axes" src="_images/view-axes.png" /> Axes view<a class="headerlink" href="#icon-view-axes-axes-view" title="Permalink to this headline">¶</a></h3>
+<h3><img alt="icon-view-axes" src="_images/view-axes.png" /> Axes View<a class="headerlink" href="#icon-view-axes-axes-view" title="Permalink to this headline">¶</a></h3>
 <p>Each part has its own, local coordinate system. With this button, you make the local axes visible. The <em>x</em> axis will be displayed as a red line, the <em>y</em> axis as a yellow line, and the <em>z</em> axis as a green line.</p>
 </div>
 <div class="section" id="icon-wireframe-wireframe-and-solid-view">
 <h3><img alt="icon-wireframe" src="_images/switch-wireframe.png" /> Wireframe and Solid View<a class="headerlink" href="#icon-wireframe-wireframe-and-solid-view" title="Permalink to this headline">¶</a></h3>
-<p>Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh. On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).</p>
-<div class="figure align-default" id="id7">
+<p>Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (<a class="reference internal" href="#wireframe"><span class="std std-numref">Fig. 15</span></a>). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).</p>
+<div class="figure align-default" id="id8">
 <span id="wireframe"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-wireframe.png"><img alt="_images/tutorial-virtualscene-wireframe.png" src="_images/tutorial-virtualscene-wireframe.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Solid surface (left) and wireframe view (right).</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Solid surface (left) and wireframe view (right).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
