@@ -590,7 +590,7 @@
      inkscape:cx="355.6848"
      inkscape:cy="283.78363"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g5668-4"
      showgrid="false"
      inkscape:snap-intersection-paths="true"
      inkscape:window-width="1920"
@@ -622,7 +622,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -713,48 +713,48 @@
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-             x="46.792461"
-             y="77.733116"
+             x="47.360901"
+             y="79.335083"
              id="text5592-8"><tspan
                sodipodi:role="line"
                id="tspan5590-7"
-               x="46.792461"
-               y="77.733116"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">x</tspan></text>
+               x="47.360901"
+               y="79.335083"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">X</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-             x="38.082184"
-             y="50.205711"
+             x="36.996979"
+             y="49.688946"
              id="text5592-0-3"><tspan
                sodipodi:role="line"
                id="tspan5590-3-3"
-               x="38.082184"
-               y="50.205711"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">y</tspan></text>
+               x="36.996979"
+               y="49.688946"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">Y</tspan></text>
           <text
              xml:space="preserve"
              style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-             x="19.027958"
-             y="73.816795"
+             x="19.079634"
+             y="73.196678"
              id="text5592-0-8-8"><tspan
                sodipodi:role="line"
                id="tspan5590-3-7-5"
-               x="19.027958"
-               y="73.816795"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">z</tspan></text>
+               x="19.079634"
+               y="73.196678"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">Z</tspan></text>
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:7.05555534px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+             x="37.578171"
+             y="66.506531"
+             id="text5592-0-3-4"><tspan
+               sodipodi:role="line"
+               id="tspan5590-3-3-1"
+               x="37.578171"
+               y="66.506531"
+               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">0</tspan></text>
         </g>
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1;font-family:Calibri;-inkscape-font-specification:Calibri;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-           x="12.142415"
-           y="-44.830311"
-           id="text211"><tspan
-             sodipodi:role="line"
-             id="tspan209"
-             x="12.142415"
-             y="-44.830311"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:Arial;-inkscape-font-specification:Arial;stroke-width:0.26458332">(0, 0, 0)</tspan></text>
       </g>
     </g>
     <g
