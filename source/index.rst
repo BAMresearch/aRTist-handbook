@@ -41,4 +41,5 @@ The information in this manual is for reference and informational use only. We a
    :caption: Tutorials:
 
    tutorial_introduction
-   tutorial_objects_and_scene
+   tutorial_virtual_scene
+   tutorial_positioning_orientation_size
