@@ -1,6 +1,9 @@
 The Virtual Scene
 =================
 
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
 A Blank Scene
 -------------
 
@@ -12,7 +15,7 @@ When you start *aRT*\ ist, it will show you an empty **scene** (:numref:`blankSc
 
     The *aRT*\ ist window with a blank scene.
 
-*aRT*\ ist's standard coordinate system is shown in :numref:`standardCoordinateSystem`. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the *z* axis. For a standard CT set-up, the axis of rotation would point in the direction of the *y* axis.
+*aRT*\ ist's standard coordinate system is shown in :numref:`standardCoordinateSystem`. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the *Z* axis. For a standard CT set-up, the axis of rotation would point in the direction of the *Y* axis.
 
 .. _standardCoordinateSystem:
 .. figure:: pictures/coordinate-system.png
@@ -21,7 +24,7 @@ When you start *aRT*\ ist, it will show you an empty **scene** (:numref:`blankSc
 
     aRTist's standard coordinate system
 
-You are free to change the position and orientation of any of the components in a scene, including the source and the detector. Some modules, like the *CtScan* module that we will use later, assume a certain coordinate system, for example that the *y* axis is the axis of rotation. To stay on the safe side, it may be a good idea to stick with this convention.
+You are free to change the position and orientation of any of the components in a scene, including the source and the detector. Some modules, like the *CtScan* module that we will use later, assume a certain coordinate system, for example that the *Y* axis is the axis of rotation. To stay on the safe side, it may be a good idea to stick with this convention.
 
 .. note:: Use your mouse to change the view. **Left-click** and drag in the virtual scene to change the camera's view point. **Right-click** and move the mouse up and down to zoom. **Middle-click** (typically your mouse wheel) and move the mouse to shift the view on the screen.
 
@@ -167,7 +170,7 @@ You can use this button to draw a permanent bounding box around the object. At m
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. |icon-view-axes| image:: pictures/icons/32x32/view-axes.png
 
-Each part has its own, local coordinate system. With this button, you make the local axes visible. The *x* axis will be displayed as a red line, the *y* axis as a yellow line, and the *z* axis as a green line.
+Each part has its own, local coordinate system. With this button, you make the local axes visible. The *X* axis will be displayed as a red line, the *Y* axis as a yellow line, and the *Z* axis as a green line.
 
 |icon-wireframe| Wireframe and Solid View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,5 +211,5 @@ In this tutorial, you have learned about *aRT*\ ist's virtual scene and how to a
 * You have also learned how to **navigate** around the view, change the camera position, projection mode, and some rendering options.
 * You know how to turn the **visibility** of objects *on* and *off* and that only visible objects are considered during a simulation (with the exception of *Source* and *Detector*).
 
-The scene that we created up to this point is available for download here:
-:download:`tutorial_virtual_scene.aRTist <files/tutorial_virtual_scene.aRTist>` (4.6 MB)
+| The scene that we created up to this point is available for download:
+| :download:`tutorial_virtual_scene.aRTist <files/tutorial_virtual_scene.aRTist>` (4.6 MB)

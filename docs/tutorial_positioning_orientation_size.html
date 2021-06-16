@@ -100,6 +100,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#parameter-panel">Parameter Panel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#position">Position</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#orientation">Orientation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#incremental-transformations">Incremental Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -173,7 +175,8 @@
 <h1>Position, Orientation &amp; Size<a class="headerlink" href="#position-orientation-size" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We continue with the project from the last tutorial. You can download it here if you need the current state: <a class="reference download internal" download="" href="_downloads/9ea569a2b326604f21a3b08c72e77df9/tutorial_virtual_scene.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_virtual_scene.aRTist</span></code></a> (4.6 MB)</p>
+<p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
+<p><a class="reference download internal" download="" href="_downloads/9ea569a2b326604f21a3b08c72e77df9/tutorial_virtual_scene.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_virtual_scene.aRTist</span></code></a> (4.6 MB)</p>
 </div>
 <div class="section" id="local-and-world-coordinate-systems">
 <h2>Local and World Coordinate Systems<a class="headerlink" href="#local-and-world-coordinate-systems" title="Permalink to this headline">¶</a></h2>
@@ -198,7 +201,7 @@
 <span id="detectortransformproperties"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-detector-properties.png"><img alt="_images/tutorial-positioning-detector-properties.png" src="_images/tutorial-positioning-detector-properties.png" style="width: 248.8px; height: 404.8px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The lower three rows of the <em>Parameter Panel</em> show the position, orientation and size of the selected <em>Detector</em>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>The panel also tells us that the detector has a size of 100 mm in <em>X</em> direction and 100 mm in <em>Y</em> direction. It has no thickness (0 mm in <em>Z</em> direction). The size always refers to an object’s <strong>bounding box</strong>, i.e. its local coordinate system. In the case of our specific detector, the axes of its local coordinate system and the world coordinate system point in the same direction. In general, this is not the case for any object.</p>
+<p>The panel also tells us that the detector has a <strong>Size</strong> of 100 mm in <em>X</em> direction and 100 mm in <em>Y</em> direction. It has no thickness (0 mm in <em>Z</em> direction). The size always refers to an object’s <strong>bounding box</strong>, i.e. its local coordinate system. In the case of our specific detector, the axes of its local coordinate system and the world coordinate system point in the same direction. In general, this is not the case for any object.</p>
 <p>We can also get the information about the position of the source.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -239,13 +242,75 @@
 </div>
 <div class="section" id="orientation">
 <h2>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h2>
-<p>One row below the <em>Position</em> settings in the <em>Parameter Panel</em> you can set up the <strong>Orientation</strong>. This is a set of three angles (in degrees) that represent consecutive rotations around an object’s coordinate axes.</p>
+<p>One row below the <em>Position</em> settings in the <em>Parameter Panel</em> you can set the <strong>Orientation</strong>. This is a set of three angles (in degrees) that represent consecutive rotations around an object’s coordinate axes.</p>
 <p>Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, <em>aRT</em>ist will perform three rotations in the following order.</p>
 <ol class="arabic simple">
 <li><p>The object is rotated by the <strong>third angle</strong> around its <strong>local Z axis</strong>.</p></li>
 <li><p>The object is rotated by the <strong>first angle</strong> around the <strong>resulting local X axis</strong>.</p></li>
 <li><p>The object is rotated by the <strong>second angle</strong> around the <strong>resulting local Y axis</strong>.</p></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select the <em>Rotor</em> and set its orientation angles to X: <code class="code docutils literal notranslate"><span class="pre">20</span></code>, Y: <code class="code docutils literal notranslate"><span class="pre">30</span></code> and Z: <code class="code docutils literal notranslate"><span class="pre">10</span></code>. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply the orientation.</p>
+</div>
+<p>You should now see a tilted <em>Rotor</em> in the virtual scene, just like in <a class="reference internal" href="#rotororientation"><span class="std std-numref">Fig. 21</span></a>. Starting with its local coordinate system aligned with the world coordinate system, it has first been rotated by 10° around its local <em>Z</em> axis, then by 20° around the resulting local <em>X</em> axis, and thirdly by 30° around the resulting local <em>Y</em> axis.</p>
+<p>The order in which you enter the three <em>Orientation</em> angles does not matter for the final result. Whenever you change an orientation angle, <em>aRT</em>ist will internally reset the object to its original orientation, and then strictly rotate it in the given order Z→X→Y.</p>
+<div class="figure align-default" id="id6">
+<span id="rotororientation"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-orientation-rotor.png"><img alt="_images/tutorial-positioning-orientation-rotor.png" src="_images/tutorial-positioning-orientation-rotor.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">We have changed the orientation of the <em>Rotor</em> in the scene.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Often, using the <em>Orientation</em> angles directly can be very inconvenient because of the strict order of rotations. An easier and more powerful way to transform an object’s position and orientation are incremental transformations as explained in the next section.</p>
+</div>
+<div class="section" id="incremental-transformations">
+<h2>Incremental Transformations<a class="headerlink" href="#incremental-transformations" title="Permalink to this headline">¶</a></h2>
+<p>The upper part of the <em>Parameter Panel</em> provides a lot of options to transform an object. <a class="reference internal" href="#transformpanel"><span class="std std-numref">Fig. 22</span></a> gives an overview over the buttons and input fields.</p>
+<div class="figure align-default" id="id7">
+<span id="transformpanel"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-transform-panel.png"><img alt="_images/tutorial-positioning-transform-panel.png" src="_images/tutorial-positioning-transform-panel.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">We have changed the orientation of the <em>Rotor</em> in the scene.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>Rotations need an <strong>axis of rotation,</strong> and translations need a <strong>translation vector</strong> that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under <em>Axis</em>. The buttons <strong>X</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" />, <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> and <strong>Z</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> provide easy ways to set the standard vectors for X, Y and Z direction. <strong>XYZ</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> gives you a diagonal axis.</p>
+<p>The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the <img alt="icon-world" src="_images/world-coordinate-system.png" /> <strong>world coordinate system</strong> or for the object’s <img alt="icon-local" src="_images/object-coordinate-system.png" /> <strong>local coordinate system.</strong></p>
+<p>Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose <img alt="icon-rotate" src="_images/transformation-rotate.png" /> <strong>Rotation Mode</strong>, <img alt="icon-move" src="_images/transformation-move.png" /> <strong>Translation Mode (move)</strong> or <img alt="icon-scale" src="_images/transformation-scale.png" /> <strong>Scale Mode (resize).</strong></p>
+<p>For <strong>Value</strong>, you can set the amount by which you want to rotate, move or scale. For rotations, enter an <strong>angle in degrees.</strong> For translations, enter a <strong>distance in mm.</strong> For scaling, <em>aRT</em>ist expects a factor that expresses a <strong>multiple of 10% magnification,</strong> i.e. a factor of 1 will increase the object’s size by 10% in the given direction.</p>
+<p>To apply the transformation, you can use the <strong>transform slider.</strong> When you grab the handle and drag it across the slider, it might perform several consecutive transformations. If you want exactly one transformation step, you have much better control by clicking onto the horizontal slider bar to the left or to the right of the slider handle.</p>
+<ul class="simple">
+<li><p>A click on the <strong>right side</strong> of the slider handle leads to a positive transformation by the amount you entered. This means that rotations will happen in a mathematically <em>positive</em> direction around the axis vector and translations will move the object <em>in the direction</em> of the axis vector. Scalings will <em>multiply</em> the size of the object by the given 10%-magnification-factor.</p></li>
+<li><p>A click on the <strong>left side</strong> of the slider handle leads to a negative transformation by the amount you entered. This means that rotations will happen in a mathematically <em>negative</em> direction around the axis vector and translations will move the object in the <em>opposite</em> direction of the axis vector. Scalings will <em>divide</em> the size of the object by the given 10%-magnification-factor.</p></li>
+</ul>
+<p>Normally, the <strong>centre of rotation or scaling</strong> is the centre of the object’s bounding box. You can change this point by entering a different <strong>Reference Position</strong> underneath the transform slider.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let’s put this in action. We will now reverse the <em>Rotor’s</em> orientation using the transform slider. But first: <strong>now is a good moment to save your project,</strong> just in case you make a mistake.</p>
+<ol class="arabic simple">
+<li><p>Make sure the <em>Rotor</em> is selected.</p></li>
+<li><p>Select the <img alt="icon-local" src="_images/object-coordinate-system.png" /> <strong>Local Coordinate System</strong> as the reference frame. (Remember that <em>aRT</em>ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object’s <strong>local</strong> coordinate system.)</p></li>
+<li><p>Switch to <img alt="icon-rotate" src="_images/transformation-rotate.png" /> <strong>Rotation Mode</strong>.</p></li>
+<li><p>Click on <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Y axis. (This has been the last of the three rotations. We need to go backwards in reverse order to get back to the start.)</p></li>
+<li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">30</span></code>.</p></li>
+<li><p>Click to <strong>left</strong> of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).</p></li>
+<li><p>Click on <strong>X</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the X axis.</p></li>
+<li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">20</span></code>.</p></li>
+<li><p>Click to <strong>left</strong> of the transform slider handle.</p></li>
+<li><p>Click on <strong>Z</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the X axis.</p></li>
+<li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p>Click to <strong>left</strong> of the transform slider handle.</p></li>
+</ol>
+<p>You should now be back at an orientation of (0, 0, 0) and see the view from <a class="reference internal" href="#sodandsddsetup"><span class="std std-numref">Fig. 20</span></a> again. If you would have changed the order of rotations, you would not be back at this point.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, you have learned how to change the position and orientation of objects.</p>
+<ul class="simple">
+<li><p>You know that each object has its own <strong>local coordinate system</strong> in a fixed, unchanging reference frame that is called the <strong>world coordinate system.</strong></p></li>
+<li><p>You can set the <strong>position</strong> and <strong>orientation</strong> of objects.</p></li>
+<li><p>You learned that the three <strong>orientation angles</strong> are always applied in the order Z→X→Y of the object’s local coordinate axes.</p></li>
+<li><p>You are able to use the <strong>transform slider</strong> to apply rotations around any given vector, and translations in any directions.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The scene that we created up to this point is available for download:</div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/68530277a6d6e495b237e4aea152cadb/tutorial_positioning.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_positioning.aRTist</span></code></a> (4.6 MB)</div>
+</div>
 </div>
 </div>
 
