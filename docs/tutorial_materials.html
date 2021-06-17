@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Materials &mdash; aRTist 2.10.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Position, Orientation &amp; Size" href="tutorial_positioning_orientation_size.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aRTist
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Materials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#materials-editor">Materials Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attenuation-data-viewer">Attenuation Data Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-material-of-a-part">Setting the Material of a Part</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Materials</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial_materials.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="materials">
+<h1>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
+<p><a class="reference download internal" download="" href="_downloads/68530277a6d6e495b237e4aea152cadb/tutorial_positioning.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_positioning.aRTist</span></code></a> (4.6 MB)</p>
+</div>
+<p><em>aRT</em>ist approximates the X-ray attenuation coefficients of chemical compounds from the attenuation properties of their single chemical elements. It uses the elementary mass attenuation coefficients from the <em>Evaluated Nuclear Data File (ENDF)</em>. Higher-order structural effects such as the electron band structure of crystals or the orbital configurations of molecules are not taken into account. Any material is simulated as “the sum of its elementary parts.”</p>
+<div class="section" id="materials-editor">
+<h2>Materials Editor<a class="headerlink" href="#materials-editor" title="Permalink to this headline">¶</a></h2>
+<p><em>aRT</em>ist has a built-in materials editor (<a class="reference internal" href="#materialseditor"><span class="std std-numref">Fig. 23</span></a>) that shows your library of materials. You can change and add entries there, and inspect the attenuation coefficients that <em>aRT</em>ist has calculated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the toolbar, click the button <img alt="icon-material-editor" src="_images/edit-materials.png" /> <span class="guilabel">Edit material properties</span> or open it from the Menu bar: <span class="guilabel">Tools</span> → <span class="guilabel">Materials…</span></p>
+</div>
+<div class="figure align-default" id="id1">
+<span id="materialseditor"></span><a class="reference internal image-reference" href="_images/tutorial-materials-editor.png"><img alt="_images/tutorial-materials-editor.png" src="_images/tutorial-materials-editor.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Materials Editor</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>We will create a simple glass ceramic that has the following composition:</p>
+<ul class="simple">
+<li><p>Al<sub>2</sub>O<sub>3</sub> with a mass fraction of 40%</p></li>
+<li><p>SiO<sub>2</sub> with a mass fraction of 60%</p></li>
+<li><p>Overall density: ρ = 2.53 g/cm<sup>3</sup></p></li>
+</ul>
+<p>In the materials editor, this compound would be represented as <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">0.4</span> <span class="pre">SiO2</span> <span class="pre">0.6</span></code>. Each of the two components is written in its molecular formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its <em>mass fraction</em> may follow (separated by a space from the molecular formula). The mass fractions will be automatically normalized to their total sum. For example, <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">40</span> <span class="pre">SiO2</span> <span class="pre">60</span></code> would represent the same material as above.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>Materials Editor,</em> click on <img alt="icon-add" src="_images/list-add.png" /> <span class="guilabel">Add new material definition</span>. An empty row will appear where you can fill in the new material information (<a class="reference internal" href="#materialseditoraddnew"><span class="std std-numref">Fig. 24</span></a>).</p>
+<div class="line-block">
+<div class="line">Enter a material name, e.g. <code class="code docutils literal notranslate"><span class="pre">Glass</span> <span class="pre">Ceramic</span></code>.</div>
+<div class="line">Enter the density: <code class="code docutils literal notranslate"><span class="pre">2.53</span></code>.</div>
+<div class="line">Enter the composition: <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">0.4</span> <span class="pre">SiO2</span> <span class="pre">0.6</span></code>.</div>
+<div class="line">You may also add a comment, if you want.</div>
+</div>
+<p>Click <span class="guilabel">Apply</span> to save the list.</p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="materialseditoraddnew"></span><a class="reference internal image-reference" href="_images/tutorial-materials-editor-add-material.png"><img alt="_images/tutorial-materials-editor-add-material.png" src="_images/tutorial-materials-editor-add-material.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">We add the glass ceramic as a new material.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>It is important to click <span class="guilabel">Apply</span> to save the changes you have made. The button <span class="guilabel">Refresh</span> will re-load the internal library, delete any unsaved changes you have made, and possibly show changes that other <em>aRT</em>ist modules have made in the material library in the time since you have opened the <em>Materials Editor.</em></p>
+</div>
+<div class="section" id="attenuation-data-viewer">
+<h2>Attenuation Data Viewer<a class="headerlink" href="#attenuation-data-viewer" title="Permalink to this headline">¶</a></h2>
+<p>For each material, you can display the <img alt="icon-attenuation" src="_images/show-attenuation.png" /> <strong>attenuation data</strong> that <em>aRT</em>ist will use during the simulation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that our <em>Glass Ceramic</em> is selected in the <em>Materials Editor</em> and click on <img alt="icon-attenuation" src="_images/show-attenuation.png" />.</p>
+</div>
+<p>The <strong>Attenuation Viewer</strong> (<a class="reference internal" href="#attenuationviewerplot"><span class="std std-numref">Fig. 25</span></a>) will appear and show a plot of the attenuation coefficients.</p>
+<div class="figure align-default" id="id3">
+<span id="attenuationviewerplot"></span><a class="reference internal image-reference" href="_images/tutorial-materials-attenuation-viewer-plot.png"><img alt="_images/tutorial-materials-attenuation-viewer-plot.png" src="_images/tutorial-materials-attenuation-viewer-plot.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">The attenuation viewer shows a plot of the attenuation coefficients.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you want to display a different photon energy range, you can enter it in the upper part of the window: <strong>min. energy</strong> and <strong>max. energy</strong>. The plot displays five curves that represent the following:</p>
+<div class="line-block">
+<div class="line"><img alt="box-black" src="_images/box_black.png" /> The <strong>total</strong> attenuation coefficients are plotted as a black line and consider all the modelled effects from particle physics.</div>
+<div class="line"><img alt="box-blue" src="_images/box_blue.png" /> The contribution from the <strong>photo effect</strong> (photoelectric absorption) is plotted as a blue line.</div>
+<div class="line"><img alt="box-red" src="_images/box_red.png" /> The contribution from <strong>incoherent scattering</strong> (Compton scattering) is plotted as a red line.</div>
+<div class="line"><img alt="box-green" src="_images/box_green.png" /> The contribution from <strong>coherent scattering</strong> (Rayleigh/Thomson scattering) is plotted as a green line.</div>
+<div class="line"><img alt="box-purple" src="_images/box_purple.png" /> The contribution from <strong>pair production</strong> (purple line) becomes relevant at photon energies above twice the electron rest mass: h⋅f &gt; 2 m<sub>e</sub>c<sup>2</sup> (1.022 MeV).</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Switch to the <span class="guilabel">Text</span> tab to display the data as a text table. (<a class="reference internal" href="#attenuationviewertext"><span class="std std-numref">Fig. 26</span></a>)</p>
+</div>
+<div class="figure align-default" id="id4">
+<span id="attenuationviewertext"></span><a class="reference internal image-reference" href="_images/tutorial-materials-attenuation-viewer-text.png"><img alt="_images/tutorial-materials-attenuation-viewer-text.png" src="_images/tutorial-materials-attenuation-viewer-text.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">The calculated data points for the attenuation coefficients are shown in a text table.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can save the attenuation data as a text file with the <img alt="icon-saveas" src="_images/document-save-as.png" /> <span class="guilabel">Save</span> button in the upper right corner of the <em>Attenuation Viewer</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the <em>Attenuation Viewer</em> and the <em>Materials Editor.</em></p>
+</div>
+</div>
+<div class="section" id="setting-the-material-of-a-part">
+<h2>Setting the Material of a Part<a class="headerlink" href="#setting-the-material-of-a-part" title="Permalink to this headline">¶</a></h2>
+<p>We now want to set the <em>Rotor’s</em> material to the <em>Glass Ceramic</em> that we have created. You can do this in the <em>Material</em> column in the <em>Assembly List.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click on the current <em>Material</em> of the <em>Rotor</em> (should be <em>Fe</em>). From the list, choose the <em>Glass Ceramic</em> that we have created. (<a class="reference internal" href="#materialdropdown"><span class="std std-numref">Fig. 27</span></a>)</p>
+</div>
+<div class="figure align-default" id="id5">
+<span id="materialdropdown"></span><a class="reference internal image-reference" href="_images/tutorial-materials-rotor-assembly-list.png"><img alt="_images/tutorial-materials-rotor-assembly-list.png" src="_images/tutorial-materials-rotor-assembly-list.png" style="width: 309.0px; height: 289.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">We set the <em>Glass Ceramic</em> as the <em>Rotor’s</em> material.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The attenuation behaviour of the <em>Rotor</em> should now change and represent the one of the <em>Glass Ceramic.</em> The grey values in the projection’s preview image will become lighter as the <em>Glass Ceramic</em> absorbs less radiation than iron.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this brief tutorial you have learned how to manage your <strong>materials library</strong>, set the material of a part and how to access its <strong>attenuation coefficients.</strong></p>
+<div class="line-block">
+<div class="line">The scene that we created up to this point is available for download:</div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/c4ae82d58f1d322123da401e03297b33/tutorial_materials.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_materials.aRTist</span></code></a> (4.6 MB)</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial_positioning_orientation_size.html" class="btn btn-neutral float-left" title="Position, Orientation &amp; Size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
