@@ -169,7 +169,7 @@ Normally, the **centre of rotation or scaling** is the centre of the object's bo
     7. Click on **X** |nbsp| |icon-arrow-down| to select the X axis.
     8. For **Value**, enter :code:`20`.
     9. Click to **left** of the transform slider handle.
-    10. Click on **Z** |nbsp| |icon-arrow-down| to select the X axis.
+    10. Click on **Z** |nbsp| |icon-arrow-down| to select the Z axis.
     11. For **Value**, enter :code:`10`.
     12. Click to **left** of the transform slider handle.
 
