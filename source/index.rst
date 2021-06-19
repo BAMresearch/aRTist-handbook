@@ -44,3 +44,4 @@ The information in this manual is for reference and informational use only. We a
    tutorial_virtual_scene
    tutorial_positioning_orientation_size
    tutorial_materials
+   tutorial_multi_material_parts

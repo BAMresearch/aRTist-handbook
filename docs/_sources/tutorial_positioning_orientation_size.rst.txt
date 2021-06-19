@@ -1,13 +1,9 @@
-Position, Orientation & Size
-============================
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 .. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
 
      :download:`tutorial_virtual_scene.aRTist <files/tutorial_virtual_scene.aRTist>` |nbsp| (4.6 MB)
 
+Position, Orientation & Size
+============================
 
 Local and World Coordinate Systems
 ----------------------------------
@@ -78,7 +74,7 @@ The number in the input field will be displayed in blue until it is applied to t
 
     Placing the source at 500 |nbsp| mm. The number remains blue until we press :kbd:`Enter` to apply the change.
 
-The *Rotor* is still at the origin of the coordinate system, basically "inside" the detector. To move it to the correct :abbr:`SOD (source-object distance)` of 300 |nbsp| mm, we have to keep in mind that we need to set its position on the *Z* axis, which starts at the detector. This means that we have to calculate the **object-source distance (ODD)** first:
+The *Rotor* is still at the origin of the coordinate system, basically "inside" the detector. To move it to the correct :abbr:`SOD (source-object distance)` of 300 |nbsp| mm, we have to keep in mind that we need to set its position on the *Z* axis, which starts at the detector. This means that we have to calculate the **object-detector distance (ODD)** first:
 
 **ODD = SDD – SOD = 200 mm.**
 
@@ -163,15 +159,15 @@ Normally, the **centre of rotation or scaling** is the centre of the object's bo
     1. Make sure the *Rotor* is selected.
     2. Select the |icon-local| |nbsp| **Local Coordinate System** as the reference frame. (Remember that *aRT*\ ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object's **local** coordinate system.)
     3. Switch to |icon-rotate| |nbsp| **Rotation Mode**.
-    4. Click on **Y** |nbsp| |icon-arrow-down| to select the Y axis. (This has been the last of the three rotations. We need to go backwards in reverse order to get back to the start.)
+    4. Click on **Y** |nbsp| |icon-arrow-down| to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)
     5. For **Value**, enter :code:`30`.
-    6. Click to **left** of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).
+    6. Click to the **left** of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).
     7. Click on **X** |nbsp| |icon-arrow-down| to select the X axis.
     8. For **Value**, enter :code:`20`.
-    9. Click to **left** of the transform slider handle.
+    9. Click to the **left** of the transform slider handle.
     10. Click on **Z** |nbsp| |icon-arrow-down| to select the Z axis.
     11. For **Value**, enter :code:`10`.
-    12. Click to **left** of the transform slider handle.
+    12. Click to the **left** of the transform slider handle.
 
     You should now be back at an orientation of (0, 0, 0) and see the view from :numref:`SODandSDDsetup` again. If you would have changed the order of rotations, you would not be back at this point.
 

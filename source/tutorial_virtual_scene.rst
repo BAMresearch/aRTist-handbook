@@ -1,9 +1,6 @@
 The Virtual Scene
 =================
 
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 A Blank Scene
 -------------
 
@@ -36,7 +33,7 @@ Any sample simulated in *aRT*\ ist is represented as a 3D surface model (triangu
 
 .. |icon-open| image:: pictures/icons/16x16/document-open-folder.png
 
-*aRT*\ ist comes with a sample library that contains some surface models that we can already use. Let's loads the *Rotor*.
+*aRT*\ ist comes with a sample library that contains some surface models that we can already use. Let's load the *Rotor*.
 
 
 .. note:: Click the |icon-library| :guilabel:`Library` button in the toolbar or choose from the menu: :guilabel:`File` → :guilabel:`Open Library...`.
@@ -111,7 +108,7 @@ Some of these only work once a part is selected.
 .. figure:: pictures/tutorial-virtualscene-rotor-selected.png
     :width: 100%
 
-    The rotor is selected: it is highlighted with a blue background in the *Assembly List* and enclosed in a yellow-cornered bounding box.
+    The rotor is selected: it is highlighted with a blue background in the *Assembly List* and enclosed in a yellow-cornered bounding box in the virtual scene.
 
 View Directions
 ^^^^^^^^^^^^^^^
@@ -164,7 +161,7 @@ You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. |icon-bounding-box| image:: pictures/icons/32x32/bounding-box.png
 
-You can use this button to draw a permanent bounding box around the object. At moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object's colour.
+You can use this button to draw a permanent bounding box around the object. At the moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object's colour.
 
 |icon-view-axes| Axes View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

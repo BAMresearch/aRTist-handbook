@@ -1,12 +1,9 @@
-Materials
-==========
-
-.. |nbsp| unicode:: 0xA0 
-   :trim:
-
 .. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
 
      :download:`tutorial_positioning.aRTist <files/tutorial_positioning.aRTist>` |nbsp| (4.6 MB)
+
+Materials
+==========
 
 *aRT*\ ist approximates the X-ray attenuation coefficients of chemical compounds from the attenuation properties of their single chemical elements. It uses the elementary mass attenuation coefficients from the *Evaluated Nuclear Data File (ENDF)*. Higher-order structural effects such as the electron band structure of crystals or the orbital configurations of molecules are not taken into account. Any material is simulated as "the sum of its elementary parts."
 

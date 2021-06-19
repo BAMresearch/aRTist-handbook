@@ -52,6 +52,12 @@ numfig_format = {
 	"section":    "Sec. %s"
 }
 
+# Our own global roles (commands accesible in all .rst files):
+rst_prolog = """
+.. |nbsp| unicode:: 0xA0 
+    :trim:
+"""
+
 
 # -- Options for HTML output -------------------------------------------------
 

@@ -106,6 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_multi_material_parts.html">Multi-Component Parts</a></li>
 </ul>
 
             
@@ -173,13 +174,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="position-orientation-size">
-<h1>Position, Orientation &amp; Size<a class="headerlink" href="#position-orientation-size" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
+  <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
 <p><a class="reference download internal" download="" href="_downloads/9ea569a2b326604f21a3b08c72e77df9/tutorial_virtual_scene.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_virtual_scene.aRTist</span></code></a> (4.6 MB)</p>
 </div>
+<div class="section" id="position-orientation-size">
+<h1>Position, Orientation &amp; Size<a class="headerlink" href="#position-orientation-size" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="local-and-world-coordinate-systems">
 <h2>Local and World Coordinate Systems<a class="headerlink" href="#local-and-world-coordinate-systems" title="Permalink to this headline">¶</a></h2>
 <p>In the previous tutorial, we have already seen that <em>aRT</em>ist puts the detector by default at the origin of the coordinate system and the source at some point in positive <em>z</em> direction. This main frame of reference is called the <strong>world coordinate system</strong>. You can imagine it as a fixed frame, or stage, that is <em>absolute</em> and will never change.</p>
@@ -228,7 +229,7 @@
 <span id="sourcetransformproperties"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-source-properties.png"><img alt="_images/tutorial-positioning-source-properties.png" src="_images/tutorial-positioning-source-properties.png" style="width: 248.8px; height: 404.8px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Placing the source at 500 mm. The number remains blue until we press <kbd class="kbd docutils literal notranslate">Enter</kbd> to apply the change.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>The <em>Rotor</em> is still at the origin of the coordinate system, basically “inside” the detector. To move it to the correct <abbr title="source-object distance">SOD</abbr> of 300 mm, we have to keep in mind that we need to set its position on the <em>Z</em> axis, which starts at the detector. This means that we have to calculate the <strong>object-source distance (ODD)</strong> first:</p>
+<p>The <em>Rotor</em> is still at the origin of the coordinate system, basically “inside” the detector. To move it to the correct <abbr title="source-object distance">SOD</abbr> of 300 mm, we have to keep in mind that we need to set its position on the <em>Z</em> axis, which starts at the detector. This means that we have to calculate the <strong>object-detector distance (ODD)</strong> first:</p>
 <p><strong>ODD = SDD – SOD = 200 mm.</strong></p>
 <p>We can now place the <em>Rotor</em> 200 mm away from the detector to get the required <abbr title="source-object distance">SOD</abbr> of 300 mm.</p>
 <div class="admonition note">
@@ -287,15 +288,15 @@
 <li><p>Make sure the <em>Rotor</em> is selected.</p></li>
 <li><p>Select the <img alt="icon-local" src="_images/object-coordinate-system.png" /> <strong>Local Coordinate System</strong> as the reference frame. (Remember that <em>aRT</em>ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object’s <strong>local</strong> coordinate system.)</p></li>
 <li><p>Switch to <img alt="icon-rotate" src="_images/transformation-rotate.png" /> <strong>Rotation Mode</strong>.</p></li>
-<li><p>Click on <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Y axis. (This has been the last of the three rotations. We need to go backwards in reverse order to get back to the start.)</p></li>
+<li><p>Click on <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">30</span></code>.</p></li>
-<li><p>Click to <strong>left</strong> of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).</p></li>
+<li><p>Click to the <strong>left</strong> of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).</p></li>
 <li><p>Click on <strong>X</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the X axis.</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">20</span></code>.</p></li>
-<li><p>Click to <strong>left</strong> of the transform slider handle.</p></li>
+<li><p>Click to the <strong>left</strong> of the transform slider handle.</p></li>
 <li><p>Click on <strong>Z</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Z axis.</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
-<li><p>Click to <strong>left</strong> of the transform slider handle.</p></li>
+<li><p>Click to the <strong>left</strong> of the transform slider handle.</p></li>
 </ol>
 <p>You should now be back at an orientation of (0, 0, 0) and see the view from <a class="reference internal" href="#sodandsddsetup"><span class="std std-numref">Fig. 20</span></a> again. If you would have changed the order of rotations, you would not be back at this point.</p>
 </div>

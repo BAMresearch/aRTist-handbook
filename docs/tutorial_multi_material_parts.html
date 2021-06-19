@@ -1,0 +1,392 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Multi-Component Parts &mdash; aRTist 2.10.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Materials" href="tutorial_materials.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aRTist
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Multi-Component Parts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#solid-module">Solid Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overlapping-parts">Overlapping Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#order-of-parts-hierarchy">Order of Parts (Hierarchy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transforming-groups-of-parts">Transforming Groups of Parts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Multi-Component Parts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial_multi_material_parts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
+<p><a class="reference download internal" download="" href="_downloads/c4ae82d58f1d322123da401e03297b33/tutorial_materials.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_materials.aRTist</span></code></a> (4.6 MB)</p>
+</div>
+<div class="section" id="multi-component-parts">
+<h1>Multi-Component Parts<a class="headerlink" href="#multi-component-parts" title="Permalink to this headline">¶</a></h1>
+<p>Each part on the <em>Assembly List</em> is a solid that can only have one single material. We can place multiple parts into the scene, each with a different material. In regions of space where these parts overlap, there is a strict hierarchy: objects that appear later in the <em>Assembly List</em> (towards the bottom) have a higher priority and completely replace previous objects (of lower priority). We can use this fact to build objects from components that all have different materials.</p>
+<p>In this tutorial, we will create a small air pocket and place it inside the <em>Rotor</em>.</p>
+<div class="section" id="solid-module">
+<h2>Solid Module<a class="headerlink" href="#solid-module" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Solid</em> module can generate simple geometric solids like spheres, cuboids, etc.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>Toolbar</em>, click the button <img alt="icon-solid" src="_images/icon-solid1.png" /> <span class="guilabel">Generate simple geometric object</span> or open the module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">Solid</span>. (<a class="reference internal" href="#solidmodule"><span class="std std-numref">Fig. 28</span></a>)</p>
+</div>
+<div class="figure align-default" id="id1">
+<span id="solidmodule"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-solid-module.png"><img alt="_images/tutorial-multimaterial-solid-module.png" src="_images/tutorial-multimaterial-solid-module.png" style="width: 65%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">We use the <em>Solid</em> module to create a sphere that we will use as an air pocket.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can choose the <span class="guilabel">Type</span> of solid that you would like to generate. Examples for the available types are shown in <a class="reference internal" href="#availablesolids"><span class="std std-numref">Fig. 29</span></a>. For each solid, you can tune its geometric properties. Typically, the aspect ratio can be controlled with the parameters <span class="guilabel">X</span>, <span class="guilabel">Y</span> and <span class="guilabel">Z</span> which specify the dimensions of the bounding box. <span class="guilabel">W</span> is an additional parameter that is sometimes necessary, for example to set the diameter of a tube’s inner hole or the size of the foundation of a wedge that is not angled.</p>
+<p><span class="guilabel">Phi steps</span> basically controls the resolution of the solid’s mesh, or the number of steps on a step wedge. <span class="guilabel">Theta steps</span> is available for ellipsoids if you create a <span class="guilabel">regular ellipsoid grid</span>. In this case, <span class="guilabel">phi</span> and <span class="guilabel">theta</span> refer to the two angles of a spherical coordinate system.</p>
+<div class="figure align-default" id="id2">
+<span id="availablesolids"></span><a class="reference internal image-reference" href="_images/solids.png"><img alt="_images/solids.png" src="_images/solids.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">The basic geometric solids that can be generated in the <em>Solids</em> module.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Create a small sphere that we will use as an air pocket.</p>
+<ol class="arabic simple">
+<li><p>Set <span class="guilabel">Type</span> to <code class="code docutils literal notranslate"><span class="pre">ellipsoid</span></code>.</p></li>
+<li><p>Activate <span class="guilabel">X=Y=Z</span> to generate an ideal sphere.</p></li>
+<li><p>Make sure <span class="guilabel">regular ellipsoid grid</span> is deactivated.</p></li>
+<li><p>For the diameter <span class="guilabel">X</span>, enter <code class="code docutils literal notranslate"><span class="pre">2</span></code> mm.</p></li>
+<li><p>For <span class="guilabel">Phi steps</span>, set <code class="code docutils literal notranslate"><span class="pre">42</span></code> to create a relatively smooth sphere.</p></li>
+<li><p>Click <span class="guilabel">Create</span>.</p></li>
+</ol>
+</div>
+<p>The sphere will appear with the name <em>“ellipsoid”</em> on the <em>Assembly List</em>. It is made of iron and will have a random colour.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click on the name of the <em>“ellipsoid”</em> and rename it to <code class="code docutils literal notranslate"><span class="pre">Air</span> <span class="pre">Pocket</span></code>. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> once you have typed the new name. Click on the <em>Air Pocket’s</em> current material (Fe) and choose <code class="code docutils literal notranslate"><span class="pre">air</span></code> from the drop-down menu.</p>
+</div>
+<p>When you click <img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> <span class="guilabel">Zoom to Selection</span> in the <em>Toolbar</em>, you should see the sphere, located in the centre of the detector at the origin of the coordinate system (<a class="reference internal" href="#airpocketcreated"><span class="std std-numref">Fig. 30</span></a>).</p>
+<div class="figure align-default" id="id3">
+<span id="airpocketcreated"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-airpocket-created.png"><img alt="_images/tutorial-multimaterial-airpocket-created.png" src="_images/tutorial-multimaterial-airpocket-created.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">We created a spherical <em>ellipsoid</em>, renamed it to <em>Air Pocket</em>, set its material to <em>air</em> and zoomed in to its current location at the coordinate origin.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="overlapping-parts">
+<h2>Overlapping Parts<a class="headerlink" href="#overlapping-parts" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Air Pocket</em> appears after the <em>Rotor</em> in the <em>Assembly List</em>. Therefore, it has a higher priority and will replace the <em>Rotor</em> wherever they overlap. All we have to do now is move it into the <em>Rotor</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enter the following <span class="guilabel">Position</span> for the <em>Air Pocket</em>: <span class="guilabel">X</span>: <code class="code docutils literal notranslate"><span class="pre">4</span></code>, <span class="guilabel">Y</span>: <code class="code docutils literal notranslate"><span class="pre">3</span></code>, <span class="guilabel">Z</span>: <code class="code docutils literal notranslate"><span class="pre">200</span></code>. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> to set the position. (<a class="reference internal" href="#airpocketcoordinates"><span class="std std-numref">Fig. 31</span></a>)</p>
+</div>
+<div class="figure align-default" id="id4">
+<span id="airpocketcoordinates"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-airpocket-coordinates.png"><img alt="_images/tutorial-multimaterial-airpocket-coordinates.png" src="_images/tutorial-multimaterial-airpocket-coordinates.png" style="width: 264.34999999999997px; height: 430.09999999999997px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">We place the <em>Air Pocket</em> at coordinates inside the <em>Rotor</em>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To see the <em>Air Pocket</em> in the virtual scene, make the <em>Rotor</em> transparent: double-click on its colour in the <em>Assembly List</em> and decrease its <em>Opacity</em> (<a class="reference internal" href="#rotortransparency"><span class="std std-numref">Fig. 32</span></a>). Alternatively, you could switch its rendering mode to <img alt="icon-wireframe" src="_images/switch-wireframe.png" /> <strong>Wireframe View</strong>.</p>
+</div>
+<div class="figure align-default" id="id5">
+<span id="rotortransparency"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-rotor-transparency.png"><img alt="_images/tutorial-multimaterial-rotor-transparency.png" src="_images/tutorial-multimaterial-rotor-transparency.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">We decreased the opacity of the <em>Rotor</em> to 0.2 to see the <em>Air Pocket</em> inside it in the virtual scene.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>You should now also be able to identify the <em>Air Pocket</em> in the projection image that the <em>Image Viewer</em> displays. It is easier to see when you simulate a full projection image (click the <img alt="icon-run" src="_images/compute-radiography.png" /> <span class="guilabel">Compute</span> button) and zoom in. You may even select a region of interest (ROI) to enhance the local contrast (<a class="reference internal" href="#airpocketimageviewer"><span class="std std-numref">Fig. 33</span></a>).</p>
+<div class="figure align-default" id="id6">
+<span id="airpocketimageviewer"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-imageviewer-airpocket.png"><img alt="_images/tutorial-multimaterial-imageviewer-airpocket.png" src="_images/tutorial-multimaterial-imageviewer-airpocket.png" style="width: 294.95px; height: 337.45px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">The <em>Air Pocket</em> becomes visible in the projection image. A region of interest (blue rectangle) is selected to rescale the display range and enhance the local contrast.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Toggle the visibility of the <em>Air Pocket</em> with its <img alt="icon-visible" src="_images/object-visible-on.png" /> <strong>visibility switch</strong> in the <em>Assembly List.</em> Observe how it disappears and reappears in the projection image. When you are done, please keep it visible so that you can still see it for the next step.</p>
+</div>
+</div>
+<div class="section" id="order-of-parts-hierarchy">
+<h2>Order of Parts (Hierarchy)<a class="headerlink" href="#order-of-parts-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>As described at the beginning of this tutorial, parts that appear later in the list completely replace earlier parts in regions where they overlap. You can rearrange the parts on the <em>Assembly List</em> to establish a different order and therefore a different hierarchy of priorities.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click on the <em>Air Pocket</em> in the <em>Assembly List</em> and keep holding your mouse button. Drag the part one step upwards such that it will take a place before the <em>Rotor</em>. Release your mouse button to drop it there. (<a class="reference internal" href="#rearrangeparts"><span class="std std-numref">Fig. 34</span></a>)</p>
+</div>
+<div class="figure align-default" id="id7">
+<span id="rearrangeparts"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-rearrange-parts.png"><img alt="_images/tutorial-multimaterial-rearrange-parts.png" src="_images/tutorial-multimaterial-rearrange-parts.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">We drag the <em>Air Pocket</em> to a position before the <em>Rotor</em>. (Left: while dragging, right: dropped.)</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>After we re-arranged the order of parts, the <em>Air Pocket</em> is not visible anymore in the projection image (<a class="reference internal" href="#airpocketinvisible"><span class="std std-numref">Fig. 35</span></a>). It is now completely replaced by the <em>Rotor</em> material because the <em>Rotor</em> has a higher priority. Also note that each part keeps its unique part <em>ID</em> (<em>Rotor</em>: 1, <em>Air Pocket</em>: 2). This ID is used by some modules to refer to parts. It is independent from the part order and will not change.</p>
+<div class="figure align-default" id="id8">
+<span id="airpocketinvisible"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-imageviewer-airpocket-disappeared.png"><img alt="_images/tutorial-multimaterial-imageviewer-airpocket-disappeared.png" src="_images/tutorial-multimaterial-imageviewer-airpocket-disappeared.png" style="width: 294.95px; height: 337.45px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">The <em>Air Pocket</em> disappeared from the projection image as it is replaced by <em>Rotor</em> material.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Move the <em>Air Pocket</em> back to its previous position underneath the <em>Rotor</em> in the <em>Assembly List</em>. It should now appear again in the projection image. (As we saw in <a class="reference internal" href="#airpocketimageviewer"><span class="std std-numref">Fig. 33</span></a>.)</p>
+</div>
+</div>
+<div class="section" id="transforming-groups-of-parts">
+<h2>Transforming Groups of Parts<a class="headerlink" href="#transforming-groups-of-parts" title="Permalink to this headline">¶</a></h2>
+<p>While <em>aRT</em>ist doesn’t provide the ability to permanently group parts, you can select multiple parts on the <em>Assembly List</em> and transform them all at the same time. They will then keep their relative positions. You can choose multiple parts by pressing <kbd class="kbd docutils literal notranslate">Ctrl</kbd> while selecting them with a click.</p>
+<p>The first part you select will be displayed with a <strong>yellow-cornered</strong> bounding box in the scene view. Any additional parts selected after that will get a <strong>white-cornered</strong> bounding box. The first selected part is special: its centre will be the centre of rotation or scaling for the whole group of parts. Alternatively, you may enter a different <strong>reference position</strong> after you have selected all the parts.</p>
+<p>Let’s try this. First, we rotate the <em>Rotor</em> around its central axis together with the <em>Air Pocket.</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Deselect everything: click on the free, white space at the bottom of the <em>Assembly List</em>.</p></li>
+<li><p>Select the <em>Rotor</em> from the <em>Assembly List</em>.</p></li>
+<li><p>Hold down the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key on your keyboard while you select the <em>Air Pocket.</em></p></li>
+</ol>
+</div>
+<p>Both the <em>Rotor</em> and the <em>Air Pocket</em> should now be selected. There should be a yellow-cornered bounding box around the <em>Rotor</em> and a white-cornered bounding box around the <em>Air Pocket</em> (<a class="reference internal" href="#twopartsselected"><span class="std std-numref">Fig. 36</span></a>).</p>
+<div class="figure align-default" id="id9">
+<span id="twopartsselected"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-two-parts-selected.png"><img alt="_images/tutorial-multimaterial-two-parts-selected.png" src="_images/tutorial-multimaterial-two-parts-selected.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">We have first selected the <em>Rotor</em>, then the <em>Air Pocket.</em></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Under <em>Transformation of 2 parts</em>, select the <img alt="icon-world" src="_images/world-coordinate-system.png" /> <strong>world coordinate system.</strong> (This is important: if you select <em>local</em> instead, each part will rotate around its own axis instead of a common axis.)</p></li>
+<li><p>Select the <img alt="icon-rotation" src="_images/transformation-rotate.png" /> <strong>Rotation Mode.</strong></p></li>
+<li><p>Select the <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> <strong>Z axis.</strong></p></li>
+<li><p>For the <span class="guilabel">Value</span>, enter <code class="code docutils literal notranslate"><span class="pre">45</span></code> degrees.</p></li>
+<li><p>Click to the <strong>right</strong> of the transform slider handle to perform one rotation step.</p></li>
+</ol>
+</div>
+<p>Both the <em>Rotor</em> and the <em>Air Pocket</em> should now rotate around the <em>Rotor’s</em> central axis and keep their relative positions. This means that the <em>Air Pocket</em> travels by 45° in counter-clockwise direction in the projection image. (This is because the <em>Z</em> vector points away from the detector towards the source.)</p>
+<div class="figure align-default" id="id10">
+<span id="twopartsrotated"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-two-parts-rotated.png"><img alt="_images/tutorial-multimaterial-two-parts-rotated.png" src="_images/tutorial-multimaterial-two-parts-rotated.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">We rotated both parts around the common central axis of the <em>Rotor.</em></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>We have not set any <em>reference position,</em> which means that the centre of rotation is the centre of the first-selected part (the <em>Rotor</em>). Let us now set a different <strong>Reference Position.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the <span class="guilabel">Reference Pos.</span>, enter the following coordinates: <span class="guilabel">X</span>: <code class="code docutils literal notranslate"><span class="pre">0</span></code>, <span class="guilabel">Y</span>: <code class="code docutils literal notranslate"><span class="pre">-15</span></code>, <span class="guilabel">Z</span>: <code class="code docutils literal notranslate"><span class="pre">200</span></code>. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> to set it.</p>
+</div>
+<p>The reference position (displayed as a red sphere in the virtual scene) now moves to the new coordinates away from the <em>Rotor’s</em> centre (<a class="reference internal" href="#twopartsreferenceposition"><span class="std std-numref">Fig. 38</span></a>). The axis of rotation (still pointing in the direction of the <em>Z</em> axis of the world coordinate system) is drawn as a yellow vector through the reference position.</p>
+<div class="figure align-default" id="id11">
+<span id="twopartsreferenceposition"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-reference-position.png"><img alt="_images/tutorial-multimaterial-reference-position.png" src="_images/tutorial-multimaterial-reference-position.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">We moved the reference position away from the <em>Rotor’s</em> principal axis.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can now use this new reference position as the centre of rotation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>In the <em>Image Viewer</em>, click <img alt="icon-zoom-to-fit" src="_images/zoom-fit-best.png" /> <span class="guilabel">Zoom to fit window</span> to see the whole projection image again. (Just in case you zoomed in previously.)</p></li>
+<li><p>Click 8× to the <strong>right</strong> of the transform slider to perform one full rotation of the group of parts. Observe how they both rotate around the reference position, both in the virtual scene and in the projection image. They keep their positions relative to each other.</p></li>
+<li><p>When playing around, try to reach their initial position again.</p></li>
+</ol>
+</div>
+<p>You can also use the reference position as the <strong>scaling centre</strong>; this works in the same way. And, of course, you can also use the <em>Transformation</em> controls to translate selected parts as a group.</p>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, we have demonstrated how to create simple geometric solids and how to handle assemblies of multiple components.</p>
+<ul class="simple">
+<li><p>You know about the <strong>Solid module</strong> and how to use it to create simple geometric solids.</p></li>
+<li><p>You have learned that the <strong>order of parts</strong> on the <em>Assembly List</em> plays an important role in regions where parts overlap. Parts at positions later on the list (further to the bottom) replace parts that are earlier on the list.</p></li>
+<li><p>You have selected <strong>multiple parts</strong> using the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key on your keyboard.</p></li>
+<li><p>You know that the <strong>first part</strong> that you select has a special role: its centre will be the reference position for rotations and scalings, unless you set a different one.</p></li>
+<li><p>You have learned how to use the <strong>reference position</strong> as a centre of rotation (or scaling) for groups of objects.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The scene that we created up to this point is available for download:</div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/82a860aa47cc7253ce6cf9f981f719c0/tutorial_multiple_components.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_multiple_components.aRTist</span></code></a> (4.6 MB)</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial_materials.html" class="btn btn-neutral float-left" title="Materials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
