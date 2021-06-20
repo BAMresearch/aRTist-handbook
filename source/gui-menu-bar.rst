@@ -28,10 +28,10 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 * **Quit** terminates the program. Before quitting the program will ask you if you want to save the changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
 
 
-.. |icon-open| image:: pictures/icons/16x16/document-open-folder.png
-.. |icon-library| image:: pictures/icons/16x16/library.png
-.. |icon-save| image:: pictures/icons/16x16/document-save.png
-.. |icon-saveas| image:: pictures/icons/16x16/document-save-as.png
+.. |icon-open| image:: pictures/icons/16x16_document-open-folder.png
+.. |icon-library| image:: pictures/icons/16x16_library.png
+.. |icon-save| image:: pictures/icons/16x16_document-save.png
+.. |icon-saveas| image:: pictures/icons/16x16_document-save-as.png
 
 
 Edit menu
@@ -54,12 +54,12 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 * |icon-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
 * |icon-delete| **Delete** removes selected parts from the *Assembly List*. 
 
-.. |icon-undo| image:: pictures/icons/16x16/edit-undo.png
-.. |icon-redo| image:: pictures/icons/16x16/edit-redo.png
-.. |icon-cut| image:: pictures/icons/16x16/edit-cut.png
-.. |icon-copy| image:: pictures/icons/16x16/edit-copy.png
-.. |icon-paste| image:: pictures/icons/16x16/edit-paste.png
-.. |icon-delete| image:: pictures/icons/16x16/edit-delete.png
+.. |icon-undo| image:: pictures/icons/16x16_edit-undo.png
+.. |icon-redo| image:: pictures/icons/16x16_edit-redo.png
+.. |icon-cut| image:: pictures/icons/16x16_edit-cut.png
+.. |icon-copy| image:: pictures/icons/16x16_edit-copy.png
+.. |icon-paste| image:: pictures/icons/16x16_edit-paste.png
+.. |icon-delete| image:: pictures/icons/16x16_edit-delete.png
 
 
 Geometry menu
@@ -86,11 +86,11 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 * |icon-arrange| **Arrange** is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: *none*, *-*, *center*, *+* are available for each of the three axes. The parts will be aligned with the first selected part.
 * |icon-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
 
-.. |icon-centernew| image:: pictures/icons/16x16/center-new.png
-.. |icon-eye| image:: pictures/icons/16x16/object-visible-on.png
-.. |icon-union| image:: pictures/icons/16x16/boolean-union.png
-.. |icon-intersection| image:: pictures/icons/16x16/boolean-intersection.png
-.. |icon-difference| image:: pictures/icons/16x16/boolean-difference.png
-.. |icon-solid| image:: pictures/icons/16x16/icon-solid.png
-.. |icon-arrange| image:: pictures/icons/16x16/icon-arrange.png
-.. |icon-pickposition| image:: pictures/icons/16x16/edit-pickposition.png
+.. |icon-centernew| image:: pictures/icons/16x16_center-new.png
+.. |icon-eye| image:: pictures/icons/16x16_object-visible-on.png
+.. |icon-union| image:: pictures/icons/16x16_boolean-union.png
+.. |icon-intersection| image:: pictures/icons/16x16_boolean-intersection.png
+.. |icon-difference| image:: pictures/icons/16x16_boolean-difference.png
+.. |icon-solid| image:: pictures/icons/16x16_icon-solid.png
+.. |icon-arrange| image:: pictures/icons/16x16_icon-arrange.png
+.. |icon-pickposition| image:: pictures/icons/16x16_edit-pickposition.png

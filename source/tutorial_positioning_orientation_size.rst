@@ -32,7 +32,7 @@ If we take a look at the full scene again, we see that the source seems to be a 
 
 .. note:: Deselect the rotor by clicking on the unoccupied white area in the *Assembly List* or on the brackground colour in the *Virtual Scene*. Now click on |icon-zoom-to-selection| :guilabel:`Zoom to Selection` to see the full scene again.
 
-.. |icon-zoom-to-selection| image:: pictures/icons/32x32/zoom-select.png
+.. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
 
 We already know that the detector is at the origin of the coordinate system: its centre lies at the point (0, |nbsp| 0, |nbsp| 0) in space. You can check this by selecting the *Detector* item from the *Assembly List* and inspecting its properties in the *Transformation* section of the *Parameter Panel* (:numref:`detectorTransformProperties`).
 
@@ -126,24 +126,24 @@ The upper part of the *Parameter Panel* provides a lot of options to transform a
 
 .. _transformPanel:
 .. figure:: pictures/tutorial-positioning-transform-panel.png
-    :width: 90%
+    :width: 100%
 
-    We have changed the orientation of the *Rotor* in the scene.
+    The transformation controls of the *Parameter Panel.*
 
 Rotations need an **axis of rotation,** and translations need a **translation vector** that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under *Axis*. The buttons **X** |nbsp| |icon-arrow-down|, **Y** |nbsp| |icon-arrow-down| and **Z** |nbsp| |icon-arrow-down| provide easy ways to set the standard vectors for X, Y and Z direction. **XYZ** |nbsp| |icon-arrow-down| gives you a diagonal axis.
 
-.. |icon-arrow-down| image:: pictures/icons/22x22/set-coordinate-arrow-down.png
+.. |icon-arrow-down| image:: pictures/icons/22x22_set-coordinate-arrow-down.png
 
 The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the |icon-world| |nbsp| **world coordinate system** or for the object's |icon-local| |nbsp| **local coordinate system.**
 
-.. |icon-world| image:: pictures/icons/22x22/world-coordinate-system.png
-.. |icon-local| image:: pictures/icons/22x22/object-coordinate-system.png
+.. |icon-world| image:: pictures/icons/22x22_world-coordinate-system.png
+.. |icon-local| image:: pictures/icons/22x22_object-coordinate-system.png
 
 Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose |icon-rotate| |nbsp| **Rotation Mode**, |icon-move| |nbsp| **Translation Mode (move)** or |icon-scale| |nbsp| **Scale Mode (resize).**
 
-.. |icon-rotate| image:: pictures/icons/22x22/transformation-rotate.png
-.. |icon-move| image:: pictures/icons/22x22/transformation-move.png
-.. |icon-scale| image:: pictures/icons/22x22/transformation-scale.png
+.. |icon-rotate| image:: pictures/icons/22x22_transformation-rotate.png
+.. |icon-move| image:: pictures/icons/22x22_transformation-move.png
+.. |icon-scale| image:: pictures/icons/22x22_transformation-scale.png
 
 For **Value**, you can set the amount by which you want to rotate, move or scale. For rotations, enter an **angle in degrees.** For translations, enter a **distance in mm.** For scaling, *aRT*\ ist expects a factor that expresses a **multiple of 10% magnification,** i.e. a factor of 1 will increase the object's size by 10% in the given direction.
 

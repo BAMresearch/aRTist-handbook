@@ -15,7 +15,7 @@ Materials Editor
 
 .. note:: In the toolbar, click the button |icon-material-editor| :guilabel:`Edit material properties` or open it from the Menu bar: :guilabel:`Tools` → :guilabel:`Materials...`
 
-.. |icon-material-editor| image:: pictures/icons/22x22/edit-materials.png
+.. |icon-material-editor| image:: pictures/icons/22x22_edit-materials.png
 
 .. _materialsEditor:
 .. figure:: pictures/tutorial-materials-editor.png
@@ -29,7 +29,7 @@ We will create a simple glass ceramic that has the following composition:
 * SiO\ :sub:`2` with a mass fraction of 60%
 * Overall density: ρ = 2.53 g/cm\ :sup:`3`
 
-In the materials editor, this compound would be represented as :code:`Al2O3 0.4 SiO2 0.6`. Each of the two components is written in its molecular formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its *mass fraction* may follow (separated by a space from the molecular formula). The mass fractions will be automatically normalized to their total sum. For example, :code:`Al2O3 40 SiO2 60` would represent the same material as above.
+In the materials editor, this compound would be represented as :code:`Al2O3 0.4 SiO2 0.6`. Each of the two components is written in its empirical formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its *mass fraction* may follow (separated by a space from the empirical formula). The mass fractions will be automatically normalized to their total sum. For example, :code:`Al2O3 40 SiO2 60` would represent the same material as above.
 
 .. note:: In the *Materials Editor,* click on |icon-add| :guilabel:`Add new material definition`. An empty row will appear where you can fill in the new material information (:numref:`materialsEditorAddNew`).
 
@@ -40,7 +40,7 @@ In the materials editor, this compound would be represented as :code:`Al2O3 0.4 
 
 	Click :guilabel:`Apply` to save the list.
 
-.. |icon-add| image:: pictures/icons/16x16/list-add.png
+.. |icon-add| image:: pictures/icons/16x16_list-add.png
 
 .. _materialsEditorAddNew:
 .. figure:: pictures/tutorial-materials-editor-add-material.png
@@ -56,7 +56,7 @@ Attenuation Data Viewer
 
 For each material, you can display the |icon-attenuation| **attenuation data** that *aRT*\ ist will use during the simulation.
 
-.. |icon-attenuation| image:: pictures/icons/16x16/show-attenuation.png
+.. |icon-attenuation| image:: pictures/icons/16x16_show-attenuation.png
 
 .. note:: Make sure that our *Glass Ceramic* is selected in the *Materials Editor* and click on |icon-attenuation|.
 
@@ -92,7 +92,7 @@ If you want to display a different photon energy range, you can enter it in the 
 
 You can save the attenuation data as a text file with the |icon-saveas| :guilabel:`Save` button in the upper right corner of the *Attenuation Viewer*.
 
-.. |icon-saveas| image:: pictures/icons/16x16/document-save-as.png
+.. |icon-saveas| image:: pictures/icons/16x16_document-save-as.png
 
 .. note:: Close the *Attenuation Viewer* and the *Materials Editor.*
 

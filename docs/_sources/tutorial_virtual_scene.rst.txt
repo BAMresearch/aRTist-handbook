@@ -31,7 +31,7 @@ Loading Objects
 
 Any sample simulated in *aRT*\ ist is represented as a 3D surface model (triangular mesh) that encloses a volume. You are able to load STL, PLY, OBJ and VTK files as objects into the scene. To load objects, you can drag and drop a file into the *aRT*\ ist window, or use the |icon-open| :guilabel:`Open` button from the toolbar or use the menu: :guilabel:`File` → :guilabel:`Open...`
 
-.. |icon-open| image:: pictures/icons/16x16/document-open-folder.png
+.. |icon-open| image:: pictures/icons/16x16_document-open-folder.png
 
 *aRT*\ ist comes with a sample library that contains some surface models that we can already use. Let's load the *Rotor*.
 
@@ -40,7 +40,7 @@ Any sample simulated in *aRT*\ ist is represented as a 3D surface model (triangu
 
 	Load the *Rotor* surface model from :file:`ExampleParts` → :file:`Rotor.ply`.
 
-.. |icon-library| image:: pictures/icons/32x32/library.png
+.. |icon-library| image:: pictures/icons/32x32_library.png
 
 The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (:numref:`rotorLoaded`). Additionally, the rotor appears on the left-hand side in the *Assembly list* of the *Parameter panel*. It gets a random colour and the default material is iron (Fe).
 
@@ -52,7 +52,7 @@ The rotor is loaded and placed into the scene at the center of the detector, bec
 
 If you want to load a surface model at its native position (as defined in the file) instead of centred at the origin of the coordinate system, turn off the button |icon-centernew| :guilabel:`Center new parts` in the toolbar or turn it off in the menu: :guilabel:`Geometry` → :guilabel:`Center New Parts`.
 
-.. |icon-centernew| image:: pictures/icons/32x32/center-new.png
+.. |icon-centernew| image:: pictures/icons/32x32_center-new.png
 
 
 Colours of Objects
@@ -70,7 +70,7 @@ The *Display Parameters* open (:numref:`displayParameters`). There, you can choo
 
     The *Display Parameters* let you change the colour and appearance of an object.
 
-.. |icon-colorwheel| image:: pictures/icons/16x16/colorwheel.png
+.. |icon-colorwheel| image:: pictures/icons/16x16_colorwheel.png
 
 .. note:: Select a colour that you like for the rotor. I'll choose blue.
 
@@ -88,7 +88,7 @@ You can save your current work as an *aRT*\ ist project. These have the file ext
 
 .. note:: Click the |icon-save| :guilabel:`Save` button in the toolbar or choose from the menu: :guilabel:`File` → :guilabel:`Save`. Select a folder and name for your project and save it.
 
-.. |icon-save| image:: pictures/icons/32x32/document-save.png
+.. |icon-save| image:: pictures/icons/32x32_document-save.png
 
 Save frequently! There will be no further reminders ;-)
 
@@ -120,10 +120,10 @@ The following buttons change the view such that the camera looks either from the
 | |icon-view-y| **View along Y**
 | |icon-view-z| **View along Z**
 
-.. |icon-view-x| image:: pictures/icons/32x32/default-view-minus-x.png
-.. |icon-view-y| image:: pictures/icons/32x32/default-view-minus-y.png
-.. |icon-view-z| image:: pictures/icons/32x32/default-view-minus-z.png
-.. |icon-view-topright| image:: pictures/icons/32x32/default-view-top-right.png
+.. |icon-view-x| image:: pictures/icons/32x32_default-view-minus-x.png
+.. |icon-view-y| image:: pictures/icons/32x32_default-view-minus-y.png
+.. |icon-view-z| image:: pictures/icons/32x32_default-view-minus-z.png
+.. |icon-view-topright| image:: pictures/icons/32x32_default-view-top-right.png
 
 They can be clicked once or twice. Clicking them a second time will change the view to the opposite direction.
 
@@ -131,7 +131,7 @@ You can also change between **orthographic** projection and **perspective** proj
 
 |icon-view-orthographic| **Orthographic/perspective projection**
 
-.. |icon-view-orthographic| image:: pictures/icons/32x32/view-orthographic.png
+.. |icon-view-orthographic| image:: pictures/icons/32x32_view-orthographic.png
 
 All of these commands can also be found in the :guilabel:`View` menu.
 
@@ -140,13 +140,13 @@ All of these commands can also be found in the :guilabel:`View` menu.
 |icon-zoom-to-selection| Zoom to Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. |icon-zoom-to-selection| image:: pictures/icons/32x32/zoom-select.png
+.. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
 
 This buttons zooms in or out to best fit the selected part(s) into the view. If no part is selected, it will arrange the view such that everything can be seen at once.
 
 You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom-to-selection-small| :guilabel:`Zoom to Selection`
 
-.. |icon-zoom-to-selection-small| image:: pictures/icons/16x16/zoom-select.png
+.. |icon-zoom-to-selection-small| image:: pictures/icons/16x16_zoom-select.png
 
 .. note:: Change the view to |icon-view-topright| **top right,** then |icon-zoom-to-selection| **zoom in** to the selected rotor (:numref:`zoomedIn`).
 
@@ -159,19 +159,19 @@ You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom
 
 |icon-bounding-box| Bounding Box
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. |icon-bounding-box| image:: pictures/icons/32x32/bounding-box.png
+.. |icon-bounding-box| image:: pictures/icons/32x32_bounding-box.png
 
 You can use this button to draw a permanent bounding box around the object. At the moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object's colour.
 
 |icon-view-axes| Axes View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. |icon-view-axes| image:: pictures/icons/32x32/view-axes.png
+.. |icon-view-axes| image:: pictures/icons/32x32_view-axes.png
 
 Each part has its own, local coordinate system. With this button, you make the local axes visible. The *X* axis will be displayed as a red line, the *Y* axis as a yellow line, and the *Z* axis as a green line.
 
 |icon-wireframe| Wireframe and Solid View
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. |icon-wireframe| image:: pictures/icons/32x32/switch-wireframe.png
+.. |icon-wireframe| image:: pictures/icons/32x32_switch-wireframe.png
 
 Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (:numref:`wireframe`). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
 
@@ -187,11 +187,11 @@ Object Visibility
 
 The visibility of an object can be turned *on* and *off* by clicking the |icon-eye| **eye symbol** in the *Assembly List*. Any sample other than the source or the detector that has been turned *off* will not be considered during the simulation of the X-ray projection.
 
-.. |icon-eye| image:: pictures/icons/16x16/object-visible-on.png
+.. |icon-eye| image:: pictures/icons/16x16_object-visible-on.png
 
 .. note:: Click the |icon-eye| **eye symbol** next to the *Rotor* in the *Assembly List*. In the *Virtual Scene*, it will be rendered in a highly transparent way, and it will disappear from the projection preview in the *Image Viewer* on the right side of the window. Turn it back on by clicking the |icon-eye-off| **eye symbol** (now grey) again.
 
-.. |icon-eye-off| image:: pictures/icons/16x16/object-visible-off.png
+.. |icon-eye-off| image:: pictures/icons/16x16_object-visible-off.png
 
 If you feel that the scene looks too cluttered with the detector and the lines connecting its corners to the source, you can also turn off the visibility of the *Source* or the *Detector* in the *Assembly List*. Their visibility will not affect the simulation of the projection image in any way.
 

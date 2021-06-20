@@ -41,7 +41,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Multi-Component Parts" href="tutorial_multi_material_parts.html" />
+    <link rel="next" title="Projection Images" href="tutorial_projection_images.html" />
     <link rel="prev" title="Position, Orientation &amp; Size" href="tutorial_positioning_orientation_size.html" /> 
 </head>
 
@@ -104,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_material_parts.html">Multi-Component Parts</a></li>
 </ul>
 
@@ -185,7 +186,7 @@
 <p><em>aRT</em>ist has a built-in materials editor (<a class="reference internal" href="#materialseditor"><span class="std std-numref">Fig. 23</span></a>) that shows your library of materials. You can change and add entries there, and inspect the attenuation coefficients that <em>aRT</em>ist has calculated.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the toolbar, click the button <img alt="icon-material-editor" src="_images/edit-materials.png" /> <span class="guilabel">Edit material properties</span> or open it from the Menu bar: <span class="guilabel">Tools</span> → <span class="guilabel">Materials…</span></p>
+<p>In the toolbar, click the button <img alt="icon-material-editor" src="_images/22x22_edit-materials.png" /> <span class="guilabel">Edit material properties</span> or open it from the Menu bar: <span class="guilabel">Tools</span> → <span class="guilabel">Materials…</span></p>
 </div>
 <div class="figure align-default" id="id1">
 <span id="materialseditor"></span><a class="reference internal image-reference" href="_images/tutorial-materials-editor.png"><img alt="_images/tutorial-materials-editor.png" src="_images/tutorial-materials-editor.png" style="width: 100%;" /></a>
@@ -197,10 +198,10 @@
 <li><p>SiO<sub>2</sub> with a mass fraction of 60%</p></li>
 <li><p>Overall density: ρ = 2.53 g/cm<sup>3</sup></p></li>
 </ul>
-<p>In the materials editor, this compound would be represented as <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">0.4</span> <span class="pre">SiO2</span> <span class="pre">0.6</span></code>. Each of the two components is written in its molecular formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its <em>mass fraction</em> may follow (separated by a space from the molecular formula). The mass fractions will be automatically normalized to their total sum. For example, <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">40</span> <span class="pre">SiO2</span> <span class="pre">60</span></code> would represent the same material as above.</p>
+<p>In the materials editor, this compound would be represented as <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">0.4</span> <span class="pre">SiO2</span> <span class="pre">0.6</span></code>. Each of the two components is written in its empirical formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its <em>mass fraction</em> may follow (separated by a space from the empirical formula). The mass fractions will be automatically normalized to their total sum. For example, <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">40</span> <span class="pre">SiO2</span> <span class="pre">60</span></code> would represent the same material as above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>Materials Editor,</em> click on <img alt="icon-add" src="_images/list-add.png" /> <span class="guilabel">Add new material definition</span>. An empty row will appear where you can fill in the new material information (<a class="reference internal" href="#materialseditoraddnew"><span class="std std-numref">Fig. 24</span></a>).</p>
+<p>In the <em>Materials Editor,</em> click on <img alt="icon-add" src="_images/16x16_list-add.png" /> <span class="guilabel">Add new material definition</span>. An empty row will appear where you can fill in the new material information (<a class="reference internal" href="#materialseditoraddnew"><span class="std std-numref">Fig. 24</span></a>).</p>
 <div class="line-block">
 <div class="line">Enter a material name, e.g. <code class="code docutils literal notranslate"><span class="pre">Glass</span> <span class="pre">Ceramic</span></code>.</div>
 <div class="line">Enter the density: <code class="code docutils literal notranslate"><span class="pre">2.53</span></code>.</div>
@@ -217,10 +218,10 @@
 </div>
 <div class="section" id="attenuation-data-viewer">
 <h2>Attenuation Data Viewer<a class="headerlink" href="#attenuation-data-viewer" title="Permalink to this headline">¶</a></h2>
-<p>For each material, you can display the <img alt="icon-attenuation" src="_images/show-attenuation.png" /> <strong>attenuation data</strong> that <em>aRT</em>ist will use during the simulation.</p>
+<p>For each material, you can display the <img alt="icon-attenuation" src="_images/16x16_show-attenuation.png" /> <strong>attenuation data</strong> that <em>aRT</em>ist will use during the simulation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Make sure that our <em>Glass Ceramic</em> is selected in the <em>Materials Editor</em> and click on <img alt="icon-attenuation" src="_images/show-attenuation.png" />.</p>
+<p>Make sure that our <em>Glass Ceramic</em> is selected in the <em>Materials Editor</em> and click on <img alt="icon-attenuation" src="_images/16x16_show-attenuation.png" />.</p>
 </div>
 <p>The <strong>Attenuation Viewer</strong> (<a class="reference internal" href="#attenuationviewerplot"><span class="std std-numref">Fig. 25</span></a>) will appear and show a plot of the attenuation coefficients.</p>
 <div class="figure align-default" id="id3">
@@ -243,7 +244,7 @@
 <span id="attenuationviewertext"></span><a class="reference internal image-reference" href="_images/tutorial-materials-attenuation-viewer-text.png"><img alt="_images/tutorial-materials-attenuation-viewer-text.png" src="_images/tutorial-materials-attenuation-viewer-text.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">The calculated data points for the attenuation coefficients are shown in a text table.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>You can save the attenuation data as a text file with the <img alt="icon-saveas" src="_images/document-save-as.png" /> <span class="guilabel">Save</span> button in the upper right corner of the <em>Attenuation Viewer</em>.</p>
+<p>You can save the attenuation data as a text file with the <img alt="icon-saveas" src="_images/16x16_document-save-as.png" /> <span class="guilabel">Save</span> button in the upper right corner of the <em>Attenuation Viewer</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Close the <em>Attenuation Viewer</em> and the <em>Materials Editor.</em></p>
@@ -278,7 +279,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="tutorial_multi_material_parts.html" class="btn btn-neutral float-right" title="Multi-Component Parts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial_projection_images.html" class="btn btn-neutral float-right" title="Projection Images" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="tutorial_positioning_orientation_size.html" class="btn btn-neutral float-left" title="Position, Orientation &amp; Size" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 

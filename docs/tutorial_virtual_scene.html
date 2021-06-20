@@ -114,6 +114,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_material_parts.html">Multi-Component Parts</a></li>
 </ul>
 
@@ -204,11 +205,11 @@
 </div>
 <div class="section" id="loading-objects">
 <h2>Loading Objects<a class="headerlink" href="#loading-objects" title="Permalink to this headline">¶</a></h2>
-<p>Any sample simulated in <em>aRT</em>ist is represented as a 3D surface model (triangular mesh) that encloses a volume. You are able to load STL, PLY, OBJ and VTK files as objects into the scene. To load objects, you can drag and drop a file into the <em>aRT</em>ist window, or use the <img alt="icon-open" src="_images/document-open-folder.png" /> <span class="guilabel">Open</span> button from the toolbar or use the menu: <span class="guilabel">File</span> → <span class="guilabel">Open…</span></p>
+<p>Any sample simulated in <em>aRT</em>ist is represented as a 3D surface model (triangular mesh) that encloses a volume. You are able to load STL, PLY, OBJ and VTK files as objects into the scene. To load objects, you can drag and drop a file into the <em>aRT</em>ist window, or use the <img alt="icon-open" src="_images/16x16_document-open-folder.png" /> <span class="guilabel">Open</span> button from the toolbar or use the menu: <span class="guilabel">File</span> → <span class="guilabel">Open…</span></p>
 <p><em>aRT</em>ist comes with a sample library that contains some surface models that we can already use. Let’s load the <em>Rotor</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click the <img alt="icon-library" src="_images/library1.png" /> <span class="guilabel">Library</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Open Library…</span>.</p>
+<p>Click the <img alt="icon-library" src="_images/32x32_library.png" /> <span class="guilabel">Library</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Open Library…</span>.</p>
 <p>Load the <em>Rotor</em> surface model from <code class="file docutils literal notranslate"><span class="pre">ExampleParts</span></code> → <code class="file docutils literal notranslate"><span class="pre">Rotor.ply</span></code>.</p>
 </div>
 <p>The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (<a class="reference internal" href="#rotorloaded"><span class="std std-numref">Fig. 10</span></a>). Additionally, the rotor appears on the left-hand side in the <em>Assembly list</em> of the <em>Parameter panel</em>. It gets a random colour and the default material is iron (Fe).</p>
@@ -216,7 +217,7 @@
 <span id="rotorloaded"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-rotor-loaded.png"><img alt="_images/tutorial-virtualscene-rotor-loaded.png" src="_images/tutorial-virtualscene-rotor-loaded.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">The rotor is loaded into the scene.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>If you want to load a surface model at its native position (as defined in the file) instead of centred at the origin of the coordinate system, turn off the button <img alt="icon-centernew" src="_images/center-new1.png" /> <span class="guilabel">Center new parts</span> in the toolbar or turn it off in the menu: <span class="guilabel">Geometry</span> → <span class="guilabel">Center New Parts</span>.</p>
+<p>If you want to load a surface model at its native position (as defined in the file) instead of centred at the origin of the coordinate system, turn off the button <img alt="icon-centernew" src="_images/32x32_center-new.png" /> <span class="guilabel">Center new parts</span> in the toolbar or turn it off in the menu: <span class="guilabel">Geometry</span> → <span class="guilabel">Center New Parts</span>.</p>
 </div>
 <div class="section" id="colours-of-objects">
 <h2>Colours of Objects<a class="headerlink" href="#colours-of-objects" title="Permalink to this headline">¶</a></h2>
@@ -225,7 +226,7 @@
 <p class="admonition-title">Note</p>
 <p>Double-click on the rotor’s colour.</p>
 </div>
-<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 11</span></a>). There, you can choose a new colour by clicking the <img alt="icon-colorwheel" src="_images/colorwheel.png" /> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
+<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 11</span></a>). There, you can choose a new colour by clicking the <img alt="icon-colorwheel" src="_images/16x16_colorwheel.png" /> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
 <div class="figure align-default" id="id4">
 <span id="displayparameters"></span><a class="reference internal image-reference" href="_images/tutorial-display-parameters.png"><img alt="_images/tutorial-display-parameters.png" src="_images/tutorial-display-parameters.png" style="width: 324.75px; height: 303.0px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">The <em>Display Parameters</em> let you change the colour and appearance of an object.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
@@ -244,7 +245,7 @@
 <p>You can save your current work as an <em>aRT</em>ist project. These have the file extension <code class="file docutils literal notranslate"><span class="pre">.aRTist</span></code> and they contain everything from your scene in one file: all object definitions, their materials, the detector and source settings, etc. You will not need any additional files to open your complete project again at a later time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click the <img alt="icon-save" src="_images/document-save1.png" /> <span class="guilabel">Save</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Save</span>. Select a folder and name for your project and save it.</p>
+<p>Click the <img alt="icon-save" src="_images/32x32_document-save.png" /> <span class="guilabel">Save</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Save</span>. Select a folder and name for your project and save it.</p>
 </div>
 <p>Save frequently! There will be no further reminders ;-)</p>
 </div>
@@ -265,23 +266,23 @@
 <h3>View Directions<a class="headerlink" href="#view-directions" title="Permalink to this headline">¶</a></h3>
 <p>The following buttons change the view such that the camera looks either from the top right direction or directly along one of the axes of the coordinate system.</p>
 <div class="line-block">
-<div class="line"><img alt="icon-view-topright" src="_images/default-view-top-right.png" /> <strong>View from top right</strong></div>
-<div class="line"><img alt="icon-view-x" src="_images/default-view-minus-x.png" /> <strong>View along X</strong></div>
-<div class="line"><img alt="icon-view-y" src="_images/default-view-minus-y.png" /> <strong>View along Y</strong></div>
-<div class="line"><img alt="icon-view-z" src="_images/default-view-minus-z.png" /> <strong>View along Z</strong></div>
+<div class="line"><img alt="icon-view-topright" src="_images/32x32_default-view-top-right.png" /> <strong>View from top right</strong></div>
+<div class="line"><img alt="icon-view-x" src="_images/32x32_default-view-minus-x.png" /> <strong>View along X</strong></div>
+<div class="line"><img alt="icon-view-y" src="_images/32x32_default-view-minus-y.png" /> <strong>View along Y</strong></div>
+<div class="line"><img alt="icon-view-z" src="_images/32x32_default-view-minus-z.png" /> <strong>View along Z</strong></div>
 </div>
 <p>They can be clicked once or twice. Clicking them a second time will change the view to the opposite direction.</p>
 <p>You can also change between <strong>orthographic</strong> projection and <strong>perspective</strong> projection. In an orthographic projection, all parallel lines appear parallel and object size does not decrease with distance. In perspective view, parallel lines do not appear parallel on screen, but they meet in a common view point at infinity.</p>
-<p><img alt="icon-view-orthographic" src="_images/view-orthographic.png" /> <strong>Orthographic/perspective projection</strong></p>
+<p><img alt="icon-view-orthographic" src="_images/32x32_view-orthographic.png" /> <strong>Orthographic/perspective projection</strong></p>
 <p>All of these commands can also be found in the <span class="guilabel">View</span> menu.</p>
 </div>
 <div class="section" id="icon-zoom-to-selection-zoom-to-selection">
-<h3><img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> Zoom to Selection<a class="headerlink" href="#icon-zoom-to-selection-zoom-to-selection" title="Permalink to this headline">¶</a></h3>
+<h3><img alt="icon-zoom-to-selection" src="_images/32x32_zoom-select.png" /> Zoom to Selection<a class="headerlink" href="#icon-zoom-to-selection-zoom-to-selection" title="Permalink to this headline">¶</a></h3>
 <p>This buttons zooms in or out to best fit the selected part(s) into the view. If no part is selected, it will arrange the view such that everything can be seen at once.</p>
-<p>You can also find this function in the menu bar: <span class="guilabel">View</span> → <img alt="icon-zoom-to-selection-small" src="_images/zoom-select1.png" /> <span class="guilabel">Zoom to Selection</span></p>
+<p>You can also find this function in the menu bar: <span class="guilabel">View</span> → <img alt="icon-zoom-to-selection-small" src="_images/16x16_zoom-select.png" /> <span class="guilabel">Zoom to Selection</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Change the view to <img alt="icon-view-topright" src="_images/default-view-top-right.png" /> <strong>top right,</strong> then <img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> <strong>zoom in</strong> to the selected rotor (<a class="reference internal" href="#zoomedin"><span class="std std-numref">Fig. 14</span></a>).</p>
+<p>Change the view to <img alt="icon-view-topright" src="_images/32x32_default-view-top-right.png" /> <strong>top right,</strong> then <img alt="icon-zoom-to-selection" src="_images/32x32_zoom-select.png" /> <strong>zoom in</strong> to the selected rotor (<a class="reference internal" href="#zoomedin"><span class="std std-numref">Fig. 14</span></a>).</p>
 </div>
 <div class="figure align-default" id="id7">
 <span id="zoomedin"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-view-top-right.png"><img alt="_images/tutorial-virtualscene-view-top-right.png" src="_images/tutorial-virtualscene-view-top-right.png" style="width: 100%;" /></a>
@@ -289,15 +290,15 @@
 </div>
 </div>
 <div class="section" id="icon-bounding-box-bounding-box">
-<h3><img alt="icon-bounding-box" src="_images/bounding-box.png" /> Bounding Box<a class="headerlink" href="#icon-bounding-box-bounding-box" title="Permalink to this headline">¶</a></h3>
+<h3><img alt="icon-bounding-box" src="_images/32x32_bounding-box.png" /> Bounding Box<a class="headerlink" href="#icon-bounding-box-bounding-box" title="Permalink to this headline">¶</a></h3>
 <p>You can use this button to draw a permanent bounding box around the object. At the moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object’s colour.</p>
 </div>
 <div class="section" id="icon-view-axes-axes-view">
-<h3><img alt="icon-view-axes" src="_images/view-axes.png" /> Axes View<a class="headerlink" href="#icon-view-axes-axes-view" title="Permalink to this headline">¶</a></h3>
+<h3><img alt="icon-view-axes" src="_images/32x32_view-axes.png" /> Axes View<a class="headerlink" href="#icon-view-axes-axes-view" title="Permalink to this headline">¶</a></h3>
 <p>Each part has its own, local coordinate system. With this button, you make the local axes visible. The <em>X</em> axis will be displayed as a red line, the <em>Y</em> axis as a yellow line, and the <em>Z</em> axis as a green line.</p>
 </div>
 <div class="section" id="icon-wireframe-wireframe-and-solid-view">
-<h3><img alt="icon-wireframe" src="_images/switch-wireframe.png" /> Wireframe and Solid View<a class="headerlink" href="#icon-wireframe-wireframe-and-solid-view" title="Permalink to this headline">¶</a></h3>
+<h3><img alt="icon-wireframe" src="_images/32x32_switch-wireframe.png" /> Wireframe and Solid View<a class="headerlink" href="#icon-wireframe-wireframe-and-solid-view" title="Permalink to this headline">¶</a></h3>
 <p>Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (<a class="reference internal" href="#wireframe"><span class="std std-numref">Fig. 15</span></a>). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).</p>
 <div class="figure align-default" id="id8">
 <span id="wireframe"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-wireframe.png"><img alt="_images/tutorial-virtualscene-wireframe.png" src="_images/tutorial-virtualscene-wireframe.png" style="width: 100%;" /></a>
@@ -307,10 +308,10 @@
 </div>
 <div class="section" id="object-visibility">
 <h2>Object Visibility<a class="headerlink" href="#object-visibility" title="Permalink to this headline">¶</a></h2>
-<p>The visibility of an object can be turned <em>on</em> and <em>off</em> by clicking the <img alt="icon-eye" src="_images/object-visible-on.png" /> <strong>eye symbol</strong> in the <em>Assembly List</em>. Any sample other than the source or the detector that has been turned <em>off</em> will not be considered during the simulation of the X-ray projection.</p>
+<p>The visibility of an object can be turned <em>on</em> and <em>off</em> by clicking the <img alt="icon-eye" src="_images/16x16_object-visible-on.png" /> <strong>eye symbol</strong> in the <em>Assembly List</em>. Any sample other than the source or the detector that has been turned <em>off</em> will not be considered during the simulation of the X-ray projection.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click the <img alt="icon-eye" src="_images/object-visible-on.png" /> <strong>eye symbol</strong> next to the <em>Rotor</em> in the <em>Assembly List</em>. In the <em>Virtual Scene</em>, it will be rendered in a highly transparent way, and it will disappear from the projection preview in the <em>Image Viewer</em> on the right side of the window. Turn it back on by clicking the <img alt="icon-eye-off" src="_images/object-visible-off.png" /> <strong>eye symbol</strong> (now grey) again.</p>
+<p>Click the <img alt="icon-eye" src="_images/16x16_object-visible-on.png" /> <strong>eye symbol</strong> next to the <em>Rotor</em> in the <em>Assembly List</em>. In the <em>Virtual Scene</em>, it will be rendered in a highly transparent way, and it will disappear from the projection preview in the <em>Image Viewer</em> on the right side of the window. Turn it back on by clicking the <img alt="icon-eye-off" src="_images/16x16_object-visible-off.png" /> <strong>eye symbol</strong> (now grey) again.</p>
 </div>
 <p>If you feel that the scene looks too cluttered with the detector and the lines connecting its corners to the source, you can also turn off the visibility of the <em>Source</em> or the <em>Detector</em> in the <em>Assembly List</em>. Their visibility will not affect the simulation of the projection image in any way.</p>
 </div>

@@ -106,6 +106,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_material_parts.html">Multi-Component Parts</a></li>
 </ul>
 
@@ -197,7 +198,7 @@
 <p>If we take a look at the full scene again, we see that the source seems to be a little bit close to the detector.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Deselect the rotor by clicking on the unoccupied white area in the <em>Assembly List</em> or on the brackground colour in the <em>Virtual Scene</em>. Now click on <img alt="icon-zoom-to-selection" src="_images/zoom-select.png" /> <span class="guilabel">Zoom to Selection</span> to see the full scene again.</p>
+<p>Deselect the rotor by clicking on the unoccupied white area in the <em>Assembly List</em> or on the brackground colour in the <em>Virtual Scene</em>. Now click on <img alt="icon-zoom-to-selection" src="_images/32x32_zoom-select.png" /> <span class="guilabel">Zoom to Selection</span> to see the full scene again.</p>
 </div>
 <p>We already know that the detector is at the origin of the coordinate system: its centre lies at the point (0, 0, 0) in space. You can check this by selecting the <em>Detector</em> item from the <em>Assembly List</em> and inspecting its properties in the <em>Transformation</em> section of the <em>Parameter Panel</em> (<a class="reference internal" href="#detectortransformproperties"><span class="std std-numref">Fig. 17</span></a>).</p>
 <div class="figure align-default" id="id2">
@@ -268,12 +269,12 @@
 <h2>Incremental Transformations<a class="headerlink" href="#incremental-transformations" title="Permalink to this headline">¶</a></h2>
 <p>The upper part of the <em>Parameter Panel</em> provides a lot of options to transform an object. <a class="reference internal" href="#transformpanel"><span class="std std-numref">Fig. 22</span></a> gives an overview over the buttons and input fields.</p>
 <div class="figure align-default" id="id7">
-<span id="transformpanel"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-transform-panel.png"><img alt="_images/tutorial-positioning-transform-panel.png" src="_images/tutorial-positioning-transform-panel.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">We have changed the orientation of the <em>Rotor</em> in the scene.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<span id="transformpanel"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-transform-panel.png"><img alt="_images/tutorial-positioning-transform-panel.png" src="_images/tutorial-positioning-transform-panel.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">The transformation controls of the <em>Parameter Panel.</em></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
-<p>Rotations need an <strong>axis of rotation,</strong> and translations need a <strong>translation vector</strong> that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under <em>Axis</em>. The buttons <strong>X</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" />, <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> and <strong>Z</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> provide easy ways to set the standard vectors for X, Y and Z direction. <strong>XYZ</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> gives you a diagonal axis.</p>
-<p>The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the <img alt="icon-world" src="_images/world-coordinate-system.png" /> <strong>world coordinate system</strong> or for the object’s <img alt="icon-local" src="_images/object-coordinate-system.png" /> <strong>local coordinate system.</strong></p>
-<p>Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose <img alt="icon-rotate" src="_images/transformation-rotate.png" /> <strong>Rotation Mode</strong>, <img alt="icon-move" src="_images/transformation-move.png" /> <strong>Translation Mode (move)</strong> or <img alt="icon-scale" src="_images/transformation-scale.png" /> <strong>Scale Mode (resize).</strong></p>
+<p>Rotations need an <strong>axis of rotation,</strong> and translations need a <strong>translation vector</strong> that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under <em>Axis</em>. The buttons <strong>X</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" />, <strong>Y</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> and <strong>Z</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> provide easy ways to set the standard vectors for X, Y and Z direction. <strong>XYZ</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> gives you a diagonal axis.</p>
+<p>The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the <img alt="icon-world" src="_images/22x22_world-coordinate-system.png" /> <strong>world coordinate system</strong> or for the object’s <img alt="icon-local" src="_images/22x22_object-coordinate-system.png" /> <strong>local coordinate system.</strong></p>
+<p>Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose <img alt="icon-rotate" src="_images/22x22_transformation-rotate.png" /> <strong>Rotation Mode</strong>, <img alt="icon-move" src="_images/22x22_transformation-move.png" /> <strong>Translation Mode (move)</strong> or <img alt="icon-scale" src="_images/22x22_transformation-scale.png" /> <strong>Scale Mode (resize).</strong></p>
 <p>For <strong>Value</strong>, you can set the amount by which you want to rotate, move or scale. For rotations, enter an <strong>angle in degrees.</strong> For translations, enter a <strong>distance in mm.</strong> For scaling, <em>aRT</em>ist expects a factor that expresses a <strong>multiple of 10% magnification,</strong> i.e. a factor of 1 will increase the object’s size by 10% in the given direction.</p>
 <p>To apply the transformation, you can use the <strong>transform slider.</strong> When you grab the handle and drag it across the slider, it might perform several consecutive transformations. If you want exactly one transformation step, you have much better control by clicking onto the horizontal slider bar to the left or to the right of the slider handle.</p>
 <ul class="simple">
@@ -286,15 +287,15 @@
 <p>Let’s put this in action. We will now reverse the <em>Rotor’s</em> orientation using the transform slider. But first: <strong>now is a good moment to save your project,</strong> just in case you make a mistake.</p>
 <ol class="arabic simple">
 <li><p>Make sure the <em>Rotor</em> is selected.</p></li>
-<li><p>Select the <img alt="icon-local" src="_images/object-coordinate-system.png" /> <strong>Local Coordinate System</strong> as the reference frame. (Remember that <em>aRT</em>ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object’s <strong>local</strong> coordinate system.)</p></li>
-<li><p>Switch to <img alt="icon-rotate" src="_images/transformation-rotate.png" /> <strong>Rotation Mode</strong>.</p></li>
-<li><p>Click on <strong>Y</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)</p></li>
+<li><p>Select the <img alt="icon-local" src="_images/22x22_object-coordinate-system.png" /> <strong>Local Coordinate System</strong> as the reference frame. (Remember that <em>aRT</em>ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object’s <strong>local</strong> coordinate system.)</p></li>
+<li><p>Switch to <img alt="icon-rotate" src="_images/22x22_transformation-rotate.png" /> <strong>Rotation Mode</strong>.</p></li>
+<li><p>Click on <strong>Y</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">30</span></code>.</p></li>
 <li><p>Click to the <strong>left</strong> of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).</p></li>
-<li><p>Click on <strong>X</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the X axis.</p></li>
+<li><p>Click on <strong>X</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> to select the X axis.</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">20</span></code>.</p></li>
 <li><p>Click to the <strong>left</strong> of the transform slider handle.</p></li>
-<li><p>Click on <strong>Z</strong> <img alt="icon-arrow-down" src="_images/set-coordinate-arrow-down.png" /> to select the Z axis.</p></li>
+<li><p>Click on <strong>Z</strong> <img alt="icon-arrow-down" src="_images/22x22_set-coordinate-arrow-down.png" /> to select the Z axis.</p></li>
 <li><p>For <strong>Value</strong>, enter <code class="code docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
 <li><p>Click to the <strong>left</strong> of the transform slider handle.</p></li>
 </ol>
