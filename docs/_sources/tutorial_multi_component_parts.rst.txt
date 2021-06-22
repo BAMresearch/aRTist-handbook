@@ -15,7 +15,7 @@ Solid Module
 
 The *Solid* module can generate simple geometric solids like spheres, cuboids, etc.
 
-.. note:: In the *Toolbar*, click the button |icon-solid| :guilabel:`Generate simple geometric object` or open the module from the menu bar: :guilabel:`Modules` → :guilabel:`Solid`. (:numref:`solidModule`)
+.. note:: In the *Toolbar*, click the button |icon-solid| :guilabel:`Generate simple geometric object` or open the module from the menu bar: :guilabel:`Modules` → :guilabel:`Solid`.
 
 .. |icon-solid| image:: pictures/icons/32x32_icon-solid.png
 
@@ -25,7 +25,7 @@ The *Solid* module can generate simple geometric solids like spheres, cuboids, e
 
 	We use the *Solid* module to create a sphere that we will use as an air pocket.
 
-You can choose the :guilabel:`Type` of solid that you would like to generate. Examples for the available types are shown in :numref:`availableSolids`. For each solid, you can tune its geometric properties. Typically, the aspect ratio can be controlled with the parameters :guilabel:`X`, :guilabel:`Y` and :guilabel:`Z` which specify the dimensions of the bounding box. :guilabel:`W` is an additional parameter that is sometimes necessary, for example to set the diameter of a tube's inner hole or the size of the foundation of a wedge that is not angled.
+You can choose the :guilabel:`Type` of solid that you would like to generate. Examples for the available types are shown in :numref:`availableSolids`. For each solid, you can tune its geometric properties. Typically, the aspect ratio can be controlled with the parameters :guilabel:`X`, :guilabel:`Y` and :guilabel:`Z` which specify the dimensions of the bounding box. :guilabel:`W` is an additional parameter that is sometimes necessary, for example to set the diameter of a tube's inner hole or the size of the foundation of a wedge (i.e. the part that is not angled).
 
 :guilabel:`Phi steps` basically controls the resolution of the solid's mesh, or the number of steps on a step wedge. :guilabel:`Theta steps` is available for ellipsoids if you create a :guilabel:`regular ellipsoid grid`. In this case, :guilabel:`phi` and :guilabel:`theta` refer to the two angles of a spherical coordinate system.
 
@@ -35,7 +35,7 @@ You can choose the :guilabel:`Type` of solid that you would like to generate. Ex
 
 	The basic geometric solids that can be generated in the *Solids* module.
 
-.. note:: Create a small sphere that we will use as an air pocket.
+.. note:: Create a small sphere that we will use as an air pocket (:numref:`solidModule`).
 
 	1. Set :guilabel:`Type` to :code:`ellipsoid`.
 	2. Activate :guilabel:`X=Y=Z` to generate an ideal sphere.
@@ -131,9 +131,8 @@ The first part you select will be displayed with a **yellow-cornered** bounding 
 Let's try this. First, we rotate the *Rotor* around its central axis together with the *Air Pocket.*
 
 .. note:: 
-	1. Deselect everything: click on the free, white space at the bottom of the *Assembly List*.
-	2. Select the *Rotor* from the *Assembly List*.
-	3. Hold down the :kbd:`Ctrl` key on your keyboard while you select the *Air Pocket.*
+	1. Click on the *Rotor* in the *Assembly List*.
+	2. Hold down the :kbd:`Ctrl` key on your keyboard while you select the *Air Pocket.*
 
 Both the *Rotor* and the *Air Pocket* should now be selected. There should be a yellow-cornered bounding box around the *Rotor* and a white-cornered bounding box around the *Air Pocket* (:numref:`twoPartsSelected`).
 
@@ -172,14 +171,13 @@ The reference position (displayed as a red sphere in the virtual scene) now move
 .. figure:: pictures/tutorial-multimaterial-reference-position.png
 	:width: 100%
 
-	We moved the reference position away from the *Rotor's* principal axis.
+	We moved the reference position away from the *Rotor's* centre.
 
 We can now use this new reference position as the centre of rotation.
 
 .. note:: 
 	1. In the *Image Viewer*, click |icon-zoom-to-fit| :guilabel:`Zoom to fit window` to see the whole projection image again. (Just in case you zoomed in previously.)
 	2. Click 8× to the **right** of the transform slider to perform one full rotation of the group of parts. Observe how they both rotate around the reference position, both in the virtual scene and in the projection image. They keep their positions relative to each other.
-	3. When playing around, try to reach their initial position again.
 
 .. |icon-zoom-to-fit| image:: pictures/icons/22x22_zoom-fit-best.png
 

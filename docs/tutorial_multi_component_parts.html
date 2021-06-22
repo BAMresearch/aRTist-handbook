@@ -190,13 +190,13 @@
 <p>The <em>Solid</em> module can generate simple geometric solids like spheres, cuboids, etc.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>Toolbar</em>, click the button <img alt="icon-solid" src="_images/32x32_icon-solid.png" /> <span class="guilabel">Generate simple geometric object</span> or open the module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">Solid</span>. (<a class="reference internal" href="#solidmodule"><span class="std std-numref">Fig. 32</span></a>)</p>
+<p>In the <em>Toolbar</em>, click the button <img alt="icon-solid" src="_images/32x32_icon-solid.png" /> <span class="guilabel">Generate simple geometric object</span> or open the module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">Solid</span>.</p>
 </div>
 <div class="figure align-default" id="id1">
 <span id="solidmodule"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-solid-module.png"><img alt="_images/tutorial-multimaterial-solid-module.png" src="_images/tutorial-multimaterial-solid-module.png" style="width: 65%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">We use the <em>Solid</em> module to create a sphere that we will use as an air pocket.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<p>You can choose the <span class="guilabel">Type</span> of solid that you would like to generate. Examples for the available types are shown in <a class="reference internal" href="#availablesolids"><span class="std std-numref">Fig. 33</span></a>. For each solid, you can tune its geometric properties. Typically, the aspect ratio can be controlled with the parameters <span class="guilabel">X</span>, <span class="guilabel">Y</span> and <span class="guilabel">Z</span> which specify the dimensions of the bounding box. <span class="guilabel">W</span> is an additional parameter that is sometimes necessary, for example to set the diameter of a tube’s inner hole or the size of the foundation of a wedge that is not angled.</p>
+<p>You can choose the <span class="guilabel">Type</span> of solid that you would like to generate. Examples for the available types are shown in <a class="reference internal" href="#availablesolids"><span class="std std-numref">Fig. 33</span></a>. For each solid, you can tune its geometric properties. Typically, the aspect ratio can be controlled with the parameters <span class="guilabel">X</span>, <span class="guilabel">Y</span> and <span class="guilabel">Z</span> which specify the dimensions of the bounding box. <span class="guilabel">W</span> is an additional parameter that is sometimes necessary, for example to set the diameter of a tube’s inner hole or the size of the foundation of a wedge (i.e. the part that is not angled).</p>
 <p><span class="guilabel">Phi steps</span> basically controls the resolution of the solid’s mesh, or the number of steps on a step wedge. <span class="guilabel">Theta steps</span> is available for ellipsoids if you create a <span class="guilabel">regular ellipsoid grid</span>. In this case, <span class="guilabel">phi</span> and <span class="guilabel">theta</span> refer to the two angles of a spherical coordinate system.</p>
 <div class="figure align-default" id="id2">
 <span id="availablesolids"></span><a class="reference internal image-reference" href="_images/solids.png"><img alt="_images/solids.png" src="_images/solids.png" style="width: 90%;" /></a>
@@ -204,7 +204,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Create a small sphere that we will use as an air pocket.</p>
+<p>Create a small sphere that we will use as an air pocket (<a class="reference internal" href="#solidmodule"><span class="std std-numref">Fig. 32</span></a>).</p>
 <ol class="arabic simple">
 <li><p>Set <span class="guilabel">Type</span> to <code class="code docutils literal notranslate"><span class="pre">ellipsoid</span></code>.</p></li>
 <li><p>Activate <span class="guilabel">X=Y=Z</span> to generate an ideal sphere.</p></li>
@@ -283,8 +283,7 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
-<li><p>Deselect everything: click on the free, white space at the bottom of the <em>Assembly List</em>.</p></li>
-<li><p>Select the <em>Rotor</em> from the <em>Assembly List</em>.</p></li>
+<li><p>Click on the <em>Rotor</em> in the <em>Assembly List</em>.</p></li>
 <li><p>Hold down the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key on your keyboard while you select the <em>Air Pocket.</em></p></li>
 </ol>
 </div>
@@ -316,7 +315,7 @@
 <p>The reference position (displayed as a red sphere in the virtual scene) now moves to the new coordinates away from the <em>Rotor’s</em> centre (<a class="reference internal" href="#twopartsreferenceposition"><span class="std std-numref">Fig. 42</span></a>). The axis of rotation (still pointing in the direction of the <em>Z</em> axis of the world coordinate system) is drawn as a yellow vector through the reference position.</p>
 <div class="figure align-default" id="id11">
 <span id="twopartsreferenceposition"></span><a class="reference internal image-reference" href="_images/tutorial-multimaterial-reference-position.png"><img alt="_images/tutorial-multimaterial-reference-position.png" src="_images/tutorial-multimaterial-reference-position.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">We moved the reference position away from the <em>Rotor’s</em> principal axis.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">We moved the reference position away from the <em>Rotor’s</em> centre.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>We can now use this new reference position as the centre of rotation.</p>
 <div class="admonition note">
@@ -324,7 +323,6 @@
 <ol class="arabic simple">
 <li><p>In the <em>Image Viewer</em>, click <img alt="icon-zoom-to-fit" src="_images/22x22_zoom-fit-best.png" /> <span class="guilabel">Zoom to fit window</span> to see the whole projection image again. (Just in case you zoomed in previously.)</p></li>
 <li><p>Click 8× to the <strong>right</strong> of the transform slider to perform one full rotation of the group of parts. Observe how they both rotate around the reference position, both in the virtual scene and in the projection image. They keep their positions relative to each other.</p></li>
-<li><p>When playing around, try to reach their initial position again.</p></li>
 </ol>
 </div>
 <p>You can also use the reference position as the <strong>scaling centre</strong>; this works in the same way. And, of course, you can also use the <em>Transformation</em> controls to translate selected parts as a group.</p>

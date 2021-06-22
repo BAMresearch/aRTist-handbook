@@ -187,7 +187,8 @@
 <div class="section" id="local-and-world-coordinate-systems">
 <h2>Local and World Coordinate Systems<a class="headerlink" href="#local-and-world-coordinate-systems" title="Permalink to this headline">¶</a></h2>
 <p>In the previous tutorial, we have already seen that <em>aRT</em>ist puts the detector by default at the origin of the coordinate system and the source at some point in positive <em>z</em> direction. This main frame of reference is called the <strong>world coordinate system</strong>. You can imagine it as a fixed frame, or stage, that is <em>absolute</em> and will never change.</p>
-<p>When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In <em>aRT</em>ist, the position of an object is a tuple of three coordinates (x, y, z) that refer to the position of the object’s centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object’s <strong>local coordinate system</strong>. Each object comes with three intrinsic axes. For example, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own, specific coordinate system. The axes of this intrinsic coordinate system must not necessarily align with <em>aRT</em>ist’s world coordinate system, as illustrated in the example of the tilted <em>Rotor</em> in <a class="reference internal" href="#worldlocalcoordinatesystem"><span class="std std-numref">Fig. 16</span></a>.</p>
+<p>When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In <em>aRT</em>ist, the position of an object is a tuple of three coordinates (x, y, z) that refer to the position of the object’s centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object’s <strong>local coordinate system</strong>.</p>
+<p>Each object comes with three intrinsic axes. More specifically, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own Cartesian coordinate system. The axes of this intrinsic coordinate system must not necessarily align with <em>aRT</em>ist’s world coordinate system, as illustrated in the example of the tilted <em>Rotor</em> in <a class="reference internal" href="#worldlocalcoordinatesystem"><span class="std std-numref">Fig. 16</span></a>.</p>
 <p>When an object rotates in space, the directions of the three axes of its <strong>local coordinate</strong> system change in relation to the world coordinate system. Mathematically, we can express the local axes as vectors within the world coordinate system to know an object’s orientation.</p>
 <p>In the example illustrated in <a class="reference internal" href="#worldlocalcoordinatesystem"><span class="std std-numref">Fig. 16</span></a>, the detector’s local coordinate system {X<sub>D</sub>, Y<sub>D</sub>, Z<sub>D</sub>} has the same origin and alignment as the world coordinate system. The source’s local coordinate system {X<sub>S</sub>, Y<sub>S</sub>, Z<sub>S</sub>} has the same alignment, but its origin is at a different point in the world coordinate system, somewhere along the positive <em>Z</em> axis. The <em>Rotor’s</em> local coordinate system has also a different origin, and additionally a different alignment (orientation) relative to the world coordinate system.</p>
 <div class="figure align-default" id="id1">
@@ -202,7 +203,7 @@
 <p class="admonition-title">Note</p>
 <p>Deselect the rotor by clicking on the unoccupied white area in the <em>Assembly List</em> or on the brackground colour in the <em>Virtual Scene</em>. Now click on <img alt="icon-zoom-to-selection" src="_images/32x32_zoom-select.png" /> <span class="guilabel">Zoom to Selection</span> to see the full scene again.</p>
 </div>
-<p>We already know that the detector is at the origin of the coordinate system: its centre lies at the point (0, 0, 0) in space. You can check this by selecting the <em>Detector</em> item from the <em>Assembly List</em> and inspecting its properties in the <em>Transformation</em> section of the <em>Parameter Panel</em> (<a class="reference internal" href="#detectortransformproperties"><span class="std std-numref">Fig. 17</span></a>).</p>
+<p>We already know that the detector is at the origin of the world coordinate system: its centre lies at the point (0, 0, 0) in space. You can check this by selecting the <em>Detector</em> item from the <em>Assembly List</em> and inspecting its properties in the <em>Transformation</em> section of the <em>Parameter Panel</em> (<a class="reference internal" href="#detectortransformproperties"><span class="std std-numref">Fig. 17</span></a>).</p>
 <div class="figure align-default" id="id2">
 <span id="detectortransformproperties"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-detector-properties.png"><img alt="_images/tutorial-positioning-detector-properties.png" src="_images/tutorial-positioning-detector-properties.png" style="width: 248.8px; height: 404.8px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">The lower three rows of the <em>Parameter Panel</em> show the position, orientation and size of the selected <em>Detector</em>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
@@ -222,10 +223,10 @@
 <span id="goalsetup"></span><a class="reference internal image-reference" href="_images/tutorial-positioning-goal-setup.png"><img alt="_images/tutorial-positioning-goal-setup.png" src="_images/tutorial-positioning-goal-setup.png" style="width: 100%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Illustration of the geometry that we want to set up.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>Setting up the <abbr title="source-detector distance">SDD</abbr> is the easier part. We have to place the source at the position <em>Z</em> = 500 mm, because the detector is located at the origin of the coordinate system and we want to keep the convention to place the source in positive <em>Z</em> direction.</p>
+<p>Setting up the <abbr title="source-detector distance">SDD</abbr> is the easier part. We have to place the source at the position <em>Z</em> = 500 mm, because the detector is located at the origin of the world coordinate system and we want to keep the convention to place the source in positive <em>Z</em> direction.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Select the <em>Source</em> from the <em>Assembly List</em>. Set <code class="code docutils literal notranslate"><span class="pre">500</span></code> for the <em>Z</em> coordinate of the <strong>Position</strong> (<a class="reference internal" href="#sourcetransformproperties"><span class="std std-numref">Fig. 19</span></a>) and press <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
+<p>Select the <em>Source</em> from the <em>Assembly List</em>. Set <code class="code docutils literal notranslate"><span class="pre">500</span></code> for the <em>Z</em> coordinate of the <span class="guilabel">Position</span> (<a class="reference internal" href="#sourcetransformproperties"><span class="std std-numref">Fig. 19</span></a>) and press <kbd class="kbd docutils literal notranslate">Enter</kbd>.</p>
 </div>
 <p>The number in the input field will be displayed in blue until it is applied to the scene.</p>
 <div class="figure align-default" id="id4">
@@ -249,7 +250,7 @@
 <div class="section" id="orientation">
 <h2>Orientation<a class="headerlink" href="#orientation" title="Permalink to this headline">¶</a></h2>
 <p>One row below the <em>Position</em> settings in the <em>Parameter Panel</em> you can set the <strong>Orientation</strong>. This is a set of three angles (in degrees) that represent consecutive rotations around an object’s coordinate axes.</p>
-<p>Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, <em>aRT</em>ist will perform three rotations in the following order.</p>
+<p>Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, <em>aRT</em>ist will perform three rotations of the object in the following order.</p>
 <ol class="arabic simple">
 <li><p>The object is rotated by the <strong>third angle</strong> around its <strong>local Z axis</strong>.</p></li>
 <li><p>The object is rotated by the <strong>first angle</strong> around the <strong>resulting local X axis</strong>.</p></li>
@@ -311,7 +312,7 @@
 <li><p>You know that each object has its own <strong>local coordinate system</strong> in a fixed, unchanging reference frame that is called the <strong>world coordinate system.</strong></p></li>
 <li><p>You can set the <strong>position</strong> and <strong>orientation</strong> of objects.</p></li>
 <li><p>You learned that the three <strong>orientation angles</strong> are always applied in the order Z→X→Y of the object’s local coordinate axes.</p></li>
-<li><p>You are able to use the <strong>transform slider</strong> to apply rotations around any given vector, and translations in any directions.</p></li>
+<li><p>You are able to use the <strong>transform slider</strong> to apply rotations around any given vector, and translations in any direction.</p></li>
 </ul>
 <div class="line-block">
 <div class="line">The scene that we created up to this point is available for download:</div>

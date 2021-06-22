@@ -18,7 +18,7 @@ A Simple CT Scan
 
 To make this demonstration quicker, we will decrease the number of detector pixels to 250×250.
 
-.. note:: In the *Parameter Panel* on the left-hand side, open the :guilabel:`Detector` tab. In the :guilabel:`Geometry` group, select :guilabel:`Res. [mm]` to make the pixel size a degree of freedom while we keep the overall physical size and set fixed number of pixels. For :guilabel:`Pixel`, enter :code:`250` for both :guilabel:`X` and :guilabel:`Y` (:numref:`detectorSettingsPixels`).
+.. note:: In the *Parameter Panel* on the left-hand side, open the :guilabel:`Detector` tab. In the :guilabel:`Geometry` group, select :guilabel:`Res. [mm]` to make the pixel size a degree of freedom while we keep the overall physical size and set a fixed number of pixels. For :guilabel:`Pixel`, enter :code:`250` for both :guilabel:`X` and :guilabel:`Y` (:numref:`detectorSettingsPixels`).
 
 .. _detectorSettingsPixels:
 .. figure:: pictures/tutorial-ctscan-detector-settings.png
@@ -27,6 +27,12 @@ To make this demonstration quicker, we will decrease the number of detector pixe
     We decrease the number of detector pixels to 250×250.
 
 .. note:: Open the *CtScan* module from the menu bar: :guilabel:`Modules` → :guilabel:`CtScan` (:numref:`ctScanWindow`).
+
+.. _ctScanWindow:
+.. figure:: pictures/tutorial-ctscan-window.png
+    :width: 55%
+
+    The *CtScan* module window.
 
 Let's simulate one full rotation (360°):
 
@@ -50,12 +56,6 @@ For the :guilabel:`File Type`, you can choose between a stack of :guilabel:`TIFF
 .. note:: Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in :numref:`ctScanWindow`). Click the |icon-run| :guilabel:`Run` button to start the scan. The CT simulation should start and you should be able to observe the *Rotor's* rotation around its own centre in the virtual scene. The *Air Pocket* should follow this rotation as well.
 
 .. |icon-run| image:: pictures/icons/16x16_compute-run.png
-
-.. _ctScanWindow:
-.. figure:: pictures/tutorial-ctscan-window.png
-    :width: 55%
-
-    The *CtScan* module window.
 
 
 Centre of Rotation
@@ -96,8 +96,8 @@ Once the cylinder is created, we set its material to air. This way, it will not 
 .. note:: 
 	1. Rename the cylinder object to :code:`Support` (or any other name you like).
 	2. Set its material to :code:`air`.
-	3. Decrease its opacity in the colour dialog to make it more transparent.
-	4. Move it upwards in the *Assembly List* to a position above the **Rotor** to give it the lowest priority.
+	3. Decrease its **opacity** in the colour dialog to make it more transparent.
+	4. Move it **upwards** in the *Assembly List* to a position above the *Rotor* to give it the lowest priority.
 	5. Set its :guilabel:`Z` position to :code:`190` |nbsp| mm (our new :abbr:`ODD (object-detector distance)`).
 
 When you view the scene from above, you should see something similar to :numref:`ctScanSupportCylinderScene`.
@@ -110,7 +110,7 @@ When you view the scene from above, you should see something similar to :numref:
 
 Let's simulate this new CT scan using the BAM CT format:
 
-.. note:: Change the file type to :guilabel:`BAM CT`, and keep :guilabel:`16bit` as the data type (:numref:`ctScanWindowBAMCT`). Click the |icon-run| :guilabel:`Run` to start the simulation.
+.. note:: In the *CtScan* module window, change the file type to :guilabel:`BAM CT` and keep :guilabel:`16bit` as the data type (:numref:`ctScanWindowBAMCT`). Click |icon-run| :guilabel:`Run` to start the simulation.
 
 .. _ctScanWindowBAMCT:
 .. figure:: pictures/tutorial-ctscan-bamct.png
@@ -125,7 +125,7 @@ If :guilabel:`Only selected objects` is checked, then only the parts you selecte
 
 You can choose the :guilabel:`Direction` of rotation for your CT scan. :guilabel:`Counterclockwise` will result in a mathematically positive rotation around the *Y* axis. Consequently, :guilabel:`clockwise` will be a rotation in mathematically negative direction.
 
-You can run a scan with photon :guilabel:`Scatter` simulation activated. For the scatter simulation, *aRT*\ ist will use a photon transport Monte-Carlo simulation tool called *McRay*. It will use the settings from the *Scatter* tab in the *Parameter Panel* of the main window. The :guilabel:`Interval` lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.
+You can run a scan with photon :guilabel:`Scatter` simulation activated. For the scatter simulation, *aRT*\ ist will use a particle transport Monte-Carlo simulation tool called *McRay*. It will use the settings from the *Scatter* tab in the *Parameter Panel* of the main window. The :guilabel:`Interval` lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.
 
 
 FDK Reconstructions
@@ -145,11 +145,11 @@ The :guilabel:`File Name` is the input file with your projection data. It is alr
 
 Activating :guilabel:`Interpolate` will lead to a linear interpolation between pixel grey values where necessary. :guilabel:`Use GPU` activates the OpenGL implementation of the reconstruction software, which uses the graphics card to speed up computations. Activating :guilabel:`multiple textures` can speed up the computation as well: in this mode, the graphics card will try to work on multiple projections in parallel. Instead of single precision, you can turn on calculations with :guilabel:`half precision` floating point numbers on the graphics card, but it is not recommended.
 
-You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a :code:`.vgi` file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) or your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from you detector's pixel size and the magnification M=SDD/SOD:
+You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a :code:`.vgi` file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) of your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from your detector's pixel size and the magnification M |nbsp| = |nbsp| SDD/SOD:
 
 	voxel size = pixel size / M.
 
-.. note:: Click :guilabel:`Reconstruct` to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. ImageJ, or try *aRT*\ ist's **Volume Viewer** (the third tab of the *CtScan* window: it is not yet explained here, but easy to use, especially with BAM CT files).
+.. note:: Click :guilabel:`Reconstruct` to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. *ImageJ*, or try *aRT*\ ist's **Volume Viewer** (the third tab of the *CtScan* window: it is not yet explained here, but easy to use, especially with BAM CT files).
 
 .. _ctScanReconstructionImageJ:
 .. figure:: pictures/tutorial-ctscan-rotor-recon.png
@@ -163,9 +163,9 @@ Summary
 
 In this tutorial, the *CtScan* module was used to simulate a CT scan of the *Rotor* with an off-centre rotation.
 
-* You know about the limitations of the *CtScan* module: it assumes an **axis of rotation in *Y* direction** and a centre of rotation whose projection is located in the centre of the detector.
+* You know about the limitations of the *CtScan* module: it assumes an **axis of rotation in Y direction** and a centre of rotation that is located on the principal ray.
 * You have learned how to set up and simulate a **simple CT scan.**
-* You have seen a technique to **shift the centre of rotation** away from the common bounding box centre (by creating a larger common bounding box with a support object).
+* You have used a technique to **shift the centre of rotation** away from the common bounding box centre (by creating a larger common bounding box with a support object).
 * You have created **CT reconstructions** with the built-in *Feldkamp* software that supports the BAM CT format.
 
 | The scene that we created up to this point is available for download:

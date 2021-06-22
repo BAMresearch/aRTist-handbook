@@ -4,7 +4,7 @@ BAM CT File Format
 Header Size and Data Offset
 ---------------------------
 
-A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the **image data block** is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by
+A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the **raw image data block** is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by
 
 	data offset = (number of columns) × (bytes per pixel).
 

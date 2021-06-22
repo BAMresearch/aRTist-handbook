@@ -10,7 +10,9 @@ Local and World Coordinate Systems
 
 In the previous tutorial, we have already seen that *aRT*\ ist puts the detector by default at the origin of the coordinate system and the source at some point in positive *z* direction. This main frame of reference is called the **world coordinate system**. You can imagine it as a fixed frame, or stage, that is *absolute* and will never change.
 
-When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In *aRT*\ ist, the position of an object is a tuple of three coordinates (x, |nbsp| y, |nbsp| z) that refer to the position of the object's centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object's **local coordinate system**. Each object comes with three intrinsic axes. For example, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own, specific coordinate system. The axes of this intrinsic coordinate system must not necessarily align with *aRT*\ ist's world coordinate system, as illustrated in the example of the tilted *Rotor* in :numref:`worldLocalCoordinateSystem`.
+When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In *aRT*\ ist, the position of an object is a tuple of three coordinates (x, |nbsp| y, |nbsp| z) that refer to the position of the object's centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object's **local coordinate system**.
+
+Each object comes with three intrinsic axes. More specifically, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own Cartesian coordinate system. The axes of this intrinsic coordinate system must not necessarily align with *aRT*\ ist's world coordinate system, as illustrated in the example of the tilted *Rotor* in :numref:`worldLocalCoordinateSystem`.
 
 When an object rotates in space, the directions of the three axes of its **local coordinate** system change in relation to the world coordinate system. Mathematically, we can express the local axes as vectors within the world coordinate system to know an object's orientation.
 
@@ -34,7 +36,7 @@ If we take a look at the full scene again, we see that the source seems to be a 
 
 .. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
 
-We already know that the detector is at the origin of the coordinate system: its centre lies at the point (0, |nbsp| 0, |nbsp| 0) in space. You can check this by selecting the *Detector* item from the *Assembly List* and inspecting its properties in the *Transformation* section of the *Parameter Panel* (:numref:`detectorTransformProperties`).
+We already know that the detector is at the origin of the world coordinate system: its centre lies at the point (0, |nbsp| 0, |nbsp| 0) in space. You can check this by selecting the *Detector* item from the *Assembly List* and inspecting its properties in the *Transformation* section of the *Parameter Panel* (:numref:`detectorTransformProperties`).
 
 .. _detectorTransformProperties:
 .. figure:: pictures/tutorial-positioning-detector-properties.png
@@ -62,9 +64,9 @@ In the field of computed tomography, two very important parameters of a system's
 
     Illustration of the geometry that we want to set up.
 
-Setting up the :abbr:`SDD (source-detector distance)` is the easier part. We have to place the source at the position *Z* |nbsp| = |nbsp| 500 |nbsp| mm, because the detector is located at the origin of the coordinate system and we want to keep the convention to place the source in positive *Z* direction.
+Setting up the :abbr:`SDD (source-detector distance)` is the easier part. We have to place the source at the position *Z* |nbsp| = |nbsp| 500 |nbsp| mm, because the detector is located at the origin of the world coordinate system and we want to keep the convention to place the source in positive *Z* direction.
 
-.. note:: Select the *Source* from the *Assembly List*. Set :code:`500` for the *Z* coordinate of the **Position** (:numref:`sourceTransformProperties`) and press :kbd:`Enter`.
+.. note:: Select the *Source* from the *Assembly List*. Set :code:`500` for the *Z* coordinate of the :guilabel:`Position` (:numref:`sourceTransformProperties`) and press :kbd:`Enter`.
 
 The number in the input field will be displayed in blue until it is applied to the scene.
 
@@ -98,7 +100,7 @@ Orientation
 
 One row below the *Position* settings in the *Parameter Panel* you can set the **Orientation**. This is a set of three angles (in degrees) that represent consecutive rotations around an object's coordinate axes.
 
-Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, *aRT*\ ist will perform three rotations in the following order.
+Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, *aRT*\ ist will perform three rotations of the object in the following order.
 
 1. The object is rotated by the **third angle** around its **local Z axis**.
 2. The object is rotated by the **first angle** around the **resulting local X axis**.
@@ -180,7 +182,7 @@ In this tutorial, you have learned how to change the position and orientation of
 * You know that each object has its own **local coordinate system** in a fixed, unchanging reference frame that is called the **world coordinate system.**
 * You can set the **position** and **orientation** of objects.
 * You learned that the three **orientation angles** are always applied in the order Z→X→Y of the object's local coordinate axes.
-* You are able to use the **transform slider** to apply rotations around any given vector, and translations in any directions.
+* You are able to use the **transform slider** to apply rotations around any given vector, and translations in any direction.
 
 | The scene that we created up to this point is available for download:
 | :download:`tutorial_positioning.aRTist <files/tutorial_positioning.aRTist>` (4.6 MB)

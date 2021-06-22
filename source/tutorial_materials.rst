@@ -11,7 +11,7 @@ Materials
 Materials Editor
 -----------------
 
-*aRT*\ ist has a built-in materials editor (:numref:`materialsEditor`) that shows your library of materials. You can change and add entries there, and inspect the attenuation coefficients that *aRT*\ ist has calculated.
+*aRT*\ ist has a built-in materials editor (:numref:`materialsEditor`) that helps you manage your library of materials. You can change and add entries there, and inspect the attenuation coefficients that *aRT*\ ist has calculated.
 
 .. note:: In the toolbar, click the button |icon-material-editor| :guilabel:`Edit material properties` or open it from the Menu bar: :guilabel:`Tools` → :guilabel:`Materials...`
 
@@ -33,10 +33,10 @@ In the materials editor, this compound would be represented as :code:`Al2O3 0.4 
 
 .. note:: In the *Materials Editor,* click on |icon-add| :guilabel:`Add new material definition`. An empty row will appear where you can fill in the new material information (:numref:`materialsEditorAddNew`).
 
-	| Enter a material name, e.g. :code:`Glass Ceramic`.
-	| Enter the density: :code:`2.53`.
-	| Enter the composition: :code:`Al2O3 0.4 SiO2 0.6`.
-	| You may also add a comment, if you want.
+	1. Enter a material name, e.g. :code:`Glass Ceramic`.
+	2. Enter the density: :code:`2.53`.
+	3. Enter the composition: :code:`Al2O3 0.4 SiO2 0.6`.
+	4. You may also add a comment, if you want.
 
 	Click :guilabel:`Apply` to save the list.
 
@@ -48,7 +48,7 @@ In the materials editor, this compound would be represented as :code:`Al2O3 0.4 
 
     We add the glass ceramic as a new material.
 
-It is important to click :guilabel:`Apply` to save the changes you have made. The button :guilabel:`Refresh` will re-load the internal library, delete any unsaved changes you have made, and possibly show changes that other *aRT*\ ist modules have made in the material library in the time since you have opened the *Materials Editor.*
+It is important to click :guilabel:`Apply` to save the changes you have made. The button :guilabel:`Refresh` will re-load the internal library, delete any unsaved changes you have made, and show changes that other *aRT*\ ist modules have made in the material library in the time since you have opened the *Materials Editor.*
 
 
 Attenuation Data Viewer

@@ -179,7 +179,7 @@
 <h1>BAM CT File Format<a class="headerlink" href="#bam-ct-file-format" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="header-size-and-data-offset">
 <h2>Header Size and Data Offset<a class="headerlink" href="#header-size-and-data-offset" title="Permalink to this headline">¶</a></h2>
-<p>A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the <strong>image data block</strong> is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by</p>
+<p>A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the <strong>raw image data block</strong> is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by</p>
 <blockquote>
 <div><p>data offset = (number of columns) × (bytes per pixel).</p>
 </div></blockquote>

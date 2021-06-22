@@ -54,7 +54,7 @@ The *Image Viewer* lets you save the current image with the button |icon-save| :
 
 In the *save dialog* that appears, it is important that you choose the **image type** that you need: do you want an 8-bit or 16-bit *unsigned integer* data type or a 32-bit *floating point* data type?
 
-Unless you want a TIFF image, you need to enter the correct **file extension** (such as :code:`.raw`) that you prefer. *aRT*\ ist will save an additional a text file that contains some important parameters from your simulation and about the image. If you save a RAW file, *aRT*\ ist will add the data type, byte order and image size to the file name, using a pattern that allows *ImageJ* to find the correct parameters to read the image.
+Unless you want a TIFF image, you need to enter the correct **file extension** (such as :code:`.raw`) that you prefer. Along with the actual image file, *aRT*\ ist will save an additional text file that contains some important parameters from your simulation and about the image. If you save a RAW file, *aRT*\ ist will add the data type, byte order and image size to the file name, using a pattern that allows *ImageJ* to automatically find the correct parameters to read the image.
 
 
 Image Selector
@@ -62,7 +62,7 @@ Image Selector
 
 Often, there is more than one image to view. You can switch between images with the **image selector** right next to the status symbol. We will talk more about the different choices here in the following tutorials when this becomes more relevant.
 
-Currently, you should have the choice between :guilabel:`Energy density (J/m^2)` and :guilabel:`primary intensities`. The **energy density image** is the output of your current detector: it is an ideal energy integrator (called the *1:1 detector*) whose grey values directly correspond to the energy that each pixel collects, normalized to their area (hence the unit J/m²). Its exposure time is automatically set up in such a way that the energy density at the maximum intensity directly corresponds to 50000 J/m² (to get a nice 16 bit grey value range). If you'd like to know more, we will talk more about detector models in another tutorial.
+Currently, you should have the choice between :guilabel:`Energy density (J/m^2)` and :guilabel:`primary intensities`. The **energy density image** is the output of your current detector: it is an ideal energy integrator (called the *1:1 detector*) whose grey values directly correspond to the energy that each pixel collects, normalized to their area (hence the unit J/m²). Its exposure time is automatically set up in such a way that the energy density at the maximum intensity directly corresponds to 50000 J/m² (to get a nice 16 bit grey value range). If you'd like to know more, we will learn about detector models in another tutorial.
 
 The **primary intensity** is more universal: it is the pure intensity absorbed by the detector (in J/s/m²) and is not converted into grey values of any kind. It is a purely physical value. When you move your mouse pointer over an image of primary intensities, you can read the intensity at each pixel.
 
@@ -91,7 +91,7 @@ Regions of Interest (ROI)
 
 You can draw regions of interest with your mouse on the image in the *Image Viewer*. If |icon-optimize| :guilabel:`Optimize display` is activated, the grey value range will be adjusted to match the minimum and maximum intensity inside your region of interest (:numref:`imageViewerROI`).
 
-To remove the ROI again, click anywhere in the image (but not on the ROI's border).
+To remove the ROI, click anywhere in the image (but not on the ROI's border).
 
 .. _imageViewerROI:
 .. figure:: pictures/tutorial-projection-images-roi.png
@@ -109,9 +109,9 @@ In the bottom right corner of the *Image Viewer*, you find zoom options. You can
 .. |icon-zoom-fit| image:: pictures/icons/22x22_zoom-fit-best.png
 .. |icon-zoom-select| image:: pictures/icons/22x22_zoom-select.png
 
-By default, the **actual size** of an image is its size in the physical world, e.g. the projection's physical size on the detector. *aRT*\ ist tries to get your monitor's resolution from the operating system and scales the image accordingly, such that at a zoom of :code:`1`, the image on your monitor should appear approximately in the physical size that it intends.
+By default, the **actual size** of an image is its size in the physical world, e.g. the projection's physical size on the detector. *aRT*\ ist tries to get your monitor's resolution from the operating system and scales the image accordingly, such that at a zoom of :code:`1`, the image on your monitor should appear approximately in the physical size that it intends to have according to its proper pixel size.
 
-You may regard the image as a pure pixel image and might want to ignore its physical size. In the *Image Viewer*, you can turn on |icon-zoom-pixel-for-pixel| :guilabel:`Pixel for pixel mode`. In this mode, the image will not be interpreted by its *physical size*, but treated as a pure pixel image. In this mode, a zoom factor of :code:`1` will display each pixel of the image with one pixel of your monitor, a zoom of :code:`2` will use 2×2 pixels of your monitor for one image pixel, and so on.
+You may regard the image as a pure pixel image and might want to ignore its physical size. In the *Image Viewer*, you can turn on |icon-zoom-pixel-for-pixel| :guilabel:`Pixel for pixel mode`. In this mode, the image will not be interpreted by its *physical size*, but treated as a pure pixel image. A zoom factor of :code:`1` will display each pixel of the image with one pixel of your monitor, a zoom of :code:`2` will use 2×2 pixels of your monitor for one image pixel, and so on.
 
 .. |icon-zoom-pixel-for-pixel| image:: pictures/icons/22x22_zoom-pixel-by-pixel.png
 
@@ -121,7 +121,7 @@ Mirror, Rotation and Advanced Image Processing
 
 You can flip (mirror) and rotate the image in the *Image Viewer*. Click the button |icon-image-transform| :guilabel:`Change image orientation` to open a menu with all the options.
 
-When you display the *Image Viewer* in a separate window, you also have a **menu bar** where you can find more advanced options.
+When you display the *Image Viewer* in a separate window, you also have a **menu bar** where you can find more advanced options on image processing.
 
 .. |icon-image-transform| image:: pictures/icons/22x22_object-flip-turn.png
 
@@ -129,21 +129,21 @@ When you display the *Image Viewer* in a separate window, you also have a **menu
 Exposure Latitude Warnings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Sometimes, parts of your image can be undersaturated or oversaturated. These regions will be coloured in blue and red, respectively, if you turn on |icon-exposure-warning| :guilabel:`Display exposure latitude warning` (:numref:`imageViewerSaturation`).
+Sometimes, parts of your image can be overexposed or subject to complete photon extinction. These regions will be coloured in red and blue, respectively, if you turn on |icon-exposure-warning| :guilabel:`Display exposure latitude warning` (:numref:`imageViewerSaturation`).
 
 .. |icon-exposure-warning| image:: pictures/icons/22x22_latitude-warning.png
 
-* **Undersaturation** occurs if no radiation reaches the detector. This can happen if parts completely absorb any radiation, but it can also happen if you misconfigured the X-ray source (it might not emit any photons) or if you misconfigured the detector (it might not absorb any radiation).
+* **Over-exposition** occurs if there is too much radiation intensity. The maximum grey value of the detector is exceeded.
 
-* **Oversaturation** occurs if there is too much radiation intensity at the detector. The intensity might exceed the maximum grey value of the detector.
+* **Full extinction** occurs if no radiation reaches the detector. This can happen if parts completely absorb any radiation, but it can also happen if you misconfigured the X-ray source (it might not emit any photons) or if you misconfigured the detector (it might not absorb any radiation).
 
-In the example image in :numref:`imageViewerSaturation`, the *Rotor's* material was set to lead (Pb) and the X-ray source and detector were tuned to achieve undersaturation and oversaturation in one image. We will not explain how to do this here, because it is beyond the scope of this tutorial.
+In the example image in :numref:`imageViewerSaturation`, the *Rotor's* material was set to lead (Pb) and the X-ray source and detector were tuned to achieve full extinction and over-exposition in one image. We will not explain how to do this here, because it is beyond the scope of this tutorial.
 
 .. _imageViewerSaturation:
 .. figure:: pictures/tutorial-projection-images-saturation.png
     :width: 65%
 
-    In some parts of the image, no radiation arrives at the detector (undersaturation, blue area) whereas in other areas, the intensity exceeds the maximum grey value of the detector (oversaturation, red area).
+    In some parts of the image, no radiation arrives at the detector (full extinction, blue area) whereas in other areas, the intensity exceeds the maximum grey value of the detector (over-exposition, red area).
 
 
 
@@ -161,7 +161,11 @@ When you open *aRT*\ ist's :guilabel:`Compute` menu (:numref:`guiComputeMenu`), 
 
 * **Radiographies** are your common detector images that show the intensities after X-ray attenuation.
 
-* **Thickness Maps** are images that show the path length that a ray travelled in each material to reach the pixel. In this mode, you will get a thickness map for each material in your scene. You can switch between the thickness maps with the *image selector* in your *Image Viewer* (see :numref:`imageViewer`). Each pixel in a *Thickness Map* will have a value that represents the penetration length in mm. Therefore, it is usually a good idea to save *Thickness Maps* as 32-bit float images to keep the precision.
+* **Thickness Maps** are images that show the path length that a ray travelled in each material to reach the pixel. In this mode, you will get a thickness map for each material in your scene. You can switch between the thickness maps with the *image selector* in your *Image Viewer*. Each pixel in a *Thickness Map* will have a value that represents the penetration length in mm. Therefore, it is usually a good idea to save *Thickness Maps* as 32-bit float images to keep the precision.
+    
+  When you compute thickness maps instead of radiographies, the :guilabel:`Run` button will change its appearance to |icon-run-thickness|.
+
+.. |icon-run-thickness| image:: pictures/icons/32x32_compute-thickness.png
 
 
 Computing Full Projection Images
@@ -169,6 +173,6 @@ Computing Full Projection Images
 
 To calculate a full simulation image, you can use the |icon-compute| :guilabel:`Run` button from the toolbar or in the menu bar, choose :guilabel:`Compute` → :guilabel:`Run`. Full simulation images have the true number of pixels of your detector. All activated effects are taken into account (e.g. source spot sampling, detector multisampling, scattering). Depending on your simulation parameters, a full simulation can take much longer than computing a simple preview image.
 
-If :guilabel:`Use GPU` is activated in the :guilabel:`Compute` menu (:numref:`guiComputeMenu`), *aRT*\ ist will use some OpenGL techniques to speed up computation, but a big part is still performed on the CPU. If your graphics card does not support it, *aRT*\ ist will automatically use the CPU for all computations.
+If :guilabel:`Use GPU` is activated in the :guilabel:`Compute` menu (:numref:`guiComputeMenu`), *aRT*\ ist will use some OpenGL techniques on your graphics card to speed up computations, but a big part is still performed on the CPU. If your graphics card does not support it, *aRT*\ ist will automatically use the CPU for all computations.
 
 :guilabel:`Single Precision` will use 32-bit floating point values for parts of the computations instead of 64-bit double precision values. In some cases, it might speed up computations.

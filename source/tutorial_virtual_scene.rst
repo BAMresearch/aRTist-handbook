@@ -102,13 +102,13 @@ Take a look at the buttons in the right section of the toolbar. They provide som
 
 Some of these only work once a part is selected.
 
-.. note:: Select the rotor: either click on it in the *Assembly List* or click on it in the scene. It should now be highlighted in the *Assembly List* and a bounding box with yellow corners should appear that encloses the rotor (:numref:`rotorSelected`).
+.. note:: Select the rotor: either click on it in the *Assembly List* or click on it in the scene. It should now be highlighted in the *Assembly List* and a bounding box with yellow corners should appear that encloses the *Rotor* in the virtual scene (:numref:`rotorSelected`).
 
 .. _rotorSelected:
 .. figure:: pictures/tutorial-virtualscene-rotor-selected.png
     :width: 100%
 
-    The rotor is selected: it is highlighted with a blue background in the *Assembly List* and enclosed in a yellow-cornered bounding box in the virtual scene.
+    The *Rotor* is selected: it is highlighted with a blue background in the *Assembly List* and enclosed in a yellow-cornered bounding box in the virtual scene.
 
 View Directions
 ^^^^^^^^^^^^^^^
@@ -127,11 +127,11 @@ The following buttons change the view such that the camera looks either from the
 
 They can be clicked once or twice. Clicking them a second time will change the view to the opposite direction.
 
-You can also change between **orthographic** projection and **perspective** projection. In an orthographic projection, all parallel lines appear parallel and object size does not decrease with distance. In perspective view, parallel lines do not appear parallel on screen, but they meet in a common view point at infinity.
-
 |icon-view-orthographic| **Orthographic/perspective projection**
 
 .. |icon-view-orthographic| image:: pictures/icons/32x32_view-orthographic.png
+
+With this button, you can switch between **orthographic** projection and **perspective** projection. In an orthographic projection, all parallel lines appear parallel and object size does not decrease with distance. In perspective view, parallel lines do not appear parallel on screen, but they meet in a common view point at infinity.
 
 All of these commands can also be found in the :guilabel:`View` menu.
 
@@ -142,7 +142,7 @@ All of these commands can also be found in the :guilabel:`View` menu.
 
 .. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
 
-This buttons zooms in or out to best fit the selected part(s) into the view. If no part is selected, it will arrange the view such that everything can be seen at once.
+This button zooms in or out to fit the selected part(s) into the view. If no part is selected, it will arrange the view such that everything can be seen at once.
 
 You can also find this function in the menu bar: :guilabel:`View` → |icon-zoom-to-selection-small| :guilabel:`Zoom to Selection`
 
@@ -173,7 +173,7 @@ Each part has its own, local coordinate system. With this button, you make the l
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. |icon-wireframe| image:: pictures/icons/32x32_switch-wireframe.png
 
-Instead of viewing a part as a solid surface, you can use this button to only display a wireframe model of the triangular mesh. The rotor has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (:numref:`wireframe`). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
+Instead of viewing a part as a solid surface, you can use this button to display a wireframe model of the triangular mesh. The *Rotor* has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (:numref:`wireframe`). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
 
 .. _wireframe:
 .. figure:: pictures/tutorial-virtualscene-wireframe.png

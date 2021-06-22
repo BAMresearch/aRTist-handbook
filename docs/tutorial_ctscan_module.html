@@ -193,7 +193,7 @@
 <p>To make this demonstration quicker, we will decrease the number of detector pixels to 250×250.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to make the pixel size a degree of freedom while we keep the overall physical size and set fixed number of pixels. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 43</span></a>).</p>
+<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to make the pixel size a degree of freedom while we keep the overall physical size and set a fixed number of pixels. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 43</span></a>).</p>
 </div>
 <div class="figure align-default" id="id1">
 <span id="detectorsettingspixels"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-detector-settings.png"><img alt="_images/tutorial-ctscan-detector-settings.png" src="_images/tutorial-ctscan-detector-settings.png" style="width: 311.0px; height: 165.0px;" /></a>
@@ -202,6 +202,10 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Open the <em>CtScan</em> module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">CtScan</span> (<a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>).</p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="ctscanwindow"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-window.png"><img alt="_images/tutorial-ctscan-window.png" src="_images/tutorial-ctscan-window.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Let’s simulate one full rotation (360°):</p>
 <div class="admonition note">
@@ -226,10 +230,6 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in <a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>). Click the <img alt="icon-run" src="_images/16x16_compute-run.png" /> <span class="guilabel">Run</span> button to start the scan. The CT simulation should start and you should be able to observe the <em>Rotor’s</em> rotation around its own centre in the virtual scene. The <em>Air Pocket</em> should follow this rotation as well.</p>
-</div>
-<div class="figure align-default" id="id2">
-<span id="ctscanwindow"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-window.png"><img alt="_images/tutorial-ctscan-window.png" src="_images/tutorial-ctscan-window.png" style="width: 55%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="centre-of-rotation">
@@ -259,8 +259,8 @@
 <ol class="arabic simple">
 <li><p>Rename the cylinder object to <code class="code docutils literal notranslate"><span class="pre">Support</span></code> (or any other name you like).</p></li>
 <li><p>Set its material to <code class="code docutils literal notranslate"><span class="pre">air</span></code>.</p></li>
-<li><p>Decrease its opacity in the colour dialog to make it more transparent.</p></li>
-<li><p>Move it upwards in the <em>Assembly List</em> to a position above the <strong>Rotor</strong> to give it the lowest priority.</p></li>
+<li><p>Decrease its <strong>opacity</strong> in the colour dialog to make it more transparent.</p></li>
+<li><p>Move it <strong>upwards</strong> in the <em>Assembly List</em> to a position above the <em>Rotor</em> to give it the lowest priority.</p></li>
 <li><p>Set its <span class="guilabel">Z</span> position to <code class="code docutils literal notranslate"><span class="pre">190</span></code> mm (our new <abbr title="object-detector distance">ODD</abbr>).</p></li>
 </ol>
 </div>
@@ -272,7 +272,7 @@
 <p>Let’s simulate this new CT scan using the BAM CT format:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Change the file type to <span class="guilabel">BAM CT</span>, and keep <span class="guilabel">16bit</span> as the data type (<a class="reference internal" href="#ctscanwindowbamct"><span class="std std-numref">Fig. 49</span></a>). Click the <img alt="icon-run" src="_images/16x16_compute-run.png" /> <span class="guilabel">Run</span> to start the simulation.</p>
+<p>In the <em>CtScan</em> module window, change the file type to <span class="guilabel">BAM CT</span> and keep <span class="guilabel">16bit</span> as the data type (<a class="reference internal" href="#ctscanwindowbamct"><span class="std std-numref">Fig. 49</span></a>). Click <img alt="icon-run" src="_images/16x16_compute-run.png" /> <span class="guilabel">Run</span> to start the simulation.</p>
 </div>
 <div class="figure align-default" id="id7">
 <span id="ctscanwindowbamct"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-bamct.png"><img alt="_images/tutorial-ctscan-bamct.png" src="_images/tutorial-ctscan-bamct.png" style="width: 55%;" /></a>
@@ -283,7 +283,7 @@
 <h2>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h2>
 <p>If <span class="guilabel">Only selected objects</span> is checked, then only the parts you selected from the <em>Assembly List</em> will perform the CT rotation. (Remember that you can select multiple parts by keeping <kbd class="kbd docutils literal notranslate">Ctrl</kbd> pressed.) Any other parts that are not selected will remain fixed at their current position during the CT scan.</p>
 <p>You can choose the <span class="guilabel">Direction</span> of rotation for your CT scan. <span class="guilabel">Counterclockwise</span> will result in a mathematically positive rotation around the <em>Y</em> axis. Consequently, <span class="guilabel">clockwise</span> will be a rotation in mathematically negative direction.</p>
-<p>You can run a scan with photon <span class="guilabel">Scatter</span> simulation activated. For the scatter simulation, <em>aRT</em>ist will use a photon transport Monte-Carlo simulation tool called <em>McRay</em>. It will use the settings from the <em>Scatter</em> tab in the <em>Parameter Panel</em> of the main window. The <span class="guilabel">Interval</span> lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.</p>
+<p>You can run a scan with photon <span class="guilabel">Scatter</span> simulation activated. For the scatter simulation, <em>aRT</em>ist will use a particle transport Monte-Carlo simulation tool called <em>McRay</em>. It will use the settings from the <em>Scatter</em> tab in the <em>Parameter Panel</em> of the main window. The <span class="guilabel">Interval</span> lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.</p>
 </div>
 <div class="section" id="fdk-reconstructions">
 <h2>FDK Reconstructions<a class="headerlink" href="#fdk-reconstructions" title="Permalink to this headline">¶</a></h2>
@@ -298,13 +298,13 @@
 </div>
 <p>The <span class="guilabel">File Name</span> is the input file with your projection data. It is already set to the BAM CT projection file that we created during the last simulation. You can also select any other <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file here.</p>
 <p>Activating <span class="guilabel">Interpolate</span> will lead to a linear interpolation between pixel grey values where necessary. <span class="guilabel">Use GPU</span> activates the OpenGL implementation of the reconstruction software, which uses the graphics card to speed up computations. Activating <span class="guilabel">multiple textures</span> can speed up the computation as well: in this mode, the graphics card will try to work on multiple projections in parallel. Instead of single precision, you can turn on calculations with <span class="guilabel">half precision</span> floating point numbers on the graphics card, but it is not recommended.</p>
-<p>You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a <code class="code docutils literal notranslate"><span class="pre">.vgi</span></code> file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) or your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from you detector’s pixel size and the magnification M=SDD/SOD:</p>
+<p>You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a <code class="code docutils literal notranslate"><span class="pre">.vgi</span></code> file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) of your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from your detector’s pixel size and the magnification M = SDD/SOD:</p>
 <blockquote>
 <div><p>voxel size = pixel size / M.</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <span class="guilabel">Reconstruct</span> to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. ImageJ, or try <em>aRT</em>ist’s <strong>Volume Viewer</strong> (the third tab of the <em>CtScan</em> window: it is not yet explained here, but easy to use, especially with BAM CT files).</p>
+<p>Click <span class="guilabel">Reconstruct</span> to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. <em>ImageJ</em>, or try <em>aRT</em>ist’s <strong>Volume Viewer</strong> (the third tab of the <em>CtScan</em> window: it is not yet explained here, but easy to use, especially with BAM CT files).</p>
 </div>
 <div class="figure align-default" id="id9">
 <span id="ctscanreconstructionimagej"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-rotor-recon.png"><img alt="_images/tutorial-ctscan-rotor-recon.png" src="_images/tutorial-ctscan-rotor-recon.png" style="width: 262.0px; height: 325.0px;" /></a>
@@ -315,9 +315,9 @@
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>In this tutorial, the <em>CtScan</em> module was used to simulate a CT scan of the <em>Rotor</em> with an off-centre rotation.</p>
 <ul class="simple">
-<li><p>You know about the limitations of the <em>CtScan</em> module: it assumes an <strong>axis of rotation in *Y* direction</strong> and a centre of rotation whose projection is located in the centre of the detector.</p></li>
+<li><p>You know about the limitations of the <em>CtScan</em> module: it assumes an <strong>axis of rotation in Y direction</strong> and a centre of rotation that is located on the principal ray.</p></li>
 <li><p>You have learned how to set up and simulate a <strong>simple CT scan.</strong></p></li>
-<li><p>You have seen a technique to <strong>shift the centre of rotation</strong> away from the common bounding box centre (by creating a larger common bounding box with a support object).</p></li>
+<li><p>You have used a technique to <strong>shift the centre of rotation</strong> away from the common bounding box centre (by creating a larger common bounding box with a support object).</p></li>
 <li><p>You have created <strong>CT reconstructions</strong> with the built-in <em>Feldkamp</em> software that supports the BAM CT format.</p></li>
 </ul>
 <div class="line-block">
