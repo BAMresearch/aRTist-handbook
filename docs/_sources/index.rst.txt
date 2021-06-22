@@ -35,6 +35,7 @@ The information in this manual is for reference and informational use only. We a
 
    installation
    gui
+   bamct_file_format
 
 .. toctree::
    :maxdepth: 2
@@ -45,4 +46,5 @@ The information in this manual is for reference and informational use only. We a
    tutorial_positioning_orientation_size
    tutorial_materials
    tutorial_projection_images
-   tutorial_multi_material_parts
+   tutorial_multi_component_parts
+   tutorial_ctscan_module

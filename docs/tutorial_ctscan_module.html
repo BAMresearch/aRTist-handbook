@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>CtScan Module &mdash; aRTist 2.10.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Multi-Component Parts" href="tutorial_multi_component_parts.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aRTist
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CtScan Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-ct-scan">A Simple CT Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#centre-of-rotation">Centre of Rotation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fdk-reconstructions">FDK Reconstructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-settings">Advanced Settings</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>CtScan Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial_ctscan_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
+<p><a class="reference download internal" download="" href="_downloads/82a860aa47cc7253ce6cf9f981f719c0/tutorial_multiple_components.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_multiple_components.aRTist</span></code></a> (4.6 MB)</p>
+</div>
+<div class="section" id="ctscan-module">
+<h1>CtScan Module<a class="headerlink" href="#ctscan-module" title="Permalink to this headline">¶</a></h1>
+<p>In this tutorial, the <em>CtScan</em> module will be explained. It allows to simulate simple CT scans.  There will be another tutorial about more advanced geometries and trajectories, using the <em>TomoSynth</em> module.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>CtScan</em> module always uses an axis of rotation that points in <strong>Y direction</strong> of the world coordinate system. Also, it will always place the center of rotation on the <strong>principal ray</strong> connecting the source and the detector centre.</p>
+<p>The reconstruction software that comes with <em>aRT</em>ist assumes a straight axis of rotation in the centre of the detector. You can simulate projections with a tilted detector, but <em>aRT</em>ist’s reconstruction software will not be able to reconstruct such a scan correctly.</p>
+</div>
+<div class="section" id="a-simple-ct-scan">
+<h2>A Simple CT Scan<a class="headerlink" href="#a-simple-ct-scan" title="Permalink to this headline">¶</a></h2>
+<p>To make this demonstration quicker, we will decrease the number of detector pixels to 250×250.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to make the pixel size a degree of freedom while we keep the overall physical size and set fixed number of pixels. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 43</span></a>).</p>
+</div>
+<div class="figure align-default" id="id1">
+<span id="detectorsettingspixels"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-detector-settings.png"><img alt="_images/tutorial-ctscan-detector-settings.png" src="_images/tutorial-ctscan-detector-settings.png" style="width: 311.0px; height: 165.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">We decrease the number of detector pixels to 250×250.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open the <em>CtScan</em> module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">CtScan</span> (<a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>).</p>
+</div>
+<p>Let’s simulate one full rotation (360°):</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <span class="guilabel">Total Angle [°]</span>, enter <code class="code docutils literal notranslate"><span class="pre">360</span></code>.</p>
+</div>
+<p>The number of angular steps should be chosen with respect to the matrix size. Our detector has a width of 250 px. To stay on the safe side, let’s choose 250⋅π/2 ≈ <strong>400</strong> steps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the <span class="guilabel">Number of Steps</span>, enter <code class="code docutils literal notranslate"><span class="pre">400</span></code>. The <span class="guilabel">Angle Step Size [°]</span> should automatically be calculated and display <code class="code docutils literal notranslate"><span class="pre">0.9</span></code>.</p>
+</div>
+<p>You can choose a different output <span class="guilabel">directory</span> for the projection files. If you leave the <code class="code docutils literal notranslate"><span class="pre">#</span></code> directory as it is, everything will be saved in your <em>Default Directory</em>. You can set this in your settings: from the menu bar, choose <span class="guilabel">Tools</span> → <img alt="icon-settings" src="_images/16x16_preferences-system.png" /> <span class="guilabel">Settings</span> to see your <em>Default Directory</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enter a <span class="guilabel">File Name</span> for your projection files. In this demonstration, we will name it <code class="code docutils literal notranslate"><span class="pre">rotor</span></code>.</p>
+</div>
+<p>For the <span class="guilabel">File Type</span>, you can choose between a stack of <span class="guilabel">TIFF</span> images and the <span class="guilabel">BAM CT</span> format.</p>
+<ul class="simple">
+<li><p><strong>TIFFs:</strong> each projection image will be saved as a single TIFF file. A projection number will be added to the file name. If you choose this format, <em>aRT</em>ist’s reconstruction software will not be able to reconstruct the CT scan.</p></li>
+<li><p><strong>BAM CT</strong> is a format where all projections are stored in a single <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file. It has a header of variable size, followed by the raw data of the projection images. <em>aRT</em>ist’s Feldkamp reconstruction software is able to reconstruct scans from this file format.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in <a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>). Click the <img alt="icon-run" src="_images/16x16_compute-run.png" /> <span class="guilabel">Run</span> button to start the scan. The CT simulation should start and you should be able to observe the <em>Rotor’s</em> rotation around its own centre in the virtual scene. The <em>Air Pocket</em> should follow this rotation as well.</p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="ctscanwindow"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-window.png"><img alt="_images/tutorial-ctscan-window.png" src="_images/tutorial-ctscan-window.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="centre-of-rotation">
+<h2>Centre of Rotation<a class="headerlink" href="#centre-of-rotation" title="Permalink to this headline">¶</a></h2>
+<p>The warning box at the beginning already explained that the <em>CtScan</em> module always chooses an axis of rotation that points in the <em>Y</em> direction of the coordinate system. The centre of rotation will be placed on the principal ray that connects the source and the detector centre. In <em>aRT</em>ist’s standard coordinate system, this is the <em>Z</em> axis of the world coordinate system. The point on this axis (and therefore the actual <abbr title="source-object distance">SOD</abbr>) will be determined by the <strong>common bounding box</strong> that encloses <strong>all parts</strong> that participate in the CT rotation. The centre coordinate of this common bounding box, projected along the <em>X</em> axis onto the principal ray (if it is not already there) determines the centre of rotation (<a class="reference internal" href="#ctscancentreofrotation"><span class="std std-numref">Fig. 45</span></a>).</p>
+<div class="figure align-default" id="id3">
+<span id="ctscancentreofrotation"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-centre-of-rotation.png"><img alt="_images/tutorial-ctscan-centre-of-rotation.png" src="_images/tutorial-ctscan-centre-of-rotation.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><strong>View from above:</strong> if multiple objects are in the scene, the <em>CtScan</em> module projects the centre of the common bounding box of all objects (blue cross) onto the principal ray axis to find the centre of rotation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>In our current scene, the centre of the <em>Rotor</em> is the centre of rotation because its bounding box encloses both the <em>Rotor</em> and the <em>Air Pocket</em>. An easy way to shift the centre of rotation but keep the current position of all parts is to create a new “support object” that forces a different common bounding box.</p>
+<p>At the moment, our scan’s <abbr title="source-object distance">SOD</abbr> is 300 mm. We will shift the rotation axis to an <abbr title="source-object distance">SOD</abbr> of 310 mm without moving the <em>Rotor</em>, therefore simulating an off-axis rotation. To do this, we will create a big cylinder made of air (<a class="reference internal" href="#ctscansupportcylinder"><span class="std std-numref">Fig. 46</span></a>) that will be centred at an <abbr title="source-object distance">SOD</abbr> of 310 mm and that will completely contain the <em>Rotor</em> and the <em>Air Pocket</em>. This leads to a common bounding box of all three objects that is the same as the cylinder’s own bounding box.</p>
+<div class="figure align-default" id="id4">
+<span id="ctscansupportcylinder"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-setup.png"><img alt="_images/tutorial-ctscan-cylinder-setup.png" src="_images/tutorial-ctscan-cylinder-setup.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><strong>View from the side:</strong> we use a “support object” to shift the centre of rotation away from the <em>Rotor</em> towards the detector.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open the <img alt="icon-solid" src="_images/32x32_icon-solid.png" /> <strong>Solid module</strong> and create a cylinder with a diameter (<span class="guilabel">X</span> and <span class="guilabel">Z</span>) of <code class="code docutils literal notranslate"><span class="pre">100</span></code> mm and a height (<span class="guilabel">Y</span>) of <code class="code docutils literal notranslate"><span class="pre">80</span></code> mm. We use <code class="code docutils literal notranslate"><span class="pre">100</span></code> <span class="guilabel">Phi steps</span> to make it relatively smooth. (<a class="reference internal" href="#ctscansupportcylindersolid"><span class="std std-numref">Fig. 47</span></a>)</p>
+</div>
+<div class="figure align-default" id="id5">
+<span id="ctscansupportcylindersolid"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-solid.png"><img alt="_images/tutorial-ctscan-cylinder-solid.png" src="_images/tutorial-ctscan-cylinder-solid.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">We use the <em>Solid</em> module to create the support cylinder.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once the cylinder is created, we set its material to air. This way, it will not differ from the environment material anymore. You don’t actually need to change its material: it would already be enough to turn off its <img alt="icon-eye" src="_images/16x16_object-visible-on.png" /> <strong>visibility</strong>. The support cylinder will then be ignored during the attenuation simulation, but still fulfil its purpose as the object that shifts the axis of rotation for the <em>CtScan</em> module.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Rename the cylinder object to <code class="code docutils literal notranslate"><span class="pre">Support</span></code> (or any other name you like).</p></li>
+<li><p>Set its material to <code class="code docutils literal notranslate"><span class="pre">air</span></code>.</p></li>
+<li><p>Decrease its opacity in the colour dialog to make it more transparent.</p></li>
+<li><p>Move it upwards in the <em>Assembly List</em> to a position above the <strong>Rotor</strong> to give it the lowest priority.</p></li>
+<li><p>Set its <span class="guilabel">Z</span> position to <code class="code docutils literal notranslate"><span class="pre">190</span></code> mm (our new <abbr title="object-detector distance">ODD</abbr>).</p></li>
+</ol>
+</div>
+<p>When you view the scene from above, you should see something similar to <a class="reference internal" href="#ctscansupportcylinderscene"><span class="std std-numref">Fig. 48</span></a>.</p>
+<div class="figure align-default" id="id6">
+<span id="ctscansupportcylinderscene"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-scene.png"><img alt="_images/tutorial-ctscan-cylinder-scene.png" src="_images/tutorial-ctscan-cylinder-scene.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">We placed the support cylinder at an <abbr title="object-detector distance">ODD</abbr> of 190 mm.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Let’s simulate this new CT scan using the BAM CT format:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Change the file type to <span class="guilabel">BAM CT</span>, and keep <span class="guilabel">16bit</span> as the data type (<a class="reference internal" href="#ctscanwindowbamct"><span class="std std-numref">Fig. 49</span></a>). Click the <img alt="icon-run" src="_images/16x16_compute-run.png" /> <span class="guilabel">Run</span> to start the simulation.</p>
+</div>
+<div class="figure align-default" id="id7">
+<span id="ctscanwindowbamct"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-bamct.png"><img alt="_images/tutorial-ctscan-bamct.png" src="_images/tutorial-ctscan-bamct.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">We simulate the off-axis scan using the BAM CT format.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="fdk-reconstructions">
+<h2>FDK Reconstructions<a class="headerlink" href="#fdk-reconstructions" title="Permalink to this headline">¶</a></h2>
+<p><em>aRT</em>ist comes with a CT reconstruction software (simply called “Feldkamp”) that can read the BAM CT format. If you activate <span class="guilabel">Run Feldkamp</span>, the reconstruction will automatically start right after the CT simulation. It will use the settings from the <em>Feldkamp</em> tab and automatically give it the name of the projection volume.</p>
+</div>
+<div class="section" id="advanced-settings">
+<h2>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="guilabel">Only selected objects</span> is checked, then only the</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial_multi_component_parts.html" class="btn btn-neutral float-left" title="Multi-Component Parts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
