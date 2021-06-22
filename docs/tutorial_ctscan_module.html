@@ -103,8 +103,9 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CtScan Module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#a-simple-ct-scan">A Simple CT Scan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#centre-of-rotation">Centre of Rotation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fdk-reconstructions">FDK Reconstructions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#advanced-settings">Advanced Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fdk-reconstructions">FDK Reconstructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
 </ul>
 </li>
 </ul>
@@ -220,7 +221,7 @@
 <p>For the <span class="guilabel">File Type</span>, you can choose between a stack of <span class="guilabel">TIFF</span> images and the <span class="guilabel">BAM CT</span> format.</p>
 <ul class="simple">
 <li><p><strong>TIFFs:</strong> each projection image will be saved as a single TIFF file. A projection number will be added to the file name. If you choose this format, <em>aRT</em>ist’s reconstruction software will not be able to reconstruct the CT scan.</p></li>
-<li><p><strong>BAM CT</strong> is a format where all projections are stored in a single <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file. It has a header of variable size, followed by the raw data of the projection images. <em>aRT</em>ist’s Feldkamp reconstruction software is able to reconstruct scans from this file format.</p></li>
+<li><p><strong>BAM CT</strong> is a format where all projections are stored in a single <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file. It has a header of variable size, followed by the raw data of the projection images. <em>aRT</em>ist’s Feldkamp reconstruction software is able to reconstruct scans from this file format. You can find a documentation in this handbook under <a class="reference external" href="bamct_file_format.html">BAM CT File Format</a>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -278,13 +279,51 @@
 <p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">We simulate the off-axis scan using the BAM CT format.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
+<div class="section" id="advanced-settings">
+<h2>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h2>
+<p>If <span class="guilabel">Only selected objects</span> is checked, then only the parts you selected from the <em>Assembly List</em> will perform the CT rotation. (Remember that you can select multiple parts by keeping <kbd class="kbd docutils literal notranslate">Ctrl</kbd> pressed.) Any other parts that are not selected will remain fixed at their current position during the CT scan.</p>
+<p>You can choose the <span class="guilabel">Direction</span> of rotation for your CT scan. <span class="guilabel">Counterclockwise</span> will result in a mathematically positive rotation around the <em>Y</em> axis. Consequently, <span class="guilabel">clockwise</span> will be a rotation in mathematically negative direction.</p>
+<p>You can run a scan with photon <span class="guilabel">Scatter</span> simulation activated. For the scatter simulation, <em>aRT</em>ist will use a photon transport Monte-Carlo simulation tool called <em>McRay</em>. It will use the settings from the <em>Scatter</em> tab in the <em>Parameter Panel</em> of the main window. The <span class="guilabel">Interval</span> lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.</p>
+</div>
 <div class="section" id="fdk-reconstructions">
 <h2>FDK Reconstructions<a class="headerlink" href="#fdk-reconstructions" title="Permalink to this headline">¶</a></h2>
 <p><em>aRT</em>ist comes with a CT reconstruction software (simply called “Feldkamp”) that can read the BAM CT format. If you activate <span class="guilabel">Run Feldkamp</span>, the reconstruction will automatically start right after the CT simulation. It will use the settings from the <em>Feldkamp</em> tab and automatically give it the name of the projection volume.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Switch to the <span class="guilabel">Feldkamp</span> tab of the <em>CtScan</em> module window (<a class="reference internal" href="#ctscanwindowfeldkamp"><span class="std std-numref">Fig. 50</span></a>).</p>
 </div>
-<div class="section" id="advanced-settings">
-<h2>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline">¶</a></h2>
-<p>If <span class="guilabel">Only selected objects</span> is checked, then only the</p>
+<div class="figure align-default" id="id8">
+<span id="ctscanwindowfeldkamp"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-feldkamp.png"><img alt="_images/tutorial-ctscan-feldkamp.png" src="_images/tutorial-ctscan-feldkamp.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">The <em>Feldkamp</em> tab of the <em>CtScan</em> module lets us reconstruct a CT scan.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>The <span class="guilabel">File Name</span> is the input file with your projection data. It is already set to the BAM CT projection file that we created during the last simulation. You can also select any other <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file here.</p>
+<p>Activating <span class="guilabel">Interpolate</span> will lead to a linear interpolation between pixel grey values where necessary. <span class="guilabel">Use GPU</span> activates the OpenGL implementation of the reconstruction software, which uses the graphics card to speed up computations. Activating <span class="guilabel">multiple textures</span> can speed up the computation as well: in this mode, the graphics card will try to work on multiple projections in parallel. Instead of single precision, you can turn on calculations with <span class="guilabel">half precision</span> floating point numbers on the graphics card, but it is not recommended.</p>
+<p>You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a <code class="code docutils literal notranslate"><span class="pre">.vgi</span></code> file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) or your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from you detector’s pixel size and the magnification M=SDD/SOD:</p>
+<blockquote>
+<div><p>voxel size = pixel size / M.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <span class="guilabel">Reconstruct</span> to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. ImageJ, or try <em>aRT</em>ist’s <strong>Volume Viewer</strong> (the third tab of the <em>CtScan</em> window: it is not yet explained here, but easy to use, especially with BAM CT files).</p>
+</div>
+<div class="figure align-default" id="id9">
+<span id="ctscanreconstructionimagej"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-rotor-recon.png"><img alt="_images/tutorial-ctscan-rotor-recon.png" src="_images/tutorial-ctscan-rotor-recon.png" style="width: 262.0px; height: 325.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">A slice of the reconstructed <em>Rotor</em> with the <em>Air Pocket</em> visible, viewed in ImageJ.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, the <em>CtScan</em> module was used to simulate a CT scan of the <em>Rotor</em> with an off-centre rotation.</p>
+<ul class="simple">
+<li><p>You know about the limitations of the <em>CtScan</em> module: it assumes an <strong>axis of rotation in *Y* direction</strong> and a centre of rotation whose projection is located in the centre of the detector.</p></li>
+<li><p>You have learned how to set up and simulate a <strong>simple CT scan.</strong></p></li>
+<li><p>You have seen a technique to <strong>shift the centre of rotation</strong> away from the common bounding box centre (by creating a larger common bounding box with a support object).</p></li>
+<li><p>You have created <strong>CT reconstructions</strong> with the built-in <em>Feldkamp</em> software that supports the BAM CT format.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The scene that we created up to this point is available for download:</div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/4e0aaf4ee7a5c51589177542e214572e/tutorial_ctscan.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_ctscan.aRTist</span></code></a> (4.6 MB)</div>
+</div>
 </div>
 </div>
 

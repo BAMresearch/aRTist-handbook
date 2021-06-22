@@ -45,7 +45,7 @@ You can choose a different output :guilabel:`directory` for the projection files
 For the :guilabel:`File Type`, you can choose between a stack of :guilabel:`TIFF` images and the :guilabel:`BAM CT` format.
 
 * **TIFFs:** each projection image will be saved as a single TIFF file. A projection number will be added to the file name. If you choose this format, *aRT*\ ist's reconstruction software will not be able to reconstruct the CT scan.
-* **BAM CT** is a format where all projections are stored in a single :code:`.dd` file. It has a header of variable size, followed by the raw data of the projection images. *aRT*\ ist's Feldkamp reconstruction software is able to reconstruct scans from this file format.
+* **BAM CT** is a format where all projections are stored in a single :code:`.dd` file. It has a header of variable size, followed by the raw data of the projection images. *aRT*\ ist's Feldkamp reconstruction software is able to reconstruct scans from this file format. You can find a documentation in this handbook under `BAM CT File Format <bamct_file_format.html>`_.
 
 .. note:: Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in :numref:`ctScanWindow`). Click the |icon-run| :guilabel:`Run` button to start the scan. The CT simulation should start and you should be able to observe the *Rotor's* rotation around its own centre in the virtual scene. The *Air Pocket* should follow this rotation as well.
 
@@ -118,19 +118,55 @@ Let's simulate this new CT scan using the BAM CT format:
 
     We simulate the off-axis scan using the BAM CT format.
 
+Advanced Settings
+-----------------
+
+If :guilabel:`Only selected objects` is checked, then only the parts you selected from the *Assembly List* will perform the CT rotation. (Remember that you can select multiple parts by keeping :kbd:`Ctrl` pressed.) Any other parts that are not selected will remain fixed at their current position during the CT scan.
+
+You can choose the :guilabel:`Direction` of rotation for your CT scan. :guilabel:`Counterclockwise` will result in a mathematically positive rotation around the *Y* axis. Consequently, :guilabel:`clockwise` will be a rotation in mathematically negative direction.
+
+You can run a scan with photon :guilabel:`Scatter` simulation activated. For the scatter simulation, *aRT*\ ist will use a photon transport Monte-Carlo simulation tool called *McRay*. It will use the settings from the *Scatter* tab in the *Parameter Panel* of the main window. The :guilabel:`Interval` lets you set how often a new scatter image shall be calculated, which is a useful option if you want to speed up computation time. The simulation of scatter radiation will be the topic of another tutorial.
+
 
 FDK Reconstructions
 -------------------
 
 *aRT*\ ist comes with a CT reconstruction software (simply called "Feldkamp") that can read the BAM CT format. If you activate :guilabel:`Run Feldkamp`, the reconstruction will automatically start right after the CT simulation. It will use the settings from the *Feldkamp* tab and automatically give it the name of the projection volume.
 
+.. note:: Switch to the :guilabel:`Feldkamp` tab of the *CtScan* module window (:numref:`ctScanWindowFeldkamp`).
+
+.. _ctScanWindowFeldkamp:
+.. figure:: pictures/tutorial-ctscan-feldkamp.png
+    :width: 55%
+
+    The *Feldkamp* tab of the *CtScan* module lets us reconstruct a CT scan.
+
+The :guilabel:`File Name` is the input file with your projection data. It is already set to the BAM CT projection file that we created during the last simulation. You can also select any other :code:`.dd` file here. 
+
+Activating :guilabel:`Interpolate` will lead to a linear interpolation between pixel grey values where necessary. :guilabel:`Use GPU` activates the OpenGL implementation of the reconstruction software, which uses the graphics card to speed up computations. Activating :guilabel:`multiple textures` can speed up the computation as well: in this mode, the graphics card will try to work on multiple projections in parallel. Instead of single precision, you can turn on calculations with :guilabel:`half precision` floating point numbers on the graphics card, but it is not recommended.
+
+You can name an output file and data type: you can choose between RAW, VTK and BAM CT formats. If you select BAM CT, the module will also create a :code:`.vgi` file that easily lets you read the volume into VGSTUDIO. The matrix size (X and Y direction) or your output volume will be the number of detector columns. The number of detector rows will give the number of slices (Z height). If you need to know the voxel size, you can calculate it from you detector's pixel size and the magnification M=SDD/SOD:
+
+	voxel size = pixel size / M.
+
+.. note:: Click :guilabel:`Reconstruct` to run the reconstruction algorithm. Take a look at your reconstructed volume in a software you like, e.g. ImageJ, or try *aRT*\ ist's **Volume Viewer** (the third tab of the *CtScan* window: it is not yet explained here, but easy to use, especially with BAM CT files).
+
+.. _ctScanReconstructionImageJ:
+.. figure:: pictures/tutorial-ctscan-rotor-recon.png
+    :scale: 100%
+
+    A slice of the reconstructed *Rotor* with the *Air Pocket* visible, viewed in ImageJ.
 
 
+Summary
+-------
 
+In this tutorial, the *CtScan* module was used to simulate a CT scan of the *Rotor* with an off-centre rotation.
 
+* You know about the limitations of the *CtScan* module: it assumes an **axis of rotation in *Y* direction** and a centre of rotation whose projection is located in the centre of the detector.
+* You have learned how to set up and simulate a **simple CT scan.**
+* You have seen a technique to **shift the centre of rotation** away from the common bounding box centre (by creating a larger common bounding box with a support object).
+* You have created **CT reconstructions** with the built-in *Feldkamp* software that supports the BAM CT format.
 
-
-Advanced Settings
------------------
-
-If :guilabel:`Only selected objects` is checked, then only the 
+| The scene that we created up to this point is available for download:
+| :download:`tutorial_ctscan.aRTist <files/tutorial_ctscan.aRTist>` (4.6 MB)

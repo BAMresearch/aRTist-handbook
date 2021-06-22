@@ -179,15 +179,15 @@
 <h1>BAM CT File Format<a class="headerlink" href="#bam-ct-file-format" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="header-size-and-data-offset">
 <h2>Header Size and Data Offset<a class="headerlink" href="#header-size-and-data-offset" title="Permalink to this headline">¶</a></h2>
-<p>A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block. The beginning of the <strong>image data block</strong> is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by</p>
+<p>A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the <strong>image data block</strong> is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by</p>
 <blockquote>
 <div><p>data offset = (number of columns) × (bytes per pixel).</p>
 </div></blockquote>
-<p>If this data offset is smaller than the significant header size of 512 bytes, the data offset will instead be the smallest multiple of the above-shown row length in bytes:</p>
+<p>If this data offset is smaller than the significant header size of 512 bytes, the data offset will instead be a multiple of the above-shown row length in bytes:</p>
 <blockquote>
-<div><p>data offset = N × (number of columns) × (bytes per pixel)</p>
+<div><p>data offset = <em>N</em> × (number of columns) × (bytes per pixel)</p>
 </div></blockquote>
-<p>with the smallest N that leads to a data offset ≥ 512.</p>
+<p>with the smallest integer <em>N</em> that leads to a data offset ≥ 512.</p>
 <p>For example, if you have X-ray projections with 1000 pixel columns and 16 bit grey values (i.e. 2 bytes per pixel), the data offset will be at</p>
 <blockquote>
 <div><p>data offset = 1000 px × 2 bytes/px = 2000 bytes.</p>
@@ -239,9 +239,10 @@
 <p class="admonition-title">Note</p>
 <p>The element at <strong>offset 12 (0xC)</strong> represents one of the following:</p>
 <ul class="simple">
-<li><p><strong>tomograms:</strong> the number of rows in an image</p></li>
-<li><p><strong>projections:</strong> (number of rows) × (number of angular steps)</p></li>
+<li><p>for <strong>tomograms:</strong> the number of rows in an image</p></li>
+<li><p>for <strong>projections:</strong> (number of rows) × (number of angular steps)</p></li>
 </ul>
+<p>The <strong>direction of rotation</strong> is given by the sign of the number of angular steps up to 180° (offset 24, 0x18) and the sign of the <strong>angular step size</strong> (offset 176, 0xB0). Their values are positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).</p>
 </div>
 <table class="docutils align-default">
 <colgroup>
@@ -486,7 +487,7 @@
 <td><p>0xB0</p></td>
 <td><p>1</p></td>
 <td><p>32 bit float</p></td>
-<td><p>Angular separation of detectors [deg]</p></td>
+<td><p>Angular step size between images [deg]</p></td>
 </tr>
 <tr class="row-even"><td><p>180</p></td>
 <td><p>0xB4</p></td>

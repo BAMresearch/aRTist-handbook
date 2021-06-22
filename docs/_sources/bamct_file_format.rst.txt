@@ -4,15 +4,15 @@ BAM CT File Format
 Header Size and Data Offset
 ---------------------------
 
-A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block. The beginning of the **image data block** is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by
+A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the **image data block** is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by
 
 	data offset = (number of columns) × (bytes per pixel).
 
-If this data offset is smaller than the significant header size of 512 bytes, the data offset will instead be the smallest multiple of the above-shown row length in bytes:
+If this data offset is smaller than the significant header size of 512 bytes, the data offset will instead be a multiple of the above-shown row length in bytes:
 
-	data offset = N × (number of columns) × (bytes per pixel)
+	data offset = *N* × (number of columns) × (bytes per pixel)
 
-with the smallest N that leads to a data offset ≥ 512.
+with the smallest integer *N* that leads to a data offset ≥ 512.
 
 For example, if you have X-ray projections with 1000 pixel columns and 16 bit grey values (i.e. 2 bytes per pixel), the data offset will be at
 	
@@ -58,8 +58,10 @@ The following table lists the elements of a BAM CT header.
 
 .. note:: The element at **offset 12 (0xC)** represents one of the following:
 
-	* **tomograms:** the number of rows in an image
-	* **projections:** (number of rows) × (number of angular steps)
+	* for **tomograms:** the number of rows in an image
+	* for **projections:** (number of rows) × (number of angular steps)
+
+	The **direction of rotation** is given by the sign of the number of angular steps up to 180° (offset 24, 0x18) and the sign of the **angular step size** (offset 176, 0xB0). Their values are positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).
 
 ====  =====  =====  ============  =====================================================
 Byte  (hex)  Count  Data Type     Description
@@ -101,7 +103,7 @@ Byte  (hex)  Count  Data Type     Description
 164   0xA4   1      32 bit float  Beam elevation [mm]
 168   0xA8   1      32 bit float  Collimator width [mm]
 172   0xAC   1      32 bit float  Collimator height [mm]
-176   0xB0   1      32 bit float  Angular separation of detectors [deg]
+176   0xB0   1      32 bit float  Angular step size between images [deg]
 180   0xB4   1      32 bit float  PCD clear time per point [s]
 184   0xB8   1      32 bit float  Density correction factor [g/cm]
 188   0xBC   1      32 bit float  ROI centre [mm]
