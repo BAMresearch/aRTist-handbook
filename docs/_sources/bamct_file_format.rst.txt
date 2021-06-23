@@ -63,6 +63,10 @@ The following table lists the elements of a BAM CT header.
 
 	The **direction of rotation** is given by the sign of the number of angular steps up to 180° (offset 24, 0x18) and the sign of the **angular step size** (offset 176, 0xB0). Their values are positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).
 
+	You can calculate the detector's pixel size from the **voxel size** (offset 112, 0x70):
+
+		pixel size = (voxel size) * SDD / SOD
+
 ====  =====  =====  ============  =====================================================
 Byte  (hex)  Count  Data Type     Description
 ====  =====  =====  ============  =====================================================
@@ -87,7 +91,7 @@ Byte  (hex)  Count  Data Type     Description
 100   0x64   1      32 bit float  Start angle
 104   0x68   1      32 bit float  Scan centre point [mm] (horizontal position)
 108   0x6C   1      32 bit float  Scan length without ramp [mm]
-112   0x70   1      32 bit float  Sampling step size [mm] (horizontal)
+112   0x70   1      32 bit float  Voxel size [mm] (sample size)
 116   0x74   1      32 bit float  Stage elevation [mm] (vertical position)
 120   0x78   1      32 bit float  Elevation increment [mm]
 124   0x7C   1      32 bit float  Source-object distance SOD [mm]
