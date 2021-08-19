@@ -8,29 +8,27 @@ The *aRT*\ ist program comes as a Microsoft Windows application. The system requ
 
 It is possible to use *aRT*\ ist on low prize netbook hardware. But it is recommended to run it on computers with multi (core) processor and accelerated graphical processing unit (OpenGL 2.1) to have the necessary calculation speed for treating ambitious simulation tasks efficiently.
 
-
 Licenses
 --------
 
 The *aRT*\ ist program is equipped with software protection mechanisms and needs license activation for full functionality. Without activation, the program runs in Lite mode of reduced functionality. In case of licensing errors, e.g. broken license file, the program might still be usable to arrange and review virtual scenes, but it is not possible to make any simulations (viewer mode).
 
-.. note:: An **evaluation period** of 30 days is granted without any license activation (DEMOMODE).
+.. note:: Demo licenses can be provided on request for an **evaluation period** of 30 days (DEMOVERSION), see :ref:`activationrequest`.
 
-An *aRT*\ ist license is shipped as serial number, which can be used to activate an *aRT*\ ist installation.
+An *aRT*\ ist license is shipped as serial number, which can be used to activate an *aRT*\ ist installation. License activation is a tow-steps process: sending an activaion request via email and installing the activated license file received in response, see :ref:`licenseactivation`.
 
 .. note:: Licenses can be bound to a specific PC **(node-locked license)** or shared among different installations **(network license).**
 
 The *aRT*\ ist licenses can be used either node-locked or shared within a network. A node-locked license is assigned to one specific PC. With network licensing the *aRT*\ ist program can be installed on several PCs with access to the same license file. In this case *aRT*\ ist can be alternately used on different PCs (floating license). To run several *aRT*\ ist installations at the same time it is possible to assign more than one license to the shared license file.
 
-
 Installation instructions
 -------------------------
 
-The radiographic simulator *aRT*\ ist comes with an installation routine :file:`aRTistSetup-X.X.X.exe` (where X.X.X is replaced by the version number). For installation execute the setup routine you got with your distribution. A dialog will appear (:numref:`installationWelcomeScreen`) and guide you through the installation process.
+The radiographic simulator *aRT*\ ist comes with an installation routine :file:`aRTistSetup-X.X.X-64bit.exe` (where X.X.X is the version number). For installation download and execute the setup routine you got with your distribution. A dialog will appear (:numref:`installationWelcomeScreen`) and guide you through the installation process.
 
-.. warning:: If *aRT*\ ist is already installed, the installation routine will ask for de-installation of the current version before proceeding with the installation process, if necessary. Consequently, installations with the same version number will be replaced, while installations with different version numbers can coexist on the same PC.
+.. note:: If *aRT*\ ist is already installed, the installation routine will prompt you to deinstall the current version if necessary before proceeding with the installation process. Consequently, installations with the same version number (X.X) will be replaced, while installations with different version numbers can coexist on the same PC.
 
-During the installation process, you can choose options like the generation of a Windows Start Menu entry and a Windows Desktop icon for convenient program execution. After installation *aRT*\ ist is ready to use. Without an active and valid license aRTist will run with the restricted functionality of Lite/Viewer mode only.
+During the installation process, you can choose options such as generating a Windows Start Menu entry and a Windows Desktop icon for convenient program execution (:numref:`installationOptions`). After the installation, *aRT*\ ist is ready to use. Without an active and valid license, aRTist only runs with the limited functionality of Lite/Viewer mode.
 
 In the next section you will find information on reqesting an evaluation or permanent license activation.
 
@@ -47,8 +45,9 @@ In the next section you will find information on reqesting an evaluation or perm
     :alt: Installer option selection
     :width: 65%
 
-    Installer option selection.
+    Installation options dialog.
 
+.. _licenseactivation:
 
 License activation
 ------------------
@@ -57,17 +56,20 @@ License activation
 
 The actual license status can be displayed under :guilabel:`License information` from the :guilabel:`Help` menu (:numref:`licenseInformationDialog`).
 
+.. _activationrequest:
 
 Activation request
 ^^^^^^^^^^^^^^^^^^
 
-The activation request requires information about your *aRT*\ ist installation. The necessary information can be collected at the license information dialog of *aRT*\ ist (:guilabel:`Help` menu → :guilabel:`License information`). There are options to apply for node-locked or network licensing and to request an evaluation period. E-mail the request to `aRTist@bam.de <mailto:aRTist@bam.de>`_.
-
-In response to an activation request, you will get back an activated license file within the next business days.
+The activation request requires information about your *aRT*\ ist installation. The necessary information can be collected at the license information dialog of *aRT*\ ist (:guilabel:`Help` menu → :guilabel:`License information`) at section "License activation". There are options to apply for node-locked or network licensing and to request an evaluation period. 
 
 .. note:: To request a network license, a shared network folder has to be prepared in advance. It is required to store the common license file. 
 
 .. note:: All users of the network license need to have write permission for the license file. 
+
+Press the button :guilabel:`Generate activation request` to display the activation request (it will also be copied to your clipboard). Please email this request to `aRTist@bam.de <mailto:aRTist@bam.de>`_.
+
+In response to an activation request, you will receive an activated license file back within the next working days.
 
 .. _licenseInformationDialog:
 .. figure:: pictures/artist-licenseinformation.png
@@ -80,10 +82,19 @@ In response to an activation request, you will get back an activated license fil
 License file installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The final step to activate a license is to install the license file provided in response to the activation request. Generally, this means overwriting the temporary license file by the activated one.
+The final step in activating a license is to install the license file provided in response to the activation request. Open the license file in *aRT*\ ist to start the dialog for installing a licnese file. During isntallation, the temporary license file will be overwritten by the activated one.
 
-The license file installation can be done just by opening the license file in *aRT*\ ist.
+.. note:: Just Drag'n'Drop the license file over the *aRT*\ ist window/icon to install it.
 
-.. note:: Just Drag'n'Drop the license file over the *aRT*\ ist window to install it.
+A license file for network licensing also only needs to be installed once. One, first computer with an *aRT*\ ist installation is used to finally install the licene file (copy the license file to the network share). Opening a network license file in *aRT*\ ist will show a dialog **"Use (not install) this network license?"** which needs to be answered with :guilabel:`No` to initiate the installation. a subsequent dialog will ask for the localtion of the common license file. It is important to enter the path of the activation request, as the license file was activated for exactly this path. To use this license at other computers in the network, the location of the license file has to be configured. A procedure simelar to the license file installation can be used, see :ref:`configurenetworklicensing`.
 
-.. note:: The same applies to use an already activated network license at additional PCs: Just Drag'n'Drop the license file from the network folder over the *aRT*\ ist window. Answer the subsequent dialog **"Use (not install) this network license?"** with :guilabel:`Yes`. 
+.. _configurenetworklicensing:
+
+Configure network licensing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Network licensing is realized by providing one common license file at a network folder. Any computer in the network can be used for *aRT*\ ist if the user has access to this common license file. To use the network license with *aRT*\ ist, the location of the license file has to be configured in the program.
+
+The procedure to configure the network license file in *aRT*\ ist is, simelar to installing a license file, to open it in *aRT*\ ist. Here it is important to open the original file at the network folder, not any local copy. The subsequent dialog **"Use (not install) this network license?"** needs to be answered with :guilabel:`Yes`.
+
+.. note:: Just Drag'n'Drop the license file from the network folder over the *aRT*\ ist window. Answer the subsequent dialog **"Use (not install) this network license?"** with :guilabel:`Yes`. 
