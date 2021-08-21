@@ -22,7 +22,7 @@ copyright = '2021, BAM, Bundesanstalt für Materialforschung und -prüfung'
 author = 'BAM, Bundesanstalt für Materialforschung und -prüfung'
 
 # The full version, including alpha/beta/rc tags
-release = '2.10.4'
+release = '2.12'
 
 
 # -- General configuration ---------------------------------------------------
@@ -71,3 +71,25 @@ html_favicon = 'favicon.ico'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# -- Options for LaTeX output -------------------------------------------------
+latex_engine = 'pdflatex'
+latex_toplevel_sectioning = 'chapter'  # part, section or chapter
+latex_elements = {
+	'papersize': 'a4paper',
+	'pointsize': '11pt',
+	'fontpkg': r'''
+		\usepackage{ptsans}
+		\usepackage{charter}
+	''',
+	'preamble': r"""
+		\usepackage{newunicodechar}
+		\newunicodechar{≤}{\ensuremath{\leq}}
+		\newunicodechar{≥}{\ensuremath{\geq}}
+		\newunicodechar{ρ}{\ensuremath{\rho}}
+		\newunicodechar{π}{\ensuremath{\pi}}
+		\newunicodechar{⋅}{\ensuremath{\cdot}}
+		\newunicodechar{≈}{\ensuremath{\approx}}
+	"""
+}

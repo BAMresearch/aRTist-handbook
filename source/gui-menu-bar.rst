@@ -12,7 +12,7 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 .. _guiFileMenu:
 .. figure:: pictures/gui-menu-file.png
     :alt: aRTist file menu
-    :scale: 100%
+    :width: 60%
 
     File menu.
 
@@ -29,9 +29,13 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
 
 .. |icon-open| image:: pictures/icons/16x16_document-open-folder.png
+    :width: 16
 .. |icon-library| image:: pictures/icons/16x16_library.png
+    :width: 16
 .. |icon-save| image:: pictures/icons/16x16_document-save.png
+    :width: 16
 .. |icon-saveas| image:: pictures/icons/16x16_document-save-as.png
+    :width: 16
 
 
 Edit menu
@@ -42,7 +46,7 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 .. _guiEditMenu:
 .. figure:: pictures/gui-menu-edit.png
     :alt: aRTist edit menu
-    :scale: 100%
+    :width: 20%
 
     Edit menu.
 
@@ -55,11 +59,17 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 * |icon-delete| **Delete** removes selected parts from the *Assembly List*. 
 
 .. |icon-undo| image:: pictures/icons/16x16_edit-undo.png
+    :width: 16
 .. |icon-redo| image:: pictures/icons/16x16_edit-redo.png
+    :width: 16
 .. |icon-cut| image:: pictures/icons/16x16_edit-cut.png
+    :width: 16
 .. |icon-copy| image:: pictures/icons/16x16_edit-copy.png
+    :width: 16
 .. |icon-paste| image:: pictures/icons/16x16_edit-paste.png
+    :width: 16
 .. |icon-delete| image:: pictures/icons/16x16_edit-delete.png
+    :width: 16
 
 
 Geometry menu
@@ -70,7 +80,7 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 .. _guiGeometryMenu:
 .. figure:: pictures/gui-menu-geometry.png
     :alt: aRTist geometry menu
-    :scale: 100%
+    :width: 20%
 
     Geometry menu.
 
@@ -87,10 +97,18 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 * |icon-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
 
 .. |icon-centernew| image:: pictures/icons/16x16_center-new.png
+    :width: 16
 .. |icon-eye| image:: pictures/icons/16x16_object-visible-on.png
+    :width: 16
 .. |icon-union| image:: pictures/icons/16x16_boolean-union.png
+    :width: 16
 .. |icon-intersection| image:: pictures/icons/16x16_boolean-intersection.png
+    :width: 16
 .. |icon-difference| image:: pictures/icons/16x16_boolean-difference.png
+    :width: 16
 .. |icon-solid| image:: pictures/icons/16x16_icon-solid.png
+    :width: 16
 .. |icon-arrange| image:: pictures/icons/16x16_icon-arrange.png
+    :width: 16
 .. |icon-pickposition| image:: pictures/icons/16x16_edit-pickposition.png
+    :width: 16

@@ -1,9 +1,9 @@
+Multi-Component Parts
+=====================
+
 .. note:: We continue with the project from the "Materials" tutorial. You can download it here if you need the current state:
 
 	 :download:`tutorial_materials.aRTist <files/tutorial_materials.aRTist>` |nbsp| (4.6 MB)
-
-Multi-Component Parts
-=====================
 
 Each part on the *Assembly List* is a solid that can only have one single material. We can place multiple parts into the scene, each with a different material. In regions of space where these parts overlap, there is a strict hierarchy: objects that appear later in the *Assembly List* (towards the bottom) have a higher priority and completely replace previous objects (of lower priority). We can use this fact to build objects from components that all have different materials.
 
@@ -18,6 +18,7 @@ The *Solid* module can generate simple geometric solids like spheres, cuboids, e
 .. note:: In the *Toolbar*, click the button |icon-solid| :guilabel:`Generate simple geometric object` or open the module from the menu bar: :guilabel:`Modules` → :guilabel:`Solid`.
 
 .. |icon-solid| image:: pictures/icons/32x32_icon-solid.png
+    :width: 32
 
 .. _solidModule:
 .. figure:: pictures/tutorial-multimaterial-solid-module.png
@@ -51,6 +52,7 @@ The sphere will appear with the name *"ellipsoid"* on the *Assembly List*. It is
 When you click |icon-zoom-to-selection| :guilabel:`Zoom to Selection` in the *Toolbar*, you should see the sphere, located in the centre of the detector at the origin of the coordinate system (:numref:`airpocketCreated`).
 
 .. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
+    :width: 32
 
 .. _airpocketCreated:
 .. figure:: pictures/tutorial-multimaterial-airpocket-created.png
@@ -68,13 +70,14 @@ The *Air Pocket* appears after the *Rotor* in the *Assembly List*. Therefore, it
 
 .. _airpocketCoordinates:
 .. figure:: pictures/tutorial-multimaterial-airpocket-coordinates.png
-	:scale: 85%
+	:width: 40%
 
 	We place the *Air Pocket* at coordinates inside the *Rotor*.
 
 .. note:: To see the *Air Pocket* in the virtual scene, make the *Rotor* transparent: double-click on its colour in the *Assembly List* and decrease its *Opacity* (:numref:`rotorTransparency`). Alternatively, you could switch its rendering mode to |icon-wireframe| **Wireframe View**.
 
 .. |icon-wireframe| image:: pictures/icons/32x32_switch-wireframe.png
+    :width: 32
 
 .. _rotorTransparency:
 .. figure:: pictures/tutorial-multimaterial-rotor-transparency.png
@@ -85,16 +88,18 @@ The *Air Pocket* appears after the *Rotor* in the *Assembly List*. Therefore, it
 You should now also be able to identify the *Air Pocket* in the projection image that the *Image Viewer* displays. It is easier to see when you simulate a full projection image (click the |icon-run| :guilabel:`Compute` button) and zoom in. You may even select a region of interest (ROI) to enhance the local contrast (:numref:`airpocketImageViewer`).
 
 .. |icon-run| image:: pictures/icons/32x32_compute-radiography.png
+    :width: 32
 
 .. _airpocketImageViewer:
 .. figure:: pictures/tutorial-multimaterial-imageviewer-airpocket.png
-	:scale: 85%
+	:width: 40%
 
 	The *Air Pocket* becomes visible in the projection image. A region of interest (blue rectangle) is selected to rescale the display range and enhance the local contrast.
 
 .. note:: Toggle the visibility of the *Air Pocket* with its |icon-visible| **visibility switch** in the *Assembly List.* Observe how it disappears and reappears in the projection image. When you are done, please keep it visible so that you can still see it for the next step.
 
 .. |icon-visible| image:: pictures/icons/16x16_object-visible-on.png
+    :width: 16
 
 
 Order of Parts (Hierarchy)
@@ -114,7 +119,7 @@ After we re-arranged the order of parts, the *Air Pocket* is not visible anymore
 
 .. _airpocketInvisible:
 .. figure:: pictures/tutorial-multimaterial-imageviewer-airpocket-disappeared.png
-	:scale: 85%
+	:width: 40%
 
 	The *Air Pocket* disappeared from the projection image as it is replaced by *Rotor* material.
 
@@ -150,8 +155,11 @@ Both the *Rotor* and the *Air Pocket* should now be selected. There should be a 
 	5. Click to the **right** of the transform slider handle to perform one rotation step.
 
 .. |icon-world| image:: pictures/icons/22x22_world-coordinate-system.png
+    :width: 22
 .. |icon-rotation| image:: pictures/icons/22x22_transformation-rotate.png
+    :width: 22
 .. |icon-arrow-down| image:: pictures/icons/22x22_set-coordinate-arrow-down.png
+    :width: 22
 
 Both the *Rotor* and the *Air Pocket* should now rotate around the *Rotor's* central axis and keep their relative positions. This means that the *Air Pocket* travels by 45° in counter-clockwise direction in the projection image. (This is because the *Z* vector points away from the detector towards the source.)
 
@@ -180,6 +188,7 @@ We can now use this new reference position as the centre of rotation.
 	2. Click 8× to the **right** of the transform slider to perform one full rotation of the group of parts. Observe how they both rotate around the reference position, both in the virtual scene and in the projection image. They keep their positions relative to each other.
 
 .. |icon-zoom-to-fit| image:: pictures/icons/22x22_zoom-fit-best.png
+    :width: 22
 
 You can also use the reference position as the **scaling centre**; this works in the same way. And, of course, you can also use the *Transformation* controls to translate selected parts as a group.
 
