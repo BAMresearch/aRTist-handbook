@@ -14,7 +14,7 @@ This manual is intended as a practical guide for the use of the radiographic sim
 
 The information in this manual is for reference and informational use only. We assume no responsibility or liability for any inaccuracies or errors in this document.
 
-.. note:: This manual refers to *aRT*\ ist version **2.10.4**.
+.. note:: This manual refers to *aRT*\ ist version **2.12**.
 
 | Contact information:
 | `aRTist@bam.de <mailto:aRTist@bam.de>`_
