@@ -32,8 +32,12 @@ release = '2.12'
 # ones.
 extensions = [
 	"sphinx_rtd_theme",
-	"sphinx.ext.autosectionlabel"
+	"sphinx.ext.autosectionlabel", 
+	"sphinx.ext.imgmath"   # to render equations as PNG images and avoid externally loaded JavaScript libraries
 ]
+
+imgmath_latex_preamble = """\\usepackage{sansmathfonts}
+\\usepackage{amsmath, amssymb}"""
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -87,9 +91,48 @@ latex_elements = {
 		\usepackage{newunicodechar}
 		\newunicodechar{≤}{\ensuremath{\leq}}
 		\newunicodechar{≥}{\ensuremath{\geq}}
-		\newunicodechar{ρ}{\ensuremath{\rho}}
-		\newunicodechar{π}{\ensuremath{\pi}}
 		\newunicodechar{⋅}{\ensuremath{\cdot}}
 		\newunicodechar{≈}{\ensuremath{\approx}}
+		\newunicodechar{×}{\ensuremath{\times}}
+		\newunicodechar{→}{\ensuremath{\rightarrow}}
+		
+		\newunicodechar{α}{\ensuremath{\alpha}}
+		\newunicodechar{β}{\ensuremath{\beta}}
+		\newunicodechar{γ}{\ensuremath{\gamma}}
+		\newunicodechar{δ}{\ensuremath{\delta}}
+		\newunicodechar{ϵ}{\ensuremath{\epsilon}}
+		\newunicodechar{ε}{\ensuremath{\varepsilon}}
+		\newunicodechar{ζ}{\ensuremath{\zeta}}
+		\newunicodechar{η}{\ensuremath{\eta}}
+		\newunicodechar{θ}{\ensuremath{\theta}}
+		\newunicodechar{ϑ}{\ensuremath{\vartheta}}
+		\newunicodechar{ι}{\ensuremath{\iota}}
+		\newunicodechar{κ}{\ensuremath{\kappa}}
+		\newunicodechar{λ}{\ensuremath{\lambda}}
+		\newunicodechar{μ}{\ensuremath{\mu}}
+		\newunicodechar{ν}{\ensuremath{\nu}}
+		\newunicodechar{ξ}{\ensuremath{\xi}}
+		\newunicodechar{π}{\ensuremath{\pi}}
+		\newunicodechar{ρ}{\ensuremath{\rho}}
+		\newunicodechar{σ}{\ensuremath{\sigma}}
+		\newunicodechar{τ}{\ensuremath{\tau}}
+		\newunicodechar{υ}{\ensuremath{\upsilon}}
+		\newunicodechar{φ}{\ensuremath{\phi}}
+		\newunicodechar{ϕ}{\ensuremath{\varphi}}
+		\newunicodechar{χ}{\ensuremath{\chi}}
+		\newunicodechar{ψ}{\ensuremath{\psi}}
+		\newunicodechar{ω}{\ensuremath{\omega}}
+
+		\newunicodechar{Γ}{\ensuremath{\Gamma}}
+		\newunicodechar{Δ}{\ensuremath{\Delta}}
+		\newunicodechar{Θ}{\ensuremath{\Theta}}
+		\newunicodechar{Λ}{\ensuremath{\Lambda}}
+		\newunicodechar{Ξ}{\ensuremath{\Xi}}
+		\newunicodechar{Π}{\ensuremath{\Pi}}
+		\newunicodechar{Σ}{\ensuremath{\Sigma}}
+		\newunicodechar{ϒ}{\ensuremath{\Upsilon}}
+		\newunicodechar{Φ}{\ensuremath{\Phi}}
+		\newunicodechar{Ψ}{\ensuremath{\Psi}}
+		\newunicodechar{Ω}{\ensuremath{\Omega}}
 	"""
 }

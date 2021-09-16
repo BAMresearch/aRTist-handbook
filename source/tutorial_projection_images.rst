@@ -1,13 +1,13 @@
 Projection Images
 =================
 
+In the previous tutorials, we have already seen preview images of radiographic projections in the *Image Viewer.* In this tutorial, this module will be explained in more detail and you will learn how to run full simulations of projection images.
+
+This tutorial will be mostly explanatory. Feel free to try everything and experiment with the features that are described. There will be no explicit instructions that you must follow.
+
 .. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
 
      :download:`tutorial_materials.aRTist <files/tutorial_materials.aRTist>` |nbsp| (4.6 MB)
-
-In the previous tutorials, we have already seen preview images of radiographic projections in the *Image Viewer.* In this tutorial, this module will be explained in more detail and you will learn how to run full simulations of projection images.
-
-This tutorial will be mostly explanatory. Feel free to try everything and experiment with the features that are described. There will be no explicit instructions.
 
 Image Viewer
 ------------

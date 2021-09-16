@@ -48,3 +48,4 @@ The information in this manual is for reference and informational use only. We a
    tutorial_projection_images
    tutorial_multi_component_parts
    tutorial_ctscan_module
+   tutorial_xray_source

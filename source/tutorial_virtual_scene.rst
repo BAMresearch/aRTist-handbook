@@ -15,7 +15,7 @@ When you start *aRT*\ ist, it will show you an empty **scene** (:numref:`blankSc
 *aRT*\ ist's standard coordinate system is shown in :numref:`standardCoordinateSystem`. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the *Z* axis. For a standard CT set-up, the axis of rotation would point in the direction of the *Y* axis.
 
 .. _standardCoordinateSystem:
-.. figure:: pictures/coordinate-system.png
+.. figure:: pictures/tutorial-virtualscene-coordinate-system.png
     :alt: aRTist standard coordinate system
     :width: 65%
 

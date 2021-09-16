@@ -7,14 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>BAM CT File Format &mdash; aRTist 2.10.4 documentation</title>
+  <title>BAM CT File Format &mdash; aRTist 2.12 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -33,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -110,6 +108,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
 </ul>
 
             
@@ -197,7 +196,7 @@
 </div>
 <div class="section" id="byte-order">
 <h2>Byte Order<a class="headerlink" href="#byte-order" title="Permalink to this headline">¶</a></h2>
-<p>Any header or image data unit that is stored in more than 1 byte can be either written in <em>big-endian byte order</em> or in <em>little-endian byte order</em>. Since today’s CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with <em>aRT</em>ist use.</p>
+<p>Any header or image data unit that is stored in more than 1 byte can be either written in <em>big-endian byte order</em> or in <em>little-endian byte order</em>. The first 12 bytes of the header reveal which byte order is used (see “File Name” section). Since today’s CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with <em>aRT</em>ist use.</p>
 </div>
 <div class="section" id="file-name">
 <h2>File Name<a class="headerlink" href="#file-name" title="Permalink to this headline">¶</a></h2>
@@ -241,13 +240,13 @@
 <p class="admonition-title">Note</p>
 <p>The element at <strong>offset 12 (0xC)</strong> represents one of the following:</p>
 <ul class="simple">
-<li><p>for <strong>tomograms:</strong> the number of rows in an image</p></li>
-<li><p>for <strong>projections:</strong> (number of rows) × (number of angular steps)</p></li>
+<li><p>for <strong>tomograms:</strong> the number of rows in an image,</p></li>
+<li><p>for <strong>projections:</strong> (number of rows) × (number of angular steps).</p></li>
 </ul>
 <p>The <strong>direction of rotation</strong> is given by the sign of the number of angular steps up to 180° (offset 24, 0x18) and the sign of the <strong>angular step size</strong> (offset 176, 0xB0). Their values are positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).</p>
 <p>You can calculate the detector’s pixel size from the <strong>voxel size</strong> (offset 112, 0x70):</p>
 <blockquote>
-<div><p>pixel size = (voxel size) * SDD / SOD</p>
+<div><p>pixel size = (voxel size) × SDD / SOD.</p>
 </div></blockquote>
 </div>
 <table class="docutils align-default">
@@ -613,7 +612,7 @@
 <td><p>0x1FC</p></td>
 <td><p>4</p></td>
 <td><p>8 bit char</p></td>
-<td><p>Reserved</p></td>
+<td><p><em>Reserved</em></p></td>
 </tr>
 <tr class="row-even"><td><p>512</p></td>
 <td><p>0x200</p></td>

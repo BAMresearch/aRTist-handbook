@@ -74,7 +74,7 @@ In response to an activation request, you will receive an activated license file
 .. _licenseInformationDialog:
 .. figure:: pictures/artist-licenseinformation.png
     :alt: License information dialog
-    :scale: 100%
+    :width: 70%
 
     License information dialog.
 

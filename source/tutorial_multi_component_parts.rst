@@ -1,14 +1,13 @@
 Multi-Component Parts
 =====================
 
-.. note:: We continue with the project from the "Materials" tutorial. You can download it here if you need the current state:
-
-	 :download:`tutorial_materials.aRTist <files/tutorial_materials.aRTist>` |nbsp| (4.6 MB)
-
 Each part on the *Assembly List* is a solid that can only have one single material. We can place multiple parts into the scene, each with a different material. In regions of space where these parts overlap, there is a strict hierarchy: objects that appear later in the *Assembly List* (towards the bottom) have a higher priority and completely replace previous objects (of lower priority). We can use this fact to build objects from components that all have different materials.
 
 In this tutorial, we will create a small air pocket and place it inside the *Rotor*.
 
+.. note:: We continue with the project from the "Materials" tutorial. You can download it here if you need the current state:
+
+	 :download:`tutorial_materials.aRTist <files/tutorial_materials.aRTist>` |nbsp| (4.6 MB)
 
 Solid Module
 -------------
@@ -31,7 +30,7 @@ You can choose the :guilabel:`Type` of solid that you would like to generate. Ex
 :guilabel:`Phi steps` basically controls the resolution of the solid's mesh, or the number of steps on a step wedge. :guilabel:`Theta steps` is available for ellipsoids if you create a :guilabel:`regular ellipsoid grid`. In this case, :guilabel:`phi` and :guilabel:`theta` refer to the two angles of a spherical coordinate system.
 
 .. _availableSolids:
-.. figure:: pictures/solids.png
+.. figure:: pictures/tutorial-multimaterial-solids.png
 	:width: 90%
 
 	The basic geometric solids that can be generated in the *Solids* module.

@@ -1,11 +1,11 @@
-.. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
-
-     :download:`tutorial_positioning.aRTist <files/tutorial_positioning.aRTist>` |nbsp| (4.6 MB)
-
 Materials
 ==========
 
 *aRT*\ ist approximates the X-ray attenuation coefficients of chemical compounds from the attenuation properties of their single chemical elements. It uses the elementary mass attenuation coefficients from the *Evaluated Nuclear Data File (ENDF)*. Higher-order structural effects such as the electron band structure of crystals or the orbital configurations of molecules are not taken into account. Any material is simulated as "the sum of its elementary parts."
+
+.. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
+
+     :download:`tutorial_positioning.aRTist <files/tutorial_positioning.aRTist>` |nbsp| (4.6 MB)
 
 
 Materials Editor
@@ -16,6 +16,7 @@ Materials Editor
 .. note:: In the toolbar, click the button |icon-material-editor| :guilabel:`Edit material properties` or open it from the Menu bar: :guilabel:`Tools` → :guilabel:`Materials...`
 
 .. |icon-material-editor| image:: pictures/icons/22x22_edit-materials.png
+    :width: 22
 
 .. _materialsEditor:
 .. figure:: pictures/tutorial-materials-editor.png
@@ -41,10 +42,11 @@ In the materials editor, this compound would be represented as :code:`Al2O3 0.4 
 	Click :guilabel:`Apply` to save the list.
 
 .. |icon-add| image:: pictures/icons/16x16_list-add.png
+    :width: 16
 
 .. _materialsEditorAddNew:
 .. figure:: pictures/tutorial-materials-editor-add-material.png
-    :width: 75%
+    :width: 70%
 
     We add the glass ceramic as a new material.
 
@@ -57,6 +59,7 @@ Attenuation Data Viewer
 For each material, you can display the |icon-attenuation| **attenuation data** that *aRT*\ ist will use during the simulation.
 
 .. |icon-attenuation| image:: pictures/icons/16x16_show-attenuation.png
+    :width: 16
 
 .. note:: Make sure that our *Glass Ceramic* is selected in the *Materials Editor* and click on |icon-attenuation|.
 
@@ -77,10 +80,15 @@ If you want to display a different photon energy range, you can enter it in the 
 | |box-purple| The contribution from **pair production** (purple line) becomes relevant at photon energies above twice the electron rest mass: h⋅f > 2 m\ :sub:`e`\ c\ :sup:`2` |nbsp| (1.022 MeV).
 
 .. |box-black| image:: pictures/icons/box_black.png
+    :width: 16
 .. |box-blue| image:: pictures/icons/box_blue.png
+    :width: 16
 .. |box-red| image:: pictures/icons/box_red.png
+    :width: 16
 .. |box-green| image:: pictures/icons/box_green.png
+    :width: 16
 .. |box-purple| image:: pictures/icons/box_purple.png
+    :width: 16
 
 .. note:: Switch to the :guilabel:`Text` tab to display the data as a text table. (:numref:`attenuationViewerText`)
 
@@ -93,6 +101,7 @@ If you want to display a different photon energy range, you can enter it in the 
 You can save the attenuation data as a text file with the |icon-saveas| :guilabel:`Save` button in the upper right corner of the *Attenuation Viewer*.
 
 .. |icon-saveas| image:: pictures/icons/16x16_document-save-as.png
+    :width: 16
 
 .. note:: Close the *Attenuation Viewer* and the *Materials Editor.*
 
@@ -106,7 +115,7 @@ We now want to set the *Rotor's* material to the *Glass Ceramic* that we have cr
 
 .. _materialDropDown:
 .. figure:: pictures/tutorial-materials-rotor-assembly-list.png
-    :scale: 100%
+    :width: 40%
 
     We set the *Glass Ceramic* as the *Rotor's* material.
 

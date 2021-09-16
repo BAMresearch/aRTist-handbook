@@ -19,7 +19,7 @@ When an object rotates in space, the directions of the three axes of its **local
 In the example illustrated in :numref:`worldLocalCoordinateSystem`, the detector's local coordinate system {X\ :sub:`D`, Y\ :sub:`D`, Z\ :sub:`D`} has the same origin and alignment as the world coordinate system. The source's local coordinate system {X\ :sub:`S`, Y\ :sub:`S`, Z\ :sub:`S`} has the same alignment, but its origin is at a different point in the world coordinate system, somewhere along the positive *Z* axis. The *Rotor's* local coordinate system has also a different origin, and additionally a different alignment (orientation) relative to the world coordinate system.
 
 .. _worldLocalCoordinateSystem:
-.. figure:: pictures/coordinate-system-world-local.png
+.. figure:: pictures/tutorial-virtualscene-coordinate-system-world-local.png
     :width: 80%
 
     The world coordinate system {X, Y, Z} and the local coordinate systems of the three objects in the scene.

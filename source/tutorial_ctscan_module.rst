@@ -1,11 +1,11 @@
 CtScan Module
 =============
 
+In this tutorial, the *CtScan* module will be explained. It allows to simulate simple CT scans.  There will be another tutorial about more advanced geometries and trajectories, using the *TomoSynth* module.
+
 .. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
 
      :download:`tutorial_multiple_components.aRTist <files/tutorial_multiple_components.aRTist>` |nbsp| (4.6 MB)
-
-In this tutorial, the *CtScan* module will be explained. It allows to simulate simple CT scans.  There will be another tutorial about more advanced geometries and trajectories, using the *TomoSynth* module.
 
 .. warning:: The *CtScan* module always uses an axis of rotation that points in **Y direction** of the world coordinate system. Also, it will always place the center of rotation on the **principal ray** connecting the source and the detector centre.
 

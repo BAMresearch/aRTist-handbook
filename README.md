@@ -17,6 +17,10 @@ The source files are all located in the `source` folder. To create the HTML docu
 
     make html
 
+To create a PDF version using LaTeX, run
+
+	make latexpdf
+
 To build everything anew from scratch, delete the `build` folder or run
 
     make clean

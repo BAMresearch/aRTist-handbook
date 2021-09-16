@@ -7,14 +7,12 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Menu bar &mdash; aRTist 2.10.4 documentation</title>
+  <title>Menu bar &mdash; aRTist 2.12 documentation</title>
   
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -33,10 +31,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -112,6 +110,7 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
 </ul>
 
             
@@ -188,15 +187,15 @@
 <h2>File menu<a class="headerlink" href="#file-menu" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="guilabel">File</span> drop-down menu comprises commands referring to the current project.</p>
 <div class="figure align-default" id="id1">
-<span id="guifilemenu"></span><a class="reference internal image-reference" href="_images/gui-menu-file.png"><img alt="aRTist file menu" src="_images/gui-menu-file.png" style="width: 401.0px; height: 228.0px;" /></a>
+<span id="guifilemenu"></span><a class="reference internal image-reference" href="_images/gui-menu-file.png"><img alt="aRTist file menu" src="_images/gui-menu-file.png" style="width: 60%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">File menu.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>New Project</strong> opens a new <em>aRT</em>ist scheme. This may also be done by pressing <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">n</kbd>. The program will ask you if you want to save the changes on your current project.</p></li>
-<li><p><img alt="icon-open" src="_images/16x16_document-open-folder.png" /> <strong>Open</strong> is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">o</kbd>.</p></li>
-<li><p><img alt="icon-library" src="_images/16x16_library.png" /> <strong>Open Library</strong>  is used to load something from the collection of example parts and projects. It can also be opened by pressing <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">l</kbd>.</p></li>
-<li><p><img alt="icon-save" src="_images/16x16_document-save.png" /> <strong>Save</strong> the current project to a single file. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">s</kbd>.</p></li>
-<li><p><img alt="icon-saveas" src="_images/16x16_document-save-as.png" /> <strong>Save As</strong> renames a project or changes the location of where you want to save it. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">shift</kbd> + <kbd class="kbd docutils literal notranslate">s</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="icon-open" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> <strong>Open</strong> is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">o</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_library.png"><img alt="icon-library" src="_images/16x16_library.png" style="width: 16px;" /></a> <strong>Open Library</strong>  is used to load something from the collection of example parts and projects. It can also be opened by pressing <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">l</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_document-save.png"><img alt="icon-save" src="_images/16x16_document-save.png" style="width: 16px;" /></a> <strong>Save</strong> the current project to a single file. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">s</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_document-save-as.png"><img alt="icon-saveas" src="_images/16x16_document-save-as.png" style="width: 16px;" /></a> <strong>Save As</strong> renames a project or changes the location of where you want to save it. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">shift</kbd> + <kbd class="kbd docutils literal notranslate">s</kbd>.</p></li>
 <li><p><strong>Reload External Files</strong> serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.</p></li>
 <li><p><strong>Last Directories</strong> shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.</p></li>
 <li><p><strong>Open New Window</strong> starts a new, additional instance of <em>aRT</em>ist.</p></li>
@@ -208,42 +207,42 @@
 <h2>Edit menu<a class="headerlink" href="#edit-menu" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="guilabel">Edit</span> menu contains undo/redo functionalities with the project’s history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.</p>
 <div class="figure align-default" id="id2">
-<span id="guieditmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-edit.png"><img alt="aRTist edit menu" src="_images/gui-menu-edit.png" style="width: 158.0px; height: 173.0px;" /></a>
+<span id="guieditmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-edit.png"><img alt="aRTist edit menu" src="_images/gui-menu-edit.png" style="width: 20%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Edit menu.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
-<li><p><img alt="icon-undo" src="_images/16x16_edit-undo.png" /> <strong>Undo</strong> erases the last change done to the project reverting it to its previous state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">z</kbd>.</p></li>
-<li><p><img alt="icon-redo" src="_images/16x16_edit-redo.png" /> <strong>Redo</strong> reverses the Undo or advances the buffer to its former state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">y</kbd>. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-undo.png"><img alt="icon-undo" src="_images/16x16_edit-undo.png" style="width: 16px;" /></a> <strong>Undo</strong> erases the last change done to the project reverting it to its previous state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">z</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-redo.png"><img alt="icon-redo" src="_images/16x16_edit-redo.png" style="width: 16px;" /></a> <strong>Redo</strong> reverses the Undo or advances the buffer to its former state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">y</kbd>. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.</p></li>
 <li><p><strong>History</strong> displays the chronology of your recent actions and lets you revert back to any previous state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">h</kbd> to open the history.</p></li>
-<li><p><img alt="icon-cut" src="_images/16x16_edit-cut.png" /> <strong>Cut</strong> removes parts from the assembly and keeps them in the clipboard. In the scene or in the <em>Assembly list</em> (in the <em>Parameter panel</em>), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the <kbd class="kbd docutils literal notranslate">ctrl</kbd> key pressed on the keyboard.</p></li>
-<li><p><img alt="icon-copy" src="_images/16x16_edit-copy.png" /> <strong>Copy</strong> can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the <em>Assembly List</em> (of <em>Parameter Panel</em>). The selected parts are kept in the clipboard.</p></li>
-<li><p><img alt="icon-paste" src="_images/16x16_edit-paste.png" /> <strong>Paste</strong> appends parts from the clipboard to the <em>Assembly List</em>.</p></li>
-<li><p><img alt="icon-delete" src="_images/16x16_edit-delete.png" /> <strong>Delete</strong> removes selected parts from the <em>Assembly List</em>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-cut.png"><img alt="icon-cut" src="_images/16x16_edit-cut.png" style="width: 16px;" /></a> <strong>Cut</strong> removes parts from the assembly and keeps them in the clipboard. In the scene or in the <em>Assembly list</em> (in the <em>Parameter panel</em>), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the <kbd class="kbd docutils literal notranslate">ctrl</kbd> key pressed on the keyboard.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-copy.png"><img alt="icon-copy" src="_images/16x16_edit-copy.png" style="width: 16px;" /></a> <strong>Copy</strong> can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the <em>Assembly List</em> (of <em>Parameter Panel</em>). The selected parts are kept in the clipboard.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-paste.png"><img alt="icon-paste" src="_images/16x16_edit-paste.png" style="width: 16px;" /></a> <strong>Paste</strong> appends parts from the clipboard to the <em>Assembly List</em>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-delete.png"><img alt="icon-delete" src="_images/16x16_edit-delete.png" style="width: 16px;" /></a> <strong>Delete</strong> removes selected parts from the <em>Assembly List</em>.</p></li>
 </ul>
 </div>
 <div class="section" id="geometry-menu">
 <h2>Geometry menu<a class="headerlink" href="#geometry-menu" title="Permalink to this headline">¶</a></h2>
 <p>The <span class="guilabel">Geometry</span> menu includes all functions regarding the geometry application for parts from the assembly. <em>aRT</em>ist’s functionality regarding “Geometry Manipulation” (→ <em>Union, Intersection, Difference, Arrange</em> and <em>Pick Destination</em>) for creating and arranging more complicated parts are described more in-depth in the separate chapter.</p>
 <div class="figure align-default" id="id3">
-<span id="guigeometrymenu"></span><a class="reference internal image-reference" href="_images/gui-menu-geometry.png"><img alt="aRTist geometry menu" src="_images/gui-menu-geometry.png" style="width: 147.0px; height: 247.0px;" /></a>
+<span id="guigeometrymenu"></span><a class="reference internal image-reference" href="_images/gui-menu-geometry.png"><img alt="aRTist geometry menu" src="_images/gui-menu-geometry.png" style="width: 20%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Geometry menu.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
-<li><p><img alt="icon-centernew" src="_images/16x16_center-new.png" /> <strong>Center New Parts</strong> positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.</p></li>
-<li><p><strong>Isolate</strong> deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the <img alt="icon-eye" src="_images/16x16_object-visible-on.png" /> eye symbol at the <em>Parameter Panel</em> → <em>Setup</em> → <em>Assembly List</em>.</p></li>
-<li><p><strong>Activate/Deactivate</strong> selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the <img alt="icon-eye" src="_images/16x16_object-visible-on.png" /> eye symbol in the <em>Assembly List</em> of the <em>Parameter Panel</em> to achieve the same effect.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_center-new.png"><img alt="icon-centernew" src="_images/16x16_center-new.png" style="width: 16px;" /></a> <strong>Center New Parts</strong> positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.</p></li>
+<li><p><strong>Isolate</strong> deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the <a class="reference internal" href="_images/16x16_object-visible-on.png"><img alt="icon-eye" src="_images/16x16_object-visible-on.png" style="width: 16px;" /></a> eye symbol at the <em>Parameter Panel</em> → <em>Setup</em> → <em>Assembly List</em>.</p></li>
+<li><p><strong>Activate/Deactivate</strong> selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the <a class="reference internal" href="_images/16x16_object-visible-on.png"><img alt="icon-eye" src="_images/16x16_object-visible-on.png" style="width: 16px;" /></a> eye symbol in the <em>Assembly List</em> of the <em>Parameter Panel</em> to achieve the same effect.</p></li>
 <li><p><strong>Set Material</strong> changes the material of a selected part. As an alternative, you may click on the material name of a part in the <em>Assembly List</em> of the parameter panel to open a drop-down menu with the same options.</p></li>
-<li><p><img alt="icon-union" src="_images/16x16_boolean-union.png" /> <strong>Union,</strong> <img alt="icon-intersection" src="_images/16x16_boolean-intersection.png" /> <strong>Intersection</strong> and <img alt="icon-difference" src="_images/16x16_boolean-difference.png" /> <strong>Difference</strong> can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the <img alt="icon-solid" src="_images/16x16_icon-solid.png" /> <em>Solid</em> module) and placed in the scene, so that they overlap. Then, select parts by using the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called <em>Geometry Manipulation</em> commands are explained more detailed in another section.</p>
+<li><p><a class="reference internal" href="_images/16x16_boolean-union.png"><img alt="icon-union" src="_images/16x16_boolean-union.png" style="width: 16px;" /></a> <strong>Union,</strong> <a class="reference internal" href="_images/16x16_boolean-intersection.png"><img alt="icon-intersection" src="_images/16x16_boolean-intersection.png" style="width: 16px;" /></a> <strong>Intersection</strong> and <a class="reference internal" href="_images/16x16_boolean-difference.png"><img alt="icon-difference" src="_images/16x16_boolean-difference.png" style="width: 16px;" /></a> <strong>Difference</strong> can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the <a class="reference internal" href="_images/16x16_icon-solid.png"><img alt="icon-solid" src="_images/16x16_icon-solid.png" style="width: 16px;" /></a> <em>Solid</em> module) and placed in the scene, so that they overlap. Then, select parts by using the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called <em>Geometry Manipulation</em> commands are explained more detailed in another section.</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><img alt="icon-union" src="_images/16x16_boolean-union.png" /> <strong>Union</strong> joins two or more parts. The order of selection is not important.</p></li>
-<li><p><img alt="icon-intersection" src="_images/16x16_boolean-intersection.png" /> <strong>Intersection</strong> creates a new part from the overlapping areas of at least two parts. Everything else will be removed. The order of your selection is not important.</p></li>
-<li><p><img alt="icon-difference" src="_images/16x16_boolean-difference.png" /> <strong>Difference</strong> is used to create a new part from the difference of at least two other parts. By selecting this command the order of selection will be important for the result. The first selected part (yellow corner) is the minuend and all other selected parts (white corners) are subtracted from the first part.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_boolean-union.png"><img alt="icon-union" src="_images/16x16_boolean-union.png" style="width: 16px;" /></a> <strong>Union</strong> joins two or more parts. The order of selection is not important.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_boolean-intersection.png"><img alt="icon-intersection" src="_images/16x16_boolean-intersection.png" style="width: 16px;" /></a> <strong>Intersection</strong> creates a new part from the overlapping areas of at least two parts. Everything else will be removed. The order of your selection is not important.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_boolean-difference.png"><img alt="icon-difference" src="_images/16x16_boolean-difference.png" style="width: 16px;" /></a> <strong>Difference</strong> is used to create a new part from the difference of at least two other parts. By selecting this command the order of selection will be important for the result. The first selected part (yellow corner) is the minuend and all other selected parts (white corners) are subtracted from the first part.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p><img alt="icon-arrange" src="_images/16x16_icon-arrange.png" /> <strong>Arrange</strong> is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: <em>none</em>, <em>-</em>, <em>center</em>, <em>+</em> are available for each of the three axes. The parts will be aligned with the first selected part.</p></li>
-<li><p><img alt="icon-pickposition" src="_images/16x16_edit-pickposition.png" /> <strong>Pick Destination</strong> moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).</p></li>
+<li><p><a class="reference internal" href="_images/16x16_icon-arrange.png"><img alt="icon-arrange" src="_images/16x16_icon-arrange.png" style="width: 16px;" /></a> <strong>Arrange</strong> is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: <em>none</em>, <em>-</em>, <em>center</em>, <em>+</em> are available for each of the three axes. The parts will be aligned with the first selected part.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-pickposition.png"><img alt="icon-pickposition" src="_images/16x16_edit-pickposition.png" style="width: 16px;" /></a> <strong>Pick Destination</strong> moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).</p></li>
 </ul>
 </div>
 </div>
