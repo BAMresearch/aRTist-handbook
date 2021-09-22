@@ -7,4 +7,4 @@ Each tutorial explains a specific aspect of *aRT*\ ist. If you already feel conf
 
 **Note boxes** show the actions that **you** should take during the tutorials.
 
-.. note:: Start with a tutorial that interests you. If you are a beginner, it is recommended to start with ":ref:`The Virtual Scene`".
+.. note:: Start with a tutorial that interests you. If you are a beginner, it is recommended to start with :ref:`The Virtual Scene <theVirtualSceneChapter>`.

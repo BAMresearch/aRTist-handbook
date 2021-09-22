@@ -1,3 +1,5 @@
+.. _theVirtualSceneChapter:
+
 The Virtual Scene
 =================
 
@@ -119,7 +121,7 @@ Some of these only work once a part is selected.
 View Directions
 ^^^^^^^^^^^^^^^
 
-The following buttons change the view such that the camera looks either from the top right direction or directly along one of the axes of the coordinate system. 
+The following buttons change the view such that the camera looks either from the top right direction or directly along one of the axes of the coordinate system.
 
 | |icon-view-topright| **View from top right**
 | |icon-view-x| **View along X**
@@ -219,7 +221,7 @@ Summary
 
 In this tutorial, you have learned about *aRT*\ ist's virtual scene and how to arrange it.
 
-* You know about the **standard coordinate** system and that, for the moment, we don't want to change the principal axes. 
+* You know about the **standard coordinate** system and that, for the moment, we don't want to change the principal axes.
 * You have learned how to **load surface files** into the virtual scene and you have made use of *aRT*\ ist's library to import the *Rotor*.
 * You assigned a **colour** to an object.
 * You know that a **saved** *aRT*\ ist project contains everything you need to restore it at a later point (including all surface models).

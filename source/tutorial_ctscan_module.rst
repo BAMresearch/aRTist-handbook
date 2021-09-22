@@ -1,24 +1,41 @@
+.. Handy substitutions
+.. |artist| replace:: *aRT*\ ist
+.. |icon-run| image:: pictures/icons/16x16_compute-run.png
+    :width: 16
+.. |icon-settings| image:: pictures/icons/16x16_preferences-system.png
+    :width: 16
+
+.. ############################################################################
+
 CtScan Module
 ================
+.. _CtScanModuleChapter:
 
-The *CtScan* module is a modular extension of aRTist which provides the tools to simulate a typical circular CT scan. By default the *CtScan* module is deployed with the aRTist installation and can be accessed via the :guilabel:`Modules` tab.
+The *CtScan* module is a modular extension of |artist| which provides the tools (compare :numref:`CtScanModuleOverview`) to simulate a typical circular CT scan. By default the *CtScan* module is deployed with the |artist| installation and can be accessed via the :guilabel:`Modules` tab.
+
+.. _CtScanModuleOverview:
+.. figure:: pictures/CtScanModule_Overview.svg
+	:width: 95%
+
+	Process of a dimensional measurement with CT. Process steps, which are highlighted in red, can be simulated with the |artist| *CtScan* module. :cite:p:`Binder2021`
 
 .. note:: The pagination of the listed modules in the :guilabel:`Modules` depend on the installed modules.
 
-For the following tutorial it is advised to be comfortable with the basic elements of aRTist. Therefore, in section ##2.3 description of the setup panel and the axis definition used within aRTist can be found. In section ##2.4 are the basics of the source panel described, which will be used to define a x-ray source. Section ##2.6 covers the basics of the detector panel, which is also necessary for a CT scan setup. The basic elments of the CtScan module itself, are descried in section ##3.3.
+For the following tutorial it is advised to be comfortable with the basic elements of |artist|. Therefore, in section ##2.3 description of the setup panel and the axis definition used within |artist| can be found. In section ##2.4 are the basics of the source panel described, which will be used to define a x-ray source. Section ##2.6 covers the basics of the detector panel, which is also necessary for a CT scan setup. The basic elements of the CtScan module itself, are descried in section ##3.3.
 
-In the following chapters of this description, first a simple CT scan is described, which shows the basics of the module. After that, a typical setup of the module is shown, which can be transferred to every custom CT scan setup. In the section ##7.3 two examples are provided, which shows the difference between a ideal simulation and an experimental model in aRTist. In the last section of this tutorial, the borders of the current models - while using the *CtScan* module are discussed.
+In the following chapters of this description, first a simple CT scan is described, which shows the basics of the module. After that, a typical setup of the module is shown, which can be transferred to a custom CT scan setup. In the section ##7.3 two examples are provided, which shows the difference between a ideal simulation and an experimental model in |artist|. In the last section of this tutorial, the borders of the current models - while using the *CtScan* module are discussed.
+
+.. ############################################################################
 
 A Simple CT Scan
 ----------------
+.. _SimpleCtScanSection:
 
-.. note:: For a fast demonstration the detector resolution will be reduced to 250×250 |nbsp| px.
+Download the example file :download:`tutorial_simple_ctscan.aRTist <files/tutorial_simple_ctscan.aRTist>` |nbsp| (4.5 MB) and open it with |artist|.
 
 In the *Parameter Panel* on the left-hand side, open the :guilabel:`Detector` tab. In the :guilabel:`Geometry` group, select :guilabel:`Res. [mm]` to fixate the pixel resolution and enable editing for the actual physical size and the number of pixels along the detector x- and y-axis. For :guilabel:`Pixel`, enter :code:`250` for both :guilabel:`X` and :guilabel:`Y` (:numref:`detectorSettingsPixels`).
 
-.. tip::
-
-	 Always press :guilabel:`Enter` to confirm an user input to avoid unwanted input resets due to the state restoration feature of aRTist.
+.. note:: For a fast demonstration the detector resolution will be reduced to 250×250 |nbsp| px.
 
 .. _detectorSettingsPixels:
 .. figure:: pictures/tutorial-ctscan-detector-settings.png
@@ -42,43 +59,117 @@ The angular steps define the number of projections simulated. A good estimation 
 
   P \ge S \cdot \frac{\pi}{2}
 
-The sampling points along the object are defined by the detector width. Hence, in this case 250 |nbsp| px.
+The sampling points along the object are defined by the detector width. In this case 250 |nbsp| px.
 
 .. math::
 
   P \ge 250 \cdot \frac{\pi}{2} \approx 392.69
 
-Including a small buffer, the :guilabel:`Number of Steps` (:math:`P`) is set to :code:`400` steps. The :guilabel:`Angle Step Size [°]` should automatically be calculated and display :code:`0.9`.
+Including a small buffer, :math:`P` is set as :guilabel:`Number of Steps` to :code:`400`. The :guilabel:`Angle Step Size [°]` will be automatically calculated and display :code:`0.9`.
 
-You can choose a different output :guilabel:`directory` for the projection files. If you leave the :code:`#` directory as it is, everything will be saved in your *Default Directory*. You can set this in your settings: from the menu bar, choose :guilabel:`Tools` → |icon-settings| :guilabel:`Settings` to see your *Default Directory*.
+Next choose an output :guilabel:`directory` for the projection files and enter a :guilabel:`File Name` for the projection files. In this demonstration, the name :code:`rotor` is chosen.
 
-.. |icon-settings| image:: pictures/icons/16x16_preferences-system.png
-    :width: 16
+.. tip::
 
-.. note:: Enter a :guilabel:`File Name` for your projection files. In this demonstration, we will name it :code:`rotor`.
+	The :code:`#` directory is a placeholder for the *Default Directory*, which can be set in the settings: From the menu bar, select :guilabel:`Tools` → |icon-settings| :guilabel:`Settings`.
 
-For the :guilabel:`File Type`, you can choose between a stack of :guilabel:`TIFF` images and the :guilabel:`BAM CT` format.
+As export :guilabel:`File Type`, either as a stack of :guilabel:`TIFF` images or the :guilabel:`BAM CT` format can be chosen.
 
-* **TIFFs:** each projection image will be saved as a single TIFF file. A projection number will be added to the file name. If you choose this format, *aRT*\ ist's reconstruction software will not be able to reconstruct the CT scan.
-* **BAM CT** is a format where all projections are stored in a single :code:`.dd` file. It has a header of variable size, followed by the raw data of the projection images. *aRT*\ ist's Feldkamp reconstruction software is able to reconstruct scans from this file format. You can find a documentation in this handbook under `BAM CT File Format <bamct_file_format.html>`_.
+.. note::
 
-.. note:: Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in :numref:`ctScanWindow`). Click the |icon-run| :guilabel:`Run` button to start the scan. The CT simulation should start and you should be able to observe the *Rotor's* rotation around its own centre in the virtual scene. The *Air Pocket* should follow this rotation as well.
+	* **TIFFs:** Each projection image will be saved as a single :code:`.tif` file. A projection number will be added to the file name. If this format is chosen, *aRT*\ ist's reconstruction software will not be able to reconstruct the CT scan, since the geometrical settings are not saved separately.
 
-.. |icon-run| image:: pictures/icons/16x16_compute-run.png
-    :width: 16
+	* **BAM CT:** Is a format where all projections are stored in a single :code:`.dd` file. It has a header of variable size, followed by the raw data of the projection images. *aRT*\ ist's Feldkamp reconstruction software is able to reconstruct scans from this file format, since the geometric settings are stored in the :code:`.dd` file. A detailed documentation of the :code:`.dd` file format can be found under `BAM CT File Format <bamct_file_format.html>`_.
+
+For this simple *CtScan*, set the :guilabel:`File Type` output to :guilabel:`TIFFs` (as shown for example in :numref:`ctScanWindow`). With a click on the |icon-run| :guilabel:`Run` button the scan simulation will start. During the scan, the circular rotation of *Rotor* around its own rotation centre can be observed in the virtual scene. The simulated projections will be saved as enumerated :code:`.tif` files on the file system.
+
+.. ############################################################################
+
+CtScan Setup
+------------
+.. _CtScanSetupSection:
+
+In the previous section :ref:`A Simple CT Scan <SimpleCtScanSection>`: the basic functionality of the *CtScan* module has been demonstrated. Therefore, a template |artist| project has been provided, which already included definitions of the basic components of a CT system. Generally for a CT scan simulation, there several parameters to be considered as displayed in :numref:`CtScanModuleComponents`.
+
+.. _CtScanModuleComponents:
+.. figure:: pictures/CtScanModule_Components.svg
+	:width: 95%
+
+	Overview of the basic components and settings of the *CtScan* module (scattering excluded) :cite:p:`Binder2021`
+
+For that reason, the following sections will cover the necessary setups to define a CT scan model with |artist|, which later on can be exercised in the :ref:`Examples <CtModuleExamplesSection>` section.
+
+.. ############################################################################
+
+Geometry Setup
+~~~~~~~~~~~~~~
+.. _GeometrySetupSubsection:
+
+.. ############################################################################
+
+Assembly Setup
+~~~~~~~~~~~~~~
+.. _AssemblySetupSubsection:
+
+.. ############################################################################
+
+Source Setup
+~~~~~~~~~~~~
+.. _SourceSetupSubsection:
+
+.. ############################################################################
+
+Detector Setup
+~~~~~~~~~~~~~~
+.. _DetectorSetupSubsection:
+
+.. ############################################################################
+
+Examples
+--------
+.. _CtModuleExamplesSection:
+
+.. ############################################################################
+
+Ideal Model
+~~~~~~~~~~~
+.. _IdealModelSubsection:
+
+.. ############################################################################
+
+Experimental Model
+~~~~~~~~~~~~~~~~~~
+.. _ExperimentalModelSubsection:
+
+.. ############################################################################
+
+Summary
+-------
+.. _CtModuleSummarySection:
+
+.. ############################################################################
 
 References
 ----------
+.. _CtModuleReferencesSection:
 .. bibliography::
 
+.. ############################################################################
 
 Test
 ----
 
-Testlines below here
+Admonition example (based on the style of a note):
 
 .. admonition:: Example
 
   This is an example
 
-More Examples `CtScan Module`_ and another `TesttutorialLink <tutorial_ctscan_module.html>`_.
+Internal site reference to headline:
+Reference to `CtScan Module`_
+
+Internal site reference to chapter:
+Reference to `CtScan Module Chapter <tutorial_ctscan_module.html>`_.
+
+Cross site reference:
+Reference to :ref:`description <worldLocalCoordinateSystem>`:
