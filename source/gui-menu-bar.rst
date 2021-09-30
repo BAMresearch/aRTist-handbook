@@ -1,11 +1,14 @@
+.. |artist| replace:: *aRT*\ ist
 
 Menu bar
 --------
+.. _MenuBarSection:
 
 The Menu bar consists of different drop-down menus with common Windows commands and program specific functions. Some of the menu entries can also be found in the toolbar indicated by the same icon. If that is the case, the icon is next to the command/option in this manual.
 
 File menu
 ^^^^^^^^^
+.. _FileMenuSubsection:
 
 The :guilabel:`File` drop-down menu comprises commands referring to the current project.
 
@@ -16,7 +19,7 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
     File menu.
 
-* **New Project** opens a new *aRT*\ ist scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
+* **New Project** opens a new |artist| scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
 * |icon-open| **Open** is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`.
 * |icon-library| **Open Library**  is used to load something from the collection of example parts and projects. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
 * |icon-save| **Save** the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
@@ -40,6 +43,7 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
 Edit menu
 ^^^^^^^^^
+.. _EditMenuSubsection:
 
 The :guilabel:`Edit` menu contains undo/redo functionalities with the project's history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.
 
@@ -74,8 +78,9 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 
 Geometry menu
 ^^^^^^^^^^^^^
+.. _GeometryMenuSubsection:
 
-The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. *aRT*\ ist's functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more in-depth in the separate chapter.
+The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more in-depth in the separate chapter.
 
 .. _guiGeometryMenu:
 .. figure:: pictures/gui-menu-geometry.png
@@ -111,4 +116,31 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 .. |icon-arrange| image:: pictures/icons/16x16_icon-arrange.png
     :width: 16
 .. |icon-pickposition| image:: pictures/icons/16x16_edit-pickposition.png
+    :width: 16
+
+
+Compute menu
+^^^^^^^^^^^^^
+.. _ComputeMenuSubsection:
+
+The :guilabel:`Compute` menu includes the button to start a simulation and offers different options for the simulation.
+
+.. _guiComputeMenu:
+.. figure:: pictures/gui-menu-compute.png
+    :alt: aRTist compute menu
+    :width: 20%
+
+    Compute menu.
+
+* |icon-run| **Run** starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled |icon-final| as final result.
+* **Radiography** / **Thickness maps** control the simulation mode. Choose between these two options to either simulate a radiographic projection or just thickness maps for each penetrated material.
+* **Use GPU** controls the usa of an OpenGL graphics processing unit. When it is anabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
+* **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumtion and computing time.
+* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labled |icon-preview| (not final) to set apart from final |icon-final| results.
+
+.. |icon-run| image:: pictures/icons/16x16_aRTist.png
+    :width: 16
+.. |icon-final| image:: pictures/icons/16x16_image-final.png
+    :width: 16
+.. |icon-preview| image:: pictures/icons/16x16_image-preview.png
     :width: 16
