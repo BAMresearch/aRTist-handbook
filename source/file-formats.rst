@@ -1,5 +1,5 @@
-User interface
-==============
+File Formats
+============
 
 When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`) with the following areas.
 
@@ -10,20 +10,8 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
 * **Docking area**, integrates additional program windows and modules. By default, the **Image Viewer** showing the simulated radiograph is placed here.
 * **Status bar** displays what's currently going on.
 
-:numref:`guiMainWindow` shows the default view of the user interface. The scene already contains two items: source and detector. The three main areas (parameter panel, virtual scene, docking area) can be scaled by clicking and dragging the edges of the respective areas.
-
-.. _guiMainWindow:
-.. figure:: pictures/gui-main-window.png
-    :alt: aRTist main window
-    :width: 100%
-
-    aRTist main window.
-
-
-
 .. toctree::
    :maxdepth: 2
-   :caption: User interface elements:
+   :caption: File Formats:
 
-   gui-menu-bar
-   gui-scene
+   bamct_file_format

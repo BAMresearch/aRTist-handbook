@@ -1,8 +1,8 @@
 BAM CT File Format
-==================
+------------------
 
 Header Size and Data Offset
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A BAM CT file starts with a 512 bytes long header. This header may be followed by zero-padding until the actual data block begins. The beginning of the **raw image data block** is located at a multiple of the size of a pixel row (in bytes). If a pixel row needs at least 512 bytes, the data offset can be calculated by
 
@@ -20,13 +20,13 @@ For example, if you have X-ray projections with 1000 pixel columns and 16 bit gr
 
 
 Byte Order
-----------
+^^^^^^^^^^
 
 Any header or image data unit that is stored in more than 1 byte can be either written in *big-endian byte order* or in *little-endian byte order*. The first 12 bytes of the header reveal which byte order is used (see "File Name" section). Since today's CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with *aRT*\ ist use.
 
 
 File Name
----------
+^^^^^^^^^
 
 The BAM CT header starts with 12 bytes that contain a "file name" (a string of twelve 1-byte characters, not null-terminated). It follows a structure that reveals additional information:
 
@@ -52,7 +52,7 @@ The BAM CT header starts with 12 bytes that contain a "file name" (a string of t
 
 
 Header Data
------------
+^^^^^^^^^^^
 
 The following table lists the elements of a BAM CT header.
 

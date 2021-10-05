@@ -35,7 +35,8 @@ The information in this manual is for reference and informational use only. We a
 
    installation
    gui
-   bamct_file_format
+   modules
+   file-formats
 
 .. toctree::
    :maxdepth: 2

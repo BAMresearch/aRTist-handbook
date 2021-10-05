@@ -1,25 +1,27 @@
+.. |artist| replace:: *aRT*\ ist
+
 Installation
 ============
 
 System requirements
 -------------------
 
-The *aRT*\ ist program comes as a Microsoft Windows application. The system requirements narrow down to the required platform: Microsoft Windows 7 or superior. The program is provided as 64-bit application.
+The |artist| program comes as a Microsoft Windows application. The system requirements narrow down to the required platform: Microsoft Windows 7 or superior. The program is provided as 64-bit application.
 
-It is possible to use *aRT*\ ist on low prize netbook hardware. But it is recommended to run it on computers with multi (core) processor and accelerated graphical processing unit (OpenGL 2.1) to have the necessary calculation speed for treating ambitious simulation tasks efficiently.
+It is possible to use |artist| on low prize netbook hardware. But it is recommended to run it on computers with multi (core) processor and accelerated graphical processing unit (OpenGL 2.1) to have the necessary calculation speed for treating ambitious simulation tasks efficiently.
 
 Licenses
 --------
 
-The *aRT*\ ist program is equipped with software protection mechanisms and needs license activation for full functionality. Without activation, the program runs in Lite mode of reduced functionality. In case of licensing errors, e.g. broken license file, the program might still be usable to arrange and review virtual scenes, but it is not possible to make any simulations (viewer mode).
+The |artist| program is equipped with software protection mechanisms and needs license activation for full functionality. Without activation, the program runs in Lite mode of reduced functionality. In case of licensing errors, e.g. broken license file, the program might still be usable to arrange and review virtual scenes, but it is not possible to make any simulations (viewer mode).
 
 .. note:: Demo licenses can be provided on request for an **evaluation period** of 30 days (DEMOVERSION), see :ref:`activationrequest`.
 
-An *aRT*\ ist license is shipped as serial number, which can be used to activate an *aRT*\ ist installation. License activation is a tow-steps process: sending an activaion request via email and installing the activated license file received in response, see :ref:`licenseactivation`.
+An |artist| license is shipped as serial number, which can be used to activate an *aRT*\ ist installation. License activation is a tow-steps process: sending an activaion request via email and installing the activated license file received in response, see :ref:`licenseactivation`.
 
 .. note:: Licenses can be bound to a specific PC **(node-locked license)** or shared among different installations **(network license).**
 
-The *aRT*\ ist licenses can be used either node-locked or shared within a network. A node-locked license is assigned to one specific PC. With network licensing the *aRT*\ ist program can be installed on several PCs with access to the same license file. In this case *aRT*\ ist can be alternately used on different PCs (floating license). To run several *aRT*\ ist installations at the same time it is possible to assign more than one license to the shared license file.
+The |artist| licenses can be used either node-locked or shared within a network. A node-locked license is assigned to one specific PC. With network licensing the *aRT*\ ist program can be installed on several PCs with access to the same license file. In this case *aRT*\ ist can be alternately used on different PCs (floating license). To run several *aRT*\ ist installations at the same time it is possible to assign more than one license to the shared license file.
 
 Installation instructions
 -------------------------
@@ -52,7 +54,7 @@ In the next section you will find information on reqesting an evaluation or perm
 License activation
 ------------------
 
-*aRT*\ ist needs to be installed before proceeding with the license activation. The activation is a two-step process: first, a dedicated activation request has to be sent to the supplier of the software and secondly, the activated license file provided in response has to be installed.
+|artist| needs to be installed before proceeding with the license activation. The activation is a two-step process: first, a dedicated activation request has to be sent to the supplier of the software and secondly, the activated license file provided in response has to be installed.
 
 The actual license status can be displayed under :guilabel:`License information` from the :guilabel:`Help` menu (:numref:`licenseInformationDialog`).
 
