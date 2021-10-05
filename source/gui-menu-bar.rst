@@ -26,9 +26,9 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 * |icon-saveas| **Save As** renames a project or changes the location of where you want to save it. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
 * **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.
 * **Last Directories** shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.
-* **Open New Window** starts a new, additional instance of *aRT*\ ist.
-* **Restart** reboots the program. Before restarting, the program will ask you if you want to save the changes on your current project.
-* **Quit** terminates the program. Before quitting the program will ask you if you want to save the changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
+* **Open New Window** starts a new, additional instance of |artist|.
+* **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
+* **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
 
 
 .. |icon-open| image:: pictures/icons/16x16_document-open-folder.png
@@ -143,4 +143,79 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 .. |icon-final| image:: pictures/icons/16x16_image-final.png
     :width: 16
 .. |icon-preview| image:: pictures/icons/16x16_image-preview.png
+    :width: 16
+
+
+Modules menu
+^^^^^^^^^^^^^
+.. _ModulesMenuSubsection:
+
+The :guilabel:`Modules` menu offers the selection of the available extention modules. Modules extent the program functionallity with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see `Modules`.
+
+.. _guiModulesMenu:
+.. figure:: pictures/gui-menu-modules.png
+    :alt: aRTist modules menu
+    :width: 20%
+
+    Modules menu.
+
+* **Manage Modules...** enables the activation of the installed modules to be controlled. New modules can be installed from |artist| package files (:code:`*.artp`).
+* **CtScan** module enables virtual X-ray computerized tomography (CT) with circular trajectory. In the three tabs of this module the corresponding settings can be navigated. Click on the Run button in the bottom of each page to start the simulation or to stop it. When the simulation is finished, click on the Show button of the first tab and the tomogram can be viewed in the scene. In ImageViewer the sectional image of the tomogram can be seen when in Volume View (third tab of tScan Module) the Show button is clicked. For more details see in Modules → CtScan.
+* **DetectorCalc** module will add new detector models to aRTist. Thereby the reference shot is necessary for calibration and calculation, also filtration over the detector is possible. For more information see `Modules → DetectorCalc`.
+* **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see `Modules → DigRad`.
+* |icon| **ImageViewer** The only module by default in the docking area is the ImageViewer. The preview image and the finished simulation are displayed there. You may choose between radiography and thickness map. The different settings and functions of ImageViewer (upper bar, lower bar and bar on the right) will be explained in Modules → ImageViewer. In a subitem called Tools Menu: ImageViewer advanced settings from the Menu Bar → Tools → ImageViewer are described.
+* **LogViewer** module displays internal messages by aRTist and its components.
+* **McRay**
+* |icon| **Solid** module, simple parts (respectively virtual objects) of different sizes can be created and added to the scene. Different geometric shapes can be chosen from: cuboid, ellipsoid, cylinder, tube, cone, text, wedge and/or step wedge. For more information see the chapter Modules → Solid.
+* **TomoSynth** Simulating tomosynthesis within aRTist are enabled with the TomoSynth module. On the Laminography tab settings for the tube, detector and output options can be set up. The Advanced tab offers settings for experts. More functions and information of TomoSynth will be explained in Modules → TomoSynth.
+
+Tools menu
+^^^^^^^^^^^^^
+.. _ToolsMenuSubsection:
+
+The :guilabel:`Modules` menu includes the button to start a simulation and offers different options for the simulation.
+
+.. _guiToolsMenu:
+.. figure:: pictures/gui-menu-tools.png
+    :alt: aRTist tools menu
+    :width: 30%
+
+    Tools menu.
+
+
+View menu
+^^^^^^^^^^^^^
+.. _ViewMenuSubsection:
+
+The :guilabel:`Modules` menu includes the button to start a simulation and offers different options for the simulation.
+
+.. _guiViewMenu:
+.. figure:: pictures/gui-menu-view.png
+    :alt: aRTist view menu
+    :width: 40%
+
+    View menu.
+
+
+Help menu
+^^^^^^^^^
+.. _HelpMenuSubsection:
+
+The :guilabel:`Help` menu provides help options and license information.
+
+.. _guiHelpMenu:
+.. figure:: pictures/gui-menu-help.png
+    :alt: aRTist help menu
+    :width: 30%
+
+    Help menu.
+
+* |icon-help| **Show Inline Help** activates the inline help where available, e.g. on the Scattering tab or at the material editor.
+* **User Guide** opens the documentation file (PDF).
+* **Online Guide** opens the online handbook (https://bamresearch.github.io/aRTist-handbook).
+* **Homepage** opens |artist|'s homepage (http://artist.bam.de).
+* **License Information** opens a dialog window with the actual license status. Here you will also find information on license activation and applying for a demo license. See also `License activation`.
+* |icon-run| **About aRTist** opens a dialog window with information about the software itself and its version, installed modules and included third-party software.
+
+.. |icon-help| image:: pictures/icons/16x16_system-help.png
     :width: 16
