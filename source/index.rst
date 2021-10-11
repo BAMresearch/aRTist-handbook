@@ -49,3 +49,7 @@ The information in this manual is for reference and informational use only. We a
    tutorial_projection_images
    tutorial_multi_component_parts
    tutorial_ctscan_module
+   tutorial_detectorcalc_module
+   tutorial_digrad_module
+   tutorial_tomosynth_module
+   tutorial_advanct_module
