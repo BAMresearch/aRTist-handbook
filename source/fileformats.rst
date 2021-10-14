@@ -14,4 +14,10 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
    :maxdepth: 2
    :caption: File Formats:
 
+   fileformats_artist
+   fileformats_tube
+   fileformats_spectrum
+   fileformats_detector
    bamct_file_format
+   fileformats_vgi
+   
