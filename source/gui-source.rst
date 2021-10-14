@@ -1,4 +1,4 @@
-.. |artist| replace:: *aRT*\ ist
+.. include:: _templates/icons.rst
 
 Source Panel
 ------------

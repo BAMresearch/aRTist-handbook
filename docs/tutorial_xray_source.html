@@ -1,0 +1,587 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>X-ray Source &mdash; aRTist 2.12 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="CtScan Module" href="tutorial_ctscan_module.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aRTist
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">X-ray Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-parameter-panel">Source Parameter Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectrum-calculator">Spectrum Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flux-units">Flux Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exposure-primary-intensities">Exposure &amp; Primary Intensities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectrum-files">Spectrum Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spectrum-picker">Spectrum Picker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#focal-spot">Focal Spot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pinhole-camera">Pinhole Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spot-size-spot-type">Spot Size &amp; Spot Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spot-intensity-profile">Spot Intensity Profile</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>X-ray Source</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/tutorial_xray_source.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="x-ray-source">
+<h1>X-ray Source<a class="headerlink" href="#x-ray-source" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial explains <em>aRT</em>ist’s spectrum calculator and how the source intensity and spot size are set up. We will build a pinhole camera to investigate the modelling of the focal spot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We continue with the project from the last tutorial. You can download it here if you need the current state:</p>
+<p><a class="reference download internal" download="" href="_downloads/4e0aaf4ee7a5c51589177542e214572e/tutorial_ctscan.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_ctscan.aRTist</span></code></a> (4.6 MB)</p>
+</div>
+<div class="section" id="source-parameter-panel">
+<h2>Source Parameter Panel<a class="headerlink" href="#source-parameter-panel" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Open the <span class="guilabel">Source</span> tab in the <em>Parameter Panel</em>.</p>
+</div>
+<p>The <em>Source</em> section of the <em>Parameter Panel</em> (<a class="reference internal" href="#xraysourceparameterpanel"><span class="std std-numref">Fig. 53</span></a>) displays the current configuration of the X-ray source and provides configuration tools.</p>
+<div class="figure align-default" id="id1">
+<span id="xraysourceparameterpanel"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-parameter-panel.png"><img alt="_images/tutorial-xraysource-parameter-panel.png" src="_images/tutorial-xraysource-parameter-panel.png" style="width: 80%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 53 </span><span class="caption-text">The <em>Parameter Panel</em> for the X-ray source.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the upper part of the panel, the current spectrum of the X-ray source is plotted. At the moment, a monochromatic photon energy of 150 keV is simulated.</p>
+</div>
+<div class="section" id="spectrum-calculator">
+<h2>Spectrum Calculator<a class="headerlink" href="#spectrum-calculator" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Spectrum Calculator</em> can be used to generate a spectrum for a given X-ray source configuration. It uses a model by Andreas Deresch <em>et al.</em>:</p>
+<blockquote>
+<div><ol class="upperalpha simple">
+<li><p>Deresch, C. Bellon, G.-R. Jaenisch. A general spectrum model for X-ray generators. <em>NDT&amp;E International</em> 79 (2016) pp. 92-97. DOI: <a class="reference external" href="https://doi.org/10.1016/j.ndteint.2015.12.007">10.1016/j.ndteint.2015.12.007</a></p></li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click the button <a class="reference internal" href="_images/22x22_xray-tube.png"><img alt="22x22_xray-tube" src="_images/22x22_xray-tube.png" style="width: 22px;" /></a> <span class="guilabel">Calculate X-ray tube spectrum</span> to open the <em>Spectrum Calculator</em> (<a class="reference internal" href="#spectrumcalculatormono"><span class="std std-numref">Fig. 54</span></a>).</p>
+</div>
+<div class="figure align-default" id="id2">
+<span id="spectrumcalculatormono"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-calculator-mono.png"><img alt="_images/tutorial-xraysource-spectrum-calculator-mono.png" src="_images/tutorial-xraysource-spectrum-calculator-mono.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 54 </span><span class="caption-text">The <em>Spectrum Calculator</em> in its mode for monochromatic radiation.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Let’s generate a spectrum for a common X-ray tube that accelerates electrons onto a target. We will have to switch the <em>Spectrum Calculator</em> window from the current monochromatic mode to a general X-ray tube and enter some parameters (<a class="reference internal" href="#spectrumcalculatorgeneral"><span class="std std-numref">Fig. 55</span></a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For <span class="guilabel">Tube</span> select <code class="code docutils literal notranslate"><span class="pre">General</span></code>. You will get more options to specify the tube (<a class="reference internal" href="#spectrumcalculatorgeneral"><span class="std std-numref">Fig. 55</span></a>).</p></li>
+<li><p>Select <span class="guilabel">Show principle</span> in the bottom of the window to display a schematic drawing that illustrates the geometrical parameters.</p></li>
+<li><p>For <span class="guilabel">voltage (kV)</span> enter <code class="code docutils literal notranslate"><span class="pre">130</span></code>.</p></li>
+<li><p>For <span class="guilabel">resolution (keV)</span> enter <code class="code docutils literal notranslate"><span class="pre">1.0</span></code>.</p></li>
+<li><p>For <span class="guilabel">filter material</span> select a <code class="code docutils literal notranslate"><span class="pre">Cu</span></code> filter.</p></li>
+<li><p>For <span class="guilabel">filter thickness</span> enter <code class="code docutils literal notranslate"><span class="pre">0.2</span></code> mm.</p></li>
+<li><p>Make sure <span class="guilabel">Transmission</span> is not checked. We will simulate a reflection target.</p></li>
+<li><p>For <span class="guilabel">target material</span> select <code class="code docutils literal notranslate"><span class="pre">W</span></code>.</p></li>
+<li><p>The <span class="guilabel">target thickness</span> does not matter for a reflection target: you can leave it at <code class="code docutils literal notranslate"><span class="pre">1</span></code> mm.</p></li>
+<li><p>For both <span class="guilabel">angles</span>, enter <code class="code docutils literal notranslate"><span class="pre">45</span></code> degrees.</p></li>
+<li><p>For <span class="guilabel">window material</span> select <code class="code docutils literal notranslate"><span class="pre">Al</span></code>.</p></li>
+<li><p>For <span class="guilabel">window thickness</span> enter <code class="code docutils literal notranslate"><span class="pre">2</span></code> mm.</p></li>
+</ol>
+</div>
+<div class="figure align-default" id="id3">
+<span id="spectrumcalculatorgeneral"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-calculator-general.png"><img alt="_images/tutorial-xraysource-spectrum-calculator-general.png" src="_images/tutorial-xraysource-spectrum-calculator-general.png" style="width: 85%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 55 </span><span class="caption-text">The <em>Spectrum Calculator</em> in its mode for a general X-ray tube.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>If you want, you can save your tube parameters as a template for future projects. To do this, you can enter a <span class="guilabel">name</span>, and limits for a <span class="guilabel">maximum voltage</span>, <span class="guilabel">current</span> and <span class="guilabel">power</span>. Using the button <a class="reference internal" href="_images/16x16_list-add.png"><img alt="16x16_list-add" src="_images/16x16_list-add.png" style="width: 16px;" /></a> <span class="guilabel">Add tube definition to database</span> you can save this tube and later select it from the <span class="guilabel">Tube</span> drop-down menu, as another entry among <code class="code docutils literal notranslate"><span class="pre">Mono</span></code> and <code class="code docutils literal notranslate"><span class="pre">General</span></code>.</p>
+<p>The target thickness does not affect tubes with a reflection target, like the one we have modelled now. However, it is an important parameter for tubes with a transmission target. When you select <span class="guilabel">Transmission</span>, the image of the tube schematics will change and illustrate the parameters for a transmission tube.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click the button <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="16x16_compute-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Compute</span> to calculate the spectrum. This might take a few moments.</p>
+</div>
+<p>Once the computation is done, the new spectrum will appear in the spectrum viewer (<a class="reference internal" href="#spectrum130kv"><span class="std std-numref">Fig. 56</span></a>).</p>
+<div class="figure align-default" id="id4">
+<span id="spectrum130kv"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-130kV.png"><img alt="_images/tutorial-xraysource-spectrum-130kV.png" src="_images/tutorial-xraysource-spectrum-130kV.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 56 </span><span class="caption-text">We have calculated a spectrum for a specific tube with an acceleration voltage of 130 kV.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the <em>Spectrum Calculator</em> window. We will not need it anymore.</p>
+</div>
+<p>Each bin of the spectrum will have a width of 1 keV, because that is the resolution that we chose before calculating the spectrum. To keep the simulation time at a bearable level, it is recommended not to exceed 128 spectrum bins. The <em>Spectrum Calculator</em> will ask if you want to reduce the spectrum when you go to higher voltages. The reduction process will remove bins in areas of the spectrum that are mostly flat (i.e. have the smallest slope). This method keeps distinct features like the peaks of characteristic radiation, and only removes information in areas where it shouldn’t hurt.</p>
+</div>
+<div class="section" id="flux-units">
+<h2>Flux Units<a class="headerlink" href="#flux-units" title="Permalink to this headline">¶</a></h2>
+<p>Spectra generated with the <em>Spectrum Calculator</em> represent the number of photons per energy bin that pass through an area of 1 m² at a distance of 1 m away from the X-ray source (<a class="reference internal" href="#isotropicsourcesphere"><span class="std std-numref">Fig. 57</span></a>).</p>
+<div class="figure align-default" id="id5">
+<span id="isotropicsourcesphere"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-isotropic-source-sphere.png"><img alt="_images/tutorial-xraysource-isotropic-source-sphere.png" src="_images/tutorial-xraysource-isotropic-source-sphere.png" style="width: 65%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 57 </span><span class="caption-text">The flux is calculated as the number of photons that pass through an area <em>A</em> of 1 m², located at a distance <em>r</em> of 1 m away from the X-ray source.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p><em>aRT</em>ist simulates an isotropic source that emits photons uniformly in all directions, but the flux per energy bin that the <em>Spectrum Calculator</em> generates is expressed as the number of photons through a solid angle Ω of 1 sr.</p>
+<div class="math">
+<p><img src="_images/math/7920660a7c99c1be17b1a79ef9c6d60182001385.png" alt="\Omega = \frac{A}{r^2} = 1\,\textsf{sr}"/></p>
+</div><p>Additionally, the number of photons is given for a certain time interval (1 s) and a certain source current (1 mA). For X-ray tubes that accelerate electrons onto a target, the unit of the spectrum is therefore:</p>
+<div class="math">
+<p><img src="_images/math/a20a653babd2d7b20518b6258b40c887c79d3aa6.png" alt="\textsf{count unit per energy bin} = \frac{\textsf{number of photons}}{\textsf{s} \cdot \textsf{mA} \cdot \textsf{sr}}"/></p>
+</div></div>
+<div class="section" id="exposure-primary-intensities">
+<h2>Exposure &amp; Primary Intensities<a class="headerlink" href="#exposure-primary-intensities" title="Permalink to this headline">¶</a></h2>
+<p>The intensity of the X-ray source can be tuned with the <span class="guilabel">Exposure</span> parameter (<a class="reference internal" href="#xrayexposure"><span class="std std-numref">Fig. 58</span></a>). For an acceleration tube like the one we just defined, you can enter a value for the electron current in mA.</p>
+<div class="figure align-default" id="id6">
+<span id="xrayexposure"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-exposure.png"><img alt="_images/tutorial-xraysource-exposure.png" src="_images/tutorial-xraysource-exposure.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 58 </span><span class="caption-text">The intensity of the X-ray source can be set in the <em>Exposure</em> box.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>Currently, changing this value does not affect the projection image because the current detector automatically adjusts its exposure time to reach 50000 grey values at the intensity maximum (<a class="reference internal" href="#xrayexposure-50000auto"><span class="std std-numref">Fig. 59</span></a>). The detector settings will be treated in a later tutorial.</p>
+<div class="figure align-default" id="id7">
+<span id="xrayexposure-50000auto"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-exposure-auto50000.png"><img alt="_images/tutorial-xraysource-exposure-auto50000.png" src="_images/tutorial-xraysource-exposure-auto50000.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 59 </span><span class="caption-text">The detector’s integration time is adjusted automatically to reach a maximum of 50000 grey values.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>However, you will already see an effect on the <em>primary intensities</em> at the detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the upper left corner of the preview window, select <span class="guilabel">primary intensities</span> from the drop-down menu to switch the display mode (<a class="reference internal" href="#xrayexposure-primaryintensities-menu"><span class="std std-numref">Fig. 60</span></a>).</p>
+</div>
+<div class="figure align-default" id="id8">
+<span id="xrayexposure-primaryintensities-menu"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-primary-intensities-menu.png"><img alt="_images/tutorial-xraysource-primary-intensities-menu.png" src="_images/tutorial-xraysource-primary-intensities-menu.png" style="width: 60%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 60 </span><span class="caption-text">We switch the preview window mode to display the primary intensities.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<p>The image of <strong>primary intensities</strong> gives the intensity of the incident radiation at the detector (<a class="reference internal" href="#xrayexposure-primaryintensities-imageviewer"><span class="std std-numref">Fig. 61</span></a>).  It is measured in units of</p>
+<div class="math">
+<p><img src="_images/math/c6af2dc7fc2294dc2149e12eee537d38a7691fb2.png" alt="\left[ \textsf{primary intensity} \right] = \frac{\textsf{J}}{\textsf{m}^2 \cdot \textsf{s}} = \frac{\textsf{W}}{\textsf{m}^2}"/></p>
+</div><p>The primary intensity is not affected by the detector’s integration time, but it depends on the source intensity (i.e. its current in mA). The primary intensities at the pixels are later converted into grey values through the underlying detector model, which can also take the spectral sensitivity (e.g. of a scintillator screen) into account. We will learn how to set up the detector characteristics in a later tutorial.</p>
+<div class="figure align-default" id="id9">
+<span id="xrayexposure-primaryintensities-imageviewer"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-primary-intensities-image-viewer.png"><img alt="_images/tutorial-xraysource-primary-intensities-image-viewer.png" src="_images/tutorial-xraysource-primary-intensities-image-viewer.png" style="width: 75%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 61 </span><span class="caption-text">The <em>Image Viewer</em> displays a map of primary intensities in W/m².</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When saving a primary intensity image, make sure to select <span class="guilabel">Float Image</span> for the data type because the primary intensities are floating point numbers.</p>
+</div>
+</div>
+<div class="section" id="spectrum-files">
+<h2>Spectrum Files<a class="headerlink" href="#spectrum-files" title="Permalink to this headline">¶</a></h2>
+<p>Spectra can be imported into <em>aRT</em>ist from an external file and they can also be saved. They are stored in <code class="code docutils literal notranslate"><span class="pre">.xrs</span></code> files. Those are ASCII-coded and can be opened in a text editor. Their structure is relatively simple: they feature two columns separated by tab characters. The first column contains the energy (in kV) of the energy bins, the second column contains the number of photons for each bin. Further information can be added to such files in the form of comments. Commented lines start with a <code class="code docutils literal notranslate"><span class="pre">#</span></code> character. Certain comments can be understood by <em>aRT</em>ist to display further information about the spectrum in the GUI, but it is not necessary to include them.</p>
+<p>If you want to know more about spectrum files, start exploring them on your own: save the current spectrum with the <a class="reference internal" href="_images/22x22_document-save-as.png"><img alt="22x22_document-save-as" src="_images/22x22_document-save-as.png" style="width: 22px;" /></a> <span class="guilabel">Save</span> button and open it in a text editor. Consequently, you can load a spectrum file with the <a class="reference internal" href="_images/22x22_document-open-folder.png"><img alt="22x22_document-open-folder" src="_images/22x22_document-open-folder.png" style="width: 22px;" /></a> <span class="guilabel">Load</span> button.</p>
+<p>In the file for the spectrum that we have generated, you will find three blocks that list information from the spectrum generator. The first block lists the properties of the radiation right after its generation at the source target, the second block for the radiation after the tube window, and the third block after the X-ray filter. The <code class="code docutils literal notranslate"><span class="pre">Avg</span></code> states the average photon energy (in keV) after the current filter step, the <code class="code docutils literal notranslate"><span class="pre">Flux</span></code> gives the total number of photons, i.e. the sum over all energy bins. Note that the flux information for the fully filtered spectrum is usually found at the very end of the file.</p>
+</div>
+<div class="section" id="spectrum-picker">
+<h2>Spectrum Picker<a class="headerlink" href="#spectrum-picker" title="Permalink to this headline">¶</a></h2>
+<p>Objects in the path of the beam attenuate radiation: the result is an attenuation image on the detector. Apart from the material properties and their thickness, the absorption probability for a photon also depends on its energy. Usually, photons of lower energies have higher absorption probabilities than photons of higher energies. This means that the spectrum measured at the detector is usually shifted towards higher energies, because lower energies tend to be absorbed more often. This effect is called <em>beam hardening</em>.</p>
+<p>You can get the spectrum (and therefore the photon flux) at a certain point of the projection image with the <em>Spectrum Picker</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Below the diagram of the spectrum, click on the button <a class="reference internal" href="_images/22x22_edit-pickposition.png"><img alt="22x22_edit-pickposition" src="_images/22x22_edit-pickposition.png" style="width: 22px;" /></a> <span class="guilabel">Show attenuated spectrum for picked position</span> to open the <em>Spectrum Picker</em> (<a class="reference internal" href="#spectrumpicker01"><span class="std std-numref">Fig. 62</span></a>).</p>
+</div>
+<p>The <strong>incident</strong> spectrum (i.e. the free beam when it leaves the source after the last filter step) and the <strong>attenuated</strong> spectrum are currently the same because we have not yet picked a reference point on the projection image.</p>
+<div class="figure align-default" id="id10">
+<span id="spectrumpicker01"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-picker-01.png"><img alt="_images/tutorial-xraysource-spectrum-picker-01.png" src="_images/tutorial-xraysource-spectrum-picker-01.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 62 </span><span class="caption-text">We have opened the <em>Spectrum Picker</em>: it displays the current spectrum because we have not yet selected a reference point.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>Spectrum Picker</em> window, click on the button <a class="reference internal" href="_images/16x16_edit-pickposition.png"><img alt="16x16_edit-pickposition" src="_images/16x16_edit-pickposition.png" style="width: 16px;" /></a> <span class="guilabel">Pick image position to calculate attenuation for</span>.</p>
+</div>
+<p>The <em>Image Viewer</em> will now display a message in red: <span class="guilabel">Picking spectrum reference position</span> (<a class="reference internal" href="#spectrumpickerpreviewwindow"><span class="std std-numref">Fig. 63</span></a>).</p>
+<div class="figure align-default" id="id11">
+<span id="spectrumpickerpreviewwindow"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-picker-preview-window.png"><img alt="_images/tutorial-xraysource-spectrum-picker-preview-window.png" src="_images/tutorial-xraysource-spectrum-picker-preview-window.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 63 </span><span class="caption-text">The <em>Image Viewer</em> is ready to select a reference position for the attenuated spectrum.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click on a point in the image for which you want to get the attenuated spectrum.</p>
+</div>
+<p>The attenuated spectrum will be displayed in blue, next to the incident (original) spectrum in black (<a class="reference internal" href="#spectrumpicker02attenuatedspectrum"><span class="std std-numref">Fig. 64</span></a>).</p>
+<div class="figure align-default" id="id12">
+<span id="spectrumpicker02attenuatedspectrum"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-picker-02-attenuated-spectrum.png"><img alt="_images/tutorial-xraysource-spectrum-picker-02-attenuated-spectrum.png" src="_images/tutorial-xraysource-spectrum-picker-02-attenuated-spectrum.png" style="width: 55%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 64 </span><span class="caption-text">The <em>Spectrum Picker</em> displays the attenuated spectrum (blue) alongside the original incident spectrum (black).</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<p>When you switch to the <span class="guilabel">Text</span> view, you can get further information, for example the path lengths that the ray travelled through each material to reach the chosen point on the detector (<a class="reference internal" href="#spectrumpicker03text"><span class="std std-numref">Fig. 65</span></a>). The spectral information is now arranged in three tab-separated columns: the energy of the bin (keV), and the photon counts for the incident (original) and attenuated spectrum.</p>
+<div class="figure align-default" id="id13">
+<span id="spectrumpicker03text"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spectrum-picker-03-text.png"><img alt="_images/tutorial-xraysource-spectrum-picker-03-text.png" src="_images/tutorial-xraysource-spectrum-picker-03-text.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 65 </span><span class="caption-text">The <em>Spectrum Picker</em> in text view displays further information.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>Of course, you can also save the current data using the <a class="reference internal" href="_images/16x16_document-save-as.png"><img alt="16x16_document-save-as" src="_images/16x16_document-save-as.png" style="width: 16px;" /></a> <span class="guilabel">Save</span> button in the <em>Spectrum Picker</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the <em>Spectrum Picker</em>.</p>
+</div>
+</div>
+<div class="section" id="focal-spot">
+<h2>Focal Spot<a class="headerlink" href="#focal-spot" title="Permalink to this headline">¶</a></h2>
+<p>Until this point, we have simulated an ideal point source. <em>aRT</em>ist also offers an approach to simulate a spatially extended focal spot profile. To understand what is happening, we will build a simple pinhole camera to project an image of the focal spot onto the detector. Then, we will start exploring the settings that <em>aRT</em>ist has to offer.</p>
+<div class="section" id="pinhole-camera">
+<h3>Pinhole Camera<a class="headerlink" href="#pinhole-camera" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Turn off the visibility of the <em>Support Cylinder</em>, the <em>Rotor</em> and the <em>Air Pocket</em> (<a class="reference internal" href="#objectvisibility"><span class="std std-numref">Fig. 66</span></a>).</p>
+</div>
+<div class="figure align-default" id="id14">
+<span id="objectvisibility"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-focalspot-objects-visibility.png"><img alt="_images/tutorial-xraysource-focalspot-objects-visibility.png" src="_images/tutorial-xraysource-focalspot-objects-visibility.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 66 </span><span class="caption-text">We turned off the visibility of the objects in the scene to make room for the pinhole camera.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+<p>Using the <em>Solids</em> generator, we will now set up a plate of a highly absorbing material and poke a small hole at its centre.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Open the <a class="reference internal" href="_images/32x32_icon-solid.png"><img alt="32x32_icon-solid" src="_images/32x32_icon-solid.png" style="width: 32px;" /></a> <em>Solid</em> module.</p></li>
+<li><dl class="simple">
+<dt>Create a <span class="guilabel">cuboid</span> with the following dimensions (<a class="reference internal" href="#solidsplate"><span class="std std-numref">Fig. 67</span></a>)</dt><dd><ul class="simple">
+<li><p><span class="guilabel">X</span> = 100 mm</p></li>
+<li><p><span class="guilabel">Y</span> = 100 mm</p></li>
+<li><p><span class="guilabel">Z</span> = 0.1 mm</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Press the <span class="guilabel">Create</span> button.</p></li>
+</ol>
+</div>
+<div class="figure align-default" id="id15">
+<span id="solidsplate"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-pinhole-solids-plate.png"><img alt="_images/tutorial-xraysource-pinhole-solids-plate.png" src="_images/tutorial-xraysource-pinhole-solids-plate.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 67 </span><span class="caption-text">We use the <em>Solids</em> generator to create a cover plate.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple" start="4">
+<li><dl class="simple">
+<dt>Create a <span class="guilabel">cylinder</span> with the following dimensions (<a class="reference internal" href="#solidscylinder"><span class="std std-numref">Fig. 68</span></a>)</dt><dd><ul class="simple">
+<li><p><span class="guilabel">X</span> = 0.05 mm</p></li>
+<li><p><span class="guilabel">Y</span> = 0.20 mm</p></li>
+<li><p><span class="guilabel">Z</span> = 0.05 mm</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Press the <span class="guilabel">Create</span> button.</p></li>
+<li><p>Close the <em>Solids</em> module window.</p></li>
+</ol>
+</div>
+<div class="figure align-default" id="id16">
+<span id="solidscylinder"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-pinhole-solids-cylinder.png"><img alt="_images/tutorial-xraysource-pinhole-solids-cylinder.png" src="_images/tutorial-xraysource-pinhole-solids-cylinder.png" style="width: 70%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 68 </span><span class="caption-text">We use the <em>Solids</em> generator to create a cylinder for the pinhole.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+</div>
+<p>We’ll rename the two generated parts to make it nicer, and set the cover’s material to a highly absorbing platinum, whereas the hole needs to be filled with air, our environment material. Also, the pinhole cylinder does not have the correct orientation yet: we need to rotate it to point in the direction of the beam. We will then position our pinhole very close in front of the source to reach a high magnification of the focal spot.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Rename the <code class="code docutils literal notranslate"><span class="pre">cuboid</span></code> to <code class="code docutils literal notranslate"><span class="pre">Cover</span></code>.</p></li>
+<li><p>Rename the <code class="code docutils literal notranslate"><span class="pre">cylinder</span></code> to <code class="code docutils literal notranslate"><span class="pre">Pinhole</span></code>.</p></li>
+<li><p>Rotate the <em>Pinhole</em> by 90 degrees around the world’s X axis: enter <code class="code docutils literal notranslate"><span class="pre">90</span></code> for its <span class="guilabel">X Orientation</span>.</p></li>
+<li><p>Set the <em>Cover’s</em> material to <span class="guilabel">Pt</span> and its <span class="guilabel">Z Position</span> to <code class="code docutils literal notranslate"><span class="pre">485</span></code>.</p></li>
+<li><p>Set the <em>Pinhole’s</em> material to <span class="guilabel">air</span> and its <span class="guilabel">Z Position</span> to <code class="code docutils literal notranslate"><span class="pre">485</span></code>.</p></li>
+</ul>
+</div>
+<p>You should now have a setup as displayed in <a class="reference internal" href="#pinholeartistwindow"><span class="std std-numref">Fig. 69</span></a>.</p>
+<div class="figure align-default" id="id17">
+<span id="pinholeartistwindow"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-pinhole-complete.png"><img alt="_images/tutorial-xraysource-pinhole-complete.png" src="_images/tutorial-xraysource-pinhole-complete.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 69 </span><span class="caption-text">We created a pinhole camera.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="spot-size-spot-type">
+<h3>Spot Size &amp; Spot Type<a class="headerlink" href="#spot-size-spot-type" title="Permalink to this headline">¶</a></h3>
+<p>To simulate X-ray spots, <em>aRT</em>ist’s approach is to place several point sources in the rectangular 2D source region. In the <em>Focal spot</em> settings group of the <em>Source</em>, you can set the <span class="guilabel">Size [mm]</span> of this rectangular region. The number of point sources can be set under <span class="guilabel">Spot type</span>. If you set a single integer, the point sources will be distributed in a random pattern, but optimized such that points are not too close to each other (<a class="reference external" href="https://en.wikipedia.org/wiki/Supersampling#Poisson_disk">Poisson Disc Sampling</a>). You can also choose a regular grid by entering two integers separated by an <code class="code docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>You can either choose pre-defined spot types from the drop-down menu, or enter your own numbers and grid sizes.</p>
+<p>The simulation will be closer to reality with more point sources, but the simulation time will increase proportionally.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Go to the <span class="guilabel">Source</span> parameter panel.</p></li>
+<li><p>Enter a spot size of <code class="code docutils literal notranslate"><span class="pre">1.5</span></code> mm in <span class="guilabel">X</span> and <span class="guilabel">Y</span> direction.</p></li>
+<li><p>For <span class="guilabel">Spot type</span>, enter <code class="code docutils literal notranslate"><span class="pre">4x4</span></code> (<a class="reference internal" href="#spot4x4"><span class="std std-numref">Fig. 70</span></a>).</p></li>
+<li><p>Run a full simulation by pressing the <a class="reference internal" href="_images/32x32_compute-radiography.png"><img alt="32x32_compute-radiography" src="_images/32x32_compute-radiography.png" style="width: 32px;" /></a> <span class="guilabel">Run</span> button.</p></li>
+</ol>
+</div>
+<div class="figure align-default" id="id18">
+<span id="spot4x4"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-4x4.png"><img alt="_images/tutorial-xraysource-spot-4x4.png" src="_images/tutorial-xraysource-spot-4x4.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 70 </span><span class="caption-text">Settings for 4×4 point sources arranged in a regular grid on the source region.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p>Once the full simulation is complete, you should see an image of the magnified focal spot in the <em>Image Viewer</em>: a regular grid pattern of 16 individual point sources (<a class="reference internal" href="#spot4x4imageviewer"><span class="std std-numref">Fig. 71</span></a>).</p>
+<div class="figure align-default" id="id19">
+<span id="spot4x4imageviewer"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-4x4-image-viewer.png"><img alt="_images/tutorial-xraysource-spot-4x4-image-viewer.png" src="_images/tutorial-xraysource-spot-4x4-image-viewer.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 71 </span><span class="caption-text">Image of the magnified focal spot, simulated as 16 individual point sources arranged in a regular grid.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For the <span class="guilabel">Spot type</span>, enter <code class="code docutils literal notranslate"><span class="pre">20</span></code> (<a class="reference internal" href="#spot20"><span class="std std-numref">Fig. 72</span></a>) and press the <a class="reference internal" href="_images/32x32_compute-radiography.png"><img alt="32x32_compute-radiography" src="_images/32x32_compute-radiography.png" style="width: 32px;" /></a> <span class="guilabel">Run</span> button again.</p>
+</div>
+<div class="figure align-default" id="id20">
+<span id="spot20"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-20.png"><img alt="_images/tutorial-xraysource-spot-20.png" src="_images/tutorial-xraysource-spot-20.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 72 </span><span class="caption-text">Settings for 20 point sources arranged in a quasi-random way on the source region.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>You will now see a Poisson Disc pattern of 20 individual point sources in the <em>Image Viewer</em> (<a class="reference internal" href="#spot20imageviewer"><span class="std std-numref">Fig. 73</span></a>).</p>
+<div class="figure align-default" id="id21">
+<span id="spot20imageviewer"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-20-image-viewer.png"><img alt="_images/tutorial-xraysource-spot-20-image-viewer.png" src="_images/tutorial-xraysource-spot-20-image-viewer.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 73 </span><span class="caption-text">Image of the magnified focal spot, simulated as 20 individual point sources.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+<p>Each of these point sources has the same intensity: the total photon flux given by the current and spectrum is divided up evenly among each of the points. In the next section, we will learn how to set up intensity profiles for the focal spot.</p>
+</div>
+<div class="section" id="spot-intensity-profile">
+<h3>Spot Intensity Profile<a class="headerlink" href="#spot-intensity-profile" title="Permalink to this headline">¶</a></h3>
+<p><em>aRT</em>ist offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Click the button <a class="reference internal" href="_images/22x22_smooth.png"><img alt="22x22_smooth" src="_images/22x22_smooth.png" style="width: 22px;" /></a> <span class="guilabel">Create a spot profile image</span>. A window will appear that lets you enter the profile parameters (<a class="reference internal" href="#spotgenerator"><span class="std std-numref">Fig. 74</span></a>).</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><span class="guilabel">Width</span>: <code class="code docutils literal notranslate"><span class="pre">1.5</span></code></p></li>
+<li><p><span class="guilabel">Height</span>: <code class="code docutils literal notranslate"><span class="pre">1.5</span></code></p></li>
+<li><p><span class="guilabel">Fraction</span>: <code class="code docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+<li><p><span class="guilabel">Resolution</span>: <code class="code docutils literal notranslate"><span class="pre">301</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>Click the <span class="guilabel">Set</span> button (the following calculation may take a few seconds).</p>
+</div>
+<div class="figure align-default" id="id22">
+<span id="spotgenerator"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-profile-generator.png"><img alt="_images/tutorial-xraysource-spot-profile-generator.png" src="_images/tutorial-xraysource-spot-profile-generator.png" style="width: 40%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 74 </span><span class="caption-text">Profile generator for the focal spot.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+</div>
+<p>The parameters that you can enter here are for a <em>Pseudo-Voigt</em> profile, V(r), a linear combination of a Gaussian distribution G(r) and a Lorentzian distribution L(r), weighted by the Lorentz <span class="guilabel">fraction</span> η.</p>
+<div class="math">
+<p><img src="_images/math/b2ed70542f1aaee2a0d5229aeeccfbdced493134.png" alt="V(r) = \eta \cdot L(r) + (1-\eta) \cdot G(r)"/></p>
+</div><p>The normalized Gaussian distribution is given by</p>
+<div class="math">
+<p><img src="_images/math/17aa44f0934b50f722c85cac1840a2ea6703558b.png" alt="G(r) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{r^2}{2\sigma^2} \right) = \frac{\sqrt{\ln 2}}{w\sqrt{\pi}} \exp\left( -\frac{r^2 \ln 2}{w^2} \right)"/></p>
+</div><p>with the <span class="guilabel">width</span> <em>w</em>, which is the parameter that you entered for the width (or height). For a Gaussian distribution, this is the half width at half maximum, or:</p>
+<div class="math">
+<p><img src="_images/math/561519d6410e1f400ffc01f2933ee5bbff45ebc7.png" alt="\textsf{FWHM} = 2w = 2\sigma\sqrt{2 \ln 2}."/></p>
+</div><p>The Lorentzian distribution is given by</p>
+<div class="math">
+<p><img src="_images/math/4c83d8318ffd4208bb552706f62eb3e33d393d5c.png" alt="L(r) = \left[ w \pi \left( 1 + \frac{r^2}{w^2} \right) \right]^{-1}."/></p>
+</div><p><em>aRT</em>ist generates a square image for a symmetric intensity profile. If the <span class="guilabel">width</span> and <span class="guilabel">height</span> (in mm) are not equal, the spot profile image will be stretched to cover the rectangular source region.</p>
+<p>In general, <em>aRT</em>ist will set up the size of the source rectangle such that its physical width and height are a factor of three higher than the ones you entered. This means that it covers 1.5 times the FWHM; the rest of the distribution is cut off. If you need a different source spot alignment, you can rotate the source object with the <em>Transform</em> tools in the <span class="guilabel">Setup</span> tab.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the <em>Focal Spot Profile Generator</em> window. Press the button <a class="reference internal" href="_images/22x22_image-viewer.png"><img alt="22x22_image-viewer" src="_images/22x22_image-viewer.png" style="width: 22px;" /></a> <span class="guilabel">Show spot profile image</span>. The profile we just generated will appear in the <em>Image Viewer</em> (<a class="reference internal" href="#spotprofileview"><span class="std std-numref">Fig. 75</span></a>).</p>
+</div>
+<div class="figure align-default" id="id23">
+<span id="spotprofileview"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-profile-view.png"><img alt="_images/tutorial-xraysource-spot-profile-view.png" src="_images/tutorial-xraysource-spot-profile-view.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 75 </span><span class="caption-text">The <em>Image Viewer</em> shows the spot profile we just generated.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+<p>The spot profile image has a size of 301×301 pixels: this is the <span class="guilabel">resolution</span> we requested. It is an odd number such that the central pixel contains the intensity maximum.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Press the <a class="reference internal" href="_images/32x32_compute-radiography.png"><img alt="32x32_compute-radiography" src="_images/32x32_compute-radiography.png" style="width: 32px;" /></a> <span class="guilabel">Run</span> button to calculate another projection image.</p>
+</div>
+<p>The <em>Image Viewer</em> now shows how the 20 single point sources are distributed on the intensity profile (higher intensities are more likely) and how their individual intensity is weighted (<a class="reference internal" href="#spot20intensityprofile"><span class="std std-numref">Fig. 76</span></a>).</p>
+<div class="figure align-default" id="id24">
+<span id="spot20intensityprofile"></span><a class="reference internal image-reference" href="_images/tutorial-xraysource-spot-20-intensityProfile.png"><img alt="_images/tutorial-xraysource-spot-20-intensityProfile.png" src="_images/tutorial-xraysource-spot-20-intensityProfile.png" style="width: 50%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 76 </span><span class="caption-text">The <em>Image Viewer</em> shows the projection of the 20 point sources spread across the intensity profile we just generated.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can also load spot profiles from external grey value images using the button <a class="reference internal" href="_images/22x22_document-open-folder.png"><img alt="22x22_document-open-folder" src="_images/22x22_document-open-folder.png" style="width: 22px;" /></a> <span class="guilabel">Load spot profile image from file</span>. Externally loaded spot image files will be placed onto the source in the same way as our generated profile image: it will be stretched to completely fill the source rectangle. The aspect ratio can be adjusted with the physical size (in mm) that you set for the source/focal spot in <em>aRT</em>ist.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, you have learned how to set up <em>aRT</em>ist’s virtual X-ray tube.</p>
+<ul class="simple">
+<li><p>You learned how to generate a spectrum using the <em>Spectrum Calculator</em>.</p></li>
+<li><p>You saw how <code class="code docutils literal notranslate"><span class="pre">.xrs</span></code> spectrum files are structured and how to import your own spectra.</p></li>
+<li><p>You have used the <em>Spectrum Picker</em> to get the spectrum after attenuation.</p></li>
+<li><p>You learned how <em>aRT</em>ist simulates spatially extended spots using multiple point sources arranged in grids or smart patterns.</p></li>
+<li><p>You know how to apply an intensity profile for the focal spot and how <em>aRT</em>ist uses it to distribute the point sources and their intensities according to the given intensity map.</p></li>
+</ul>
+<div class="line-block">
+<div class="line">The scene that we created up to this point is available for download:</div>
+<div class="line"><a class="reference download internal" download="" href="_downloads/0362cf8999e52c60016dffb49177d6ff/tutorial_xray_source.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_xray_source.aRTist</span></code></a> (4.7 MB)</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorial_ctscan_module.html" class="btn btn-neutral float-left" title="CtScan Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

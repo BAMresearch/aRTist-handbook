@@ -1,8 +1,7 @@
-.. |artist| replace:: *aRT*\ ist
+.. include:: _templates/icons.rst
 
 Scene
 --------
 .. _SceneSection:
 
 Virtual Scene (basic navigation)
-

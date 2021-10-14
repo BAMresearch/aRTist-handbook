@@ -1,3 +1,5 @@
+.. include:: _templates/icons.rst
+
 File Formats
 ============
 
@@ -20,4 +22,3 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
    fileformats_detector
    bamct_file_format
    fileformats_vgi
-   

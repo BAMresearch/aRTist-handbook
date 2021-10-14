@@ -3,18 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-aRTist Handbook
-===============
+|artist| Handbook
+=================
+
+.. _artistHandbook:
 
 .. figure:: pictures/artist_truecolor_256.png
     :figwidth: 20%
     :align: right
 
-This manual is intended as a practical guide for the use of the radiographic simulator `aRTist <http://artist.bam.de>`_. *aRT*\ ist is a software package for computer simulation of radiographic testing developed by Bundesanstalt für Materialforschung und -prüfung (BAM), Berlin, Germany.
+This manual is intended as a practical guide for the use of the radiographic simulator `aRTist <http://artist.bam.de>`_, a software package for computer simulation of radiographic testing developed by Bundesanstalt für Materialforschung und -prüfung (BAM), Berlin, Germany.
 
 The information in this manual is for reference and informational use only. We assume no responsibility or liability for any inaccuracies or errors in this document.
 
-.. note:: This manual refers to *aRT*\ ist version **2.12**.
+.. note:: This manual refers to |artist| version **2.12**.
 
 | Contact information:
 | `aRTist@bam.de <mailto:aRTist@bam.de>`_
@@ -53,3 +55,4 @@ The information in this manual is for reference and informational use only. We a
    tutorial_digrad_module
    tutorial_tomosynth_module
    tutorial_advanct_module
+   tutorial_xray_source

@@ -1,5 +1,5 @@
-.. Handy substitutions
-.. |artist| replace:: *aRT*\ ist
+.. include:: _templates/icons.rst
+
 .. |icon-run| image:: pictures/icons/16x16_compute-run.png
     :width: 16
 .. |icon-settings| image:: pictures/icons/16x16_preferences-system.png

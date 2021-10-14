@@ -22,7 +22,7 @@ For example, if you have X-ray projections with 1000 pixel columns and 16 bit gr
 Byte Order
 ^^^^^^^^^^
 
-Any header or image data unit that is stored in more than 1 byte can be either written in *big-endian byte order* or in *little-endian byte order*. The first 12 bytes of the header reveal which byte order is used (see "File Name" section). Since today's CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with *aRT*\ ist use.
+Any header or image data unit that is stored in more than 1 byte can be either written in *big-endian byte order* or in *little-endian byte order*. The first 12 bytes of the header reveal which byte order is used (see "File Name" section). Since today's CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with |artist| use.
 
 
 File Name

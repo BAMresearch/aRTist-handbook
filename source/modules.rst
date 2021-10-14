@@ -1,3 +1,5 @@
+.. include:: _templates/icons.rst
+
 Modules
 =======
 

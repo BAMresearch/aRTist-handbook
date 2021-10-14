@@ -1,4 +1,4 @@
-.. |artist| replace:: *aRT*\ ist
+.. include:: _templates/icons.rst
 
 Menu bar
 --------
@@ -54,26 +54,13 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 
     Edit menu.
 
-* |icon-undo| **Undo** erases the last change done to the project reverting it to its previous state. Alternatively, press :kbd:`ctrl` + :kbd:`z`.
-* |icon-redo| **Redo** reverses the Undo or advances the buffer to its former state. Alternatively, press :kbd:`ctrl` + :kbd:`y`. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.
+* |16x16_edit-undo| **Undo** erases the last change done to the project reverting it to its previous state. Alternatively, press :kbd:`ctrl` + :kbd:`z`.
+* |16x16_edit-redo| **Redo** reverses the Undo or advances the buffer to its former state. Alternatively, press :kbd:`ctrl` + :kbd:`y`. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.
 * **History** displays the chronology of your recent actions and lets you revert back to any previous state. Alternatively, press :kbd:`ctrl` + :kbd:`h` to open the history.
-* |icon-cut| **Cut** removes parts from the assembly and keeps them in the clipboard. In the scene or in the *Assembly list* (in the *Parameter panel*), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the :kbd:`ctrl` key pressed on the keyboard.
-* |icon-copy| **Copy** can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the *Assembly List* (of *Parameter Panel*). The selected parts are kept in the clipboard.
-* |icon-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
-* |icon-delete| **Delete** removes selected parts from the *Assembly List*. 
-
-.. |icon-undo| image:: pictures/icons/16x16_edit-undo.png
-    :width: 16
-.. |icon-redo| image:: pictures/icons/16x16_edit-redo.png
-    :width: 16
-.. |icon-cut| image:: pictures/icons/16x16_edit-cut.png
-    :width: 16
-.. |icon-copy| image:: pictures/icons/16x16_edit-copy.png
-    :width: 16
-.. |icon-paste| image:: pictures/icons/16x16_edit-paste.png
-    :width: 16
-.. |icon-delete| image:: pictures/icons/16x16_edit-delete.png
-    :width: 16
+* |16x16_edit-cut| **Cut** removes parts from the assembly and keeps them in the clipboard. In the scene or in the *Assembly list* (in the *Parameter panel*), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the :kbd:`ctrl` key pressed on the keyboard.
+* |16x16_edit-copy| **Copy** can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the *Assembly List* (of *Parameter Panel*). The selected parts are kept in the clipboard.
+* |16x16_edit-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
+* |16x16_edit-delete| **Delete** removes selected parts from the *Assembly List*.
 
 
 Geometry menu
@@ -89,9 +76,9 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 
     Geometry menu.
 
-* |icon-centernew| **Center New Parts** positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.
-* **Isolate** deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the |icon-eye| eye symbol at the *Parameter Panel* → *Setup* → *Assembly List*.
-* **Activate/Deactivate** selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the |icon-eye| eye symbol in the *Assembly List* of the *Parameter Panel* to achieve the same effect.
+* |16x16_center-new| **Center New Parts** positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.
+* **Isolate** deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the |16x16_object-visible-on| eye symbol at the *Parameter Panel* → *Setup* → *Assembly List*.
+* **Activate/Deactivate** selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the |16x16_object-visible-on| eye symbol in the *Assembly List* of the *Parameter Panel* to achieve the same effect.
 * **Set Material** changes the material of a selected part. As an alternative, you may click on the material name of a part in the *Assembly List* of the parameter panel to open a drop-down menu with the same options.
 * |icon-union| **Union,** |icon-intersection| **Intersection** and |icon-difference| **Difference** can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the |icon-solid| *Solid* module) and placed in the scene, so that they overlap. Then, select parts by using the :kbd:`Ctrl` key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called *Geometry Manipulation* commands are explained more detailed in another section.
 
@@ -163,10 +150,10 @@ The :guilabel:`Modules` menu offers the selection of the available extention mod
 * **CtScan** module enables virtual X-ray computerized tomography (CT) with circular trajectory. In the three tabs of this module the corresponding settings can be navigated. Click on the Run button in the bottom of each page to start the simulation or to stop it. When the simulation is finished, click on the Show button of the first tab and the tomogram can be viewed in the scene. In ImageViewer the sectional image of the tomogram can be seen when in Volume View (third tab of tScan Module) the Show button is clicked. For more details see in Modules → CtScan.
 * **DetectorCalc** module will add new detector models to aRTist. Thereby the reference shot is necessary for calibration and calculation, also filtration over the detector is possible. For more information see `Modules → DetectorCalc`.
 * **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see `Modules → DigRad`.
-* |icon| **ImageViewer** The only module by default in the docking area is the ImageViewer. The preview image and the finished simulation are displayed there. You may choose between radiography and thickness map. The different settings and functions of ImageViewer (upper bar, lower bar and bar on the right) will be explained in Modules → ImageViewer. In a subitem called Tools Menu: ImageViewer advanced settings from the Menu Bar → Tools → ImageViewer are described.
+* **ImageViewer** The only module by default in the docking area is the ImageViewer. The preview image and the finished simulation are displayed there. You may choose between radiography and thickness map. The different settings and functions of ImageViewer (upper bar, lower bar and bar on the right) will be explained in Modules → ImageViewer. In a subitem called Tools Menu: ImageViewer advanced settings from the Menu Bar → Tools → ImageViewer are described.
 * **LogViewer** module displays internal messages by aRTist and its components.
 * **McRay**
-* |icon| **Solid** module, simple parts (respectively virtual objects) of different sizes can be created and added to the scene. Different geometric shapes can be chosen from: cuboid, ellipsoid, cylinder, tube, cone, text, wedge and/or step wedge. For more information see the chapter Modules → Solid.
+* **Solid** module, simple parts (respectively virtual objects) of different sizes can be created and added to the scene. Different geometric shapes can be chosen from: cuboid, ellipsoid, cylinder, tube, cone, text, wedge and/or step wedge. For more information see the chapter Modules → Solid.
 * **TomoSynth** Simulating tomosynthesis within aRTist are enabled with the TomoSynth module. On the Laminography tab settings for the tube, detector and output options can be set up. The Advanced tab offers settings for experts. More functions and information of TomoSynth will be explained in Modules → TomoSynth.
 
 Tools menu
