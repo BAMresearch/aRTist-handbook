@@ -42,7 +42,7 @@ extensions = [
 bibtex_bibfiles = ['references.bib']
 
 # Define bibtex enconding (default: utf-8-sig)
-bibtex_encoding = 'latin'
+bibtex_encoding = 'utf-8-sig'
 
 # Define bibtex style
 bibtex_default_style = 'unsrt'

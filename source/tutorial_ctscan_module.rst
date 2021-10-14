@@ -93,7 +93,7 @@ CtScan Setup
 ------------
 .. _CtScanModuleCtScanSetup:
 
-In the previous section :ref:`A Simple CT Scan <CtScanModuleASimpleCTScan>`: the basic functionality of the *CtScan* module has been demonstrated. Therefore, a template |artist| project has been provided, which already included definitions of the basic components of a CT system. Generally for a CT scan simulation, there are several parameters to be considered as displayed in :numref:`CtScanModuleComponents`.
+In the previous section :ref:`A Simple CT Scan <CtScanModuleASimpleCTScan>` the basic functionality of the *CtScan* module has been demonstrated. Therefore, a template |artist| project has been provided, which already included definitions of the basic components of a CT system. Generally for a CT scan simulation, there are several parameters to be considered as displayed in :numref:`CtScanModuleComponents`.
 
 .. _CtScanModuleComponents:
 .. figure:: pictures/CtScanModule_Components.svg
@@ -131,15 +131,13 @@ In computed tomography, the ratio :math:`M` of the distance between the x-ray so
 
   M = \frac{SOD}{SDD}
 
-This ratio, also called *magnification*, is used in the reconstruction process to scale the acquired projections in order to reconstruct the actual size of the measured volume. Therefore, the relative position between the x-ray source and the detector in |artist| has to be adjusted. By default, the source and the detector are placed along the global z-Axis with a distance of 100 mm and the centrepoint of the detector plane as origin of the global coordinate system. Each object in the assembly list can be adjusted to by it's position, orientation and size inside the scene. Therefore, each object has to be selected from the assembly list (compare :numref:`CtScanModuleAssemblyList`.) and can be adjusted in the transformation section either using the |icon-world| |nbsp| **world coordinate system** or by a |icon-local| |nbsp| **local coordinate system**, which is based on a minimum bounding box that will be fitted automatically if an object is imported into the scene. By default |artist| will define the x-ray direction based on the line direction between the source centrepoint and the detector centrepoint.
+This ratio, also called *magnification*, is used in the reconstruction process to scale the acquired projections in order to reconstruct the actual size of the measured volume. Therefore, the relative position between the x-ray source and the detector in |artist| has to be adjusted. By default, the source and the detector are placed along the global z-Axis with a distance of 100 mm and the centrepoint of the detector plane as origin of the global coordinate system. Each object in the assembly list can be adjusted by it's position, orientation and size inside the scene. Therefore, each object has to be selected from the assembly list (compare :numref:`CtScanModuleAssemblyList`.) and can be adjusted in the transformation section either using the |icon-world| |nbsp| **world coordinate system** or the |icon-local| |nbsp| **local coordinate system**, which is based on a minimum bounding box that will be fitted automatically if an object is imported into the scene. By default |artist| will define the x-ray direction based on the line direction between the source centrepoint and the detector centrepoint.
 
 .. note::
 
-	If *McRay* scattering is enabled, the default position of the x-ray source in positive direction of the global z-axis shall not be changed, since the internal definition of the *McRay* module depends on this axis definition.
+ * If *McRay* scattering is enabled, the default position of the x-ray source in positive direction of the global z-axis shall not be changed, since the internal definition of the *McRay* module depends on this axis definition.
 
-.. note::
-
-	 To avoid ambiguities, every orientation transformation will be applied first along the selected z-axis, then the x-axis and last the y-axis. This sequence will be applied for every change in the transformation tab of the selected object.
+ * To avoid ambiguities, every orientation transformation will be applied first along the selected z-axis, then the x-axis and last the y-axis. This sequence will be applied for every change in the transformation tab of the selected object.
 
 For more information on the available coordinate systems in |artist| follow to :ref:`The Virtual Scene <theVirtualSceneChapter>` section. More details about transforming an object inside the scene please have a look at the :ref:`Position, Orientation & Size <PositionOrientationSizeChapter>` chapter.
 
@@ -167,6 +165,25 @@ In industrial CT systems the operator is usually in control of the x-ray tube pa
 
   * If more than 128 sampling points are defined by the acceleration voltage and the resolution, |artist| will prompt to reduce the calculated spectrum to 128 datapoints, which is sufficient for most use cases.
 
+The tube current can be set in the in the :guilabel:`Exposure` menu and adjusts the intensity of the defined x-ray source.
+
+|artist| supports three general types of focal spot definitions, which can be adjusted in the :guilabel:`Focal spot` menu. By default every focal spot is defined as a single point inside the focal spot plane. If the :guilabel:`Spot type` :code:`point` is chosen, the focal spot plane size will be ignored and replaced with a single point at the defined position in the assembly list. Alternatively, either a regular grid of :math:`m \times n` focal spot points or a random distributed number of :math:`m` focal spot points can be used.
+
+.. note::
+
+ * The :guilabel:`Spot type` entries in |artist| are examples. Every regular grid combination of :math:`m \times n` spots or :math:`m` random distributed spots can be used.
+
+ * Every additional defined focal spot point will increase the necessary computational time for a single projection, since every spot is connected to every pixel of the defined detector.
+
+ * If a single point :math:`m > 1` is chosen, the focal spots will be randomly distributed with a Poisson disc pattern, to centralize the focal spots to the centre of the focal spot plane and avoid overlapping.
+
+Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from :math:`\left[0;1\right]` or it can be generated with an additional focal spot image generator.
+
+.. _CtScanModuleFocalSpotMechanic:
+.. figure:: pictures/CtScanModule_FocalSpotMechanic.svg
+	:width: 100%
+
+	Image projection (A and C) of an 1:1 detector in |artist| with a distance of 5 |nbsp| mm between source and detector (1000x1000 |nbsp| px). Figure (A) is a raw projection defined by a 5x5 focal spot grid. (C) is the weighted result of the raw projection (A) and the gaussian focal spot weight (B). :cite:p:`Binder2021`
 
 .. ############################################################################
 
