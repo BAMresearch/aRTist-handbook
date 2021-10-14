@@ -10,4 +10,14 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
 * **Docking area**, integrates additional program windows and modules. By default, the **Image Viewer** showing the simulated radiograph is placed here.
 * **Status bar** displays what's currently going on.
 
+.. toctree::
+   :maxdepth: 2
+   :caption: User interface elements:
 
+   modules-imageviewer
+   modules-solid
+   modules-ctscan
+   modules-detectorcalc
+   modules-digrad
+   modules-tomosynth
+   modules-mcray

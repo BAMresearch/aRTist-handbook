@@ -27,3 +27,7 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
 
    gui-menu-bar
    gui-scene
+   gui-setup
+   gui-source
+   gui-scattering
+   gui-detector
