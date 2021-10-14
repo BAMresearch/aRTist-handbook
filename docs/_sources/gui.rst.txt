@@ -1,7 +1,7 @@
 User interface
 ==============
 
-When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`) with the following areas.
+When you open |artist|, you will see its main window (:numref:`guiMainWindow`) with the following areas.
 
 * **Menu bar**, used to access detailed settings and commands.
 * **Toolbar**, used to access the most commonly used functions and viewer settings.

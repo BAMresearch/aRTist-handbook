@@ -10,6 +10,11 @@ The [Read the Docs theme](https://sphinx-rtd-theme.readthedocs.io) is required. 
 
     pip install sphinx_rtd_theme
 
+Additionally the [sphinxcontrib-bibtex](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html) extension is required. To install it, use:
+
+    pip install sphinxcontrib-bibtex
+    
+The references.bib file can be edited with a reference manager like [JabRef](https://www.jabref.org/).
 
 ## Compile and deploy
 

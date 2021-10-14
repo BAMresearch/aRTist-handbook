@@ -195,19 +195,19 @@
 <p>To make this demonstration quicker, we will decrease the number of detector pixels to 250×250.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to make the pixel size a degree of freedom while we keep the overall physical size and set a fixed number of pixels. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 43</span></a>).</p>
+<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to make the pixel size a degree of freedom while we keep the overall physical size and set a fixed number of pixels. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 44</span></a>).</p>
 </div>
 <div class="figure align-default" id="id1">
 <span id="detectorsettingspixels"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-detector-settings.png"><img alt="_images/tutorial-ctscan-detector-settings.png" src="_images/tutorial-ctscan-detector-settings.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">We decrease the number of detector pixels to 250×250.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">We decrease the number of detector pixels to 250×250.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Open the <em>CtScan</em> module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">CtScan</span> (<a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>).</p>
+<p>Open the <em>CtScan</em> module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">CtScan</span> (<a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 45</span></a>).</p>
 </div>
 <div class="figure align-default" id="id2">
 <span id="ctscanwindow"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-window.png"><img alt="_images/tutorial-ctscan-window.png" src="_images/tutorial-ctscan-window.png" style="width: 55%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>Let’s simulate one full rotation (360°):</p>
 <div class="admonition note">
@@ -219,7 +219,7 @@
 <p class="admonition-title">Note</p>
 <p>For the <span class="guilabel">Number of Steps</span>, enter <code class="code docutils literal notranslate"><span class="pre">400</span></code>. The <span class="guilabel">Angle Step Size [°]</span> should automatically be calculated and display <code class="code docutils literal notranslate"><span class="pre">0.9</span></code>.</p>
 </div>
-<p>You can choose a different output <span class="guilabel">directory</span> for the projection files. If you leave the <code class="code docutils literal notranslate"><span class="pre">#</span></code> directory as it is, everything will be saved in your <em>Default Directory</em>. You can set this in your settings: from the menu bar, choose <span class="guilabel">Tools</span> → <a class="reference internal" href="_images/16x16_preferences-system.png"><img alt="icon-settings" src="_images/16x16_preferences-system.png" style="width: 16px;" /></a> <span class="guilabel">Settings</span> to see your <em>Default Directory</em>.</p>
+<p>You can choose a different output <span class="guilabel">directory</span> for the projection files. If you leave the <code class="code docutils literal notranslate"><span class="pre">#</span></code> directory as it is, everything will be saved in your <em>Default Directory</em>. You can set this in your settings: from the menu bar, choose <span class="guilabel">Tools</span> → <a class="reference internal" href="_images/16x16_preferences-system.png"><img alt="16x16_preferences-system" src="_images/16x16_preferences-system.png" style="width: 16px;" /></a> <span class="guilabel">Settings</span> to see your <em>Default Directory</em>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Enter a <span class="guilabel">File Name</span> for your projection files. In this demonstration, we will name it <code class="code docutils literal notranslate"><span class="pre">rotor</span></code>.</p>
@@ -231,31 +231,31 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in <a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 44</span></a>). Click the <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="icon-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> button to start the scan. The CT simulation should start and you should be able to observe the <em>Rotor’s</em> rotation around its own centre in the virtual scene. The <em>Air Pocket</em> should follow this rotation as well.</p>
+<p>Go ahead and simulate a TIFF stack by choosing the appropriate settings (as shown for example in <a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 45</span></a>). Click the <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="16x16_compute-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> button to start the scan. The CT simulation should start and you should be able to observe the <em>Rotor’s</em> rotation around its own centre in the virtual scene. The <em>Air Pocket</em> should follow this rotation as well.</p>
 </div>
 </div>
 <div class="section" id="centre-of-rotation">
 <h2>Centre of Rotation<a class="headerlink" href="#centre-of-rotation" title="Permalink to this headline">¶</a></h2>
-<p>The warning box at the beginning already explained that the <em>CtScan</em> module always chooses an axis of rotation that points in the <em>Y</em> direction of the coordinate system. The centre of rotation will be placed on the principal ray that connects the source and the detector centre. In <em>aRT</em>ist’s standard coordinate system, this is the <em>Z</em> axis of the world coordinate system. The point on this axis (and therefore the actual <abbr title="source-object distance">SOD</abbr>) will be determined by the <strong>common bounding box</strong> that encloses <strong>all parts</strong> that participate in the CT rotation. The centre coordinate of this common bounding box, projected along the <em>X</em> axis onto the principal ray (if it is not already there) determines the centre of rotation (<a class="reference internal" href="#ctscancentreofrotation"><span class="std std-numref">Fig. 45</span></a>).</p>
+<p>The warning box at the beginning already explained that the <em>CtScan</em> module always chooses an axis of rotation that points in the <em>Y</em> direction of the coordinate system. The centre of rotation will be placed on the principal ray that connects the source and the detector centre. In <em>aRT</em>ist’s standard coordinate system, this is the <em>Z</em> axis of the world coordinate system. The point on this axis (and therefore the actual <abbr title="source-object distance">SOD</abbr>) will be determined by the <strong>common bounding box</strong> that encloses <strong>all parts</strong> that participate in the CT rotation. The centre coordinate of this common bounding box, projected along the <em>X</em> axis onto the principal ray (if it is not already there) determines the centre of rotation (<a class="reference internal" href="#ctscancentreofrotation"><span class="std std-numref">Fig. 46</span></a>).</p>
 <div class="figure align-default" id="id3">
 <span id="ctscancentreofrotation"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-centre-of-rotation.png"><img alt="_images/tutorial-ctscan-centre-of-rotation.png" src="_images/tutorial-ctscan-centre-of-rotation.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><strong>View from above:</strong> if multiple objects are in the scene, the <em>CtScan</em> module projects the centre of the common bounding box of all objects (blue cross) onto the principal ray axis to find the centre of rotation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><strong>View from above:</strong> if multiple objects are in the scene, the <em>CtScan</em> module projects the centre of the common bounding box of all objects (blue cross) onto the principal ray axis to find the centre of rotation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>In our current scene, the centre of the <em>Rotor</em> is the centre of rotation because its bounding box encloses both the <em>Rotor</em> and the <em>Air Pocket</em>. An easy way to shift the centre of rotation but keep the current position of all parts is to create a new “support object” that forces a different common bounding box.</p>
-<p>At the moment, our scan’s <abbr title="source-object distance">SOD</abbr> is 300 mm. We will shift the rotation axis to an <abbr title="source-object distance">SOD</abbr> of 310 mm without moving the <em>Rotor</em>, therefore simulating an off-axis rotation. To do this, we will create a big cylinder made of air (<a class="reference internal" href="#ctscansupportcylinder"><span class="std std-numref">Fig. 46</span></a>) that will be centred at an <abbr title="source-object distance">SOD</abbr> of 310 mm and that will completely contain the <em>Rotor</em> and the <em>Air Pocket</em>. This leads to a common bounding box of all three objects that is the same as the cylinder’s own bounding box.</p>
+<p>At the moment, our scan’s <abbr title="source-object distance">SOD</abbr> is 300 mm. We will shift the rotation axis to an <abbr title="source-object distance">SOD</abbr> of 310 mm without moving the <em>Rotor</em>, therefore simulating an off-axis rotation. To do this, we will create a big cylinder made of air (<a class="reference internal" href="#ctscansupportcylinder"><span class="std std-numref">Fig. 47</span></a>) that will be centred at an <abbr title="source-object distance">SOD</abbr> of 310 mm and that will completely contain the <em>Rotor</em> and the <em>Air Pocket</em>. This leads to a common bounding box of all three objects that is the same as the cylinder’s own bounding box.</p>
 <div class="figure align-default" id="id4">
 <span id="ctscansupportcylinder"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-setup.png"><img alt="_images/tutorial-ctscan-cylinder-setup.png" src="_images/tutorial-ctscan-cylinder-setup.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 46 </span><span class="caption-text"><strong>View from the side:</strong> we use a “support object” to shift the centre of rotation away from the <em>Rotor</em> towards the detector.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text"><strong>View from the side:</strong> we use a “support object” to shift the centre of rotation away from the <em>Rotor</em> towards the detector.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Open the <a class="reference internal" href="_images/32x32_icon-solid.png"><img alt="icon-solid" src="_images/32x32_icon-solid.png" style="width: 32px;" /></a> <strong>Solid module</strong> and create a cylinder with a diameter (<span class="guilabel">X</span> and <span class="guilabel">Z</span>) of <code class="code docutils literal notranslate"><span class="pre">100</span></code> mm and a height (<span class="guilabel">Y</span>) of <code class="code docutils literal notranslate"><span class="pre">80</span></code> mm. We use <code class="code docutils literal notranslate"><span class="pre">100</span></code> <span class="guilabel">Phi steps</span> to make it relatively smooth. (<a class="reference internal" href="#ctscansupportcylindersolid"><span class="std std-numref">Fig. 47</span></a>)</p>
+<p>Open the <a class="reference internal" href="_images/32x32_icon-solid.png"><img alt="32x32_icon-solid" src="_images/32x32_icon-solid.png" style="width: 32px;" /></a> <strong>Solid module</strong> and create a cylinder with a diameter (<span class="guilabel">X</span> and <span class="guilabel">Z</span>) of <code class="code docutils literal notranslate"><span class="pre">100</span></code> mm and a height (<span class="guilabel">Y</span>) of <code class="code docutils literal notranslate"><span class="pre">80</span></code> mm. We use <code class="code docutils literal notranslate"><span class="pre">100</span></code> <span class="guilabel">Phi steps</span> to make it relatively smooth. (<a class="reference internal" href="#ctscansupportcylindersolid"><span class="std std-numref">Fig. 48</span></a>)</p>
 </div>
 <div class="figure align-default" id="id5">
 <span id="ctscansupportcylindersolid"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-solid.png"><img alt="_images/tutorial-ctscan-cylinder-solid.png" src="_images/tutorial-ctscan-cylinder-solid.png" style="width: 70%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">We use the <em>Solid</em> module to create the support cylinder.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">We use the <em>Solid</em> module to create the support cylinder.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
-<p>Once the cylinder is created, we set its material to air. This way, it will not differ from the environment material anymore. You don’t actually need to change its material: it would already be enough to turn off its <a class="reference internal" href="_images/16x16_object-visible-on.png"><img alt="icon-eye" src="_images/16x16_object-visible-on.png" style="width: 16px;" /></a> <strong>visibility</strong>. The support cylinder will then be ignored during the attenuation simulation, but still fulfil its purpose as the object that shifts the axis of rotation for the <em>CtScan</em> module.</p>
+<p>Once the cylinder is created, we set its material to air. This way, it will not differ from the environment material anymore. You don’t actually need to change its material: it would already be enough to turn off its <a class="reference internal" href="_images/16x16_object-visible-on.png"><img alt="16x16_object-visible-on" src="_images/16x16_object-visible-on.png" style="width: 16px;" /></a> <strong>visibility</strong>. The support cylinder will then be ignored during the attenuation simulation, but still fulfil its purpose as the object that shifts the axis of rotation for the <em>CtScan</em> module.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ol class="arabic simple">
@@ -266,19 +266,19 @@
 <li><p>Set its <span class="guilabel">Z</span> position to <code class="code docutils literal notranslate"><span class="pre">190</span></code> mm (our new <abbr title="object-detector distance">ODD</abbr>).</p></li>
 </ol>
 </div>
-<p>When you view the scene from above, you should see something similar to <a class="reference internal" href="#ctscansupportcylinderscene"><span class="std std-numref">Fig. 48</span></a>.</p>
+<p>When you view the scene from above, you should see something similar to <a class="reference internal" href="#ctscansupportcylinderscene"><span class="std std-numref">Fig. 49</span></a>.</p>
 <div class="figure align-default" id="id6">
 <span id="ctscansupportcylinderscene"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-cylinder-scene.png"><img alt="_images/tutorial-ctscan-cylinder-scene.png" src="_images/tutorial-ctscan-cylinder-scene.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">We placed the support cylinder at an <abbr title="object-detector distance">ODD</abbr> of 190 mm.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">We placed the support cylinder at an <abbr title="object-detector distance">ODD</abbr> of 190 mm.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>Let’s simulate this new CT scan using the BAM CT format:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>CtScan</em> module window, change the file type to <span class="guilabel">BAM CT</span> and keep <span class="guilabel">16bit</span> as the data type (<a class="reference internal" href="#ctscanwindowbamct"><span class="std std-numref">Fig. 49</span></a>). Click <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="icon-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> to start the simulation.</p>
+<p>In the <em>CtScan</em> module window, change the file type to <span class="guilabel">BAM CT</span> and keep <span class="guilabel">16bit</span> as the data type (<a class="reference internal" href="#ctscanwindowbamct"><span class="std std-numref">Fig. 50</span></a>). Click <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="16x16_compute-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> to start the simulation.</p>
 </div>
 <div class="figure align-default" id="id7">
 <span id="ctscanwindowbamct"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-bamct.png"><img alt="_images/tutorial-ctscan-bamct.png" src="_images/tutorial-ctscan-bamct.png" style="width: 55%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">We simulate the off-axis scan using the BAM CT format.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">We simulate the off-axis scan using the BAM CT format.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="advanced-settings">
@@ -292,11 +292,11 @@
 <p><em>aRT</em>ist comes with a CT reconstruction software (simply called “Feldkamp”) that can read the BAM CT format. If you activate <span class="guilabel">Run Feldkamp</span>, the reconstruction will automatically start right after the CT simulation. It will use the settings from the <em>Feldkamp</em> tab and automatically give it the name of the projection volume.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Switch to the <span class="guilabel">Feldkamp</span> tab of the <em>CtScan</em> module window (<a class="reference internal" href="#ctscanwindowfeldkamp"><span class="std std-numref">Fig. 50</span></a>).</p>
+<p>Switch to the <span class="guilabel">Feldkamp</span> tab of the <em>CtScan</em> module window (<a class="reference internal" href="#ctscanwindowfeldkamp"><span class="std std-numref">Fig. 51</span></a>).</p>
 </div>
 <div class="figure align-default" id="id8">
 <span id="ctscanwindowfeldkamp"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-feldkamp.png"><img alt="_images/tutorial-ctscan-feldkamp.png" src="_images/tutorial-ctscan-feldkamp.png" style="width: 55%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">The <em>Feldkamp</em> tab of the <em>CtScan</em> module lets us reconstruct a CT scan.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">The <em>Feldkamp</em> tab of the <em>CtScan</em> module lets us reconstruct a CT scan.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The <span class="guilabel">File Name</span> is the input file with your projection data. It is already set to the BAM CT projection file that we created during the last simulation. You can also select any other <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file here.</p>
 <p>Activating <span class="guilabel">Interpolate</span> will lead to a linear interpolation between pixel grey values where necessary. <span class="guilabel">Use GPU</span> activates the OpenGL implementation of the reconstruction software, which uses the graphics card to speed up computations. Activating <span class="guilabel">multiple textures</span> can speed up the computation as well: in this mode, the graphics card will try to work on multiple projections in parallel. Instead of single precision, you can turn on calculations with <span class="guilabel">half precision</span> floating point numbers on the graphics card, but it is not recommended.</p>
@@ -310,7 +310,7 @@
 </div>
 <div class="figure align-default" id="id9">
 <span id="ctscanreconstructionimagej"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-rotor-recon.png"><img alt="_images/tutorial-ctscan-rotor-recon.png" src="_images/tutorial-ctscan-rotor-recon.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 51 </span><span class="caption-text">A slice of the reconstructed <em>Rotor</em> with the <em>Air Pocket</em> visible, viewed in ImageJ.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 52 </span><span class="caption-text">A slice of the reconstructed <em>Rotor</em> with the <em>Air Pocket</em> visible, viewed in ImageJ.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="summary">

@@ -1,3 +1,7 @@
+.. include:: _templates/icons.rst
+
+.. _PositionOrientationSizeChapter:
+
 Position, Orientation & Size
 ============================
 
@@ -8,11 +12,11 @@ Position, Orientation & Size
 Local and World Coordinate Systems
 ----------------------------------
 
-In the previous tutorial, we have already seen that *aRT*\ ist puts the detector by default at the origin of the coordinate system and the source at some point in positive *z* direction. This main frame of reference is called the **world coordinate system**. You can imagine it as a fixed frame, or stage, that is *absolute* and will never change.
+In the previous tutorial, we have already seen that |artist| puts the detector by default at the origin of the coordinate system and the source at some point in positive *z* direction. This main frame of reference is called the **world coordinate system**. You can imagine it as a fixed frame, or stage, that is *absolute* and will never change.
 
-When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In *aRT*\ ist, the position of an object is a tuple of three coordinates (x, |nbsp| y, |nbsp| z) that refer to the position of the object's centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object's **local coordinate system**.
+When placing objects into the scene, we can express their position and orientation in terms of the world coordinate system. In |artist|, the position of an object is a tuple of three coordinates (x, |nbsp| y, |nbsp| z) that refer to the position of the object's centre (i.e. the centre of its bounding box) in the world coordinate system. This centre point is the origin of the object's **local coordinate system**.
 
-Each object comes with three intrinsic axes. More specifically, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own Cartesian coordinate system. The axes of this intrinsic coordinate system must not necessarily align with *aRT*\ ist's world coordinate system, as illustrated in the example of the tilted *Rotor* in :numref:`worldLocalCoordinateSystem`.
+Each object comes with three intrinsic axes. More specifically, the coordinates of the triangles in the surface mesh of an STL or PLY file are expressed in terms of its own Cartesian coordinate system. The axes of this intrinsic coordinate system must not necessarily align with |artist|'s world coordinate system, as illustrated in the example of the tilted *Rotor* in :numref:`worldLocalCoordinateSystem`.
 
 When an object rotates in space, the directions of the three axes of its **local coordinate** system change in relation to the world coordinate system. Mathematically, we can express the local axes as vectors within the world coordinate system to know an object's orientation.
 
@@ -32,10 +36,7 @@ Parameter Panel
 
 If we take a look at the full scene again, we see that the source seems to be a little bit close to the detector.
 
-.. note:: Deselect the rotor by clicking on the unoccupied white area in the *Assembly List* or on the brackground colour in the *Virtual Scene*. Now click on |icon-zoom-to-selection| :guilabel:`Zoom to Selection` to see the full scene again.
-
-.. |icon-zoom-to-selection| image:: pictures/icons/32x32_zoom-select.png
-    :width: 32
+.. note:: Deselect the rotor by clicking on the unoccupied white area in the *Assembly List* or on the brackground colour in the *Virtual Scene*. Now click on |32x32_zoom-select| :guilabel:`Zoom to Selection` to see the full scene again.
 
 We already know that the detector is at the origin of the world coordinate system: its centre lies at the point (0, |nbsp| 0, |nbsp| 0) in space. You can check this by selecting the *Detector* item from the *Assembly List* and inspecting its properties in the *Transformation* section of the *Parameter Panel* (:numref:`detectorTransformProperties`).
 
@@ -101,7 +102,7 @@ Orientation
 
 One row below the *Position* settings in the *Parameter Panel* you can set the **Orientation**. This is a set of three angles (in degrees) that represent consecutive rotations around an object's coordinate axes.
 
-Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, *aRT*\ ist will perform three rotations of the object in the following order.
+Whenever you load a new object into the scene, the axes of its local coordinate system are aligned with the axes of the world coordinate system. To reach the orientation specified by the three angles, |artist| will perform three rotations of the object in the following order.
 
 1. The object is rotated by the **third angle** around its **local Z axis**.
 2. The object is rotated by the **first angle** around the **resulting local X axis**.
@@ -111,7 +112,7 @@ Whenever you load a new object into the scene, the axes of its local coordinate 
 
 You should now see a tilted *Rotor* in the virtual scene, just like in :numref:`rotorOrientation`. Starting with its local coordinate system aligned with the world coordinate system, it has first been rotated by 10° around its local *Z* axis, then by 20° around the resulting local *X* axis, and thirdly by 30° around the resulting local *Y* axis.
 
-The order in which you enter the three *Orientation* angles does not matter for the final result. Whenever you change an orientation angle, *aRT*\ ist will internally reset the object to its original orientation, and then strictly rotate it in the given order Z→X→Y.
+The order in which you enter the three *Orientation* angles does not matter for the final result. Whenever you change an orientation angle, |artist| will internally reset the object to its original orientation, and then strictly rotate it in the given order Z→X→Y.
 
 .. _rotorOrientation:
 .. figure:: pictures/tutorial-positioning-orientation-rotor.png
@@ -133,28 +134,13 @@ The upper part of the *Parameter Panel* provides a lot of options to transform a
 
     The transformation controls of the *Parameter Panel.*
 
-Rotations need an **axis of rotation,** and translations need a **translation vector** that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under *Axis*. The buttons **X** |nbsp| |icon-arrow-down|, **Y** |nbsp| |icon-arrow-down| and **Z** |nbsp| |icon-arrow-down| provide easy ways to set the standard vectors for X, Y and Z direction. **XYZ** |nbsp| |icon-arrow-down| gives you a diagonal axis.
+Rotations need an **axis of rotation,** and translations need a **translation vector** that points in the direction of the movement. Such an axis is provided as a three-component vector that you can enter under *Axis*. The buttons **X** |nbsp| |22x22_set-coordinate-arrow-down|, **Y** |nbsp| |22x22_set-coordinate-arrow-down| and **Z** |nbsp| |22x22_set-coordinate-arrow-down| provide easy ways to set the standard vectors for X, Y and Z direction. **XYZ** |nbsp| |22x22_set-coordinate-arrow-down| gives you a diagonal axis.
 
-.. |icon-arrow-down| image:: pictures/icons/22x22_set-coordinate-arrow-down.png
-    :width: 22
+The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the |22x22_world-coordinate-system| |nbsp| **world coordinate system** or for the object's |22x22_object-coordinate-system| |nbsp| **local coordinate system.**
 
-The important question is: does the vector describe a direction in the world coordinate system or in the local coordinate system of the object you selected? You can choose the one you prefer: in the upper part of the panel, either click the button for the |icon-world| |nbsp| **world coordinate system** or for the object's |icon-local| |nbsp| **local coordinate system.**
+Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose |22x22_transformation-rotate| |nbsp| **Rotation Mode**, |22x22_transformation-move| |nbsp| **Translation Mode (move)** or |22x22_transformation-scale| |nbsp| **Scale Mode (resize).**
 
-.. |icon-world| image:: pictures/icons/22x22_world-coordinate-system.png
-    :width: 22
-.. |icon-local| image:: pictures/icons/22x22_object-coordinate-system.png
-    :width: 22
-
-Next to the two buttons for the coordinate systems you can choose which kind of transformation you want to perform. There are three buttons to choose |icon-rotate| |nbsp| **Rotation Mode**, |icon-move| |nbsp| **Translation Mode (move)** or |icon-scale| |nbsp| **Scale Mode (resize).**
-
-.. |icon-rotate| image:: pictures/icons/22x22_transformation-rotate.png
-    :width: 22
-.. |icon-move| image:: pictures/icons/22x22_transformation-move.png
-    :width: 22
-.. |icon-scale| image:: pictures/icons/22x22_transformation-scale.png
-    :width: 22
-
-For **Value**, you can set the amount by which you want to rotate, move or scale. For rotations, enter an **angle in degrees.** For translations, enter a **distance in mm.** For scaling, *aRT*\ ist expects a factor that expresses a **multiple of 10% magnification,** i.e. a factor of 1 will increase the object's size by 10% in the given direction.
+For **Value**, you can set the amount by which you want to rotate, move or scale. For rotations, enter an **angle in degrees.** For translations, enter a **distance in mm.** For scaling, |artist| expects a factor that expresses a **multiple of 10% magnification,** i.e. a factor of 1 will increase the object's size by 10% in the given direction.
 
 To apply the transformation, you can use the **transform slider.** When you grab the handle and drag it across the slider, it might perform several consecutive transformations. If you want exactly one transformation step, you have much better control by clicking onto the horizontal slider bar to the left or to the right of the slider handle.
 
@@ -166,15 +152,15 @@ Normally, the **centre of rotation or scaling** is the centre of the object's bo
 .. note:: Let's put this in action. We will now reverse the *Rotor's* orientation using the transform slider. But first: **now is a good moment to save your project,** just in case you make a mistake.
 
     1. Make sure the *Rotor* is selected.
-    2. Select the |icon-local| |nbsp| **Local Coordinate System** as the reference frame. (Remember that *aRT*\ ist assumes that the orientation angles refer to consecutive rotations around the three axes of the object's **local** coordinate system.)
-    3. Switch to |icon-rotate| |nbsp| **Rotation Mode**.
-    4. Click on **Y** |nbsp| |icon-arrow-down| to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)
+    2. Select the |22x22_object-coordinate-system| |nbsp| **Local Coordinate System** as the reference frame. (Remember that |artist| assumes that the orientation angles refer to consecutive rotations around the three axes of the object's **local** coordinate system.)
+    3. Switch to |22x22_transformation-rotate| |nbsp| **Rotation Mode**.
+    4. Click on **Y** |nbsp| |22x22_set-coordinate-arrow-down| to select the Y axis. (This has been the last of the three rotations. We need to go in reverse order to get back to the start.)
     5. For **Value**, enter :code:`30`.
     6. Click to the **left** of the transform slider handle to perform one transformation step in the opposite direction (a rotation of -30° degrees, if you will).
-    7. Click on **X** |nbsp| |icon-arrow-down| to select the X axis.
+    7. Click on **X** |nbsp| |22x22_set-coordinate-arrow-down| to select the X axis.
     8. For **Value**, enter :code:`20`.
     9. Click to the **left** of the transform slider handle.
-    10. Click on **Z** |nbsp| |icon-arrow-down| to select the Z axis.
+    10. Click on **Z** |nbsp| |22x22_set-coordinate-arrow-down| to select the Z axis.
     11. For **Value**, enter :code:`10`.
     12. Click to the **left** of the transform slider handle.
 

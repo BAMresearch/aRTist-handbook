@@ -1,7 +1,9 @@
+.. include:: _templates/icons.rst
+
 X-ray Source
 ============
 
-This tutorial explains *aRT*\ ist's spectrum calculator and how the source intensity and spot size are set up. We will build a pinhole camera to investigate the modelling of the focal spot.
+This tutorial explains |artist|'s spectrum calculator and how the source intensity and spot size are set up. We will build a pinhole camera to investigate the modelling of the focal spot.
 
 .. note:: We continue with the project from the last tutorial. You can download it here if you need the current state:
 
@@ -31,10 +33,7 @@ The *Spectrum Calculator* can be used to generate a spectrum for a given X-ray s
     
     A. Deresch, C. Bellon, G.-R. Jaenisch. A general spectrum model for X-ray generators. *NDT&E International* 79 (2016) pp. 92-97. DOI: `10.1016/j.ndteint.2015.12.007 <https://doi.org/10.1016/j.ndteint.2015.12.007>`__
 
-.. note:: Click the button |icon-spectrum-calculator| :guilabel:`Calculate X-ray tube spectrum` to open the *Spectrum Calculator* (:numref:`spectrumCalculatorMono`).
-
-.. |icon-spectrum-calculator| image:: pictures/icons/22x22_xray-tube.png
-    :width: 22
+.. note:: Click the button |22x22_xray-tube| :guilabel:`Calculate X-ray tube spectrum` to open the *Spectrum Calculator* (:numref:`spectrumCalculatorMono`).
 
 .. _spectrumCalculatorMono:
 .. figure:: pictures/tutorial-xraysource-spectrum-calculator-mono.png
@@ -63,17 +62,11 @@ Let's generate a spectrum for a common X-ray tube that accelerates electrons ont
 
     The *Spectrum Calculator* in its mode for a general X-ray tube.
 
-If you want, you can save your tube parameters as a template for future projects. To do this, you can enter a :guilabel:`name`, and limits for a :guilabel:`maximum voltage`, :guilabel:`current` and :guilabel:`power`. Using the button |icon-add| :guilabel:`Add tube definition to database` you can save this tube and later select it from the :guilabel:`Tube` drop-down menu, as another entry among :code:`Mono` and :code:`General`.
-
-.. |icon-add| image:: pictures/icons/16x16_list-add.png
-    :width: 16
+If you want, you can save your tube parameters as a template for future projects. To do this, you can enter a :guilabel:`name`, and limits for a :guilabel:`maximum voltage`, :guilabel:`current` and :guilabel:`power`. Using the button |16x16_list-add| :guilabel:`Add tube definition to database` you can save this tube and later select it from the :guilabel:`Tube` drop-down menu, as another entry among :code:`Mono` and :code:`General`.
 
 The target thickness does not affect tubes with a reflection target, like the one we have modelled now. However, it is an important parameter for tubes with a transmission target. When you select :guilabel:`Transmission`, the image of the tube schematics will change and illustrate the parameters for a transmission tube.
 
-.. note:: Click the button |icon-compute| :guilabel:`Compute` to calculate the spectrum. This might take a few moments.
-
-.. |icon-compute| image:: pictures/icons/16x16_compute-run.png
-    :width: 16
+.. note:: Click the button |16x16_compute-run| :guilabel:`Compute` to calculate the spectrum. This might take a few moments.
 
 Once the computation is done, the new spectrum will appear in the spectrum viewer (:numref:`spectrum130kV`).
 
@@ -98,7 +91,7 @@ Spectra generated with the *Spectrum Calculator* represent the number of photons
 
     The flux is calculated as the number of photons that pass through an area *A* of 1 |nbsp| m², located at a distance *r* of 1 |nbsp| m away from the X-ray source.
 
-*aRT*\ ist simulates an isotropic source that emits photons uniformly in all directions, but the flux per energy bin that the *Spectrum Calculator* generates is expressed as the number of photons through a solid angle Ω of 1 |nbsp| sr.
+|artist| simulates an isotropic source that emits photons uniformly in all directions, but the flux per energy bin that the *Spectrum Calculator* generates is expressed as the number of photons through a solid angle Ω of 1 |nbsp| sr.
 
 .. math::
     \Omega = \frac{A}{r^2} = 1\,\textsf{sr}
@@ -157,15 +150,9 @@ The primary intensity is not affected by the detector's integration time, but it
 Spectrum Files
 --------------
 
-Spectra can be imported into *aRT*\ ist from an external file and they can also be saved. They are stored in :code:`.xrs` files. Those are ASCII-coded and can be opened in a text editor. Their structure is relatively simple: they feature two columns separated by tab characters. The first column contains the energy (in kV) of the energy bins, the second column contains the number of photons for each bin. Further information can be added to such files in the form of comments. Commented lines start with a :code:`#` character. Certain comments can be understood by *aRT*\ ist to display further information about the spectrum in the GUI, but it is not necessary to include them.
+Spectra can be imported into |artist| from an external file and they can also be saved. They are stored in :code:`.xrs` files. Those are ASCII-coded and can be opened in a text editor. Their structure is relatively simple: they feature two columns separated by tab characters. The first column contains the energy (in kV) of the energy bins, the second column contains the number of photons for each bin. Further information can be added to such files in the form of comments. Commented lines start with a :code:`#` character. Certain comments can be understood by |artist| to display further information about the spectrum in the GUI, but it is not necessary to include them.
 
-If you want to know more about spectrum files, start exploring them on your own: save the current spectrum with the |icon-save| :guilabel:`Save` button and open it in a text editor. Consequently, you can load a spectrum file with the |icon-load| :guilabel:`Load` button.
-
-.. |icon-save| image:: pictures/icons/22x22_document-save-as.png
-    :width: 22
-
-.. |icon-load| image:: pictures/icons/22x22_document-open-folder.png
-    :width: 22
+If you want to know more about spectrum files, start exploring them on your own: save the current spectrum with the |22x22_document-save-as| :guilabel:`Save` button and open it in a text editor. Consequently, you can load a spectrum file with the |22x22_document-open-folder| :guilabel:`Load` button.
 
 In the file for the spectrum that we have generated, you will find three blocks that list information from the spectrum generator. The first block lists the properties of the radiation right after its generation at the source target, the second block for the radiation after the tube window, and the third block after the X-ray filter. The :code:`Avg` states the average photon energy (in keV) after the current filter step, the :code:`Flux` gives the total number of photons, i.e. the sum over all energy bins. Note that the flux information for the fully filtered spectrum is usually found at the very end of the file.
 
@@ -177,12 +164,9 @@ Objects in the path of the beam attenuate radiation: the result is an attenuatio
 
 You can get the spectrum (and therefore the photon flux) at a certain point of the projection image with the *Spectrum Picker*.
 
-.. note:: Below the diagram of the spectrum, click on the button |icon-pick| :guilabel:`Show attenuated spectrum for picked position` to open the *Spectrum Picker* (:numref:`spectrumPicker01`).
+.. note:: Below the diagram of the spectrum, click on the button |22x22_edit-pickposition| :guilabel:`Show attenuated spectrum for picked position` to open the *Spectrum Picker* (:numref:`spectrumPicker01`).
 
 The **incident** spectrum (i.e. the free beam when it leaves the source after the last filter step) and the **attenuated** spectrum are currently the same because we have not yet picked a reference point on the projection image.
-
-.. |icon-pick| image:: pictures/icons/22x22_edit-pickposition.png
-    :width: 22
 
 .. _spectrumPicker01:
 .. figure:: pictures/tutorial-xraysource-spectrum-picker-01.png
@@ -190,10 +174,7 @@ The **incident** spectrum (i.e. the free beam when it leaves the source after th
 
     We have opened the *Spectrum Picker*: it displays the current spectrum because we have not yet selected a reference point.
 
-.. note:: In the *Spectrum Picker* window, click on the button |icon-pick-small| :guilabel:`Pick image position to calculate attenuation for`.
-
-.. |icon-pick-small| image:: pictures/icons/16x16_edit-pickposition.png
-    :width: 16
+.. note:: In the *Spectrum Picker* window, click on the button |16x16_edit-pickposition| :guilabel:`Pick image position to calculate attenuation for`.
 
 The *Image Viewer* will now display a message in red: :guilabel:`Picking spectrum reference position` (:numref:`spectrumPickerPreviewWindow`).
 
@@ -221,10 +202,7 @@ When you switch to the :guilabel:`Text` view, you can get further information, f
 
     The *Spectrum Picker* in text view displays further information.
 
-Of course, you can also save the current data using the |icon-save-small| :guilabel:`Save` button in the *Spectrum Picker*.
-
-.. |icon-save-small| image:: pictures/icons/16x16_document-save-as.png
-    :width: 16
+Of course, you can also save the current data using the |16x16_document-save-as| :guilabel:`Save` button in the *Spectrum Picker*.
 
 .. note:: Close the *Spectrum Picker*.
 
@@ -233,7 +211,7 @@ Of course, you can also save the current data using the |icon-save-small| :guila
 Focal Spot
 ----------
 
-Until this point, we have simulated an ideal point source. *aRT*\ ist also offers an approach to simulate a spatially extended focal spot profile. To understand what is happening, we will build a simple pinhole camera to project an image of the focal spot onto the detector. Then, we will start exploring the settings that *aRT*\ ist has to offer.
+Until this point, we have simulated an ideal point source. |artist| also offers an approach to simulate a spatially extended focal spot profile. To understand what is happening, we will build a simple pinhole camera to project an image of the focal spot onto the detector. Then, we will start exploring the settings that |artist| has to offer.
 
 
 Pinhole Camera
@@ -250,15 +228,12 @@ Pinhole Camera
 Using the *Solids* generator, we will now set up a plate of a highly absorbing material and poke a small hole at its centre. 
 
 .. note::
-    1. Open the |icon-solid| *Solid* module.
+    1. Open the |32x32_icon-solid| *Solid* module.
     2. Create a :guilabel:`cuboid` with the following dimensions (:numref:`solidsPlate`)
         * :guilabel:`X` = 100 mm
         * :guilabel:`Y` = 100 mm
         * :guilabel:`Z` = 0.1 mm
     3. Press the :guilabel:`Create` button.
-
-.. |icon-solid| image:: pictures/icons/32x32_icon-solid.png
-    :width: 32
 
 .. _solidsPlate:
 .. figure:: pictures/tutorial-xraysource-pinhole-solids-plate.png
@@ -300,7 +275,7 @@ You should now have a setup as displayed in :numref:`pinholeArtistWindow`.
 Spot Size & Spot Type
 ^^^^^^^^^^^^^^^^^^^^^
 
-To simulate X-ray spots, *aRT*\ ist's approach is to place several point sources in the rectangular 2D source region. In the *Focal spot* settings group of the *Source*, you can set the :guilabel:`Size [mm]` of this rectangular region. The number of point sources can be set under :guilabel:`Spot type`. If you set a single integer, the point sources will be distributed in a random pattern, but optimized such that points are not too close to each other (`Poisson Disc Sampling <https://en.wikipedia.org/wiki/Supersampling#Poisson_disk>`__). You can also choose a regular grid by entering two integers separated by an :code:`x`.
+To simulate X-ray spots, |artist|'s approach is to place several point sources in the rectangular 2D source region. In the *Focal spot* settings group of the *Source*, you can set the :guilabel:`Size [mm]` of this rectangular region. The number of point sources can be set under :guilabel:`Spot type`. If you set a single integer, the point sources will be distributed in a random pattern, but optimized such that points are not too close to each other (`Poisson Disc Sampling <https://en.wikipedia.org/wiki/Supersampling#Poisson_disk>`__). You can also choose a regular grid by entering two integers separated by an :code:`x`.
 
 You can either choose pre-defined spot types from the drop-down menu, or enter your own numbers and grid sizes.
 
@@ -309,10 +284,7 @@ The simulation will be closer to reality with more point sources, but the simula
 .. note:: 1. Go to the :guilabel:`Source` parameter panel.
     2. Enter a spot size of :code:`1.5` mm in :guilabel:`X` and :guilabel:`Y` direction.
     3. For :guilabel:`Spot type`, enter :code:`4x4` (:numref:`spot4x4`).
-    4. Run a full simulation by pressing the |icon-run| :guilabel:`Run` button.
-
-.. |icon-run| image:: pictures/icons/32x32_compute-radiography.png
-    :width: 32
+    4. Run a full simulation by pressing the |32x32_compute-radiography| :guilabel:`Run` button.
 
 .. _spot4x4:
 .. figure:: pictures/tutorial-xraysource-spot-4x4.png
@@ -330,7 +302,7 @@ Once the full simulation is complete, you should see an image of the magnified f
 
 
 
-.. note:: For the :guilabel:`Spot type`, enter :code:`20` (:numref:`spot20`) and press the |icon-run| :guilabel:`Run` button again.
+.. note:: For the :guilabel:`Spot type`, enter :code:`20` (:numref:`spot20`) and press the |32x32_compute-radiography| :guilabel:`Run` button again.
 
 .. _spot20:
 .. figure:: pictures/tutorial-xraysource-spot-20.png
@@ -352,10 +324,10 @@ Each of these point sources has the same intensity: the total photon flux given 
 Spot Intensity Profile
 ^^^^^^^^^^^^^^^^^^^^^^
 
-*aRT*\ ist offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.
+|artist| offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.
 
 .. note::
-    Click the button |icon-intensity-profile| :guilabel:`Create a spot profile image`. A window will appear that lets you enter the profile parameters (:numref:`spotGenerator`).
+    Click the button |22x22_smooth| :guilabel:`Create a spot profile image`. A window will appear that lets you enter the profile parameters (:numref:`spotGenerator`).
 
         * :guilabel:`Width`: :code:`1.5`
         * :guilabel:`Height`: :code:`1.5`
@@ -363,9 +335,6 @@ Spot Intensity Profile
         * :guilabel:`Resolution`: :code:`301`
 
     Click the :guilabel:`Set` button (the following calculation may take a few seconds).
-
-.. |icon-intensity-profile| image:: pictures/icons/22x22_smooth.png
-    :width: 22
 
 .. _spotGenerator:
 .. figure:: pictures/tutorial-xraysource-spot-profile-generator.png
@@ -393,14 +362,11 @@ The Lorentzian distribution is given by
 .. math::
     L(r) = \left[ w \pi \left( 1 + \frac{r^2}{w^2} \right) \right]^{-1}.
 
-*aRT*\ ist generates a square image for a symmetric intensity profile. If the :guilabel:`width` and :guilabel:`height` (in mm) are not equal, the spot profile image will be stretched to cover the rectangular source region.
+|artist| generates a square image for a symmetric intensity profile. If the :guilabel:`width` and :guilabel:`height` (in mm) are not equal, the spot profile image will be stretched to cover the rectangular source region.
 
-In general, *aRT*\ ist will set up the size of the source rectangle such that its physical width and height are a factor of three higher than the ones you entered. This means that it covers 1.5 times the FWHM; the rest of the distribution is cut off. If you need a different source spot alignment, you can rotate the source object with the *Transform* tools in the :guilabel:`Setup` tab.
+In general, |artist| will set up the size of the source rectangle such that its physical width and height are a factor of three higher than the ones you entered. This means that it covers 1.5 times the FWHM; the rest of the distribution is cut off. If you need a different source spot alignment, you can rotate the source object with the *Transform* tools in the :guilabel:`Setup` tab.
 
-.. note:: Close the *Focal Spot Profile Generator* window. Press the button |icon-spot-profile-view| :guilabel:`Show spot profile image`. The profile we just generated will appear in the *Image Viewer* (:numref:`spotProfileView`).
-
-.. |icon-spot-profile-view| image:: pictures/icons/22x22_image-viewer.png
-    :width: 22
+.. note:: Close the *Focal Spot Profile Generator* window. Press the button |22x22_image-viewer| :guilabel:`Show spot profile image`. The profile we just generated will appear in the *Image Viewer* (:numref:`spotProfileView`).
 
 .. _spotProfileView:
 .. figure:: pictures/tutorial-xraysource-spot-profile-view.png
@@ -410,7 +376,7 @@ In general, *aRT*\ ist will set up the size of the source rectangle such that it
 
 The spot profile image has a size of 301×301 pixels: this is the :guilabel:`resolution` we requested. It is an odd number such that the central pixel contains the intensity maximum.
 
-.. note:: Press the |icon-run| :guilabel:`Run` button to calculate another projection image.
+.. note:: Press the |32x32_compute-radiography| :guilabel:`Run` button to calculate another projection image.
 
 The *Image Viewer* now shows how the 20 single point sources are distributed on the intensity profile (higher intensities are more likely) and how their individual intensity is weighted (:numref:`spot20intensityProfile`).
 
@@ -420,19 +386,19 @@ The *Image Viewer* now shows how the 20 single point sources are distributed on 
 
     The *Image Viewer* shows the projection of the 20 point sources spread across the intensity profile we just generated.
 
-You can also load spot profiles from external grey value images using the button |icon-load| :guilabel:`Load spot profile image from file`. Externally loaded spot image files will be placed onto the source in the same way as our generated profile image: it will be stretched to completely fill the source rectangle. The aspect ratio can be adjusted with the physical size (in mm) that you set for the source/focal spot in *aRT*\ ist.
+You can also load spot profiles from external grey value images using the button |22x22_document-open-folder| :guilabel:`Load spot profile image from file`. Externally loaded spot image files will be placed onto the source in the same way as our generated profile image: it will be stretched to completely fill the source rectangle. The aspect ratio can be adjusted with the physical size (in mm) that you set for the source/focal spot in |artist|.
 
 
 Summary
 -------
 
-In this tutorial, you have learned how to set up *aRT*\ ist's virtual X-ray tube.
+In this tutorial, you have learned how to set up |artist|'s virtual X-ray tube.
 
 * You learned how to generate a spectrum using the *Spectrum Calculator*.
 * You saw how :code:`.xrs` spectrum files are structured and how to import your own spectra.
 * You have used the *Spectrum Picker* to get the spectrum after attenuation.
-* You learned how *aRT*\ ist simulates spatially extended spots using multiple point sources arranged in grids or smart patterns.
-* You know how to apply an intensity profile for the focal spot and how *aRT*\ ist uses it to distribute the point sources and their intensities according to the given intensity map.
+* You learned how |artist| simulates spatially extended spots using multiple point sources arranged in grids or smart patterns.
+* You know how to apply an intensity profile for the focal spot and how |artist| uses it to distribute the point sources and their intensities according to the given intensity map.
 
 | The scene that we created up to this point is available for download:
 | :download:`tutorial_xray_source.aRTist <files/tutorial_xray_source.aRTist>` (4.7 MB)

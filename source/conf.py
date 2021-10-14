@@ -30,17 +30,35 @@ release = '2.12'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+# Bibliography extension available from:
+# https://sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html
 extensions = [
 	"sphinx_rtd_theme",
-	"sphinx.ext.autosectionlabel", 
+	"sphinx.ext.autosectionlabel",
+	"sphinxcontrib.bibtex",
 	"sphinx.ext.imgmath"   # to render equations as PNG images and avoid externally loaded JavaScript libraries
 ]
+
+# Add the path of a bibliography (.bib) file
+bibtex_bibfiles = ['references.bib']
+
+# Define bibtex enconding (default: utf-8-sig)
+bibtex_encoding = 'latin'
+
+# Define bibtex style
+bibtex_default_style = 'unsrt'
 
 imgmath_latex_preamble = """\\usepackage{sansmathfonts}
 \\usepackage{amsmath, amssymb}"""
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# Change autoconfigextension default behaviour for section labels, in order to
+# avoid duplicate label summary warnings.
+# Source: https://www.spinics.net/lists/linux-doc/msg77015.html
+autosectionlabel_prefix_document = True
+autosectionlabel_maxdepth = 1
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -58,8 +76,9 @@ numfig_format = {
 
 # Our own global roles (commands accesible in all .rst files):
 rst_prolog = """
-.. |nbsp| unicode:: 0xA0 
+.. |nbsp| unicode:: 0xA0
     :trim:
+.. |artist| replace:: *aRT*\\ ist
 """
 
 
