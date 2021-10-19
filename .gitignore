@@ -2,3 +2,4 @@ build/
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bib.bak
+*.log
