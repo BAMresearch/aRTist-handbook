@@ -20,25 +20,16 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
     File menu.
 
 * **New Project** opens a new |artist| scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
-* |icon-open| **Open** is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`.
-* |icon-library| **Open Library**  is used to load something from the collection of example parts and projects. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
-* |icon-save| **Save** the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
-* |icon-saveas| **Save As** renames a project or changes the location of where you want to save it. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
+* |16x16_document-open-folder| **Open** is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`.
+* |16x16_library| **Open Library**  is used to load something from the collection of example parts and projects. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
+* |16x16_document-save| **Save** the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
+* |16x16_document-save-as| **Save As** renames a project or changes the location of where you want to save it. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
 * **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.
 * **Last Directories** shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.
 * **Open New Window** starts a new, additional instance of |artist|.
 * **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
-* **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
+* |16x16_window-close| **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
 
-
-.. |icon-open| image:: pictures/icons/16x16_document-open-folder.png
-    :width: 16
-.. |icon-library| image:: pictures/icons/16x16_library.png
-    :width: 16
-.. |icon-save| image:: pictures/icons/16x16_document-save.png
-    :width: 16
-.. |icon-saveas| image:: pictures/icons/16x16_document-save-as.png
-    :width: 16
 
 
 Edit menu
@@ -80,30 +71,13 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 * **Isolate** deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the |16x16_object-visible-on| eye symbol at the *Parameter Panel* → *Setup* → *Assembly List*.
 * **Activate/Deactivate** selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the |16x16_object-visible-on| eye symbol in the *Assembly List* of the *Parameter Panel* to achieve the same effect.
 * **Set Material** changes the material of a selected part. As an alternative, you may click on the material name of a part in the *Assembly List* of the parameter panel to open a drop-down menu with the same options.
-* |icon-union| **Union,** |icon-intersection| **Intersection** and |icon-difference| **Difference** can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the |icon-solid| *Solid* module) and placed in the scene, so that they overlap. Then, select parts by using the :kbd:`Ctrl` key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called *Geometry Manipulation* commands are explained more detailed in another section.
+* |16x16_boolean-union| **Union,** |16x16_boolean-intersection| **Intersection** and |16x16_boolean-difference| **Difference** can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the |16x16_icon-solid| *Solid* module) and placed in the scene, so that they overlap. Then, select parts by using the :kbd:`Ctrl` key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called *Geometry Manipulation* commands are explained more detailed in another section.
 
-	* |icon-union| **Union** joins two or more parts. The order of selection is not important.
-	* |icon-intersection| **Intersection** creates a new part from the overlapping areas of at least two parts. Everything else will be removed. The order of your selection is not important.
-	* |icon-difference| **Difference** is used to create a new part from the difference of at least two other parts. By selecting this command the order of selection will be important for the result. The first selected part (yellow corner) is the minuend and all other selected parts (white corners) are subtracted from the first part.
-* |icon-arrange| **Arrange** is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: *none*, *-*, *center*, *+* are available for each of the three axes. The parts will be aligned with the first selected part.
-* |icon-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
-
-.. |icon-centernew| image:: pictures/icons/16x16_center-new.png
-    :width: 16
-.. |icon-eye| image:: pictures/icons/16x16_object-visible-on.png
-    :width: 16
-.. |icon-union| image:: pictures/icons/16x16_boolean-union.png
-    :width: 16
-.. |icon-intersection| image:: pictures/icons/16x16_boolean-intersection.png
-    :width: 16
-.. |icon-difference| image:: pictures/icons/16x16_boolean-difference.png
-    :width: 16
-.. |icon-solid| image:: pictures/icons/16x16_icon-solid.png
-    :width: 16
-.. |icon-arrange| image:: pictures/icons/16x16_icon-arrange.png
-    :width: 16
-.. |icon-pickposition| image:: pictures/icons/16x16_edit-pickposition.png
-    :width: 16
+	* |16x16_boolean-union| **Union** joins two or more parts. The order of selection is not important.
+	* |16x16_boolean-intersection| **Intersection** creates a new part from the overlapping areas of at least two parts. Everything else will be removed. The order of your selection is not important.
+	* |16x16_boolean-difference| **Difference** is used to create a new part from the difference of at least two other parts. By selecting this command the order of selection will be important for the result. The first selected part (yellow corner) is the minuend and all other selected parts (white corners) are subtracted from the first part.
+* |16x16_icon-arrange| **Arrange** is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: *none*, *-*, *center*, *+* are available for each of the three axes. The parts will be aligned with the first selected part.
+* |16x16_edit-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
 
 
 Compute menu
@@ -119,18 +93,11 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 
     Compute menu.
 
-* |icon-run| **Run** starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled |icon-final| as final result.
+* |16x16_aRTist| **Run** starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled |16x16_image-final| as final result.
 * **Radiography** / **Thickness maps** control the simulation mode. Choose between these two options to either simulate a radiographic projection or just thickness maps for each penetrated material.
 * **Use GPU** controls the usa of an OpenGL graphics processing unit. When it is anabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
 * **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumtion and computing time.
-* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labled |icon-preview| (not final) to set apart from final |icon-final| results.
-
-.. |icon-run| image:: pictures/icons/16x16_aRTist.png
-    :width: 16
-.. |icon-final| image:: pictures/icons/16x16_image-final.png
-    :width: 16
-.. |icon-preview| image:: pictures/icons/16x16_image-preview.png
-    :width: 16
+* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labled |16x16_image-preview| (not final) to set apart from final |16x16_image-final| results.
 
 
 Modules menu
@@ -146,21 +113,21 @@ The :guilabel:`Modules` menu offers the selection of the available extention mod
 
     Modules menu.
 
-* **Manage Modules...** enables the activation of the installed modules to be controlled. New modules can be installed from |artist| package files (:code:`*.artp`).
-* **CtScan** module enables virtual X-ray computerized tomography (CT) with circular trajectory. In the three tabs of this module the corresponding settings can be navigated. Click on the Run button in the bottom of each page to start the simulation or to stop it. When the simulation is finished, click on the Show button of the first tab and the tomogram can be viewed in the scene. In ImageViewer the sectional image of the tomogram can be seen when in Volume View (third tab of tScan Module) the Show button is clicked. For more details see in Modules → CtScan.
-* **DetectorCalc** module will add new detector models to aRTist. Thereby the reference shot is necessary for calibration and calculation, also filtration over the detector is possible. For more information see `Modules → DetectorCalc`.
-* **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see `Modules → DigRad`.
-* **ImageViewer** The only module by default in the docking area is the ImageViewer. The preview image and the finished simulation are displayed there. You may choose between radiography and thickness map. The different settings and functions of ImageViewer (upper bar, lower bar and bar on the right) will be explained in Modules → ImageViewer. In a subitem called Tools Menu: ImageViewer advanced settings from the Menu Bar → Tools → ImageViewer are described.
+* **Manage Modules...** controls the activation of the installed modules. New modules can be installed from |artist| package files (:code:`*.artp`).
+* **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScanSection` description.
+* **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the medelled detector. For more information see :ref:`DetectorCalcSection` section.
+* **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see :ref:`DigRadSection` section.
+* |16x16_image-radiography| **ImageViewer** module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section :ref:`ImageViewerSection`.
 * **LogViewer** module displays internal messages by aRTist and its components.
-* **McRay**
-* **Solid** module, simple parts (respectively virtual objects) of different sizes can be created and added to the scene. Different geometric shapes can be chosen from: cuboid, ellipsoid, cylinder, tube, cone, text, wedge and/or step wedge. For more information see the chapter Modules → Solid.
-* **TomoSynth** Simulating tomosynthesis within aRTist are enabled with the TomoSynth module. On the Laminography tab settings for the tube, detector and output options can be set up. The Advanced tab offers settings for experts. More functions and information of TomoSynth will be explained in Modules → TomoSynth.
+* **McRay** module is the interface to the Monte Carlo code McRay, comming with aRTist. Usually McRay is controlled at the :ref:`ScatteringPanelSection`. This module provides additional options for expirienced users.
+* |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.
+* **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advancd tab can be used to control variations for any part in the scene.
 
 Tools menu
-^^^^^^^^^^^^^
+^^^^^^^^^^
 .. _ToolsMenuSubsection:
 
-The :guilabel:`Modules` menu includes the button to start a simulation and offers different options for the simulation.
+The :guilabel:`Tools` menu provides several dialogs to control the program.
 
 .. _guiToolsMenu:
 .. figure:: pictures/gui-menu-tools.png
@@ -169,12 +136,22 @@ The :guilabel:`Modules` menu includes the button to start a simulation and offer
 
     Tools menu.
 
+* **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation rans. 
+* **Show VTK Log** calls module LogViewer to displays internal messages by aRTist and its components.
+* **Enable remote access** opens a TCP/IP port to control |artist| from another program, e.g. Python. 
+* **Opening Angle** calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the status bar.
+* **Attenuation Data** opens a viewer of the energy-dependend attenuation coefficients used by the program.
+* **Detector Properties** opens a viewer of the currently used detector model.
+* **Image Viewer** provides the menu bar of the image viewer module (lacking a nice way to directly attach it to the module window).
+* |16x16_edit-materials| **Materials** opens the materials editor.
+* |16x16_xray-tube| **Spectrum...** opens the X-ray spectrum generator.
+* |16x16_preferences-system| **Settings** opens the preferences dialog.
 
 View menu
 ^^^^^^^^^^^^^
 .. _ViewMenuSubsection:
 
-The :guilabel:`Modules` menu includes the button to start a simulation and offers different options for the simulation.
+The :guilabel:`View` menu provides commands ot control the variouse rendering and display parameters. 
 
 .. _guiViewMenu:
 .. figure:: pictures/gui-menu-view.png
@@ -183,12 +160,33 @@ The :guilabel:`Modules` menu includes the button to start a simulation and offer
 
     View menu.
 
+* |16x16_zoom-select| **Zoom to Selection** will render the selected parts over the full extent of the scene view. If no part is selected, the view is adjusted to show the entire setup.
+* |16x16_default-view-top-right| **Default View** realign the scene view to look from the top right.
+* |16x16_default-view-minus-x| **View along X**,
+* |16x16_default-view-minus-y| **View along Y**,
+* |16x16_default-view-minus-z| **View along Z** realign the scene view to look in the direction of the coordinate axes. Calling the function again rotates the view in the opposite direction. 
+* |16x16_pick-focalpoint| **Pick Focal Point** will allow to pick an part and shift the view to the center of the picked part. From mow on the scene will rotate around the position of the picked part.
+* |16x16_view-orthographic| **Orthographic Projection** toggles orthografic and perspective projection mode.
+* |16x16_view-axes| **Toggle Axes** will control the visibility of local coordinate axes at the selected parts.
+* |16x16_bounding-box| **Toggle Bounding Box** will control the visibility of the bonding box at the selected parts.
+* **Toggle Edge Visibility** will control the visibility of triangle edges at the selected parts.
+* |16x16_switch-wireframe| **Toggle Wireframe** toggles wireframe and solid rendering of the selected parts.
+* **Multiple views** switches the division of the scene view to show three additional sub-views, each with a different viewing direction.
+* **Views Follow Main Camera** toggles the synchronous movement of the sub-views.
+* **Show Source Cone** toggles the display of a tranparet cone representing the X-ray beam.
+* **Show Orientation** toggles the disply of a orientation marker at bottom lift of the scene view.
+* **Stereo Rendering** toggles stereo rendering, e.g. by red/cyan anaglyph imaging. See related parameters under Settings. 
+* **Level Of Detail Rendering** 
+* **Fullscreen** toggle full-sceen mode of main program window.
+* **Toggle Toolbar Visibility** switches the toolbar on and off.
+* |16x16_open-dock| **Toggle Dock Visibility** switches the docking area on and off.
+* **Toggle Setup Visibility** switches the parameter panel on and off.
 
 Help menu
 ^^^^^^^^^
 .. _HelpMenuSubsection:
 
-The :guilabel:`Help` menu provides help options and license information.
+The :guilabel:`Help` menu provides information about the program itself, its installation and its license status.
 
 .. _guiHelpMenu:
 .. figure:: pictures/gui-menu-help.png
@@ -197,12 +195,9 @@ The :guilabel:`Help` menu provides help options and license information.
 
     Help menu.
 
-* |icon-help| **Show Inline Help** activates the inline help where available, e.g. on the Scattering tab or at the material editor.
+* |16x16_system-help| **Show Inline Help** activates the inline help where available, e.g. on the Scattering tab or at the material editor.
 * **User Guide** opens the documentation file (PDF).
 * **Online Guide** opens the online handbook (https://bamresearch.github.io/aRTist-handbook).
 * **Homepage** opens |artist|'s homepage (http://artist.bam.de).
 * **License Information** opens a dialog window with the actual license status. Here you will also find information on license activation and applying for a demo license. See also `License activation`.
-* |icon-run| **About aRTist** opens a dialog window with information about the software itself and its version, installed modules and included third-party software.
-
-.. |icon-help| image:: pictures/icons/16x16_system-help.png
-    :width: 16
+* |16x16_aRTist| **About aRTist** opens a dialog window with information about the software itself and its version, installed modules and included third-party software.

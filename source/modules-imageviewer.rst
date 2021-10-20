@@ -1,8 +1,9 @@
 .. include:: _templates/icons.rst
 
+.. _ImageViewerSection:
+
 Image Viewer
 ------------
-.. _ImageViewerSection:
 
 3.1	Image Viewer (from existing tutorial)
 3.1.1	Status Icon

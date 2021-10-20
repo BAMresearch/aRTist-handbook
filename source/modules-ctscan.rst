@@ -1,8 +1,9 @@
 .. include:: _templates/icons.rst
 
-CtScan
-------------
 .. _CtScanSection:
+
+CtScan
+------
 
 3.3	CtScan (from existing tutorial)
 3.3.1	Centre of Rotation

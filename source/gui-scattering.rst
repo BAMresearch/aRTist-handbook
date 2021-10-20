@@ -1,7 +1,8 @@
 .. include:: _templates/icons.rst
 
+.. _ScatteringPanelSection:
+
 Scattering Panel
 ----------------
-.. _ScatteringPanelSection:
 
 Scattering Panel (incl. menu description)
