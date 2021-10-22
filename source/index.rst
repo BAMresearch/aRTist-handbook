@@ -39,7 +39,6 @@ The information in this manual is for reference and informational use only. We a
    gui
    modules
    fileformats
-   faq
 
 .. toctree::
    :maxdepth: 2
@@ -57,3 +56,10 @@ The information in this manual is for reference and informational use only. We a
    tutorial_tomosynth_module
    tutorial_advanct_module
    tutorial_xray_source
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Appendix:
+
+   faq
+   references

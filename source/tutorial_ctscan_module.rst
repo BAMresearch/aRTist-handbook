@@ -177,13 +177,15 @@ The tube current can be set in the in the :guilabel:`Exposure` menu and adjusts 
 
  * If a single point :math:`m > 1` is chosen, the focal spots will be randomly distributed with a Poisson disc pattern, to centralize the focal spots to the centre of the focal spot plane and avoid overlapping.
 
-Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from :math:`\left[0;1\right]` or it can be generated with an additional focal spot image generator.
+Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from :math:`\left[0,1\right]` or it can be generated with an additional focal spot image generator. The integrated generator for focal spot weights is described in the chapter :ref:`Spot Intensity Profile <TutorialXraySourceSpotIntensityProfile>` of the x-ray source tutorial.
 
 .. _CtScanModuleFocalSpotMechanic:
 .. figure:: pictures/CtScanModule_FocalSpotMechanic.svg
 	:width: 100%
 
 	Image projection (A and C) of an 1:1 detector in |artist| with a distance of 5 |nbsp| mm between source and detector (1000x1000 |nbsp| px). Figure (A) is a raw projection defined by a 5x5 focal spot grid. (C) is the weighted result of the raw projection (A) and the gaussian focal spot weight (B). :cite:p:`Binder2021`
+
+:numref:`CtScanModuleFocalSpotMechanic` shows exemplary the mechanics behind the spot distribution and the spot intensity profile.
 
 .. ############################################################################
 
@@ -217,13 +219,6 @@ Summary
 
 .. ############################################################################
 
-References
-----------
-.. _CtScanModuleReferences:
-.. bibliography::
-
-.. ############################################################################
-
 Test
 ----
 
@@ -237,7 +232,10 @@ Internal site reference to headline:
 Reference to `CtScan Module`_
 
 Internal site reference to chapter:
-Reference to `CtScan Module Chapter <tutorial_ctscan_module.html>`_.
+Reference to `CtScan Module Chapter <tutorial_ctscan_module.html>`_
 
 Cross site reference:
-Reference to :ref:`description <worldLocalCoordinateSystem>`:
+Reference to :ref:`description <CtScanModuleSummary>`
+
+Additional cross site reference:
+Reference to :ref:`aRTist File Format <aRTistFileFormatSection>`

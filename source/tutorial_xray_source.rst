@@ -321,6 +321,7 @@ Each of these point sources has the same intensity: the total photon flux given 
 
 Spot Intensity Profile
 ^^^^^^^^^^^^^^^^^^^^^^
+.. _TutorialXraySourceSpotIntensityProfile:
 
 |artist| offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.
 
