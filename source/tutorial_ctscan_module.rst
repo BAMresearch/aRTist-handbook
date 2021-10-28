@@ -177,7 +177,7 @@ The tube current can be set in the in the :guilabel:`Exposure` menu and adjusts 
 
  * If a single point :math:`m > 1` is chosen, the focal spots will be randomly distributed with a Poisson disc pattern, to centralize the focal spots to the centre of the focal spot plane and avoid overlapping.
 
-Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from :math:`\left[0,1\right]` or it can be generated with an additional focal spot image generator. The integrated generator for focal spot weights is described in the chapter :ref:`Spot Intensity Profile <TutorialXraySourceSpotIntensityProfile>` of the x-ray source tutorial.
+Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from :math:`\left[0,1\right]` or it can be generated with an additional focal spot image generator. The integrated generator for the focal spot weights is described in the chapter :ref:`Spot Intensity Profile <TutorialXraySourceSpotIntensityProfile>` of the x-ray source tutorial.
 
 .. _CtScanModuleFocalSpotMechanic:
 .. figure:: pictures/CtScanModule_FocalSpotMechanic.svg
@@ -185,7 +185,7 @@ Hence every focal spot is defined a single point, the shape of a focal spot plan
 
 	Image projection (A and C) of an 1:1 detector in |artist| with a distance of 5 |nbsp| mm between source and detector (1000x1000 |nbsp| px). Figure (A) is a raw projection defined by a 5x5 focal spot grid. (C) is the weighted result of the raw projection (A) and the gaussian focal spot weight (B). :cite:p:`Binder2021`
 
-:numref:`CtScanModuleFocalSpotMechanic` shows exemplary the mechanics behind the spot distribution and the spot intensity profile.
+:numref:`CtScanModuleFocalSpotMechanic` shows exemplary the mechanics behind the spot distribution and the spot intensity profile. Please note, that the displayed blurriness of the projections (A) and (C) are a result of the 5 |nbsp| mm distance between the source and detector. Alternative, a pinhole setup as shown in :numref:`spot4x4imageViewer` can be used to further visualize the distribution of the focal spot.
 
 .. ############################################################################
 
@@ -193,11 +193,66 @@ Detector Setup
 ~~~~~~~~~~~~~~
 .. _CtScanModuleDetectorSetup:
 
+The last mandatory setup to simulate a full CT scan with |artist| is the detector setup. |artist| supports out of the box a variety of different detector types. However, in this tutorial the two most versatile detector types :guilabel:`1:1` and :guilabel:`flatpanel` will be described. An overview of the available detector settings is given in :numref:`CtScanModuleDetectorPanel`.
+
+.. _CtScanModuleDetectorPanel:
+.. figure:: pictures/CtScanModule_DetectorPanel.svg
+	:width: 65%
+
+	Overview of the common setup options of the detector panel in |artist|.
+
+The settings in :numref:`CtScanModuleDetectorPanel` are set by default if a new :code:`.artist` project is created. In the :guilabel:`Geometry` tab, the size and the resolution of the detector can be adjusted. By default a detector with the actual size of :math:`100x100 \mathrm{mm}` is created and placed at the origin of the scene. This default detector consists of :math:`1000x1000 \mathrm{px}` which results in a resolution/pixelpitch of :math:`0.1 \mathrm{mm}`.
+
+.. note::
+
+  * By selecting either :guilabel:`Size [mm]`, :guilabel:`Pixel` or :guilabel:`Res. [mm]` in the geometry tab, the selected column will be fixed and automatically calculated if one of the other columns is changed.
+
+  * By default the pixels are considered as squares. To disable this boundary, the :guilabel:`square pixel` button next to the resolution column has to be disjointed.
+
+In the :guilabel:`detector type` field at the :guilabel:`Characteristics` section a specific detector can be selected. By default the :code:`1:1` detector is selected. The 1:1 detector stands for a direct transformation of grey values (:math:`\mathrm{GV}`) to radiant exposure :math:`\left( \mathrm{\frac{J}{m^2}} \right)`. By selecting :guilabel:`Tools` :math:`\rightarrow` :guilabel:`Detector Properties` from the main menu, an overview of the selected detector type characteristic is provided as seen in :numref:`CtScanModule1on1DectorViewer`.
+
+.. _CtScanModule1on1DectorViewer:
+.. figure:: pictures/CtScanMoudle_1-1DetectorViewer.png
+	:width: 80%
+
+	Detector viewer settings of the 1:1 detector.
+
+The displayed :guilabel:`Characteristic` curve visualizes direct relation between the displayed grey values and measured energy density.
+
+.. note::
+
+	The displayed pixel size of the detector viewer is the defined pixel size of the :code:`.artdet` detector file. Any changes in the :guilabel:`Detector` tab will overwrite the data from the file.
+
+On a new project, the :guilabel:`Exposure` settings are set as acoording to :numref:`CtScanModuleDetectorPanel`. With the :guilabel:`reference point` option, a custom reference behavior can be enabled, which is useful in combination with the :code:`1:1` detector and therefore enabled by default. If the :guilabel:`reference point` option is enabled, a reference point according to the selected settings will be chosen and the :guilabel:`Exposure time [s]` automatically adjusted until the reference point reaches the threshold defined in :guilabel:`set to [D or GV]`. There are four ways to choose such a reference point:
+
+* :code:`max`: The reference point is determined by the pixel with maximum grey value (0 ... 65535) of the rendered projection.
+* :code:`min`: The reference point is determined by the pixel with minimum grey value  (0 ... 65535) of the rendered projection.
+* :code:`center`: The reference point is the central pixel of the detector.
+* :code:`picked`: The reference point is the pixel, which either can be set via coordinates or manually selected with the auto selection tool inside the :guilabel:`Image Viewer`.
+
+Alternatively, with the :guilabel:`reference point` set to :code:`off` no reference point is used at all. In case of the :code:`1:1` detector a reference point is useful, since the defined energy densities are way higher than usual industrial CTs operate with. Consequently, without an adjusted :code:`exposure time` to compensate this, the resulting projections would appear to have very low contrast. Therefore, the default settings for the :guilabel:`Exposure` use a reference point, which is determined by the first pixel within the projection image that reaches a grey value of code:`50000`. The exposure time, that results of the simulation setup (assembly, source, detector) so far, is automatically calculated and in this case 433 weeks 6 hours 49 minutes and 2 seconds.
+
+.. note::
+
+  * If a reference point is selected the :code:`exposure time` will automatically be adjusted every time a relevant parameter changes, like the distance between source and detector or the definition of the source or the detector. The :code:`exposure time` is only approximated and will be calculated correctly if the simulation is actually run.
+
+  * Due to scattering or small deviations of the Monte Carlo simulation, the calculated :code:`exposure time` will also vary for empty projections.
+
+  * The reference point may be influenced by the measurement object. For example if the :code:`center` reference point is chosen, the resulting grey value of the detector center depends also on any absorption caused by a measurement object in-between the source and the detector. Consequently, the resulting exposure times may change drastically, due to different penetration lengths
+
+Next content:
+
+* Different graphs (Example from svt detector)
+* WCNDT publication and citation
+* Reference to detector calc or to the actual file
+
 .. ############################################################################
 
 Examples
 --------
 .. _CtModuleExamples:
+
+* Short description that either a ideal model can be used or adjusted based on the own system
 
 .. ############################################################################
 
@@ -205,11 +260,15 @@ Ideal Model
 ~~~~~~~~~~~
 .. _CtScanModuleIdealModel:
 
+* Ideal model description with reference to the dgzfp paper
+
 .. ############################################################################
 
 Experimental Model
 ~~~~~~~~~~~~~~~~~~
 .. _CtScanModuleExperimentalModel:
+
+* Based on the ideal model, some additions like a gaussian focal spot or a detector
 
 .. ############################################################################
 
