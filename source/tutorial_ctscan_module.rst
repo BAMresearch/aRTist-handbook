@@ -197,7 +197,7 @@ The last mandatory setup to simulate a full CT scan with |artist| is the detecto
 
 .. _CtScanModuleDetectorPanel:
 .. figure:: pictures/CtScanModule_DetectorPanel.svg
-	:width: 65%
+	:width: 75%
 
 	Overview of the common setup options of the detector panel in |artist|.
 
@@ -208,6 +208,20 @@ The settings in :numref:`CtScanModuleDetectorPanel` are set by default if a new 
   * By selecting either :guilabel:`Size [mm]`, :guilabel:`Pixel` or :guilabel:`Res. [mm]` in the geometry tab, the selected column will be fixed and automatically calculated if one of the other columns is changed.
 
   * By default the pixels are considered as squares. To disable this boundary, the :guilabel:`square pixel` button next to the resolution column has to be disjointed.
+
+In the geometry section the multi-sampling behavior can be adjusted, which is by default set to :code:`source dependent`. There are three options available for multi-sampling:
+
+* :code:`source dependent`: The pattern of the focal :guilabel:`Spot type` is mirrored on every pixel of the detector. The point of detection is the central point of each subpixel.
+
+* :code:`nxm`: Every pixel is separated into a regular :math:`m \times n` grid. The point of detection is the central point of each subpixel.
+
+* :code:`n`: Every pixel is separated into :math:`n` subpixel based on a Poisson disc pattern. The point of detection is in the center of the Poisson discs.
+
+.. _CtScanModuleDetectorMultisampling:
+.. figure:: pictures/CtScanModule_DetectorMultisamplingGrid.svg
+	:width: 80%
+
+	Overview of the multi-sampling behavior for different source-detector combinations.
 
 In the :guilabel:`detector type` field at the :guilabel:`Characteristics` section a specific detector can be selected. By default the :code:`1:1` detector is selected. The 1:1 detector stands for a direct transformation of grey values (:math:`\mathrm{GV}`) to radiant exposure :math:`\left( \mathrm{\frac{J}{m^2}} \right)`. By selecting :guilabel:`Tools` :math:`\rightarrow` :guilabel:`Detector Properties` from the main menu, an overview of the selected detector type characteristic is provided as seen in :numref:`CtScanModule1on1DectorViewer`.
 
