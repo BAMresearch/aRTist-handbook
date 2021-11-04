@@ -37,7 +37,7 @@ In the next section you will find information on reqesting an evaluation or perm
 .. _installationWelcomeScreen:
 .. figure:: pictures/artist-2.12-setup1.png
     :alt: Installer welcome screen
-    :width: 65%
+    :width: 71.3%
 
     Installer welcome screen.
 
@@ -45,7 +45,7 @@ In the next section you will find information on reqesting an evaluation or perm
 .. _installationOptions:
 .. figure:: pictures/artist-2.12-setup2.png
     :alt: Installer option selection
-    :width: 65%
+    :width: 71.3%
 
     Installation options dialog.
 
@@ -74,9 +74,9 @@ Press the button :guilabel:`Generate activation request` to display the activati
 In response to an activation request, you will receive an activated license file back within the next working days.
 
 .. _licenseInformationDialog:
-.. figure:: pictures/artist-licenseinformation.png
+.. figure:: pictures/installation-licenseinformation.png
     :alt: License information dialog
-    :width: 70%
+    :width: 76%
 
     License information dialog.
 

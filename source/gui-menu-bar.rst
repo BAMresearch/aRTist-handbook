@@ -15,7 +15,7 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 .. _guiFileMenu:
 .. figure:: pictures/gui-menu-file.png
     :alt: aRTist file menu
-    :width: 60%
+    :width: 57.3%
 
     File menu.
 
@@ -41,7 +41,7 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 .. _guiEditMenu:
 .. figure:: pictures/gui-menu-edit.png
     :alt: aRTist edit menu
-    :width: 20%
+    :width: 22.6%
 
     Edit menu.
 
@@ -63,7 +63,7 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 .. _guiGeometryMenu:
 .. figure:: pictures/gui-menu-geometry.png
     :alt: aRTist geometry menu
-    :width: 20%
+    :width: 21%
 
     Geometry menu.
 
@@ -89,7 +89,7 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 .. _guiComputeMenu:
 .. figure:: pictures/gui-menu-compute.png
     :alt: aRTist compute menu
-    :width: 20%
+    :width: 18.6%
 
     Compute menu.
 
@@ -104,22 +104,22 @@ Modules menu
 ^^^^^^^^^^^^^
 .. _ModulesMenuSubsection:
 
-The :guilabel:`Modules` menu offers the selection of the available extention modules. Modules extent the program functionallity with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see `Modules`.
+The :guilabel:`Modules` menu offers the selection of the available extention modules. Modules extent the program functionallity with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
 
 .. _guiModulesMenu:
 .. figure:: pictures/gui-menu-modules.png
     :alt: aRTist modules menu
-    :width: 20%
+    :width: 20.7%
 
     Modules menu.
 
 * **Manage Modules...** controls the activation of the installed modules. New modules can be installed from |artist| package files (:code:`*.artp`).
-* **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScanSection` description.
-* **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the medelled detector. For more information see :ref:`DetectorCalcSection` section.
-* **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see :ref:`DigRadSection` section.
-* |16x16_image-radiography| **ImageViewer** module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section :ref:`ImageViewerSection`.
+* **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScan <CtScanSection>` description.
+* **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the medelled detector. For more information see :ref:`DetectorCalc <DetectorCalcSection>` section.
+* **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see :ref:`DigRad <DigRadSection>` section.
+* |16x16_image-radiography| **ImageViewer** module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section :ref:`ImageViewer <ImageViewerSection>`.
 * **LogViewer** module displays internal messages by aRTist and its components.
-* **McRay** module is the interface to the Monte Carlo code McRay, comming with aRTist. Usually McRay is controlled at the :ref:`ScatteringPanelSection`. This module provides additional options for expirienced users.
+* **McRay** module is the interface to the Monte Carlo code McRay, comming with aRTist. Usually McRay is controlled at the :ref:`Scattering <ScatteringPanelSection>`. This module provides additional options for expirienced users.
 * |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.
 * **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advancd tab can be used to control variations for any part in the scene.
 
@@ -132,7 +132,7 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 .. _guiToolsMenu:
 .. figure:: pictures/gui-menu-tools.png
     :alt: aRTist tools menu
-    :width: 30%
+    :width: 32%
 
     Tools menu.
 
@@ -156,7 +156,7 @@ The :guilabel:`View` menu provides commands ot control the variouse rendering an
 .. _guiViewMenu:
 .. figure:: pictures/gui-menu-view.png
     :alt: aRTist view menu
-    :width: 40%
+    :width: 35.9%
 
     View menu.
 
@@ -191,7 +191,7 @@ The :guilabel:`Help` menu provides information about the program itself, its ins
 .. _guiHelpMenu:
 .. figure:: pictures/gui-menu-help.png
     :alt: aRTist help menu
-    :width: 30%
+    :width: 21.3%
 
     Help menu.
 
@@ -199,5 +199,5 @@ The :guilabel:`Help` menu provides information about the program itself, its ins
 * **User Guide** opens the documentation file (PDF).
 * **Online Guide** opens the online handbook (https://bamresearch.github.io/aRTist-handbook).
 * **Homepage** opens |artist|'s homepage (http://artist.bam.de).
-* **License Information** opens a dialog window with the actual license status. Here you will also find information on license activation and applying for a demo license. See also `License activation`.
+* **License Information** opens a dialog window with the actual license status. Here you will also find information on license activation and applying for a demo license. See also :ref:`License activation <licenseactivation>`.
 * |16x16_aRTist| **About aRTist** opens a dialog window with information about the software itself and its version, installed modules and included third-party software.
