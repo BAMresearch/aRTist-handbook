@@ -217,11 +217,17 @@ In the geometry section the multi-sampling behavior can be adjusted, which is by
 
 * :code:`n`: Every pixel is separated into :math:`n` subpixel based on a Poisson disc pattern. The point of detection is in the center of the Poisson discs.
 
+A quick visualization of the different detector mutli-sampling and focal spot type combinations can be seen in the following :numref:`CtScanModuleDetectorMultisampling`.
+
 .. _CtScanModuleDetectorMultisampling:
 .. figure:: pictures/CtScanModule_DetectorMultisamplingGrid.svg
 	:width: 80%
 
 	Overview of the multi-sampling behavior for different source-detector combinations.
+
+.. note::
+
+  Sub figures C and B in :numref:`CtScanModuleDetectorMultisampling` show, that if multi-sampling is used without the :code:`source dependent` option, the computational effort will increase exponentially, which results in a longer computational time for each projection.
 
 In the :guilabel:`detector type` field at the :guilabel:`Characteristics` section a specific detector can be selected. By default the :code:`1:1` detector is selected. The 1:1 detector stands for a direct transformation of grey values (:math:`\mathrm{GV}`) to radiant exposure :math:`\left( \mathrm{\frac{J}{m^2}} \right)`. By selecting :guilabel:`Tools` :math:`\rightarrow` :guilabel:`Detector Properties` from the main menu, an overview of the selected detector type characteristic is provided as seen in :numref:`CtScanModule1on1DectorViewer`.
 
@@ -231,20 +237,22 @@ In the :guilabel:`detector type` field at the :guilabel:`Characteristics` sectio
 
 	Detector viewer settings of the 1:1 detector.
 
-The displayed :guilabel:`Characteristic` curve visualizes direct relation between the displayed grey values and measured energy density.
+The displayed :guilabel:`Characteristic` curve visualizes the direct relation between the displayed grey values and detected energy density.
 
 .. note::
 
 	The displayed pixel size of the detector viewer is the defined pixel size of the :code:`.artdet` detector file. Any changes in the :guilabel:`Detector` tab will overwrite the data from the file.
 
+In |artist| at least a :code:`Characteristic` curve is needed to describe the response behavior of a detector, which is the case of the code:`1:1` detector. Further elaborated detector models consists of at least an additional :code:`Noise` curve and optional a :code:`Sensitivity` curve, which can be specified by an :code:`Attenuation` and :code:`Deposit` curve. The additional curves of an |artist| detector model will be discussed later in the section :ref:`Experimental Model <CtScanModuleExperimentalModel>`.
+
 On a new project, the :guilabel:`Exposure` settings are set as acoording to :numref:`CtScanModuleDetectorPanel`. With the :guilabel:`reference point` option, a custom reference behavior can be enabled, which is useful in combination with the :code:`1:1` detector and therefore enabled by default. If the :guilabel:`reference point` option is enabled, a reference point according to the selected settings will be chosen and the :guilabel:`Exposure time [s]` automatically adjusted until the reference point reaches the threshold defined in :guilabel:`set to [D or GV]`. There are four ways to choose such a reference point:
 
-* :code:`max`: The reference point is determined by the pixel with maximum grey value (0 ... 65535) of the rendered projection.
-* :code:`min`: The reference point is determined by the pixel with minimum grey value  (0 ... 65535) of the rendered projection.
+* :code:`max`: The reference point is determined by the pixel with maximum grey value (0 ... 65535 for UINT16) of the rendered projection.
+* :code:`min`: The reference point is determined by the pixel with minimum grey value  (0 ... 65535 for UINT16) of the rendered projection.
 * :code:`center`: The reference point is the central pixel of the detector.
 * :code:`picked`: The reference point is the pixel, which either can be set via coordinates or manually selected with the auto selection tool inside the :guilabel:`Image Viewer`.
 
-Alternatively, with the :guilabel:`reference point` set to :code:`off` no reference point is used at all. In case of the :code:`1:1` detector a reference point is useful, since the defined energy densities are way higher than usual industrial CTs operate with. Consequently, without an adjusted :code:`exposure time` to compensate this, the resulting projections would appear to have very low contrast. Therefore, the default settings for the :guilabel:`Exposure` use a reference point, which is determined by the first pixel within the projection image that reaches a grey value of code:`50000`. The exposure time, that results of the simulation setup (assembly, source, detector) so far, is automatically calculated and in this case 433 weeks 6 hours 49 minutes and 2 seconds.
+Alternatively, with the :guilabel:`reference point` set to :code:`off` no reference point is used at all. In case of the :code:`1:1` detector a reference point is useful, since the defined energy densities are way higher than usual industrial CTs operate with. Consequently, without an adjusted :code:`exposure time` to compensate this, the resulting projections would appear to have very low contrast. Therefore, the default settings for the :guilabel:`Exposure` use a reference point, which is determined by the first pixel within the projection image that reaches a grey value of :code:`50000`. The exposure time, that results of the simulation setup (assembly, source, detector) so far, is automatically calculated and in this case 433 weeks 6 hours 49 minutes and 2 seconds.
 
 .. note::
 
@@ -253,6 +261,16 @@ Alternatively, with the :guilabel:`reference point` set to :code:`off` no refere
   * Due to scattering or small deviations of the Monte Carlo simulation, the calculated :code:`exposure time` will also vary for empty projections.
 
   * The reference point may be influenced by the measurement object. For example if the :code:`center` reference point is chosen, the resulting grey value of the detector center depends also on any absorption caused by a measurement object in-between the source and the detector. Consequently, the resulting exposure times may change drastically, due to different penetration lengths
+
+The last option in the :guilabel:`Exposure` section is the averaging option, which is also a common option in many CT systems. In a real system this usually means, that the same projection is repeated at the same rotation angle by a specified :guilabel:`# of frames to average`. Averaging projections results in an stable mean grey value for individual pixels and in a reduction of overall noise which is demonstrated in :numref:`CtScanModuleNoisyAveraging`.
+
+.. _CtScanModuleNoisyAveraging:
+.. figure:: pictures/CtScanModule_NoisyAveraging.svg
+	:width: 100%
+
+	Exemplary noisy projection without averaging (left) and with #3 frames averaged (right).
+
+In order to reduce the computational effort and therefore reduce the computation time per projection, |artist| does not simply calculate a series of images and averages them, but changes temporarily the energy density proportional to :guilabel:`# of frames to average` of the corresponding SNR curve. In that way, the overall noise level will be reduced with only a single simulated projection per angle iteration. 
 
 Next content:
 
@@ -283,6 +301,18 @@ Experimental Model
 .. _CtScanModuleExperimentalModel:
 
 * Based on the ideal model, some additions like a gaussian focal spot or a detector
+
+.. _CtScanModuleCharacteristicsSNR:
+.. figure:: pictures/CtScanModule_CharacteristicsSNR.svg
+	:width: 67%
+
+	Characteristics and Signal to Noise Ratio of the provided detector ST-VI Dynamix SK 7083.
+
+.. _CtScanModuleSensitivity:
+.. figure:: pictures/CtScanModule_DetectorSensitivity.svg
+	:width: 100%
+
+	Sensitivity, attenuation and deposited energy of the provided detector ST-VI Dynamix SK 7083.
 
 .. ############################################################################
 
