@@ -25,9 +25,9 @@ The *CtScan* module is a modular extension of |artist| which provides the tools 
 
 .. note:: The pagination of the listed modules in the :guilabel:`Modules` depend on the installed modules.
 
-For the following tutorial it is advised to be comfortable with the basic elements of |artist|. Therefore, in section ##2.3 description of the setup panel and the axis definition used within |artist| can be found. In section ##2.4 are the basics of the source panel described, which will be used to define a x-ray source. Section ##2.6 covers the basics of the detector panel, which is also necessary for a CT scan setup. The basic elements of the CtScan module itself, are descried in section ##3.3.
+For the following tutorial it is advised to be comfortable with the basic elements of |artist|. Therefore, in section :ref:`Setup Panel <SetupPanelSection>` a description of the setup panel and the axis definition used within |artist| can be found. In the section :ref:`Source Panel <SourcePanelSection>` are the basics of the source GUI described, which will be used to define a x-ray source. The :ref:`Detector Panel <SetupPanelSection>` section covers the basics of the detector GUI, which is also necessary for a CT scan setup. The basic elements of the CtScan module itself, are descried in the :ref:`Module CtScan <CtScanSection>`.
 
-In the following chapters of this description, first a simple CT scan is described, which shows the basics of the module. After that, a typical setup of the module is shown, which can be transferred to a custom CT scan setup. In the section ##7.3 two examples are provided, which shows the difference between a ideal simulation and an experimental model in |artist|. In the last section of this tutorial, the borders of the current models - while using the *CtScan* module are discussed.
+In the following chapters of this description, first a simple CT scan is described, which shows the basics of the module. After that, a typical setup of the module is shown, which can be transferred to a custom CT scan setup. In the :ref:`Examples <CtModuleExamples>` section two examples are provided, which shows the difference between a ideal simulation and an experimental model in |artist|. In the last section of this tutorial, the borders of the current models - while using the *CtScan* module are discussed.
 
 .. ############################################################################
 
@@ -270,13 +270,27 @@ The last option in the :guilabel:`Exposure` section is the averaging option, whi
 
 	Exemplary noisy projection without averaging (left) and with #3 frames averaged (right).
 
-In order to reduce the computational effort and therefore reduce the computation time per projection, |artist| does not simply calculate a series of images and averages them, but changes temporarily the energy density proportional to :guilabel:`# of frames to average` of the corresponding SNR curve. In that way, the overall noise level will be reduced with only a single simulated projection per angle iteration. 
+In order to reduce the computational effort and therefore reduce the computation time per projection, |artist| does not simply calculate a series of images and averages them, but changes temporarily the energy density proportional to :guilabel:`# of frames to average` of the corresponding signal to noise ratio (abbr.: SNR, see :numref:`CtScanModuleAveragingExample`). In that way, the overall noise level will be reduced with only a single simulated projection per angle iteration.
 
-Next content:
+.. _CtScanModuleAveragingExample:
+.. figure:: pictures/CtScanModule_AveragingExample.svg
+	:width: 100%
 
-* Different graphs (Example from svt detector)
-* WCNDT publication and citation
-* Reference to detector calc or to the actual file
+	Example of the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames.
+
+.. note::
+
+	If the calculated energy densities exceed the temporary density axis, the SNR curve will be extrapolated based on the linear slope of the last two values of the curve. However, this may result in a faster saturation if averaging is enabled.
+
+With the parameter override section, a manual override of the detector parameters can be enabled. By default |artist| uses the parameters of the characteristics for unsharpness or noise, which are defined either by selecting a provided detector type or by loading a custom detector file. The unsharpness model in |artist| follows the guideline as described in the ASTM E2597/E2597M-14 standard. :cite:p:`ASTME2597`
+Any detector unsharpness contribution is applied as a 2D Gaussian convolution. The :code:`Unsharpness [mm]` and the :code:`Long range unsharpness [mm]` are the standard deviations of the two 2D Gaussian functions, which contribute to the overall unsharpness model of the detector. Additionally, the :code:`Long range unsharpness contribution [%]` is a linear scaling factor according to the ASTM E2597/E2597M-14 standard. :cite:p:`ASTME2597`
+Furthermore, using the :code:`noise factor` in the override mode, will allows to manually scale the standard deviation of the SNR (compare :cite:p:`DIN147841`).
+
+The last section allows to use a :guilabel:`Flat Field Correction` in |artist|. In actual CT systems, this usually requires a set of dark and bright images which are used for a gain and offset correction of each projection. In |artist| only a single free beam image is used to normalize a projection. For that purpose, the internal flat field generator can be used, which will temporarily set all objects invisible in order to get a free beam image of the current scene. Alternatively, an external image can be loaded, too. If :guilabel:`apply flat field correction` is enabled, each projection :math:`P_i` of :math:`n` projections of a scan with will be corrected with the flat field image :math:`F` and scaled according to the mean of the flat field image :math:`\overline{F}` to acquire the normalized projection :math:`N_i`.
+
+.. math::
+
+  N_i = \frac{P_i}{F} \cdot \overline{F} \qquad \mathrm{for} \quad i = 1, 2,  \dots n
 
 .. ############################################################################
 
@@ -324,6 +338,8 @@ Summary
 
 Test
 ----
+
+This is citation example. :cite:p:`ASTME2597`
 
 Admonition example (based on the style of a note):
 
