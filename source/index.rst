@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-|artist| Handbook
-=================
+===================
+ |artist| Handbook
+===================
 
 .. _artistHandbook:
 
@@ -18,18 +19,19 @@ The information in this manual is for reference and informational use only. We a
 
 .. note:: This manual refers to |artist| version **2.12**.
 
-| Contact information:
-| `aRTist@bam.de <mailto:aRTist@bam.de>`_
-| `http://artist.bam.de <http://artist.bam.de>`_
+Contact
+-------
+
+`aRTist@bam.de <mailto:aRTist@bam.de>`_
+
+Publisher
+---------
 
 | Bundesanstalt für Materialforschung und -prüfung (BAM)
-| Unter den Eichen 87
-| 12205 Berlin
-| Germany
+| Unter den Eichen 87, 12205 Berlin, Germany
+|
 | Phone: +49 30 8104-0
-| Fax: +49 30 8104-7-2222
-| E-Mail: `info@bam.de <mailto:info@bam.de>`_
-| Internet: `www.bam.de <https://www.bam.de>`_
+| E-Mail: info(at)bam.de, Internet: `www.bam.de <https://www.bam.de>`_
 
 .. toctree::
    :maxdepth: 2
@@ -63,3 +65,4 @@ The information in this manual is for reference and informational use only. We a
 
    faq
    references
+   acknowledgments

@@ -95,16 +95,16 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 
 * |16x16_aRTist| **Run** starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled |16x16_image-final| as final result.
 * **Radiography** / **Thickness maps** control the simulation mode. Choose between these two options to either simulate a radiographic projection or just thickness maps for each penetrated material.
-* **Use GPU** controls the usa of an OpenGL graphics processing unit. When it is anabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
-* **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumtion and computing time.
-* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labled |16x16_image-preview| (not final) to set apart from final |16x16_image-final| results.
+* **Use GPU** controls the usa of an OpenGL graphics processing unit. When it is enabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
+* **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumption and computing time.
+* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labeled |16x16_image-preview| (not final) to set apart from final |16x16_image-final| results.
 
 
 Modules menu
 ^^^^^^^^^^^^^
 .. _ModulesMenuSubsection:
 
-The :guilabel:`Modules` menu offers the selection of the available extention modules. Modules extent the program functionallity with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
+The :guilabel:`Modules` menu offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
 
 .. _guiModulesMenu:
 .. figure:: pictures/gui-menu-modules.png
@@ -115,13 +115,13 @@ The :guilabel:`Modules` menu offers the selection of the available extention mod
 
 * **Manage Modules...** controls the activation of the installed modules. New modules can be installed from |artist| package files (:code:`*.artp`).
 * **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScan <CtScanSection>` description.
-* **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the medelled detector. For more information see :ref:`DetectorCalc <DetectorCalcSection>` section.
+* **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the modelled detector. For more information see :ref:`DetectorCalc <DetectorCalcSection>` section.
 * **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see :ref:`DigRad <DigRadSection>` section.
 * |16x16_image-radiography| **ImageViewer** module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section :ref:`ImageViewer <ImageViewerSection>`.
 * **LogViewer** module displays internal messages by aRTist and its components.
-* **McRay** module is the interface to the Monte Carlo code McRay, comming with aRTist. Usually McRay is controlled at the :ref:`Scattering <ScatteringPanelSection>`. This module provides additional options for expirienced users.
+* **McRay** module is the interface to the Monte Carlo code McRay, coming with aRTist. Usually McRay is controlled at the :ref:`Scattering <ScatteringPanelSection>`. This module provides additional options for experienced users.
 * |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.
-* **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advancd tab can be used to control variations for any part in the scene.
+* **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene.
 
 Tools menu
 ^^^^^^^^^^
@@ -136,11 +136,11 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 
     Tools menu.
 
-* **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation rans. 
+* **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation runs. 
 * **Show VTK Log** calls module LogViewer to displays internal messages by aRTist and its components.
 * **Enable remote access** opens a TCP/IP port to control |artist| from another program, e.g. Python. 
 * **Opening Angle** calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the status bar.
-* **Attenuation Data** opens a viewer of the energy-dependend attenuation coefficients used by the program.
+* **Attenuation Data** opens a viewer of the energy-dependent attenuation coefficients used by the program.
 * **Detector Properties** opens a viewer of the currently used detector model.
 * **Image Viewer** provides the menu bar of the image viewer module (lacking a nice way to directly attach it to the module window).
 * |16x16_edit-materials| **Materials** opens the materials editor.
@@ -151,7 +151,7 @@ View menu
 ^^^^^^^^^^^^^
 .. _ViewMenuSubsection:
 
-The :guilabel:`View` menu provides commands ot control the variouse rendering and display parameters. 
+The :guilabel:`View` menu provides commands ot control the various rendering and display parameters. 
 
 .. _guiViewMenu:
 .. figure:: pictures/gui-menu-view.png
@@ -166,18 +166,18 @@ The :guilabel:`View` menu provides commands ot control the variouse rendering an
 * |16x16_default-view-minus-y| **View along Y**,
 * |16x16_default-view-minus-z| **View along Z** realign the scene view to look in the direction of the coordinate axes. Calling the function again rotates the view in the opposite direction. 
 * |16x16_pick-focalpoint| **Pick Focal Point** will allow to pick an part and shift the view to the center of the picked part. From mow on the scene will rotate around the position of the picked part.
-* |16x16_view-orthographic| **Orthographic Projection** toggles orthografic and perspective projection mode.
+* |16x16_view-orthographic| **Orthographic Projection** toggles orthographic and perspective projection mode.
 * |16x16_view-axes| **Toggle Axes** will control the visibility of local coordinate axes at the selected parts.
 * |16x16_bounding-box| **Toggle Bounding Box** will control the visibility of the bonding box at the selected parts.
 * **Toggle Edge Visibility** will control the visibility of triangle edges at the selected parts.
 * |16x16_switch-wireframe| **Toggle Wireframe** toggles wireframe and solid rendering of the selected parts.
 * **Multiple views** switches the division of the scene view to show three additional sub-views, each with a different viewing direction.
 * **Views Follow Main Camera** toggles the synchronous movement of the sub-views.
-* **Show Source Cone** toggles the display of a tranparet cone representing the X-ray beam.
-* **Show Orientation** toggles the disply of a orientation marker at bottom lift of the scene view.
+* **Show Source Cone** toggles the display of a transparent cone representing the X-ray beam.
+* **Show Orientation** toggles the display of a orientation marker at bottom lift of the scene view.
 * **Stereo Rendering** toggles stereo rendering, e.g. by red/cyan anaglyph imaging. See related parameters under Settings. 
 * **Level Of Detail Rendering** 
-* **Fullscreen** toggle full-sceen mode of main program window.
+* **Fullscreen** toggle full-screen mode of main program window.
 * **Toggle Toolbar Visibility** switches the toolbar on and off.
 * |16x16_open-dock| **Toggle Dock Visibility** switches the docking area on and off.
 * **Toggle Setup Visibility** switches the parameter panel on and off.

@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'aRTist'
-copyright = '2021, BAM, Bundesanstalt für Materialforschung und -prüfung'
+copyright = '2021, Bundesanstalt für Materialforschung und -prüfung (BAM)'
 author = 'BAM, Bundesanstalt für Materialforschung und -prüfung'
 
 # The full version, including alpha/beta/rc tags
@@ -95,6 +95,8 @@ html_favicon = 'favicon.ico'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+# Copyright is handled by extra footer - _templates/footer.html
+html_show_copyright = False
 
 # -- Options for LaTeX output -------------------------------------------------
 latex_engine = 'pdflatex'

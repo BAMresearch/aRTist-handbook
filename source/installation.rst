@@ -17,7 +17,7 @@ The |artist| program is equipped with software protection mechanisms and needs l
 
 .. note:: Demo licenses can be provided on request for an **evaluation period** of 30 days (DEMOVERSION), see :ref:`activationrequest`.
 
-An |artist| license is shipped as serial number, which can be used to activate an |artist| installation. License activation is a tow-steps process: sending an activaion request via email and installing the activated license file received in response, see :ref:`licenseactivation`.
+An |artist| license is shipped as serial number, which can be used to activate an |artist| installation. License activation is a tow-steps process: sending an activation request via email and installing the activated license file received in response, see :ref:`licenseactivation`.
 
 .. note:: Licenses can be bound to a specific PC **(node-locked license)** or shared among different installations **(network license).**
 
@@ -28,11 +28,11 @@ Installation instructions
 
 The radiographic simulator |artist| comes with an installation routine :file:`aRTistSetup-X.X.X-64bit.exe` (where X.X.X is the version number). For installation download and execute the setup routine you got with your distribution. A dialog will appear (:numref:`installationWelcomeScreen`) and guide you through the installation process.
 
-.. note:: If |artist| is already installed, the installation routine will prompt you to deinstall the current version if necessary before proceeding with the installation process. Consequently, installations with the same version number (X.X) will be replaced, while installations with different version numbers can coexist on the same PC.
+.. note:: If |artist| is already installed, the installation routine will prompt you to uninstall the current version if necessary before proceeding with the installation process. Consequently, installations with the same version number (X.X) will be replaced, while installations with different version numbers can coexist on the same PC.
 
 During the installation process, you can choose options such as generating a Windows Start Menu entry and a Windows Desktop icon for convenient program execution (:numref:`installationOptions`). After the installation, |artist| is ready to use. Without an active and valid license, aRTist only runs with the limited functionality of Lite/Viewer mode.
 
-In the next section you will find information on reqesting an evaluation or permanent license activation.
+In the next section you will find information on requesting an evaluation or permanent license activation.
 
 .. _installationWelcomeScreen:
 .. figure:: pictures/artist-2.12-setup1.png
@@ -84,11 +84,11 @@ In response to an activation request, you will receive an activated license file
 License file installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The final step in activating a license is to install the license file provided in response to the activation request. Open the license file in |artist| to start the dialog for installing a licnese file. During isntallation, the temporary license file will be overwritten by the activated one.
+The final step in activating a license is to install the license file provided in response to the activation request. Open the license file in |artist| to start the dialog for installing a license file. During installation, the temporary license file will be overwritten by the activated one.
 
 .. note:: Just Drag'n'Drop the license file over the |artist| window/icon to install it.
 
-A license file for network licensing also only needs to be installed once. One, first computer with an |artist| installation is used to finally install the licene file (copy the license file to the network share). Opening a network license file in |artist| will show a dialog **"Use (not install) this network license?"** which needs to be answered with :guilabel:`No` to initiate the installation. a subsequent dialog will ask for the localtion of the common license file. It is important to enter the path of the activation request, as the license file was activated for exactly this path. To use this license at other computers in the network, the location of the license file has to be configured. A procedure simelar to the license file installation can be used, see :ref:`configurenetworklicensing`.
+A license file for network licensing also only needs to be installed once. One, first computer with an |artist| installation is used to finally install the license file (copy the license file to the network share). Opening a network license file in |artist| will show a dialog **"Use (not install) this network license?"** which needs to be answered with :guilabel:`No` to initiate the installation. a subsequent dialog will ask for the location of the common license file. It is important to enter the path of the activation request, as the license file was activated for exactly this path. To use this license at other computers in the network, the location of the license file has to be configured. A procedure similar to the license file installation can be used, see :ref:`configurenetworklicensing`.
 
 .. _configurenetworklicensing:
 
@@ -97,6 +97,6 @@ Configure network licensing
 
 Network licensing is realized by providing one common license file at a network folder. Any computer in the network can be used for |artist| if the user has access to this common license file. To use the network license with |artist|, the location of the license file has to be configured in the program.
 
-The procedure to configure the network license file in |artist| is, simelar to installing a license file, to open it in |artist|. Here it is important to open the original file at the network folder, not any local copy. The subsequent dialog **"Use (not install) this network license?"** needs to be answered with :guilabel:`Yes`.
+The procedure to configure the network license file in |artist| is, similar to installing a license file, to open it in |artist|. Here it is important to open the original file at the network folder, not any local copy. The subsequent dialog **"Use (not install) this network license?"** needs to be answered with :guilabel:`Yes`.
 
 .. note:: Just Drag'n'Drop the license file from the network folder over the |artist| window. Answer the subsequent dialog **"Use (not install) this network license?"** with :guilabel:`Yes`.

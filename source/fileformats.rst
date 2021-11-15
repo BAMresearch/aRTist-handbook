@@ -3,14 +3,9 @@
 File Formats
 ============
 
-When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`) with the following areas.
+|artist| supports several file formats for data input and output. The three most important ones are the *STL* format for loading part geometries, the *ARTSIT* format for saving and restoring the program status, and the *TIFF* format for outputting the simulation results.
 
-* **Menu bar**, used to access detailed settings and commands.
-* **Toolbar**, used to access the most commonly used functions and viewer settings.
-* **Parameter panel**, used to control the current model parameters for the scene, X-ray source and detector.
-* **Virtual scene**, a 3D scene view of the radiographic setup.
-* **Docking area**, integrates additional program windows and modules. By default, the **Image Viewer** showing the simulated radiograph is placed here.
-* **Status bar** displays what's currently going on.
+All file formats supported by the :guilabel:`File` → :guilabel:`Open...` dialog are also prepared for drag & drop. Accordingly, it is possible to drag a supported data file onto the |artist| program icon or window for opening.
 
 .. toctree::
    :maxdepth: 2
