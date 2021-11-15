@@ -276,7 +276,7 @@ In order to reduce the computational effort and therefore reduce the computation
 .. figure:: pictures/CtScanModule_AveragingExample.svg
 	:width: 100%
 
-	Example of the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames.
+	Example of the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames (detector type: ST-VI Dynamix SK 7083).
 
 .. note::
 
@@ -286,11 +286,15 @@ With the parameter override section, a manual override of the detector parameter
 Any detector unsharpness contribution is applied as a 2D Gaussian convolution. The :code:`Unsharpness [mm]` and the :code:`Long range unsharpness [mm]` are the standard deviations of the two 2D Gaussian functions, which contribute to the overall unsharpness model of the detector. Additionally, the :code:`Long range unsharpness contribution [%]` is a linear scaling factor according to the ASTM E2597/E2597M-14 standard. :cite:p:`ASTME2597`
 Furthermore, using the :code:`noise factor` in the override mode, will allows to manually scale the standard deviation of the SNR (compare :cite:p:`DIN147841`).
 
-The last section allows to use a :guilabel:`Flat Field Correction` in |artist|. In actual CT systems, this usually requires a set of dark and bright images which are used for a gain and offset correction of each projection. In |artist| only a single free beam image is used to normalize a projection. For that purpose, the internal flat field generator can be used, which will temporarily set all objects invisible in order to get a free beam image of the current scene. Alternatively, an external image can be loaded, too. If :guilabel:`apply flat field correction` is enabled, each projection :math:`P_i` of :math:`n` projections of a scan with will be corrected with the flat field image :math:`F` and scaled according to the mean of the flat field image :math:`\overline{F}` to acquire the normalized projection :math:`N_i`.
+The last section allows to use a :guilabel:`Flat Field Correction` in |artist|. In actual CT systems, this usually requires a set of dark and bright images which are used for a gain and offset correction of each projection. In |artist| only a single free beam image is used to normalize a projection. For that purpose, the internal flat field generator can be used, which will use the current szene settings in order to get a free beam image. Alternatively, an external image can be loaded, too. If :guilabel:`apply flat field correction` is enabled, each projection :math:`P_i` of :math:`n` projections of a scan with will be corrected with the flat field image :math:`F` and scaled according to the mean of the flat field image :math:`\overline{F}` to acquire the normalized projection :math:`N_i`.
 
 .. math::
 
   N_i = \frac{P_i}{F} \cdot \overline{F} \qquad \mathrm{for} \quad i = 1, 2,  \dots n
+
+.. note::
+
+	If :guilabel:`apply flat field correction` is enabled, |artist| will automatically set all objects temporarily invisible and acquire a free beam image of the current szene and settings if the simulation is run. Then the acquired flat field image will be stored in the :code:`.artist` project file. If the simulation is run and a flat field image is already present, changing the settings will not generate a new flat field image. Therefore, it is good practice to delete the stored flat field image, if any relevant settings change.
 
 .. ############################################################################
 
@@ -298,7 +302,7 @@ Examples
 --------
 .. _CtModuleExamples:
 
-* Short description that either a ideal model can be used or adjusted based on the own system
+After getting familiar with the settings of the *CtScan* module and the general procedure to setup the assembly, the source and the detector the following chapter will provide two additional examples. In the follow up section :ref:`Ideal model <CtScanModuleIdealModel>` an aluminium measurand will be simulated with ideal settings (point source, no unsharpness, no noise) and compared to the original :code:`.stl` volume. The second example given in the section :ref:`Experimental model <CtScanModuleExperimentalModel>` will adjust some of the settings to an exemplary CT system. This will include a custom source and detector definition. Both examples will be explained step by step and will be compared against the orignal volume. For the nominal to actual surface comparison, the external software *VG Studio MAX (v. 3.5)* is used.
 
 .. ############################################################################
 
@@ -306,7 +310,29 @@ Ideal Model
 ~~~~~~~~~~~
 .. _CtScanModuleIdealModel:
 
-* Ideal model description with reference to the dgzfp paper
+For both examples, the :download:`FMT_StackCube.stl <files/FMT_StackCube.stl>` |nbsp| (1.8 MB) is used as a non-trivial measurement object with different dimensional features. At first download the :code:`FMT_StackCube.stl` file and start a new |artist| project. Next load the :code:`FMT_StackCube.stl` into the szene either via :guilabel:`File` :math:`\rightarrow` :guilabel:`Open...` or by draging and droping the file right into the szene. Now start with the assembly setup by changeing the position and orientation of the :guilabel:`Source`, the :guilabel:`Detector` and the :guilabel:`FMT_StackCube` according to the values given in :numref:`CtScanModuleExampleSimulationSetup`.
+
+.. _CtScanModuleExampleSimulationSetup:
+.. figure:: pictures/CtScanModule_ExampleSimulationSetup.svg
+	:width: 100%
+
+	Geometric setup of the example simulation.
+
+By default new objects are assigned :guilabel:`Fe` as material. Since the stack cube is made of aluminium, change the default material to :guilabel:`Al` in the :guilabel:`AssemblyList`. The environmental material :guilabel:`air` keeps unchanged.
+
+For an ideal source, the tube type :guilabel:`Mono` has to be selected in the :guilabel:`Spectrum calculator`. The accleration voltage of this exemplary tube is given by :code:`170 kV`. Compute the spectrum an make sure, that the graph of the source spectrum represents a monochromatic spectrum at 170 kV. As exposure, a high current at :code:`1000 mA` is chosen. Since in an ideal simulation, the focal spot is a single point, the :guilabel:`Spot type` :code:`point` is chosen. In that way there is only one single point source to emitt x-radiation.
+
+For the detector assembly, the :guilabel:`1:1` detector is chosen, which has no noise, no unsharpness and uses a linear characteristic between the energy density and the displayed grey value (compare :numref:`CtScanModule1on1DectorViewer`). Change the default geometry of the detector to a squared size of :code:`102.4 mm` with :code:`1024 px` and a resolution of :code:`0.1 mm`. Keep the :guilabel:`Multisampling` as :code:`source dependent` and the :guilabel:`Curvature` as :code:`off`. In the :guilabel:`Exposure` tab, the standard settings are kept, which will guarantee that the projections gain enough contrast for the reconstruction, even though the detector characteristics demand a high exposure time. Since, the :guilabel:`1:1` detector is without a noise curve, averaging can be disabled, which is the for a new project. Further parameter overrides are not necessary to define a near ideal detector.
+
+Even though there is noise or non-linearity of the detector pixels, a flat field correction will at least account for the cone beam characteristic and level out the grey values for each projection. Therefore, enable the flat field correction with the checkbox :guilabel:`apply flat field correction`.
+
+At this stage, it is useful to run the simulation (:guilabel:`Compute` :math:`\rightarrow` :guilabel:`Run`) which will trigger the automated flat field acquisition routine. Furthermore, the preview of the current projection in the :guilabel:`ImageViewer` will be replaced by a correctly rendered projection.
+
+Now the CT setup is done and only the settings in the :guilabel:`CTScan` (:guilabel:`Modules` :math:`\rightarrow` :guilabel:`CtScan`) module have to be adjusted. The simulation shall take :code:`1800` projections at a total angle of :code:`360 °`. Next chose a suitable output :guilabel:`Directory` and a :guilabel:`File Name`. Be sure to use the :code:`BAM CT` :guilabel:`File Type` with a depth of :code:`16 bit`. Finally enable the Feldkamp reconstruction (:guilabel:`Run Feldkamp`) and click on the :guilabel:`Run` button to start the simulation.
+
+The object will now rotate around the global y-axis and the reconstruction will trigger automatically after all projections are acquired. If everything is finished the progress bar will disappear and the projection stack (:code:`.dd`), the reconstructed volume (:code:`.bd`) and the open volume project file (:code:`.vgi`) can be used for further analysis.
+
+As comparison, the complete |artist| project file for this ideal simulation is available for download: :download:`Example_CtScanModule_Ideal.aRTist <files/Example_CtScanModule_Ideal.aRTist>` |nbsp| (2.8 MB).
 
 .. ############################################################################
 
@@ -314,19 +340,47 @@ Experimental Model
 ~~~~~~~~~~~~~~~~~~
 .. _CtScanModuleExperimentalModel:
 
-* Based on the ideal model, some additions like a gaussian focal spot or a detector
+In the previous section, an ideal model has been setup with |artist| which does neither account for noise nor unsharpness. Furthermore, the source and the detector were idealized in their characteristical behaviour (point source and 1:1 detector). In this example, a more realistic model will be created with custom source and detector setups. Generally, every time a new |artist| project is created, it is advised to follow the same setup procedure as described before:
 
-.. _CtScanModuleCharacteristicsSNR:
-.. figure:: pictures/CtScanModule_CharacteristicsSNR.svg
-	:width: 67%
+#. Load all objects into the scene
+#. Assign the correct object materials and the environmental material
+#. Setup the geometrical parameters within the assembly list
+#. Setup the source and define a focal spot
+#. Setup the detector settings
+#. Create a flat field image
+#. Finalize the *CtScan* module parameters and run the simulation
 
-	Characteristics and Signal to Noise Ratio of the provided detector ST-VI Dynamix SK 7083.
+For the experimental model the source and the detector setup has to change. The geometrical settings will be same as in the ideal example. Hence, the previous model :download:`Example_CtScanModule_Ideal.aRTist <files/Example_CtScanModule_Ideal.aRTist>` |nbsp| (2.8 MB) will be used as basis, which skips step 1 to 3.
 
-.. _CtScanModuleSensitivity:
-.. figure:: pictures/CtScanModule_DetectorSensitivity.svg
-	:width: 100%
+The spectrum of an industrial CT is usually polychromatic. Thus a general generator of the :guilabel:`Spectrum calculator` has to be used. Open the :guilabel:`Spectrum calculator` and select als :guilabel:`Tube` :code:`General`. Enter the :guilabel:`Tube settings` according to :numref:`CtScanModuleSpectrumExperimental`. The provided parameters represent a tungsten reflection tube with a maximum acceleration voltage of :code:`150 kV` and :code:`1.2 mA`. For this simulated measurement, the maximum acceleartion voltage will be used, which is defined in :guilabel:`voltage (kV)` setting. Additionally, an iron pre filter with a width of :code:`0.5 mm` is also defined in the spectrum calculator in order to reduce beam hardening artefacts. Compute the spectrum and verify in the spectrum graph, that a polychromatic spectrum is assigned.
 
-	Sensitivity, attenuation and deposited energy of the provided detector ST-VI Dynamix SK 7083.
+.. _CtScanModuleSpectrumExperimental:
+.. figure:: pictures/CtScanModule_SpectrumExperimental.svg
+	:width: 40%
+
+	Exemplary settings of the spectrum calculator for the experimental model.
+
+.. note::
+
+	The :guilabel:`target angle (deg)` and the :guilabel:`angle of e- incidence (deg)` are in this specific case both :code:`45°`. Depending on the actual construction of the target, both angles do not necessarily combine to :code:`90°`.
+
+For the :guilabel:`exposure [mA or GBq]` a total of :code:`1 mA` ist used by the tube, which is a far more realistc value than the :code:`1000 mA` that were used in the ideal example. Industrial CTs usually have an extended focal spot area in order to spread the thermal load and avert material burn-ins. In this specific setting, the size and the shape of the focal spot area is known. First the :guilabel:`Spot type` is changed from :code:`point` to :code:`3x3`. This results in a 3x3 regular grid of 9 x-ray sources. The general shape of the focal spot intensity is known be a 2D Gaussian. This can be integrated with the focal spot profile generator at default settings. If the focal spot weight is set, the size has to be adjusted and is set in this case to be :code:`0.01 mm` in x- and y-direction.
+
+After finishing the source setup, the detector setup is next. The :code:`1:1` detector which has been used before does not support any noise which is usually present in every real detector. Therefore, a different :guilabel:`detector type` has to be used. There are several options in |artist| to generate a custom detector. Either a detector can be generated with the *DigRad* (based on the ASTM E2597 :cite:p:`ASTME2597`) or the *DetectorCalc* (based on a layer model) module. Furthermore, a custom :code:`.artdet` file (see :ref:`Detector Definition <DetectorDefinitionSection>`) can be generated and read into |artist|. In this case, the provided :code:`flat panel` is used as :guilabel:`detector type` and adjusted to the simulation. Upon loading the :code:`flat panel` the default settings of the :code:`.artdet` file are loaded into the :guilabel:`Detector` tab. Hence, the size has to be reduced to the setting of the ideal example, which includes a squared size of :code:`102.4 mm`, :code:`1024 px` and a resolution of :code:`0.1 mm`. Since the source is already represented by 9 independent sources, the :guilabel:`Multisampling` option is kept at :code:`source dependent`. In the exposure tab, set the :guilabel:`reference point` :code:`off`. Now the exposure time is not adjusted for every projection but kept on a constant value, in this case :code:`1 s`. Since the SNR curve of the :code:`flat panel` detector is quite noisy, an average of :code:`2` frames is applied.
+
+Even with averaging enabled, the :code:`flat panel` model is still quite noisy. To further reduce the noise contribution, override the :guilabel:`noise factor` to :code:`0.2`. The unsharpness settings of the detector are kept untouched. Now that all relevant settings are done, finish the detector setup with a new flat field image. Otherwise the old flat field image of the ideal example will be used, which will mislead the simulation.
+
+Last but not least, change the output :guilabel:`File Name` and the :guilabel:`Directory` in the *CtScan* module. All other settings in the *CtScan* module can be kept the same as in the ideal example. If every chang is applied correctly, run the simulation. Due to the 9-fold of the computational effort (9 sources), the calculation time per projection will increase according to the available ressources of the calculating system. Again, if the simulation and the reconstruction is finished, the projection stack (:code:`.dd`), the reconstructed volume (:code:`.bd`) and the open volume project file (:code:`.vgi`) can be found in the output folder.
+
+The full example of the experimental model is provided as download: :download:`Example_CtScanModule_Experimental.aRTist <files/Example_CtScanModule_Experimental.aRTist>` |nbsp| (2.0 MB)
+
+Even though |artist| can simulate projections and reconstruct the volume, any further analysis of the volumes has to be done outside |artist|. Therefore the open volume project files (:code:`.vgi`) can be imported into a volume analysis software like *VG Studio MAX*. Within *VG Studio MAX* both volumes have been treated equally. Which means that first a surface was determined (classic surface determination with self healing start contour enabled) and then the resulting volume was fitted against the ideal :code:`FMT_StackCube.stl` surface (feature based registration). The resulting deviation distributions are summerized in :numref:`CtScanModuleComparisonIdealExperimental`.
+
+.. _CtScanModuleComparisonIdealExperimental:
+.. figure:: pictures/CtScanModule_ComparisonIdealExperimental.svg
+	:width: 80%
+
+	Nominal to actual comparison between the surfaces of the reconstructed volumes and the nominal surface of the FMT_StackCube.stl.
 
 .. ############################################################################
 
@@ -334,27 +388,4 @@ Summary
 -------
 .. _CtScanModuleSummary:
 
-.. ############################################################################
-
-Test
-----
-
-This is citation example. :cite:p:`ASTME2597`
-
-Admonition example (based on the style of a note):
-
-.. admonition:: Example
-
-  This is an example
-
-Internal site reference to headline:
-Reference to `CtScan Module`_
-
-Internal site reference to chapter:
-Reference to `CtScan Module Chapter <tutorial_ctscan_module.html>`_
-
-Cross site reference:
-Reference to :ref:`description <CtScanModuleSummary>`
-
-Additional cross site reference:
-Reference to :ref:`aRTist File Format <aRTistFileFormatSection>`
+In this chapter, a basic procdure to setup a *CtScan* in |artist| has been provided. Additionally, some of |artist| hidden mechanics, like the handling of averaged images or the source dependent mulit sampling has been explained. Moreover three examples with increasing complexy have been provided that show how to setup a *CtScan* from scratch or update an existing model with new parameters.
