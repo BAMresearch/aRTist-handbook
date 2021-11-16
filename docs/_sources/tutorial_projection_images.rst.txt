@@ -124,9 +124,9 @@ In the example image in :numref:`imageViewerSaturation`, the *Rotor's* material 
 Radiographies and Thickness Maps
 --------------------------------
 
-When you open |artist|'s :guilabel:`Compute` menu (:numref:`guiComputeMenu`), you can choose between :guilabel:`Radiography` and :guilabel:`Thickness Maps`. (You can also long-press the |32x32_compute-radiography| :guilabel:`Run` button to get this menu.)
+When you open |artist|'s :guilabel:`Compute` menu (:numref:`tutGuiComputeMenu`), you can choose between :guilabel:`Radiography` and :guilabel:`Thickness Maps`. (You can also long-press the |32x32_compute-radiography| :guilabel:`Run` button to get this menu.)
 
-.. _guiComputeMenu:
+.. _tutGuiComputeMenu:
 .. figure:: pictures/gui-menu-compute.png
     :width: 15%
 
@@ -135,7 +135,7 @@ When you open |artist|'s :guilabel:`Compute` menu (:numref:`guiComputeMenu`), yo
 * **Radiographies** are your common detector images that show the intensities after X-ray attenuation.
 
 * **Thickness Maps** are images that show the path length that a ray travelled in each material to reach the pixel. In this mode, you will get a thickness map for each material in your scene. You can switch between the thickness maps with the *image selector* in your *Image Viewer*. Each pixel in a *Thickness Map* will have a value that represents the penetration length in mm. Therefore, it is usually a good idea to save *Thickness Maps* as 32-bit float images to keep the precision.
-    
+
   When you compute thickness maps instead of radiographies, the :guilabel:`Run` button will change its appearance to |32x32_compute-thickness|.
 
 
@@ -144,6 +144,6 @@ Computing Full Projection Images
 
 To calculate a full simulation image, you can use the |32x32_compute-radiography| :guilabel:`Run` button from the toolbar or in the menu bar, choose :guilabel:`Compute` → :guilabel:`Run`. Full simulation images have the true number of pixels of your detector. All activated effects are taken into account (e.g. source spot sampling, detector multisampling, scattering). Depending on your simulation parameters, a full simulation can take much longer than computing a simple preview image.
 
-If :guilabel:`Use GPU` is activated in the :guilabel:`Compute` menu (:numref:`guiComputeMenu`), |artist| will use some OpenGL techniques on your graphics card to speed up computations, but a big part is still performed on the CPU. If your graphics card does not support it, |artist| will automatically use the CPU for all computations.
+If :guilabel:`Use GPU` is activated in the :guilabel:`Compute` menu (:numref:`tutGuiComputeMenu`), |artist| will use some OpenGL techniques on your graphics card to speed up computations, but a big part is still performed on the CPU. If your graphics card does not support it, |artist| will automatically use the CPU for all computations.
 
 :guilabel:`Single Precision` will use 32-bit floating point values for parts of the computations instead of 64-bit double precision values. In some cases, it might speed up computations.

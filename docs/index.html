@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -31,10 +33,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -86,13 +88,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
@@ -102,6 +105,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
 </ul>
 
             
@@ -180,23 +189,21 @@
 <p class="admonition-title">Note</p>
 <p>This manual refers to <em>aRT</em>ist version <strong>2.12</strong>.</p>
 </div>
-<div class="line-block">
-<div class="line">Contact information:</div>
-<div class="line"><a class="reference external" href="mailto:aRTist&#37;&#52;&#48;bam&#46;de">aRTist<span>&#64;</span>bam<span>&#46;</span>de</a></div>
-<div class="line"><a class="reference external" href="http://artist.bam.de">http://artist.bam.de</a></div>
+<div class="section" id="contact">
+<h2>Contact<a class="headerlink" href="#contact" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="mailto:aRTist&#37;&#52;&#48;bam&#46;de">aRTist<span>&#64;</span>bam<span>&#46;</span>de</a></p>
 </div>
+<div class="section" id="publisher">
+<h2>Publisher<a class="headerlink" href="#publisher" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line">Bundesanstalt für Materialforschung und -prüfung (BAM)</div>
-<div class="line">Unter den Eichen 87</div>
-<div class="line">12205 Berlin</div>
-<div class="line">Germany</div>
+<div class="line">Unter den Eichen 87, 12205 Berlin, Germany</div>
+<div class="line"><br /></div>
 <div class="line">Phone: +49 30 8104-0</div>
-<div class="line">Fax: +49 30 8104-7-2222</div>
-<div class="line">E-Mail: <a class="reference external" href="mailto:info&#37;&#52;&#48;bam&#46;de">info<span>&#64;</span>bam<span>&#46;</span>de</a></div>
-<div class="line">Internet: <a class="reference external" href="https://www.bam.de">www.bam.de</a></div>
+<div class="line">E-Mail: info(at)bam.de, Internet: <a class="reference external" href="https://www.bam.de">www.bam.de</a></div>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#system-requirements">System requirements</a></li>
@@ -207,19 +214,36 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html">Menu bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-setup.html">Setup Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-source.html">Source Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scattering.html">Scattering Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-detector.html">Detector Panel</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bamct_file_format.html#header-size-and-data-offset">Header Size and Data Offset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bamct_file_format.html#byte-order">Byte Order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bamct_file_format.html#file-name">File Name</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bamct_file_format.html#header-data">Header Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-solid.html">Solid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-ctscan.html">CtScan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-detectorcalc.html">DetectorCalc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-digrad.html">DigRad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-mcray.html">McRay</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fileformats_artist.html">aRTist File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformats_tube.html">Tube Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformats_spectrum.html">Source Spectrum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformats_detector.html">Detector Definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fileformats_vgi.html">VGI File Format</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a><ul>
@@ -264,9 +288,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#a-simple-ct-scan">A Simple CT Scan</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#centre-of-rotation">Centre of Rotation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#advanced-settings">Advanced Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#fdk-reconstructions">FDK Reconstructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#ctscan-setup">CtScan Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#examples">Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_ctscan_module.html#summary">Summary</a></li>
 </ul>
 </li>
@@ -283,6 +306,19 @@
 </li>
 </ul>
 </div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html#authors">Authors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html#acknowledgment">Acknowledgment</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -298,7 +334,6 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
 
     </p>
   </div>
@@ -309,7 +344,12 @@
     
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p></p>
+    <p>&#169; Copyright 2021, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
 
 </footer>
         </div>

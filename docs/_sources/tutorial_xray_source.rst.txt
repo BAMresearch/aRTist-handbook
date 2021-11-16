@@ -23,15 +23,13 @@ The *Source* section of the *Parameter Panel* (:numref:`xraySourceParameterPanel
 
     The *Parameter Panel* for the X-ray source.
 
-In the upper part of the panel, the current spectrum of the X-ray source is plotted. At the moment, a monochromatic photon energy of 150 |nbsp| keV is simulated. 
+In the upper part of the panel, the current spectrum of the X-ray source is plotted. At the moment, a monochromatic photon energy of 150 |nbsp| keV is simulated.
 
 
 Spectrum Calculator
 -------------------
 
-The *Spectrum Calculator* can be used to generate a spectrum for a given X-ray source configuration. It uses a model by Andreas Deresch *et al.*:
-    
-    A. Deresch, C. Bellon, G.-R. Jaenisch. A general spectrum model for X-ray generators. *NDT&E International* 79 (2016) pp. 92-97. DOI: `10.1016/j.ndteint.2015.12.007 <https://doi.org/10.1016/j.ndteint.2015.12.007>`__
+The *Spectrum Calculator* can be used to generate a spectrum for a given X-ray source configuration. It uses a model by Andreas Deresch *et al.*: :cite:p:`Deresch2016`
 
 .. note:: Click the button |22x22_xray-tube| :guilabel:`Calculate X-ray tube spectrum` to open the *Spectrum Calculator* (:numref:`spectrumCalculatorMono`).
 
@@ -225,7 +223,7 @@ Pinhole Camera
 
     We turned off the visibility of the objects in the scene to make room for the pinhole camera.
 
-Using the *Solids* generator, we will now set up a plate of a highly absorbing material and poke a small hole at its centre. 
+Using the *Solids* generator, we will now set up a plate of a highly absorbing material and poke a small hole at its centre.
 
 .. note::
     1. Open the |32x32_icon-solid| *Solid* module.
@@ -323,6 +321,7 @@ Each of these point sources has the same intensity: the total photon flux given 
 
 Spot Intensity Profile
 ^^^^^^^^^^^^^^^^^^^^^^
+.. _TutorialXraySourceSpotIntensityProfile:
 
 |artist| offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.
 

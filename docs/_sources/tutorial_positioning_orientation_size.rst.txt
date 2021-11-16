@@ -108,7 +108,7 @@ Whenever you load a new object into the scene, the axes of its local coordinate 
 2. The object is rotated by the **first angle** around the **resulting local X axis**.
 3. The object is rotated by the **second angle** around the **resulting local Y axis**.
 
-.. note:: Select the *Rotor* and set its orientation angles to X: :code:`20`, Y: :code:`30` and Z: :code:`10`. Press :kbd:`Enter` to apply the orientation. 
+.. note:: Select the *Rotor* and set its orientation angles to X: :code:`20`, Y: :code:`30` and Z: :code:`10`. Press :kbd:`Enter` to apply the orientation.
 
 You should now see a tilted *Rotor* in the virtual scene, just like in :numref:`rotorOrientation`. Starting with its local coordinate system aligned with the world coordinate system, it has first been rotated by 10° around its local *Z* axis, then by 20° around the resulting local *X* axis, and thirdly by 30° around the resulting local *Y* axis.
 

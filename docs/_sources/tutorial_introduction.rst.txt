@@ -1,3 +1,5 @@
+.. include:: _templates/icons.rst
+
 Introduction to Tutorials
 =========================
 
@@ -7,4 +9,4 @@ Each tutorial explains a specific aspect of |artist|. If you already feel confid
 
 **Note boxes** show the actions that **you** should take during the tutorials.
 
-.. note:: Start with a tutorial that interests you. If you are a beginner, it is recommended to start with ":ref:`theVirtualSceneChapter`".
+.. note:: Start with a tutorial that interests you. If you are a beginner, it is recommended to start with :ref:`The Virtual Scene <theVirtualSceneChapter>`.

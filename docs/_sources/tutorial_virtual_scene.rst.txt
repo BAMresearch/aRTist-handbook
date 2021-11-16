@@ -179,7 +179,7 @@ Summary
 
 In this tutorial, you have learned about |artist|'s virtual scene and how to arrange it.
 
-* You know about the **standard coordinate** system and that, for the moment, we don't want to change the principal axes. 
+* You know about the **standard coordinate** system and that, for the moment, we don't want to change the principal axes.
 * You have learned how to **load surface files** into the virtual scene and you have made use of |artist|'s library to import the *Rotor*.
 * You assigned a **colour** to an object.
 * You know that a **saved** |artist| project contains everything you need to restore it at a later point (including all surface models).

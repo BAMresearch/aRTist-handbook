@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -31,17 +33,17 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="BAM CT File Format" href="bamct_file_format.html" />
+    <link rel="next" title="Scene" href="gui-scene.html" />
     <link rel="prev" title="User interface" href="gui.html" /> 
 </head>
 
@@ -87,7 +89,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="gui.html">User interface</a><ul class="current">
@@ -95,13 +97,24 @@
 <li class="toctree-l3"><a class="reference internal" href="#file-menu">File menu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#edit-menu">Edit menu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometry-menu">Geometry menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compute-menu">Compute menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modules-menu">Modules menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tools-menu">Tools menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-menu">View menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-menu">Help menu</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-setup.html">Setup Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-source.html">Source Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scattering.html">Scattering Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-detector.html">Detector Panel</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
@@ -111,6 +124,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
 </ul>
 
             
@@ -187,8 +206,8 @@
 <h2>File menu<a class="headerlink" href="#file-menu" title="Permalink to this headline">¶</a></h2>
 <p id="filemenusubsection">The <span class="guilabel">File</span> drop-down menu comprises commands referring to the current project.</p>
 <div class="figure align-default" id="id1">
-<span id="guifilemenu"></span><a class="reference internal image-reference" href="_images/gui-menu-file.png"><img alt="aRTist file menu" src="_images/gui-menu-file.png" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">File menu.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="guifilemenu"></span><a class="reference internal image-reference" href="_images/gui-menu-file.png"><img alt="aRTist file menu" src="_images/gui-menu-file.png" style="width: 57.3%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">File menu.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><strong>New Project</strong> opens a new <em>aRT</em>ist scheme. This may also be done by pressing <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">n</kbd>. The program will ask you if you want to save the changes on your current project.</p></li>
@@ -200,15 +219,15 @@
 <li><p><strong>Last Directories</strong> shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.</p></li>
 <li><p><strong>Open New Window</strong> starts a new, additional instance of <em>aRT</em>ist.</p></li>
 <li><p><strong>Restart</strong> reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.</p></li>
-<li><p><strong>Quit</strong> terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">q</kbd>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_window-close.png"><img alt="16x16_window-close" src="_images/16x16_window-close.png" style="width: 16px;" /></a> <strong>Quit</strong> terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">q</kbd>.</p></li>
 </ul>
 </div>
 <div class="section" id="edit-menu">
 <h2>Edit menu<a class="headerlink" href="#edit-menu" title="Permalink to this headline">¶</a></h2>
 <p id="editmenusubsection">The <span class="guilabel">Edit</span> menu contains undo/redo functionalities with the project’s history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.</p>
 <div class="figure align-default" id="id2">
-<span id="guieditmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-edit.png"><img alt="aRTist edit menu" src="_images/gui-menu-edit.png" style="width: 20%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Edit menu.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<span id="guieditmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-edit.png"><img alt="aRTist edit menu" src="_images/gui-menu-edit.png" style="width: 22.6%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Edit menu.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p><a class="reference internal" href="_images/16x16_edit-undo.png"><img alt="16x16_edit-undo" src="_images/16x16_edit-undo.png" style="width: 16px;" /></a> <strong>Undo</strong> erases the last change done to the project reverting it to its previous state. Alternatively, press <kbd class="kbd docutils literal notranslate">ctrl</kbd> + <kbd class="kbd docutils literal notranslate">z</kbd>.</p></li>
@@ -224,8 +243,8 @@
 <h2>Geometry menu<a class="headerlink" href="#geometry-menu" title="Permalink to this headline">¶</a></h2>
 <p id="geometrymenusubsection">The <span class="guilabel">Geometry</span> menu includes all functions regarding the geometry application for parts from the assembly. <em>aRT</em>ist’s functionality regarding “Geometry Manipulation” (→ <em>Union, Intersection, Difference, Arrange</em> and <em>Pick Destination</em>) for creating and arranging more complicated parts are described more in-depth in the separate chapter.</p>
 <div class="figure align-default" id="id3">
-<span id="guigeometrymenu"></span><a class="reference internal image-reference" href="_images/gui-menu-geometry.png"><img alt="aRTist geometry menu" src="_images/gui-menu-geometry.png" style="width: 20%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Geometry menu.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<span id="guigeometrymenu"></span><a class="reference internal image-reference" href="_images/gui-menu-geometry.png"><img alt="aRTist geometry menu" src="_images/gui-menu-geometry.png" style="width: 21%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Geometry menu.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ul>
 <li><p><a class="reference internal" href="_images/16x16_center-new.png"><img alt="16x16_center-new" src="_images/16x16_center-new.png" style="width: 16px;" /></a> <strong>Center New Parts</strong> positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.</p></li>
@@ -245,6 +264,107 @@
 <li><p><a class="reference internal" href="_images/16x16_edit-pickposition.png"><img alt="16x16_edit-pickposition" src="_images/16x16_edit-pickposition.png" style="width: 16px;" /></a> <strong>Pick Destination</strong> moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).</p></li>
 </ul>
 </div>
+<div class="section" id="compute-menu">
+<h2>Compute menu<a class="headerlink" href="#compute-menu" title="Permalink to this headline">¶</a></h2>
+<p id="computemenusubsection">The <span class="guilabel">Compute</span> menu includes the button to start a simulation and offers different options for the simulation.</p>
+<div class="figure align-default" id="id4">
+<span id="guicomputemenu"></span><a class="reference internal image-reference" href="_images/gui-menu-compute.png"><img alt="aRTist compute menu" src="_images/gui-menu-compute.png" style="width: 18.6%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Compute menu.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="_images/16x16_aRTist.png"><img alt="16x16_aRTist" src="_images/16x16_aRTist.png" style="width: 16px;" /></a> <strong>Run</strong> starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled <a class="reference internal" href="_images/16x16_image-final.png"><img alt="16x16_image-final" src="_images/16x16_image-final.png" style="width: 16px;" /></a> as final result.</p></li>
+<li><p><strong>Radiography</strong> / <strong>Thickness maps</strong> control the simulation mode. Choose between these two options to either simulate a radiographic projection or just thickness maps for each penetrated material.</p></li>
+<li><p><strong>Use GPU</strong> controls the usa of an OpenGL graphics processing unit. When it is enabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. <em>aRT</em>ist’s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.</p></li>
+<li><p><strong>Single Precision</strong> controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumption and computing time.</p></li>
+<li><p><strong>Render Previews</strong> enables/disables live rendering of preview images in ImageViewer. Preview images are labeled <a class="reference internal" href="_images/16x16_image-preview.png"><img alt="16x16_image-preview" src="_images/16x16_image-preview.png" style="width: 16px;" /></a> (not final) to set apart from final <a class="reference internal" href="_images/16x16_image-final.png"><img alt="16x16_image-final" src="_images/16x16_image-final.png" style="width: 16px;" /></a> results.</p></li>
+</ul>
+</div>
+<div class="section" id="modules-menu">
+<h2>Modules menu<a class="headerlink" href="#modules-menu" title="Permalink to this headline">¶</a></h2>
+<p id="modulesmenusubsection">The <span class="guilabel">Modules</span> menu offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see <a class="reference internal" href="modules.html#modules"><span class="std std-ref">Modules</span></a>.</p>
+<div class="figure align-default" id="id5">
+<span id="guimodulesmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-modules.png"><img alt="aRTist modules menu" src="_images/gui-menu-modules.png" style="width: 20.7%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Modules menu.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Manage Modules…</strong> controls the activation of the installed modules. New modules can be installed from <em>aRT</em>ist package files (<code class="code docutils literal notranslate"><span class="pre">*.artp</span></code>).</p></li>
+<li><p><strong>CtScan</strong> module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see <a class="reference internal" href="modules-ctscan.html#ctscansection"><span class="std std-ref">CtScan</span></a> description.</p></li>
+<li><p><strong>DetectorCalc</strong> module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the modelled detector. For more information see <a class="reference internal" href="modules-detectorcalc.html#detectorcalcsection"><span class="std std-ref">DetectorCalc</span></a> section.</p></li>
+<li><p><strong>DigRad</strong> module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a> section.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_image-radiography.png"><img alt="16x16_image-radiography" src="_images/16x16_image-radiography.png" style="width: 16px;" /></a> <strong>ImageViewer</strong> module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">ImageViewer</span></a>.</p></li>
+<li><p><strong>LogViewer</strong> module displays internal messages by aRTist and its components.</p></li>
+<li><p><strong>McRay</strong> module is the interface to the Monte Carlo code McRay, coming with aRTist. Usually McRay is controlled at the <a class="reference internal" href="gui-scattering.html#scatteringpanelsection"><span class="std std-ref">Scattering</span></a>. This module provides additional options for experienced users.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_icon-solid.png"><img alt="16x16_icon-solid" src="_images/16x16_icon-solid.png" style="width: 16px;" /></a> <strong>Solid</strong> module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.</p></li>
+<li><p><strong>TomoSynth</strong> module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene.</p></li>
+</ul>
+</div>
+<div class="section" id="tools-menu">
+<h2>Tools menu<a class="headerlink" href="#tools-menu" title="Permalink to this headline">¶</a></h2>
+<p id="toolsmenusubsection">The <span class="guilabel">Tools</span> menu provides several dialogs to control the program.</p>
+<div class="figure align-default" id="id6">
+<span id="guitoolsmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-tools.png"><img alt="aRTist tools menu" src="_images/gui-menu-tools.png" style="width: 32%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Tools menu.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><strong>Show Console</strong> opens the <em>aRT</em>ist console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation runs.</p></li>
+<li><p><strong>Show VTK Log</strong> calls module LogViewer to displays internal messages by aRTist and its components.</p></li>
+<li><p><strong>Enable remote access</strong> opens a TCP/IP port to control <em>aRT</em>ist from another program, e.g. Python.</p></li>
+<li><p><strong>Opening Angle</strong> calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the status bar.</p></li>
+<li><p><strong>Attenuation Data</strong> opens a viewer of the energy-dependent attenuation coefficients used by the program.</p></li>
+<li><p><strong>Detector Properties</strong> opens a viewer of the currently used detector model.</p></li>
+<li><p><strong>Image Viewer</strong> provides the menu bar of the image viewer module (lacking a nice way to directly attach it to the module window).</p></li>
+<li><p><a class="reference internal" href="_images/16x16_edit-materials.png"><img alt="16x16_edit-materials" src="_images/16x16_edit-materials.png" style="width: 16px;" /></a> <strong>Materials</strong> opens the materials editor.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_xray-tube.png"><img alt="16x16_xray-tube" src="_images/16x16_xray-tube.png" style="width: 16px;" /></a> <strong>Spectrum…</strong> opens the X-ray spectrum generator.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_preferences-system.png"><img alt="16x16_preferences-system" src="_images/16x16_preferences-system.png" style="width: 16px;" /></a> <strong>Settings</strong> opens the preferences dialog.</p></li>
+</ul>
+</div>
+<div class="section" id="view-menu">
+<h2>View menu<a class="headerlink" href="#view-menu" title="Permalink to this headline">¶</a></h2>
+<p id="viewmenusubsection">The <span class="guilabel">View</span> menu provides commands ot control the various rendering and display parameters.</p>
+<div class="figure align-default" id="id7">
+<span id="guiviewmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-view.png"><img alt="aRTist view menu" src="_images/gui-menu-view.png" style="width: 35.9%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">View menu.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="_images/16x16_zoom-select.png"><img alt="16x16_zoom-select" src="_images/16x16_zoom-select.png" style="width: 16px;" /></a> <strong>Zoom to Selection</strong> will render the selected parts over the full extent of the scene view. If no part is selected, the view is adjusted to show the entire setup.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_default-view-top-right.png"><img alt="16x16_default-view-top-right" src="_images/16x16_default-view-top-right.png" style="width: 16px;" /></a> <strong>Default View</strong> realign the scene view to look from the top right.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_default-view-minus-x.png"><img alt="16x16_default-view-minus-x" src="_images/16x16_default-view-minus-x.png" style="width: 16px;" /></a> <strong>View along X</strong>,</p></li>
+<li><p><a class="reference internal" href="_images/16x16_default-view-minus-y.png"><img alt="16x16_default-view-minus-y" src="_images/16x16_default-view-minus-y.png" style="width: 16px;" /></a> <strong>View along Y</strong>,</p></li>
+<li><p><a class="reference internal" href="_images/16x16_default-view-minus-z.png"><img alt="16x16_default-view-minus-z" src="_images/16x16_default-view-minus-z.png" style="width: 16px;" /></a> <strong>View along Z</strong> realign the scene view to look in the direction of the coordinate axes. Calling the function again rotates the view in the opposite direction.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_pick-focalpoint.png"><img alt="16x16_pick-focalpoint" src="_images/16x16_pick-focalpoint.png" style="width: 16px;" /></a> <strong>Pick Focal Point</strong> will allow to pick an part and shift the view to the center of the picked part. From mow on the scene will rotate around the position of the picked part.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_view-orthographic.png"><img alt="16x16_view-orthographic" src="_images/16x16_view-orthographic.png" style="width: 16px;" /></a> <strong>Orthographic Projection</strong> toggles orthographic and perspective projection mode.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_view-axes.png"><img alt="16x16_view-axes" src="_images/16x16_view-axes.png" style="width: 16px;" /></a> <strong>Toggle Axes</strong> will control the visibility of local coordinate axes at the selected parts.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_bounding-box.png"><img alt="16x16_bounding-box" src="_images/16x16_bounding-box.png" style="width: 16px;" /></a> <strong>Toggle Bounding Box</strong> will control the visibility of the bonding box at the selected parts.</p></li>
+<li><p><strong>Toggle Edge Visibility</strong> will control the visibility of triangle edges at the selected parts.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_switch-wireframe.png"><img alt="16x16_switch-wireframe" src="_images/16x16_switch-wireframe.png" style="width: 16px;" /></a> <strong>Toggle Wireframe</strong> toggles wireframe and solid rendering of the selected parts.</p></li>
+<li><p><strong>Multiple views</strong> switches the division of the scene view to show three additional sub-views, each with a different viewing direction.</p></li>
+<li><p><strong>Views Follow Main Camera</strong> toggles the synchronous movement of the sub-views.</p></li>
+<li><p><strong>Show Source Cone</strong> toggles the display of a transparent cone representing the X-ray beam.</p></li>
+<li><p><strong>Show Orientation</strong> toggles the display of a orientation marker at bottom lift of the scene view.</p></li>
+<li><p><strong>Stereo Rendering</strong> toggles stereo rendering, e.g. by red/cyan anaglyph imaging. See related parameters under Settings.</p></li>
+<li><p><strong>Level Of Detail Rendering</strong></p></li>
+<li><p><strong>Fullscreen</strong> toggle full-screen mode of main program window.</p></li>
+<li><p><strong>Toggle Toolbar Visibility</strong> switches the toolbar on and off.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_open-dock.png"><img alt="16x16_open-dock" src="_images/16x16_open-dock.png" style="width: 16px;" /></a> <strong>Toggle Dock Visibility</strong> switches the docking area on and off.</p></li>
+<li><p><strong>Toggle Setup Visibility</strong> switches the parameter panel on and off.</p></li>
+</ul>
+</div>
+<div class="section" id="help-menu">
+<h2>Help menu<a class="headerlink" href="#help-menu" title="Permalink to this headline">¶</a></h2>
+<p id="helpmenusubsection">The <span class="guilabel">Help</span> menu provides information about the program itself, its installation and its license status.</p>
+<div class="figure align-default" id="id8">
+<span id="guihelpmenu"></span><a class="reference internal image-reference" href="_images/gui-menu-help.png"><img alt="aRTist help menu" src="_images/gui-menu-help.png" style="width: 21.3%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Help menu.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="_images/16x16_system-help.png"><img alt="16x16_system-help" src="_images/16x16_system-help.png" style="width: 16px;" /></a> <strong>Show Inline Help</strong> activates the inline help where available, e.g. on the Scattering tab or at the material editor.</p></li>
+<li><p><strong>User Guide</strong> opens the documentation file (PDF).</p></li>
+<li><p><strong>Online Guide</strong> opens the online handbook (<a class="reference external" href="https://bamresearch.github.io/aRTist-handbook">https://bamresearch.github.io/aRTist-handbook</a>).</p></li>
+<li><p><strong>Homepage</strong> opens <em>aRT</em>ist’s homepage (<a class="reference external" href="http://artist.bam.de">http://artist.bam.de</a>).</p></li>
+<li><p><strong>License Information</strong> opens a dialog window with the actual license status. Here you will also find information on license activation and applying for a demo license. See also <a class="reference internal" href="installation.html#licenseactivation"><span class="std std-ref">License activation</span></a>.</p></li>
+<li><p><a class="reference internal" href="_images/16x16_aRTist.png"><img alt="16x16_aRTist" src="_images/16x16_aRTist.png" style="width: 16px;" /></a> <strong>About aRTist</strong> opens a dialog window with information about the software itself and its version, installed modules and included third-party software.</p></li>
+</ul>
+</div>
 </div>
 
 
@@ -253,7 +373,7 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="bamct_file_format.html" class="btn btn-neutral float-right" title="BAM CT File Format" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gui-scene.html" class="btn btn-neutral float-right" title="Scene" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
         <a href="gui.html" class="btn btn-neutral float-left" title="User interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
@@ -261,7 +381,6 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
 
     </p>
   </div>
@@ -272,7 +391,12 @@
     
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p></p>
+    <p>&#169; Copyright 2021, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
 
 </footer>
         </div>

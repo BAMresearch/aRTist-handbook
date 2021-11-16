@@ -13,6 +13,8 @@
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
 
   
   
@@ -31,10 +33,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -87,16 +89,22 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">User interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html">Menu bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scene.html">Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-setup.html">Setup Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-source.html">Source Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-scattering.html">Scattering Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-detector.html">Detector Panel</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bamct_file_format.html">BAM CT File Format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Tutorials:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
@@ -106,6 +114,12 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
 </ul>
 
             
@@ -175,7 +189,7 @@
             
   <div class="section" id="user-interface">
 <h1>User interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h1>
-<p>When you open <em>aRT</em>ist, you will see its main window (<a class="reference internal" href="#guimainwindow"><span class="std std-numref">Fig. 5</span></a>) with the following areas.</p>
+<p>When you open <em>aRT</em>ist, you will see its main window (<a class="reference internal" href="#guimainwindow"><span class="std std-numref">Fig. 4</span></a>) with the following areas.</p>
 <ul class="simple">
 <li><p><strong>Menu bar</strong>, used to access detailed settings and commands.</p></li>
 <li><p><strong>Toolbar</strong>, used to access the most commonly used functions and viewer settings.</p></li>
@@ -184,20 +198,30 @@
 <li><p><strong>Docking area</strong>, integrates additional program windows and modules. By default, the <strong>Image Viewer</strong> showing the simulated radiograph is placed here.</p></li>
 <li><p><strong>Status bar</strong> displays what’s currently going on.</p></li>
 </ul>
-<p><a class="reference internal" href="#guimainwindow"><span class="std std-numref">Fig. 5</span></a> shows the default view of the user interface. The scene already contains two items: source and detector. The three main areas (parameter panel, virtual scene, docking area) can be scaled by clicking and dragging the edges of the respective areas.</p>
+<p><a class="reference internal" href="#guimainwindow"><span class="std std-numref">Fig. 4</span></a> shows the default view of the user interface. The scene already contains two items: source and detector. The three main areas (parameter panel, virtual scene, docking area) can be scaled by clicking and dragging the edges of the respective areas.</p>
 <div class="figure align-default" id="id1">
 <span id="guimainwindow"></span><a class="reference internal image-reference" href="_images/gui-main-window.png"><img alt="aRTist main window" src="_images/gui-main-window.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">aRTist main window.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">aRTist main window.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">User interface elements:</span></p>
+<p class="caption" role="heading"><span class="caption-text">User interface elements:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gui-menu-bar.html">Menu bar</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#file-menu">File menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#edit-menu">Edit menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#geometry-menu">Geometry menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#compute-menu">Compute menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#modules-menu">Modules menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#tools-menu">Tools menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#view-menu">View menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gui-menu-bar.html#help-menu">Help menu</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gui-scene.html">Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-setup.html">Setup Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-source.html">Source Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-scattering.html">Scattering Panel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui-detector.html">Detector Panel</a></li>
 </ul>
 </div>
 </div>
@@ -216,7 +240,6 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, BAM, Bundesanstalt für Materialforschung und -prüfung.
 
     </p>
   </div>
@@ -227,7 +250,12 @@
     
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+    <p></p>
+    <p>&#169; Copyright 2021, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
 
 </footer>
         </div>

@@ -1,3 +1,5 @@
+.. include:: _templates/icons.rst
+
 User interface
 ==============
 
@@ -26,3 +28,8 @@ When you open |artist|, you will see its main window (:numref:`guiMainWindow`) w
    :caption: User interface elements:
 
    gui-menu-bar
+   gui-scene
+   gui-setup
+   gui-source
+   gui-scattering
+   gui-detector
