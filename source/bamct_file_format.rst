@@ -1,6 +1,8 @@
 BAM CT File Format
 ------------------
 
+BAM CT is a proprietary file format used to store either projection or volume data of a CT scan. It is generally used with a two-letter file extensions, with a :code:`p` as first letter indicating projection data and a :code:`b` as first letter indicating volume data. The second letter is used to denote the CT scanner the data is captured with.
+
 Header Size and Data Offset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -25,8 +27,8 @@ Byte Order
 Any header or image data unit that is stored in more than 1 byte can be either written in *big-endian byte order* or in *little-endian byte order*. The first 12 bytes of the header reveal which byte order is used (see "File Name" section). Since today's CPUs usually operate in little-endian mode, this is the byte order that BAM CT files generated with |artist| use.
 
 
-File Name
-^^^^^^^^^
+File Name (header entry)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The BAM CT header starts with 12 bytes that contain a "file name" (a string of twelve 1-byte characters, not null-terminated). It follows a structure that reveals additional information:
 
