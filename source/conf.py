@@ -48,8 +48,14 @@ bibtex_encoding = 'utf-8-sig'
 # Define bibtex style
 bibtex_default_style = 'unsrt'
 
+imgmath_image_format = "svg"
+imgmath_font_size = 13
 imgmath_latex_preamble = """\\usepackage{sansmathfonts}
-\\usepackage{amsmath, amssymb}"""
+\\usepackage{PTSans}
+\\usepackage{amsmath, amssymb}
+\\usepackage{sfmath}
+\\usepackage{sansmath}
+"""
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -116,6 +122,8 @@ latex_elements = {
 		\newunicodechar{≈}{\ensuremath{\approx}}
 		\newunicodechar{×}{\ensuremath{\times}}
 		\newunicodechar{→}{\ensuremath{\rightarrow}}
+		\newunicodechar{²}{\textsuperscript{2}}
+		\newunicodechar{³}{\textsuperscript{3}}
 
 		\newunicodechar{α}{\ensuremath{\alpha}}
 		\newunicodechar{β}{\ensuremath{\beta}}

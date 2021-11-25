@@ -106,7 +106,7 @@ Some of these only work once a part is selected.
     The *Rotor* is selected: it is highlighted with a blue background in the *Assembly List* and enclosed in a yellow-cornered bounding box in the virtual scene.
 
 View Directions
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 The following buttons change the view such that the camera looks either from the top right direction or directly along one of the axes of the coordinate system.
 
@@ -126,7 +126,7 @@ All of these commands can also be found in the :guilabel:`View` menu.
 
 
 |32x32_zoom-select| Zoom to Selection
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This button zooms in or out to fit the selected part(s) into the view. If no part is selected, it will arrange the view such that everything can be seen at once.
 
@@ -142,17 +142,17 @@ You can also find this function in the menu bar: :guilabel:`View` → |16x16_zoo
 
 
 |32x32_bounding-box| Bounding Box
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use this button to draw a permanent bounding box around the object. At the moment, it is only displayed by yellow corners as long as the rotor is selected. This functionality lets you always display the bounding box, no matter if the part is selected or not. A full frame will appear in the object's colour.
 
 |32x32_view-axes| Axes View
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Each part has its own, local coordinate system. With this button, you make the local axes visible. The *X* axis will be displayed as a red line, the *Y* axis as a yellow line, and the *Z* axis as a green line.
 
 |32x32_switch-wireframe| Wireframe and Solid View
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Instead of viewing a part as a solid surface, you can use this button to display a wireframe model of the triangular mesh. The *Rotor* has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (:numref:`wireframe`). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).
 

@@ -31,13 +31,13 @@ The Image Viewer is made to display 2D grey scale images. Typically, it will dis
 
 
 Status Icon
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The **status icon** signals if you see a |22x22_image-preview| **preview image** or a |22x22_image-final| **full simulation image.** To calculate a full simulation image, you can use the |32x32_compute-radiography| :guilabel:`Run` button from the toolbar or in the menu bar, choose :guilabel:`Compute` → :guilabel:`Run`.
 
 
 Saving Images
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The *Image Viewer* lets you save the current image with the button |22x22_document-save| :guilabel:`Save to file`. It will warn you if you save a preview image instead of a fully simulated image.
 
@@ -47,7 +47,7 @@ Unless you want a TIFF image, you need to enter the correct **file extension** (
 
 
 Image Selector
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 Often, there is more than one image to view. You can switch between images with the **image selector** right next to the status symbol. We will talk more about the different choices here in the following tutorials when this becomes more relevant.
 
@@ -57,13 +57,13 @@ The **primary intensity** is more universal: it is the pure intensity absorbed b
 
 
 Intensity Value
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Next to the image selector, you find the pixel coordinates and intensity value at the position of the mouse pointer. The intensity value and its unit depend on the kind of image you display and your detector model.
 
 
 Display Range
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 The :guilabel:`display range` sets the minimum and maximum grey value displayed in the image. Normally, the minimum value is displayed as **black**, the maximum value as **white**, and all other values in between are interpolated linearly into corresponding grey values. You can use the |22x22_image-invert| :guilabel:`invert` button to turn around all grey values and make the minimum white and the maximum black.
 
@@ -71,7 +71,7 @@ To automatically set the grey value range to the grey value range featured in th
 
 
 Regions of Interest (ROI)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can draw regions of interest with your mouse on the image in the *Image Viewer*. If |22x22_optimize-contrast| :guilabel:`Optimize display` is activated, the grey value range will be adjusted to match the minimum and maximum intensity inside your region of interest (:numref:`imageViewerROI`).
 
@@ -85,7 +85,7 @@ To remove the ROI, click anywhere in the image (but not on the ROI's border).
 
 
 Zoom, Image Size, Pixel-for-Pixel Mode
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In the bottom right corner of the *Image Viewer*, you find zoom options. You can enter a :guilabel:`Zoom` factor for the image (:code:`1` corresponds to its actual size). The button |22x22_zoom-original| :guilabel:`Show in actual size` will reset the zoom factor to :code:`1`, whereas |22x22_zoom-fit-best| :guilabel:`Zoom to fit window` will display the *full* image as big as it fits into the viewer. When you draw a region of interest on your image, you can use |22x22_zoom-select| :guilabel:`Zoom to selection` to enlarge this specific area of the picture.
 
@@ -95,7 +95,7 @@ You may regard the image as a pure pixel image and might want to ignore its phys
 
 
 Mirror, Rotation and Advanced Image Processing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can flip (mirror) and rotate the image in the *Image Viewer*. Click the button |22x22_object-flip-turn| :guilabel:`Change image orientation` to open a menu with all the options.
 
@@ -103,7 +103,7 @@ When you display the *Image Viewer* in a separate window, you also have a **menu
 
 
 Exposure Latitude Warnings
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes, parts of your image can be overexposed or subject to complete photon extinction. These regions will be coloured in red and blue, respectively, if you turn on |22x22_latitude-warning| :guilabel:`Display exposure latitude warning` (:numref:`imageViewerSaturation`).
 

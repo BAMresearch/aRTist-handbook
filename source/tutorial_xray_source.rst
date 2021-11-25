@@ -1,5 +1,7 @@
 .. include:: _templates/icons.rst
 
+.. _sourceTutorialChapter:
+
 X-ray Source
 ============
 
@@ -213,7 +215,7 @@ Until this point, we have simulated an ideal point source. |artist| also offers 
 
 
 Pinhole Camera
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. note:: Turn off the visibility of the *Support Cylinder*, the *Rotor* and the *Air Pocket* (:numref:`objectVisibility`).
 
@@ -269,9 +271,10 @@ You should now have a setup as displayed in :numref:`pinholeArtistWindow`.
 
     We created a pinhole camera.
 
+.. _sourceTutorialSpotChapter:
 
 Spot Size & Spot Type
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 To simulate X-ray spots, |artist|'s approach is to place several point sources in the rectangular 2D source region. In the *Focal spot* settings group of the *Source*, you can set the :guilabel:`Size [mm]` of this rectangular region. The number of point sources can be set under :guilabel:`Spot type`. If you set a single integer, the point sources will be distributed in a random pattern, but optimized such that points are not too close to each other (`Poisson Disc Sampling <https://en.wikipedia.org/wiki/Supersampling#Poisson_disk>`__). You can also choose a regular grid by entering two integers separated by an :code:`x`.
 
@@ -320,7 +323,7 @@ Each of these point sources has the same intensity: the total photon flux given 
 
 
 Spot Intensity Profile
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 .. _TutorialXraySourceSpotIntensityProfile:
 
 |artist| offers a simple way to generate two-dimensional Gaussian or Lorentzian intensity profiles for the focal spot. In the following example, we will create a purely Gaussian spot which has a circular symmetry: its width and height will be equal. Feel free to experiment with different parameters.
