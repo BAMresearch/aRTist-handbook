@@ -15,15 +15,17 @@ We do not continue with the project file from the last tutorial, but will start 
 An Example Scene
 ----------------
 
-In this tutorial, we will reproduce an example projection image taken with a real CT scanner. It is a flat-field corrected image of a PMMA step cylinder (:numref:`PMMAcylinderOriginalProjection`). To follow the steps we are going to take, you can download a package that contains the projection image (in TIFF format) and the STL file for the surface model of the cylinder that we will use in |artist|:
+In this tutorial, we will reproduce an example projection image taken with a real CT scanner. It is an image of a PMMA step cylinder (:numref:`PMMAcylinderOriginalProjection`). To follow the steps we are going to take, you can download a package that contains the projection images (in TIFF format) and the STL file for the surface model of the cylinder that we will use in |artist|:
 
 :download:`detector_tutorial_additional_data.zip <files/detector_tutorial_additional_data.zip>` |nbsp| (5.8 MB)
 
+Note that you get three projection images: a free-beam flat field image, a "raw" projection image of the step cylinder, and a flat-field corrected projection image. All three images are already dark-field corrected (i.e. the grey value at zero intensity is also zero). This makes it easier for us to build the detector in |artist|.
+
 .. _PMMAcylinderOriginalProjection:
 .. figure:: pictures/tutorial-detector-PMMA-cylinder-original-projection.jpg
-    :width: 50%
+    :width: 100%
 
-    Projection image of a PMMA step cylinder (flat-field corrected).
+    Raw projection image of the PMMA step cylinder (a), free-beam flat field image (b) and flat-field corrected projection image (c). All three images are already dark-field corrected.
 
 .. _PMMAcylinderGeometry:
 .. figure:: pictures/tutorial-detector-cylinder-setup.png
@@ -253,7 +255,7 @@ So far, those are the general properties of the detector. Now we need to switch 
 .. figure:: pictures/tutorial-detector-detectorcalc-exposure.png
     :width: 50%
 
-    In the exposure settings, we will enter reference values that we have measured in our real-world projection image.
+    In the exposure settings, we will enter reference values that we have measured in our real-world projection images.
 
 The first section, called :guilabel:`Reference exposure settings`, asks for the general circumstances under which the reference image was taken.
 
@@ -298,17 +300,25 @@ We will not reproduce the long range unsharpness for our detector as this will b
 Grey Value & Noise
 ~~~~~~~~~~~~~~~~~~
 
-*DetectorCalc* asks for a reference grey value. This is the grey value at the maximum free beam intensity. If you were trying to reproduce an image that has *not* been flat-field corrected, the best option would be to measure the expected grey value at the intensity maximum of a flat field image. In this example, we do work with a flat-field corrected image, so we will just measure the mean background intensity in a region of free beam (:numref:`detectorFreeBeamGVSNR`). The standard deviation will lead us to the SNR (signal-to-noise ratio).
+*DetectorCalc* asks for a reference grey value. This is the grey value at the maximum free-beam intensity, which we can measure in the free-beam flat field image (:numref:`detectorFreeBeamGV`). For our example, we get a free-beam grey value of about 8410.
 
-.. _detectorFreeBeamGVSNR:
-.. figure:: pictures/tutorial-detector-PMMA-cylinder-projection-mean-stddev-snr.png
+.. _detectorFreeBeamGV:
+.. figure:: pictures/tutorial-detector-PMMA-cylinder-projection-freebeam-gv.png
     :width: 100%
 
-    Measuring the reference grey value and SNR in the real-world projection image.
+    Measuring the reference grey value in the free-beam image.
+
+To measure the SNR, we will use a free-beam are in the flat-field corrected image (:numref:`detectorFreeBeamSNR`). The first reason is that the flat-field corrected image is the only one where we have a homogeneous background intensity where we can measure the noise (in terms of the grey value standard deviation) without the interference of the intensity profile of the flat field. The second reason is that |artist| typically uses an ideal, noise-free flat field image for the flat-field correction, which means that we can simulate the full noise in the raw projection image and won't have to worry about noise contributions from the flat-field image. A more correct way to do this would be to measure the noise in the centre of a flat-field corrected free-beam image instead of choosing an off-centre region like in :numref:`detectorFreeBeamSNR`. However, for simplicity, we continue with this approximation.
+
+.. _detectorFreeBeamSNR:
+.. figure:: pictures/tutorial-detector-PMMA-cylinder-projection-stddev-snr.png
+    :width: 100%
+
+    Measuring the reference SNR in the flat-field corrected projection image.
 
 Enter these two reference values into the *DetectorCalc* window:
 
-.. note:: 1. For :guilabel:`grey value`, enter :code:`8240`.
+.. note:: 1. For :guilabel:`grey value`, enter :code:`8410`.
     2. For :guilabel:`SNR unnormalized`, enter :code:`615`.
 
 We have now prepared all parameters to generate our new detector.
@@ -327,4 +337,46 @@ The new detector is now selected as the current :guilabel:`detector type` in the
 
     The new detector is now imported. We need to set the exposure time manually.
 
-The grey values that you will get in the preview image should now already be close to the grey values in the real-world projection image. Keep in mind that you still see an uncorrected projection image in |artist|. 
+The grey values that you will get in the preview image should now already be close to the grey values in the raw projection image.
+
+
+Attenuation, Deposit & Sensitivity
+----------------------------------
+
+*DetectorCalc* has generated some characteristic curves from the given information. We can inspect them using the *DetectorViewer*.
+
+.. todo:: From the menu bar, select :guilabel:`Tools` → :guilabel:`Detector Properties`.
+
+The *DetectorViewer* shows the general properties of your new detector in the left column, and a graph (or text table) of its spectral characteristics. You can choose the :guilabel:`Curve` from the drop-down menu in the upper left section.
+
+The first important curve is the **Attenuation** (:numref:`detectorViewerAttenuation`). In |artist|'s vocabulary, this is the probability that an incoming photon of a certain energy (keV) interacts with the scintillator (instead of just passing through).
+
+.. _detectorViewerAttenuation:
+.. figure:: pictures/tutorial-detector-detectorviewer-attenuation.png
+    :width: 100%
+
+    The *DetectorViewer* shows the attenuation curve.
+
+Depending on the underlying physics of the particle interactions, not all photons will deposit their full energy in the scintillator. The second important curve is the **Deposit,** which shows the amount of energy that a given photon would store in the scintillator in the event of an attenuation.
+
+.. _detectorViewerDeposit:
+.. figure:: pictures/tutorial-detector-detectorviewer-deposit.png
+    :width: 100%
+
+    The *DetectorViewer* shows the deposit curve.
+
+The product of these two shown curves is called the **Sensitivity** (:numref:`detectorViewerSensitivity`). It gives the mean deposited energy (keV) in a pixel for an incoming photon of the given energy (keV). The sensitivity curve is the foundation of the detector's spectral energy characteristics and is used, together with the current X-ray spectrum, the X-ray current (and overall photon flux), and the area of a pixel, to calculate the primary intensity (in J/m²/s) at the detector pixels.
+
+.. _detectorViewerSensitivity:
+.. figure:: pictures/tutorial-detector-detectorviewer-sensitivity.png
+    :width: 100%
+
+    The *DetectorViewer* shows the sensitivity curve.
+
+To associate a grey value with the total energy density at a pixel (accumulated during the integration time), another curve is important: the **Characteristic** (:numref:`detectorViewerCharacteristic`). We have already seen it before at the 1:1 detector. For our new detector, *DetectorCalc* has generated a purely linear function which associates no incoming energy with the grey value 0. It has used the maximum free-beam intensity and our reference grey value to extrapolate a second point for the characteristic curve and associated the maximum possible grey value of 65535 (for a 16-bit detector) with its corresponding energy density.
+
+.. _detectorViewerCharacteristic:
+.. figure:: pictures/tutorial-detector-detectorviewer-characteristic.png
+    :width: 100%
+
+    The *DetectorViewer* shows the characteristic curve.
