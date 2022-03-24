@@ -7,7 +7,7 @@ Menu bar
 The Menu bar consists of different drop-down menus with common Windows commands and program specific functions. Some of the menu entries can also be found in the toolbar indicated by the same icon. If that is the case, the icon is next to the command/option in this manual.
 
 File menu
-^^^^^^^^^
+~~~~~~~~~
 .. _FileMenuSubsection:
 
 The :guilabel:`File` drop-down menu comprises commands referring to the current project.
@@ -33,7 +33,7 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
 
 Edit menu
-^^^^^^^^^
+~~~~~~~~~
 .. _EditMenuSubsection:
 
 The :guilabel:`Edit` menu contains undo/redo functionalities with the project's history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.
@@ -55,7 +55,7 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 
 
 Geometry menu
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 .. _GeometryMenuSubsection:
 
 The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more in-depth in the separate chapter.
@@ -81,7 +81,7 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 
 
 Compute menu
-^^^^^^^^^^^^^
+~~~~~~~~~~~~
 .. _ComputeMenuSubsection:
 
 The :guilabel:`Compute` menu includes the button to start a simulation and offers different options for the simulation.
@@ -101,7 +101,7 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 
 
 Modules menu
-^^^^^^^^^^^^^
+~~~~~~~~~~~~
 .. _ModulesMenuSubsection:
 
 The :guilabel:`Modules` menu offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
@@ -124,7 +124,7 @@ The :guilabel:`Modules` menu offers the selection of the available extension mod
 * **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene.
 
 Tools menu
-^^^^^^^^^^
+~~~~~~~~~~
 .. _ToolsMenuSubsection:
 
 The :guilabel:`Tools` menu provides several dialogs to control the program.
@@ -148,7 +148,7 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 * |16x16_preferences-system| **Settings** opens the preferences dialog.
 
 View menu
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 .. _ViewMenuSubsection:
 
 The :guilabel:`View` menu provides commands ot control the various rendering and display parameters. 
@@ -183,7 +183,7 @@ The :guilabel:`View` menu provides commands ot control the various rendering and
 * **Toggle Setup Visibility** switches the parameter panel on and off.
 
 Help menu
-^^^^^^^^^
+~~~~~~~~~
 .. _HelpMenuSubsection:
 
 The :guilabel:`Help` menu provides information about the program itself, its installation and its license status.

@@ -61,7 +61,7 @@ The actual license status can be displayed under :guilabel:`License information`
 .. _activationrequest:
 
 Activation request
-^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~
 
 The activation request requires information about your |artist| installation. The necessary information can be collected at the license information dialog of |artist| (:guilabel:`Help` menu → :guilabel:`License information`) at section "License activation". There are options to apply for node-locked or network licensing and to request an evaluation period.
 
@@ -82,7 +82,7 @@ In response to an activation request, you will receive an activated license file
 
 
 License file installation
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The final step in activating a license is to install the license file provided in response to the activation request. Open the license file in |artist| to start the dialog for installing a license file. During installation, the temporary license file will be overwritten by the activated one.
 
@@ -93,7 +93,7 @@ A license file for network licensing also only needs to be installed once. One, 
 .. _configurenetworklicensing:
 
 Configure network licensing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Network licensing is realized by providing one common license file at a network folder. Any computer in the network can be used for |artist| if the user has access to this common license file. To use the network license with |artist|, the location of the license file has to be configured in the program.
 
