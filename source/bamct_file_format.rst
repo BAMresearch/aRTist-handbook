@@ -1,7 +1,7 @@
 BAM CT File Format
 ------------------
 
-BAM CT is a proprietary file format used to store either projection or volume data of a CT scan. It is generally used with a two-letter file extensions, with a :code:`p` as first letter indicating projection data and a :code:`b` as first letter indicating volume data. The second letter is used to denote the CT scanner the data is captured with.
+BAM CT is a file format used at BAM to store either projection or volume data of a CT scan. It is generally used with a two-letter file extensions, with a :code:`p` as first letter indicating projection data and a :code:`b` as first letter indicating volume data. The second letter is used to denote the CT scanner the data is captured with.
 
 Header Size and Data Offset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ The following table lists the elements of a BAM CT header.
 	* for **tomograms:** the number of rows in an image,
 	* for **projections:** (number of rows) × (number of angular steps).
 
-	The **direction of rotation** is given by the sign of the number of angular steps up to 180° (offset 24, 0x18) and the sign of the **angular step size** (offset 176, 0xB0). Their values are positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).
+	The **direction of rotation** is given by the sign of the **angular step size** (offset 176, 0xB0). Its value is positive for counter-clockwise rotations (CCW) and negative for clockwise rotations (CW).
 
 	You can calculate the detector's pixel size from the **voxel size** (offset 112, 0x70):
 
