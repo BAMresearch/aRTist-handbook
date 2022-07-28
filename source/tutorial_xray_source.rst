@@ -1,5 +1,7 @@
 .. include:: _templates/icons.rst
 
+.. _sourceTutorialChapter:
+
 X-ray Source
 ============
 
@@ -269,6 +271,7 @@ You should now have a setup as displayed in :numref:`pinholeArtistWindow`.
 
     We created a pinhole camera.
 
+.. _sourceTutorialSpotChapter:
 
 Spot Size & Spot Type
 ^^^^^^^^^^^^^^^^^^^^^
