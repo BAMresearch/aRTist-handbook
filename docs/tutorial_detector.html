@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detector &mdash; aRTist 2.12 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="X-ray Source" href="tutorial_xray_source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> aRTist
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#an-example-scene">An Example Scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pixels-size">Pixels &amp; Size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#characteristic">Characteristic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exposure">Exposure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#realistic-detectors">Realistic Detectors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spectrum-and-current">Spectrum and Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detectorcalc">DetectorCalc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-exposure">Reference Exposure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unsharpness">Unsharpness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grey-value-noise">Grey Value &amp; Noise</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#attenuation-deposit-sensitivity">Attenuation, Deposit &amp; Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#noise">Noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grey-value-reproduction">Grey Value Reproduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flat-field-correction">Flat-Field Correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frame-averaging">Frame Averaging</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Detector</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tutorial_detector.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detector">
+<span id="detectortutorialchapter"></span><h1>Detector<a class="headerlink" href="#detector" title="Permalink to this heading"></a></h1>
+<p>This tutorial explains the basics of <em>aRT</em>ist’s virtual detector and how to use the <em>DetectorCalc</em> module to calculate characteristics for scintillator-based flat panel detectors.</p>
+<p>We do not continue with the project file from the last tutorial, but will start with a fresh new <em>aRT</em>ist scene.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you still have the previous project loaded in <em>aRT</em>ist, choose <span class="guilabel">File</span> → <span class="guilabel">New Project</span> from the menu to create a new, empty project.</p>
+</div>
+<section id="an-example-scene">
+<h2>An Example Scene<a class="headerlink" href="#an-example-scene" title="Permalink to this heading"></a></h2>
+<p>In this tutorial, we will reproduce an example projection image taken with a real CT scanner. It is an image of a PMMA step cylinder (<a class="reference internal" href="#pmmacylinderoriginalprojection"><span class="std std-numref">Fig. 87</span></a>). To follow the steps, you can download a package that contains the projection images (in TIFF format) and the STL file for the surface model of the cylinder that we will use in <em>aRT</em>ist:</p>
+<p><a class="reference download internal" download="" href="_downloads/dc6287ba037c50fd11e1d05ba48873c1/detector_tutorial_additional_data.zip"><code class="xref download docutils literal notranslate"><span class="pre">detector_tutorial_additional_data.zip</span></code></a> (5.8 MB)</p>
+<p>Note that you get three projection images: a free-beam flat field image, a “raw” projection image of the step cylinder, and a flat-field corrected projection image. All three images are already dark-field corrected (i.e. the grey value at zero intensity is also zero). This makes it easier for us to build the detector in <em>aRT</em>ist.</p>
+<figure class="align-default" id="id2">
+<span id="pmmacylinderoriginalprojection"></span><a class="reference internal image-reference" href="_images/tutorial-detector-PMMA-cylinder-original-projection.jpg"><img alt="_images/tutorial-detector-PMMA-cylinder-original-projection.jpg" src="_images/tutorial-detector-PMMA-cylinder-original-projection.jpg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 87 </span><span class="caption-text">(a) Raw projection image of the PMMA step cylinder, (b) free-beam flat field image and (c) flat-field corrected projection image. All three images are already dark-field corrected.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<span id="pmmacylindergeometry"></span><a class="reference internal image-reference" href="_images/tutorial-detector-cylinder-setup.png"><img alt="_images/tutorial-detector-cylinder-setup.png" src="_images/tutorial-detector-cylinder-setup.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 88 </span><span class="caption-text">Geometry used to acquire the example projection image.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The CT geometry shown in <a class="reference internal" href="#pmmacylindergeometry"><span class="std std-numref">Fig. 88</span></a> was used to acquire the projection image. The first step we will take is to reproduce this geometry in <em>aRT</em>ist.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Set the <span class="guilabel">Z</span> position of the source to <code class="code docutils literal notranslate"><span class="pre">500</span></code> mm.</p></li>
+<li><p>Make sure that <a class="reference internal" href="_images/32x32_center-new.png"><img alt="32x32_center-new" src="_images/32x32_center-new.png" style="width: 32px;" /></a> <span class="guilabel">Center new parts</span> is turned off in the toolbar. Our cylinder surface model already comes with the correct coordinates. Otherwise, you will have to place the cylinder yourself (see next step).</p></li>
+<li><p>Open the file <code class="code docutils literal notranslate"><span class="pre">PMMA_Cylinder.stl</span></code> from the downloaded package of additional data for this tutorial, or drag and drop it into the <em>aRT</em>ist window. It should appear at a <span class="guilabel">Z</span> position of 350 mm (the ODD). If not, set the <span class="guilabel">Z</span> position manually.</p></li>
+<li><p>Create a new material called <em>PMMA</em> (<a class="reference internal" href="#pmmacylindermaterial"><span class="std std-numref">Fig. 89</span></a>). Its chemical composition is C<sub>5</sub>H<sub>8</sub>O<sub>2</sub>, it has a density of 1.19 g/cm<sup>3</sup>. Use the <a class="reference internal" href="_images/22x22_edit-materials.png"><img alt="22x22_edit-materials" src="_images/22x22_edit-materials.png" style="width: 22px;" /></a> <em>materials editor</em> and don’t forget to click <span class="guilabel">Apply</span> before closing it.</p></li>
+<li><p>Assign the new <em>PMMA</em> material to the step cylinder in the <em>Assembly List</em>.</p></li>
+</ol>
+<p>Your scene should now look like in <a class="reference internal" href="#pmmacylindervirtualscene01"><span class="std std-numref">Fig. 90</span></a>.</p>
+</div>
+<figure class="align-default" id="id4">
+<span id="pmmacylindermaterial"></span><a class="reference internal image-reference" href="_images/tutorial-detector-PMMA-material-properties.png"><img alt="_images/tutorial-detector-PMMA-material-properties.png" src="_images/tutorial-detector-PMMA-material-properties.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 89 </span><span class="caption-text">PMMA material properties for the virtual step cylinder.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<span id="pmmacylindervirtualscene01"></span><a class="reference internal image-reference" href="_images/tutorial-detector-cylinder-virtual-scene-01.png"><img alt="_images/tutorial-detector-cylinder-virtual-scene-01.png" src="_images/tutorial-detector-cylinder-virtual-scene-01.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 90 </span><span class="caption-text">We have prepared the basic CT geometry and material properties. We will take care of the detector size later.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="pixels-size">
+<h2>Pixels &amp; Size<a class="headerlink" href="#pixels-size" title="Permalink to this heading"></a></h2>
+<p>Let’s take a look at the detector configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Switch to the <em>Detector</em> tab in the parameter panel (<a class="reference internal" href="#detectorgeometrypanel01"><span class="std std-numref">Fig. 91</span></a>).</p>
+</div>
+<figure class="align-default" id="id6">
+<span id="detectorgeometrypanel01"></span><a class="reference internal image-reference" href="_images/tutorial-detector-geometry-panel-01.png"><img alt="_images/tutorial-detector-geometry-panel-01.png" src="_images/tutorial-detector-geometry-panel-01.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 91 </span><span class="caption-text">The default geometry parameters of the detector.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the <span class="guilabel">Geometry</span> section, we can set up the detector’s size, its number of pixels, and the pixel size (resolution). Each of these three parameters is coupled to the other two:</p>
+<div class="math">
+<p><img src="_images/math/510bac30163abca47c4ca74860977dae694e12fa.png" alt="\textsf{Size~[mm]} = (\textsf{Number~of~Pixels}) \cdot (\textsf{Resolution [mm]})."/></p>
+</div><p>In the upper row, you can choose which one <em>aRT</em>ist should calculate from the other two.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select <span class="guilabel">Size [mm]</span>, <em>aRT</em>ist should calculate it for us. We will enter the following two other parameters, which we know (<a class="reference internal" href="#detectorgeometrypanel02"><span class="std std-numref">Fig. 92</span></a>).</p>
+<ul class="simple">
+<li><p><span class="guilabel">Pixel</span>: <span class="guilabel">X</span>: <code class="code docutils literal notranslate"><span class="pre">1200</span></code>, <span class="guilabel">Y</span>: <code class="code docutils literal notranslate"><span class="pre">1400</span></code></p></li>
+<li><p><span class="guilabel">Res. [mm]</span>: <span class="guilabel">X</span>: <code class="code docutils literal notranslate"><span class="pre">0.2</span></code>, <span class="guilabel">Y</span>: <code class="code docutils literal notranslate"><span class="pre">0.2</span></code></p></li>
+</ul>
+</div>
+<p>The detector size is calculated automatically. You should now see a preview image that contains the complete step cylinder (<a class="reference internal" href="#pmmacylindervirtualscene02"><span class="std std-numref">Fig. 93</span></a>).</p>
+<figure class="align-default" id="id7">
+<span id="detectorgeometrypanel02"></span><a class="reference internal image-reference" href="_images/tutorial-detector-geometry-panel-02.png"><img alt="_images/tutorial-detector-geometry-panel-02.png" src="_images/tutorial-detector-geometry-panel-02.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 92 </span><span class="caption-text">The detector’s geometry parameters for our projection image.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<span id="pmmacylindervirtualscene02"></span><a class="reference internal image-reference" href="_images/tutorial-detector-cylinder-virtual-scene-02.png"><img alt="_images/tutorial-detector-cylinder-virtual-scene-02.png" src="_images/tutorial-detector-cylinder-virtual-scene-02.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 93 </span><span class="caption-text">The detector has the correct size now.</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Note that you can set <span class="guilabel">Multisampling</span> for each pixel. It works in the same way as for the source. If you activate a certain type of pixel multisampling, a ray will be simulated connecting each source point with each pixel point (or subpixel). As described for the <a class="reference internal" href="tutorial_xray_source.html#sourcetutorialspotchapter"><span class="std std-ref">Spot Type in the Source tutorial</span></a>, you can define regular subpixel grids (e.g. <code class="code docutils literal notranslate"><span class="pre">3x3</span></code>) or quasi-random patterns using Poisson Disc Sampling (any integers, e.g. <code class="code docutils literal notranslate"><span class="pre">11</span></code>). The number of rays that will be simulated per pixel is the product of the source spot multisampling points and the detector (pixel) multisampling points. If you choose <span class="guilabel">source dependent</span> for the pixel multisampling (the default setting), the pattern defined for the source will also be used for each pixel (with the exception that it will be flipped in both spatial directions compared to the source pattern). Each spot point is then connected to its corresponding point on the pixel: the number of rays per pixel will remain the number of spot points and will not multiply (<a class="reference internal" href="#detectorpixelmultisampling"><span class="std std-numref">Fig. 94</span></a>).</p>
+<figure class="align-default" id="id9">
+<span id="detectorpixelmultisampling"></span><a class="reference internal image-reference" href="_images/CtScanModule_DetectorMultisamplingGrid.svg"><img alt="_images/CtScanModule_DetectorMultisamplingGrid.svg" src="_images/CtScanModule_DetectorMultisamplingGrid.svg" width="80%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 94 </span><span class="caption-text">Overview of the multi-sampling behavior for different source-detector combinations.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <span class="guilabel">Curvature</span> is an experimental feature that can be used to simulate detectors that are curved in a certain direction of space. A possible application could be the simulation of medical CT, but this feature will not be covered here.</p>
+</section>
+<section id="characteristic">
+<h2>Characteristic<a class="headerlink" href="#characteristic" title="Permalink to this heading"></a></h2>
+<p>The function that assigns a grey value to the energy density at a pixel is called the <em>Characteristic</em>. The default detector in <em>aRT</em>ist is the so-called 1:1 detector. It converts all energy that arrives at a pixel linearly into grey values without losses. Let’s take a closer look at the <em>Characteristic</em> of the 1:1 detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Make sure that <span class="guilabel">1:1</span> is selected as the <span class="guilabel">detector type</span>.</p></li>
+<li><p>From the menu bar, choose <span class="guilabel">Tools</span> → <span class="guilabel">Detector Properties</span>. The <em>DetectorViewer</em> will open in a new window (<a class="reference internal" href="#detectorviewer1to1"><span class="std std-numref">Fig. 95</span></a>).</p></li>
+</ol>
+</div>
+<figure class="align-default" id="id10">
+<span id="detectorviewer1to1"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detector-viewer-1to1.png"><img alt="_images/tutorial-detector-detector-viewer-1to1.png" src="_images/tutorial-detector-detector-viewer-1to1.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 95 </span><span class="caption-text">The <em>DetectorViewer</em> displays the <em>Characteristic</em> curve of the 1:1 detector.</span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As you can see, the input unit of the 1:1 detector is the energy density (in J/m<sup>2</sup>), the same as the output unit. This means that a pixel in the projection image will have a grey value that directly corresponds to the energy density at the pixel. The result is a purely linear function. This is a very simple <em>Characteristic</em>, but it helps us understand what is going on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Close the DetectorViewer.</p>
+</div>
+<p>When you take a look at the preview image (<a class="reference internal" href="#imageviewer1to1"><span class="std std-numref">Fig. 96</span></a>) you will notice that the <em>Image Viewer</em> displays the energy density at the detector as a map of grey values. When you move your mouse around the image, the energy density will be displayed as a floating point number. They look suspiciously like “real” grey values, but note that “real” grey values are usually integers. In the <em>Image Viewer</em>, you can switch the image between <span class="guilabel">primary intensities</span> and the <span class="guilabel">Energy density (J/m²)</span>. In terms of visible grey values they are the same, but they represent different physical quantities and are connected by the integration time τ:</p>
+<div class="math">
+<p><img src="_images/math/a0f8605050d33c9b671729e09c1f9aed97619462.png" alt="\textsf{Energy~density} \left[ \frac{\textsf{J}}{\textsf{m}^2} \right] = \textsf{primary intensity} \left[ \frac{\textsf{J}}{\textsf{s}\cdot\textsf{m}^2} \right] \cdot \tau \left[ \textsf{s} \right]."/></p>
+</div><figure class="align-default" id="id11">
+<span id="imageviewer1to1"></span><a class="reference internal image-reference" href="_images/tutorial-detector-image-viewer-1to1.png"><img alt="_images/tutorial-detector-image-viewer-1to1.png" src="_images/tutorial-detector-image-viewer-1to1.png" style="width: 65%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 96 </span><span class="caption-text">The <em>Image Viewer</em> displays the energy density at the detector as grey values.</span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exposure">
+<h2>Exposure<a class="headerlink" href="#exposure" title="Permalink to this heading"></a></h2>
+<p>The energy density at each pixel depends on the integration time τ. In the current standard settings of the detector (<a class="reference internal" href="#detectorexposuresettings"><span class="std std-numref">Fig. 97</span></a>), the integration time is automatically calculated such that the brightest point in the image (point of maximum exposure) will reach an energy density of 50000 J/m². You can see this in the <em>display range</em> in <a class="reference internal" href="#imageviewer1to1"><span class="std std-numref">Fig. 96</span></a>. To reach such a high energy density, a simulated integration time of more than 11000 weeks is necessary. This might seem confusing, but it is simply the result of the purely linear 1:1 characteristics. In the following section we will build a detector with a grey value characteristic that associates higher grey values with smaller energy densities and therefore reaches realistic integration times.</p>
+<figure class="align-default" id="id12">
+<span id="detectorexposuresettings"></span><a class="reference internal image-reference" href="_images/tutorial-detector-exposure-settings.png"><img alt="_images/tutorial-detector-exposure-settings.png" src="_images/tutorial-detector-exposure-settings.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 97 </span><span class="caption-text">Exposure settings.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Instead of the maximum intensity, you can set a different <span class="guilabel">reference point</span> where the expected grey value should be reached. You can also turn off the reference point and enter the <span class="guilabel">exposure time</span> manually.</p>
+</section>
+<section id="realistic-detectors">
+<h2>Realistic Detectors<a class="headerlink" href="#realistic-detectors" title="Permalink to this heading"></a></h2>
+<p>The pre-defined detectors in <em>aRT</em>ist are usually not of interest if you are trying to reproduce a realistic flat panel CT detector. In the following example, we will reproduce the real-world projection image of the step cylinder and create our own detector using the <em>DetectorCalc</em> module.</p>
+<section id="spectrum-and-current">
+<h3>Spectrum and Current<a class="headerlink" href="#spectrum-and-current" title="Permalink to this heading"></a></h3>
+<p>We already set the scene geometry and the material of the PMMA cylinder correctly. Before we can take care of the detector, we need to simulate the spectrum and the tube current that were used to take the projection image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Switch to the <span class="guilabel">Source</span> parameters and use the <a class="reference internal" href="_images/22x22_xray-tube.png"><img alt="22x22_xray-tube" src="_images/22x22_xray-tube.png" style="width: 22px;" /></a> <em>Spectrum Calculator</em> to generate a spectrum with the following parameters: we need a general tube at <strong>130 kV</strong> with a <strong>tungsten (W) reflection target</strong> (45° target and incidence angle), a <strong>0.5 mm Be window</strong> and a <strong>0.1 mm Cu filter</strong> (<a class="reference internal" href="#detectorspectrumcalculator"><span class="std std-numref">Fig. 98</span></a>).</p>
+<p>Press <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="16x16_compute-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Compute</span> to calculate the spectrum, then close the <em>Spectrum Calculator</em>.</p>
+</div>
+<figure class="align-default" id="id13">
+<span id="detectorspectrumcalculator"></span><a class="reference internal image-reference" href="_images/tutorial-detector-spectrum-calculator.png"><img alt="_images/tutorial-detector-spectrum-calculator.png" src="_images/tutorial-detector-spectrum-calculator.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 98 </span><span class="caption-text">Settings to reproduce the X-ray tube spectrum that was used to take the projection image.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You should now see the spectrum shown in <a class="reference internal" href="#detectorsourcesettings"><span class="std std-numref">Fig. 99</span></a>. We still need to set the current of 100 µA that was used for the real-world tube when the projection image was taken.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <span class="guilabel">exposure [mA or GBq]</span> enter <code class="code docutils literal notranslate"><span class="pre">0.1</span></code>. (The unit is mA, <a class="reference internal" href="#detectorsourcesettings"><span class="std std-numref">Fig. 99</span></a>).</p>
+</div>
+<figure class="align-default" id="id14">
+<span id="detectorsourcesettings"></span><a class="reference internal image-reference" href="_images/tutorial-detector-source-settings.png"><img alt="_images/tutorial-detector-source-settings.png" src="_images/tutorial-detector-source-settings.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 99 </span><span class="caption-text">We calculated a spectrum that matches the real-world tube parameters that were used to take the projection image.</span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We will need this spectrum as an <code class="code docutils literal notranslate"><span class="pre">.xrs</span></code> file later when creating our new detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Underneath the spectrum graph, click <a class="reference internal" href="_images/22x22_document-save-as.png"><img alt="22x22_document-save-as" src="_images/22x22_document-save-as.png" style="width: 22px;" /></a> to save the current spectrum as an <code class="code docutils literal notranslate"><span class="pre">.xrs</span></code> file at a location of your choice. (We will need this file later in the tutorial.)</p>
+</div>
+<p>When you switch back to the <em>Detector</em> parameters, you will see that the exposure time dropped from more than 11000 weeks to “just” 5 weeks to reach the 50000 J/m² at the point of maximum intensity (<a class="reference internal" href="#detectorexposuresettings02"><span class="std std-numref">Fig. 100</span></a>). Our new tube and current obviously lead to a much higher flux at the detector.</p>
+<figure class="align-default" id="id15">
+<span id="detectorexposuresettings02"></span><a class="reference internal image-reference" href="_images/tutorial-detector-exposure-settings-02.png"><img alt="_images/tutorial-detector-exposure-settings-02.png" src="_images/tutorial-detector-exposure-settings-02.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 100 </span><span class="caption-text">The exposure time dropped to “just” 5 weeks with our new tube settings.</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="detectorcalc">
+<h3>DetectorCalc<a class="headerlink" href="#detectorcalc" title="Permalink to this heading"></a></h3>
+<p>We have now prepared everything to build our new detector using the <em>DetectorCalc</em> module. This module’s purpose is to generate realistic sensitivity, noise and grey value response curves for a given X-ray spectrum and scintillator material.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From the menu bar, open <span class="guilabel">Modules</span> → <span class="guilabel">DetectorCalc</span> (<a class="reference internal" href="#detectorcalcsettings"><span class="std std-numref">Fig. 101</span></a>).</p>
+</div>
+<figure class="align-default" id="id16">
+<span id="detectorcalcsettings"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorcalc-settings.png"><img alt="_images/tutorial-detector-detectorcalc-settings.png" src="_images/tutorial-detector-detectorcalc-settings.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 101 </span><span class="caption-text">We describe our general detector settings in the <em>DetectorCalc</em> module.</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the <em>General</em> section, we enter the obvious parameters of our detector: its size, number of pixels, grey value dynamics and we will give it a name.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Give your detector any <span class="guilabel">name</span> you like. In this example, we called it the <code class="code docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Cylinder</span> <span class="pre">Detector</span></code>.</p></li>
+<li><p>Enter the <span class="guilabel">pixel size</span>: <code class="code docutils literal notranslate"><span class="pre">0.2</span></code> mm.</p></li>
+<li><p>Enter the <span class="guilabel">Pixel count X</span>: <code class="code docutils literal notranslate"><span class="pre">1200</span></code> (the width of our projection image).</p></li>
+<li><p>Enter the <span class="guilabel">Pixel count Y</span>: <code class="code docutils literal notranslate"><span class="pre">1400</span></code> (the height of our projection image).</p></li>
+<li><p><span class="guilabel">Maximum grey value</span>: <code class="code docutils literal notranslate"><span class="pre">65535</span></code> (i.e. a 16 bit detector).</p></li>
+<li><p><span class="guilabel">Grey value quantum</span>: <code class="code docutils literal notranslate"><span class="pre">1</span></code> (the detector’s output are integer grey values in steps of 1).</p></li>
+</ol>
+</div>
+<p>The next section is called <em>Sensitivity</em>. It asks for the detector parameters relevant to its spectral absorption characteristics, namely the scintillator properties. The detector that was used to capture the projection image has a CsI scintillator with a thickness of 150 µm.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If CsI is not yet in your materials list, you need to create it using the <a class="reference internal" href="_images/22x22_edit-materials.png"><img alt="22x22_edit-materials" src="_images/22x22_edit-materials.png" style="width: 22px;" /></a> <em>Materials Editor</em> (<a class="reference internal" href="#detectormaterials"><span class="std std-numref">Fig. 102</span></a>). You can leave the <em>DetectorCalc</em> window open while doing this.</p>
+<ul class="simple">
+<li><p>Material: <code class="code docutils literal notranslate"><span class="pre">CsI</span></code>,</p></li>
+<li><p>Density: <code class="code docutils literal notranslate"><span class="pre">4.51</span></code> g/cm³,</p></li>
+<li><p>Composition: <code class="code docutils literal notranslate"><span class="pre">CsI</span></code>.</p></li>
+</ul>
+<p>We also create a material for the carbon fibre in front of the detector. It serves as a protection and (slightly) filters the radiation:</p>
+<ul class="simple">
+<li><p>Material: <code class="code docutils literal notranslate"><span class="pre">Carbon</span></code>,</p></li>
+<li><p>Density: <code class="code docutils literal notranslate"><span class="pre">1.8</span></code> g/cm³,</p></li>
+<li><p>Composition: <code class="code docutils literal notranslate"><span class="pre">C</span></code>.</p></li>
+</ul>
+</div>
+<figure class="align-default" id="id17">
+<span id="detectormaterials"></span><a class="reference internal image-reference" href="_images/tutorial-detector-materials.png"><img alt="_images/tutorial-detector-materials.png" src="_images/tutorial-detector-materials.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 102 </span><span class="caption-text">If they are not yet in your list of materials, you will have to add CsI for the scintillator and Carbon for the protective layer.</span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We can now set the sensitivity and filtration properties in the <em>DetectorCalc</em> module.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For the (scintillator) <span class="guilabel">Material</span>, choose <code class="code docutils literal notranslate"><span class="pre">CsI</span></code>.</p></li>
+<li><p>For its <span class="guilabel">Thickness</span>, set <code class="code docutils literal notranslate"><span class="pre">0.15</span></code> mm.</p></li>
+<li><p>Leave the <span class="guilabel">Steps</span> at <code class="code docutils literal notranslate"><span class="pre">2</span></code>. This parameter is used in the X-ray generation model and gives the maximum number of consecutive interactions to be simulated.</p></li>
+<li><p><span class="guilabel">Min Energy</span>: <code class="code docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><span class="guilabel">Max Energy</span>: <code class="code docutils literal notranslate"><span class="pre">Infinity</span></code>.</p></li>
+<li><p><span class="guilabel">Signal Type</span>: <code class="code docutils literal notranslate"><span class="pre">Average</span> <span class="pre">Energy</span></code>. (Common flat panel detectors are energy-integrating devices, this is what the <em>average energy</em> signal type does.)</p></li>
+<li><p>Add the 0.5 mm Carbon filter to the filtration list.</p></li>
+</ol>
+<p>(See <a class="reference internal" href="#detectorcalcsettings"><span class="std std-numref">Fig. 101</span></a>.)</p>
+</div>
+</section>
+<section id="reference-exposure">
+<h3>Reference Exposure<a class="headerlink" href="#reference-exposure" title="Permalink to this heading"></a></h3>
+<p>So far, those are the general properties of the detector. Now we need to switch over to the <em>Exposure</em> tab (<a class="reference internal" href="#detectorcalcexposure"><span class="std std-numref">Fig. 103</span></a>) and provide reference measurements from the projection image that we try to reproduce. <em>DetectorCalc</em> will use those reference values to calculate matching characteristics curves, as we will see later.</p>
+<figure class="align-default" id="id18">
+<span id="detectorcalcexposure"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorcalc-exposure.png"><img alt="_images/tutorial-detector-detectorcalc-exposure.png" src="_images/tutorial-detector-detectorcalc-exposure.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 103 </span><span class="caption-text">In the exposure settings, we will enter reference values that we have measured in our real-world projection images.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The first section, called <span class="guilabel">Reference exposure settings</span>, asks for the general circumstances under which the reference image was taken.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For the <span class="guilabel">Spectrum</span>, select the <code class="code docutils literal notranslate"><span class="pre">.xrs</span></code> spectrum file that you saved after we generated the X-ray spectrum.</p></li>
+<li><p>The image was taken at a tube <span class="guilabel">current</span> of <code class="code docutils literal notranslate"><span class="pre">0.1</span></code> mA.</p></li>
+<li><p>The <span class="guilabel">exposure time</span> for the image was <code class="code docutils literal notranslate"><span class="pre">0.5</span></code> s.</p></li>
+<li><p>You need to specify the <span class="guilabel">Number of frames</span> that have been averaged for the reference image. This is taken into account for the noise characteristics. If you do not intend to simulate any different frame averaging than the one from the reference image, it is advisable to pretend that the number of frames has been <code class="code docutils literal notranslate"><span class="pre">1</span></code>. More about the details of frame averaging is explained later.</p></li>
+<li><p>The <span class="guilabel">Source detector distance</span> was <code class="code docutils literal notranslate"><span class="pre">500</span></code> mm.</p></li>
+<li><p>Keep <span class="guilabel">Filter spectrum with environment material</span> activated: this will take the X-ray absorption of air into account when reproducing the grey values.</p></li>
+</ol>
+</div>
+<p><em>DetectorCalc</em> now knows the circumstances under which the reference image was taken and is able to calculate a good estimate for the primary intensity at the detector. It still needs to know how these primary intensities correspond to grey values, and also asks for the noise (SNR, signal-to-noise-ratio) in the reference image and the detector’s unsharpness.</p>
+</section>
+<section id="unsharpness">
+<h3>Unsharpness<a class="headerlink" href="#unsharpness" title="Permalink to this heading"></a></h3>
+<p><em>aRT</em>ist’s unsharpness definition conforms to the guideline ASTM E2597/E2597M-14 where it is measured using a duplex wire standard <span id="id1">[<a class="reference internal" href="references.html#id7" title="ASTM E2597/E2597M-14. Practice for Manufacturing Characterization of Digital Detector Arrays. doi:10.1520/e2597_e2597m-14.">5</a>]</span>. The unsharpness is achieved by treating the analytical projection image in <em>aRT</em>ist with a Gaussian smoothing kernel. Its standard deviation <img class="math" src="_images/math/fe0b03d01cd977bec3be061393c2438e0fcd2944.png" alt="\sigma_\mathsf{main}"/> is chosen such that the resulting unsharpness will match the mentioned guideline.</p>
+<p>Apart from this main unsharpness, <em>aRT</em>ist offers a second component called the <em>long range unsharpness</em>. This component becomes visible when measuring line profiles across an edge image (<a class="reference internal" href="#detectorunsharpnesscomponents"><span class="std std-numref">Fig. 104</span></a>).</p>
+<figure class="align-default" id="id19">
+<span id="detectorunsharpnesscomponents"></span><a class="reference internal image-reference" href="_images/tutorial-detector-unsharpness-LR-and-main.png"><img alt="_images/tutorial-detector-unsharpness-LR-and-main.png" src="_images/tutorial-detector-unsharpness-LR-and-main.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 104 </span><span class="caption-text">The main unsharpness and the long range unsharpness have an effect on the line profile across an edge image.</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><em>aRT</em>ist uses alpha blending to combine the main unsharpness and the long range unsharpness. For a given ideal point function δ as the input, the resulting point spread function (PSF) would be</p>
+<div class="math">
+<p><img src="_images/math/91c0362601b0e159288f86a4548b7a172a66594a.png" alt="\mathsf{PSF} = \left[ \alpha \cdot g_\mathsf{LR} \ast \delta + (1-\alpha)\delta \right] \ast g_\mathsf{main},"/></p>
+</div><p>with the long range ratio <img class="math" src="_images/math/4c4c8481b3937a57239b94b1d6e6912ef4ac0282.png" alt="\alpha"/> (the “prominence” of the long range component), the convolution operator <img class="math" src="_images/math/01d7fcfa0280d324ddc48e03a557e79b95986d63.png" alt="\ast"/> and the two Gaussian smoothing kernels</p>
+<div class="math">
+<p><img src="_images/math/563346f54a8252362d60c7b9a7a81172ed10c334.png" alt="g_\mathsf{main} = \frac{1}{\sqrt{2\pi \sigma_\mathsf{main}^2}} \exp \left( -\frac{x^2}{2\sigma_\mathsf{main}^2} \right) ~~~~~\mathsf{and}~~~~~ g_\mathsf{LR} = \frac{1}{\sqrt{2\pi \sigma_\mathsf{LR}^2}} \exp \left( -\frac{x^2}{2\sigma_\mathsf{LR}^2} \right)."/></p>
+</div><p>We will not reproduce the long range unsharpness for our detector as this will be beyond the scope of this tutorial.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For the <span class="guilabel">basic spatial resolution</span>, enter <code class="code docutils literal notranslate"><span class="pre">0.18</span></code> mm. This is an unsharpness property of the detector that is known, but cannot be deducted from the projection image of the step cylinder.</p></li>
+<li><p>For the <span class="guilabel">long range unsharpness</span> and the <span class="guilabel">unsharpness ratio</span>, enter <code class="code docutils literal notranslate"><span class="pre">0</span></code>. This is an advanced topic not covered here, but feel free to try it out on your own.</p></li>
+</ol>
+</div>
+</section>
+<section id="grey-value-noise">
+<h3>Grey Value &amp; Noise<a class="headerlink" href="#grey-value-noise" title="Permalink to this heading"></a></h3>
+<p><em>DetectorCalc</em> asks for a reference grey value. This is the grey value at the maximum free-beam intensity, which we can measure in the free-beam flat field image (<a class="reference internal" href="#detectorfreebeamgv"><span class="std std-numref">Fig. 105</span></a>). For our example, we get a free-beam grey value of about 8410.</p>
+<figure class="align-default" id="id20">
+<span id="detectorfreebeamgv"></span><a class="reference internal image-reference" href="_images/tutorial-detector-PMMA-cylinder-projection-freebeam-gv.png"><img alt="_images/tutorial-detector-PMMA-cylinder-projection-freebeam-gv.png" src="_images/tutorial-detector-PMMA-cylinder-projection-freebeam-gv.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 105 </span><span class="caption-text">Measuring the reference grey value in the free-beam image.</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To measure the SNR, we will use a free-beam region in the flat-field corrected image (<a class="reference internal" href="#detectorfreebeamsnr"><span class="std std-numref">Fig. 106</span></a>). The first reason is that the flat-field corrected image is the only one where we have a homogeneous background intensity where we can measure the noise (in terms of the grey value standard deviation) without the interference of the intensity profile of the flat field. The second reason is that <em>aRT</em>ist typically uses an ideal, noise-free flat field image for the flat-field correction, which means that we can simulate the full noise in the raw projection image and won’t have to worry about noise contributions from the flat-field image. A more correct way to do this would be to measure the noise in the centre of a flat-field corrected free-beam image instead of choosing an off-centre region like in <a class="reference internal" href="#detectorfreebeamsnr"><span class="std std-numref">Fig. 106</span></a>. However, for simplicity, we continue with this approximation.</p>
+<figure class="align-default" id="id21">
+<span id="detectorfreebeamsnr"></span><a class="reference internal image-reference" href="_images/tutorial-detector-PMMA-cylinder-projection-stddev-snr.png"><img alt="_images/tutorial-detector-PMMA-cylinder-projection-stddev-snr.png" src="_images/tutorial-detector-PMMA-cylinder-projection-stddev-snr.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 106 </span><span class="caption-text">Measuring the reference SNR in the flat-field corrected projection image. Note that the mean grey value does not match the previously measured maximum grey value in the flat-field image because our flat-field correction renormalizes to the <em>mean</em> intensity of the flat-field image, not its maximum value.</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Enter these two reference values into the <em>DetectorCalc</em> window:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>For <span class="guilabel">grey value</span>, enter <code class="code docutils literal notranslate"><span class="pre">8410</span></code>.</p></li>
+<li><p>For <span class="guilabel">SNR unnormalized</span>, enter <code class="code docutils literal notranslate"><span class="pre">615</span></code>.</p></li>
+</ol>
+</div>
+<p>We have now prepared all parameters to generate our new detector.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Press <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="16x16_compute-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> to create the new detector. You will be asked to save the new detector as an <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file, which is <em>aRT</em>ist’s file format for detector descriptions. Save it where you can find it again, we will inspect the file later.</p>
+<p>After you created the file, the actual computation might take a while, and you might need some patience. When you are asked if you want to load the new detector definition, click <span class="guilabel">Yes</span> to import the detector file that you just generated.</p>
+</div>
+<p>The new detector is now selected as the current <span class="guilabel">detector type</span> in the parameter panel (<a class="reference internal" href="#detectornewimported"><span class="std std-numref">Fig. 107</span></a>). We now need to switch the exposure to a fixed exposure time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Turn off the <span class="guilabel">reference point</span> and manually set an exposure time of <code class="code docutils literal notranslate"><span class="pre">0.5</span></code> seconds (<a class="reference internal" href="#detectornewimported"><span class="std std-numref">Fig. 107</span></a>). This was the original exposure time for the real-world projection image that we used to configure <em>DetectorCalc</em>.</p>
+</div>
+<figure class="align-default" id="id22">
+<span id="detectornewimported"></span><a class="reference internal image-reference" href="_images/tutorial-detector-newdetector-imported.png"><img alt="_images/tutorial-detector-newdetector-imported.png" src="_images/tutorial-detector-newdetector-imported.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 107 </span><span class="caption-text">The new detector is now imported. We need to set the exposure time manually.</span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The grey values that you will get in the preview image should now already be close to the grey values in the raw projection image.</p>
+</section>
+</section>
+<section id="attenuation-deposit-sensitivity">
+<h2>Attenuation, Deposit &amp; Sensitivity<a class="headerlink" href="#attenuation-deposit-sensitivity" title="Permalink to this heading"></a></h2>
+<p><em>DetectorCalc</em> has generated some characteristic curves from the given information. We can inspect them using the <em>DetectorViewer</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From the menu bar, select <span class="guilabel">Tools</span> → <span class="guilabel">Detector Properties</span>. Turn on the options <span class="guilabel">log x</span> and <span class="guilabel">log y</span> underneath the graph.</p>
+</div>
+<p>The <em>DetectorViewer</em> shows the general properties of your new detector in the left column, and a graph (or text table) of its spectral characteristics in the window’s right-hand area. You can choose the <span class="guilabel">Curve</span> from the drop-down menu in the upper left section.</p>
+<p>The first important curve is the <strong>Attenuation</strong> (<a class="reference internal" href="#detectorviewerattenuation"><span class="std std-numref">Fig. 108</span></a>). In <em>aRT</em>ist’s vocabulary, this is the probability that an incoming photon of a certain energy (keV) interacts with the scintillator (instead of just passing through).</p>
+<figure class="align-default" id="id23">
+<span id="detectorviewerattenuation"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorviewer-attenuation.png"><img alt="_images/tutorial-detector-detectorviewer-attenuation.png" src="_images/tutorial-detector-detectorviewer-attenuation.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 108 </span><span class="caption-text">The <em>DetectorViewer</em> shows the attenuation curve.</span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Depending on the underlying physics of the particle interactions, not all photons will deposit their full energy in the scintillator in a detectable way. The second important curve is the <strong>Deposit,</strong> which shows the average amount of “usable” energy that a given photon would store in the scintillator in the event of an attenuation.</p>
+<figure class="align-default" id="id24">
+<span id="detectorviewerdeposit"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorviewer-deposit.png"><img alt="_images/tutorial-detector-detectorviewer-deposit.png" src="_images/tutorial-detector-detectorviewer-deposit.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 109 </span><span class="caption-text">The <em>DetectorViewer</em> shows the deposit curve.</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The product of these two shown curves is called the <strong>Sensitivity</strong> (<a class="reference internal" href="#detectorviewersensitivity"><span class="std std-numref">Fig. 110</span></a>). It gives the mean deposited energy (keV) in a pixel for an incoming photon of the given energy (keV). The sensitivity curve is the foundation of the detector’s spectral energy characteristics and is used, together with the X-ray spectrum, the X-ray current (and overall photon flux), and the area of a pixel, to calculate the primary intensity (in J/m²/s) at the detector pixels.</p>
+<figure class="align-default" id="id25">
+<span id="detectorviewersensitivity"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorviewer-sensitivity.png"><img alt="_images/tutorial-detector-detectorviewer-sensitivity.png" src="_images/tutorial-detector-detectorviewer-sensitivity.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 110 </span><span class="caption-text">The <em>DetectorViewer</em> shows the sensitivity curve.</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To associate a grey value with the total energy density at a pixel (in J/m², accumulated from the primary intensity during the integration time), another curve is important: the <strong>Characteristic</strong> (<a class="reference internal" href="#detectorviewercharacteristic"><span class="std std-numref">Fig. 111</span></a>). We have already seen it before at the 1:1 detector. For our new detector, <em>DetectorCalc</em> has generated a purely linear function which associates no incoming energy with the grey value 0. It has used the maximum free-beam intensity and our reference grey value to extrapolate a second point for the characteristic curve and associated the maximum possible grey value of 65535 (for a 16-bit detector) with its corresponding energy density.</p>
+<figure class="align-default" id="id26">
+<span id="detectorviewercharacteristic"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorviewer-characteristic.png"><img alt="_images/tutorial-detector-detectorviewer-characteristic.png" src="_images/tutorial-detector-detectorviewer-characteristic.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 111 </span><span class="caption-text">The <em>DetectorViewer</em> shows the characteristic curve.</span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="noise">
+<h2>Noise<a class="headerlink" href="#noise" title="Permalink to this heading"></a></h2>
+<p>The noise amplitude of a pixel is usually a function of the intensity, i.e., in <em>aRT</em>ist a function of the energy density. One typical contribution comes from the shot noise of the X-ray source, which scales with the square root of its intensity and finally affects the grey value noise level. In <em>DetectorCalc</em>, we have defined the signal-to-noise ratio (SNR) at the maximum free beam intensity. This value was used to compute our detector’s noise curve (<a class="reference internal" href="#detectorviewernoise"><span class="std std-numref">Fig. 112</span></a>): it shows a strikingly square-rootish behaviour.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Turn off the options <span class="guilabel">log x</span> and <span class="guilabel">log y</span> underneath the graph.</p>
+</div>
+<figure class="align-default" id="id27">
+<span id="detectorviewernoise"></span><a class="reference internal image-reference" href="_images/tutorial-detector-detectorviewer-noise.png"><img alt="_images/tutorial-detector-detectorviewer-noise.png" src="_images/tutorial-detector-detectorviewer-noise.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 112 </span><span class="caption-text">The <em>DetectorViewer</em> shows the noise curve.</span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Typically, the calculated noise curve has two components: an intensity-dependent component that models the shot noise of the X-ray source, and a structural component that models static and systematic differences between the pixel grey values. An analytical value for the shot noise component is calculated from the spectrum, integration time, current and pixel area. If the SNR that you entered in <em>DetectorCalc</em> is lower than this analytical value, the remainder will be satisfied using the structural, constant noise component. If the SNR is better than the analytical value, there might be something wrong with your flux or your projection image where you measured the SNR might be filtered to remove noise. In this case, <em>DetectorCalc</em> models a purely intensity-dependent (square-root) noise characteristic and ignores its own analytical value. If this is the case, <em>DetectorCalc</em> will issue a warning that you can see in the console (<span class="guilabel">Tools</span> → <span class="guilabel">Show Console</span>).</p>
+</section>
+<section id="grey-value-reproduction">
+<h2>Grey Value Reproduction<a class="headerlink" href="#grey-value-reproduction" title="Permalink to this heading"></a></h2>
+<p>One way to get a better match between the real and simulated grey values is to adapt the detector’s characteristics curve. To do so, we need to create a table that lists some simulated energy densities and their associated expected grey values. First, we need a primary intensity image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the <em>Image Viewer</em>, switch to <span class="guilabel">primary intensities</span> (<a class="reference internal" href="#detectorprimaryintensities"><span class="std std-numref">Fig. 113</span></a>).</p>
+<p>In the toolbar, press <a class="reference internal" href="_images/32x32_compute-radiography.png"><img alt="32x32_compute-radiography" src="_images/32x32_compute-radiography.png" style="width: 32px;" /></a> to run a full simulation. In the <em>Image Viewer</em>, press <a class="reference internal" href="_images/22x22_document-save.png"><img alt="22x22_document-save" src="_images/22x22_document-save.png" style="width: 22px;" /></a> to save the primary intensities as an image file.</p>
+</div>
+<figure class="align-default" id="id28">
+<span id="detectorprimaryintensities"></span><a class="reference internal image-reference" href="_images/tutorial-detector-primary-intensities.png"><img alt="_images/tutorial-detector-primary-intensities.png" src="_images/tutorial-detector-primary-intensities.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 113 </span><span class="caption-text">The <em>Image Viewer</em> displays the primary intensities.</span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We will now open the primary intensity image and the real CT image side by side in an external image viewer. In this tutorial, we will use ImageJ. For a few small selected regions of interest, we measure the mean primary intensity and the grey value that we would expect from the real CT image.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>Open the simulated primary intensity image and the uncorrected real CT image (<code class="code docutils literal notranslate"><span class="pre">1636_PMMA_Cylinder_upright00092.tif</span></code>) in ImageJ.</p></li>
+<li><p>Measure the mean primary intensity and mean grey value in a bunch of meaningful regions of interest. The ROIs in both images should be located at roughly the same location with respect to the cylinder. In <a class="reference internal" href="#detectorprimaryintensitiesvsrealgreyvalues"><span class="std std-numref">Fig. 114</span></a> you can see an example for five different regions of interest that cover a representative grey value range.</p></li>
+</ol>
+</div>
+<figure class="align-default" id="id29">
+<span id="detectorprimaryintensitiesvsrealgreyvalues"></span><a class="reference internal image-reference" href="_images/tutorial-detector_primary-intensities_vs_real-grey-values.png"><img alt="_images/tutorial-detector_primary-intensities_vs_real-grey-values.png" src="_images/tutorial-detector_primary-intensities_vs_real-grey-values.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 114 </span><span class="caption-text">Measuring the mean primary intensity (left) and the mean real grey value (right) for five distinct regions of interest.</span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We use a spreadsheet to keep track of the values (<a class="reference internal" href="#detectorprimaryintensitiesvsrealgreyvaluesspreadsheet"><span class="std std-numref">Fig. 115</span></a>). We also add a grey value of zero for a primary intensity of zero (keep in mind that we work with dark-field corrected images here) and we add the grey value 8410 for the maximum free-beam intensity (see <a class="reference internal" href="#detectorfreebeamgv"><span class="std std-numref">Fig. 105</span></a>). To get the maximum free-beam primary intensity value of 0.00411101 W/m², you can deactivate the PMMA cylinder’s visibility, run a full free-beam simulation and read the maximum intensity value from the image viewer (see <a class="reference internal" href="#detectorprimaryintensitiesvsrealgreyvaluesmaxfreebeamprimary"><span class="std std-numref">Fig. 116</span></a> for more instructions).</p>
+<figure class="align-default" id="id30">
+<span id="detectorprimaryintensitiesvsrealgreyvaluesspreadsheet"></span><a class="reference internal image-reference" href="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet.png"><img alt="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet.png" src="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 115 </span><span class="caption-text">A spreadsheet lists the primary intensity and the target grey value for each ROI.</span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id31">
+<span id="detectorprimaryintensitiesvsrealgreyvaluesmaxfreebeamprimary"></span><a class="reference internal image-reference" href="_images/tutorial-detector_primary-intensities_vs_real-grey-values_max-primary.png"><img alt="_images/tutorial-detector_primary-intensities_vs_real-grey-values_max-primary.png" src="_images/tutorial-detector_primary-intensities_vs_real-grey-values_max-primary.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 116 </span><span class="caption-text">Four steps to get the maximum free-beam primary intensity.</span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For the grey value characteristics (see <a class="reference internal" href="#detectorviewercharacteristic"><span class="std std-numref">Fig. 111</span></a>) we need the energy density (J/m²) per pixel and associate it with a grey value. We can easily calculate the energy density by multiplying the primary intensity with the detector’s integration time (0.5 s). For this purpose, we add another column to our spreadsheet (<a class="reference internal" href="#detectorprimaryintensitiesvsrealgreyvaluesspreadsheet2"><span class="std std-numref">Fig. 117</span></a>).</p>
+<figure class="align-default" id="id32">
+<span id="detectorprimaryintensitiesvsrealgreyvaluesspreadsheet2"></span><a class="reference internal image-reference" href="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet2.png"><img alt="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet2.png" src="_images/tutorial-detector_primary-intensities_vs_real-grey-values_spreadsheet2.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 117 </span><span class="caption-text">We added a column for the energy density, which is the primary intensity multiplied by the integration time (0.5 s in our case).</span><a class="headerlink" href="#id32" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Now we use a text editor to open the detector definition file that we created with the DetectorCalc module (<code class="code docutils literal notranslate"><span class="pre">Step</span> <span class="pre">Cylinder</span> <span class="pre">Detector.aRTdet</span></code>). Find the section that’s called <code class="code docutils literal notranslate"><span class="pre">[Characteristics]</span></code> (<a class="reference internal" href="#detectorartdetfile"><span class="std std-numref">Fig. 118</span></a>).</p>
+<figure class="align-default" id="id33">
+<span id="detectorartdetfile"></span><a class="reference internal image-reference" href="_images/tutorial-detector_artdet-file.png"><img alt="_images/tutorial-detector_artdet-file.png" src="_images/tutorial-detector_artdet-file.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 118 </span><span class="caption-text">The detector definition file opened in a text editor. The relevant grey value characteristics section is highlighted.</span><a class="headerlink" href="#id33" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>From our spreadsheet, we copy the columns for the energy density and target grey value and replace the existing two value pairs. We also need to put an equals sign <code class="code docutils literal notranslate"><span class="pre">=</span></code> in between each value pair as the file notation demands (<a class="reference internal" href="#detectorartdetfilecustomcharacteristics"><span class="std std-numref">Fig. 119</span></a>).</p>
+<figure class="align-default" id="id34">
+<span id="detectorartdetfilecustomcharacteristics"></span><a class="reference internal image-reference" href="_images/tutorial-detector_artdet-file_custom-characteristics.png"><img alt="_images/tutorial-detector_artdet-file_custom-characteristics.png" src="_images/tutorial-detector_artdet-file_custom-characteristics.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 119 </span><span class="caption-text">The detector definition file with our custom grey-value characteristics.</span><a class="headerlink" href="#id34" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>We save this altered detector definition file and open it in aRTist to import our changes (drag&amp;drop or <span class="guilabel">File</span> → <span class="guilabel">Open</span>). The detector viewer (<span class="guilabel">Tools</span> → <span class="guilabel">Detector Properties</span>) should now display our custom-made grey value characteristics (<a class="reference internal" href="#detectordetectorviewercustomcharacteristics"><span class="std std-numref">Fig. 120</span></a>) and you should get grey values in your simulated projection image that match the real measurement much better.</p>
+<figure class="align-default" id="id35">
+<span id="detectordetectorviewercustomcharacteristics"></span><a class="reference internal image-reference" href="_images/tutorial-detector_detector-viewer_custom-characteristics.png"><img alt="_images/tutorial-detector_detector-viewer_custom-characteristics.png" src="_images/tutorial-detector_detector-viewer_custom-characteristics.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 120 </span><span class="caption-text">The detector viewer displays our custom-made grey-value characteristics.</span><a class="headerlink" href="#id35" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="flat-field-correction">
+<h2>Flat-Field Correction<a class="headerlink" href="#flat-field-correction" title="Permalink to this heading"></a></h2>
+<p>To be continued…</p>
+</section>
+<section id="frame-averaging">
+<h2>Frame Averaging<a class="headerlink" href="#frame-averaging" title="Permalink to this heading"></a></h2>
+<p>To be continued…</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorial_xray_source.html" class="btn btn-neutral float-left" title="X-ray Source" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <p></p>
+    <p>&#169; Copyright 2021, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

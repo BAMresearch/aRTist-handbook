@@ -54,6 +54,7 @@ Publisher
    tutorial_multi_component_parts
    tutorial_ctscan_module
    tutorial_xray_source
+   tutorial_detector
 
 .. toctree::
    :maxdepth: 2
