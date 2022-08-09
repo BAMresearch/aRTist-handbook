@@ -98,7 +98,7 @@ The detector size is calculated automatically. You should now see a preview imag
 Note that you can set :guilabel:`Multisampling` for each pixel. It works in the same way as for the source. If you activate a certain type of pixel multisampling, a ray will be simulated connecting each source point with each pixel point (or subpixel). As described for the :ref:`Spot Type in the Source tutorial <sourceTutorialSpotChapter>`, you can define regular subpixel grids (e.g. :code:`3x3`) or quasi-random patterns using Poisson Disc Sampling (any integers, e.g. :code:`11`). The number of rays that will be simulated per pixel is the product of the source spot multisampling points and the detector (pixel) multisampling points. If you choose :guilabel:`source dependent` for the pixel multisampling (the default setting), the pattern defined for the source will also be used for each pixel (with the exception that it will be flipped in both spatial directions compared to the source pattern). Each spot point is then connected to its corresponding point on the pixel: the number of rays per pixel will remain the number of spot points and will not multiply (:numref:`DetectorPixelMultisampling`).
 
 .. _DetectorPixelMultisampling:
-.. figure:: pictures/CtScanModule_DetectorMultisamplingGrid.svg
+.. figure:: pictures/QuickStartCT_DetectorMultisamplingGrid.svg
 	:width: 80%
 
 	Overview of the multi-sampling behavior for different source-detector combinations.
@@ -473,10 +473,43 @@ We save this altered detector definition file and open it in aRTist to import ou
 Flat-Field Correction
 ---------------------
 
-To be continued...
+|artist| offers the ability to run a flat-field correction for simulated projection images. For this purpose, it has an internal buffer that can store a flat field image.
 
+When you activate the flat field correction in the detector settings (:numref:`detectorFlatFieldCorrection`), |artist| will use the image from the buffer for the flat field correction. If the buffer is empty (i.e., if you have not yet loaded or computed any flat field image), |artist| will temporarily turn off the visibility of all objects in your scene and temporarily turn off noise to calculate a flat field image. It will then restore the object visibility and noise and compute the actual projection image, complete with a flat-field correction.
+
+This automatic computation of the flat-field image is done **only once!** Once the buffer contains an image, it will be used for any further flat fieldf corrections, even if you change your scene. To re-compute another flat field image, you can delete |22x22_edit-delete| the current flat field image to clear the buffer. Once the buffer is empty, |artist| will automatically calculate a new flat field image when needed.
+
+.. _detectorFlatFieldCorrection:
+.. figure:: pictures/tutorial-detector_flat-field-correction.png
+    :width: 80%
+    
+    Controls for the flat-field correction.
+
+During the flat field correction, the projection image :math:`I` will be "flattened" with the flat-field image :math:`I_\text{FF}`. The result is then re-normalized to the **mean free-beam grey value** :math:`\left< I_\text{FF} \right>`, such that you should get a homogenous background that has the mean intensity of a free-beam image.
+
+.. math::
+    I_\text{corrected} = \frac{I}{I_\text{FF}} \cdot \left< I_\text{FF} \right>
+
+You can use the button |22x22_aRTist| to compute a new flat field image for the buffer with your current scene settings. Remember to turn off any objects in the beam path yourself, otherwise they will appear in the flat field image.
 
 Frame Averaging
 ---------------
 
-To be continued...
+To simulate the averaging of multiple frames, |artist| does not simulate the requested number of frames and averages them. Instead, it temporarily adjusts the energy density on the detector and therefore looks up a different SNR on your detector's noise curve (:numref:`FrameAveragingExample`).
+
+.. _FrameAveragingExample:
+.. figure:: pictures/QuickStartCT_AveragingExample.svg
+    :width: 100%
+
+    Example for the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames.
+
+Note that |artist| uses a linear interpolation if your SNR curve does not reach the high energies that might be required by a high number of averaging frames. Also, depending on your specific SNR curve, you might get a result that differs from what you would expect from a simple arithmetic mean of two frames. |artist| uses this approach to cover the effects of structural pattern noise (which cannot be improved by averaging) and dynamic noise (e.g. Poisson noise of the source, thermal noise of the detector, etc.) in *one* single SNR curve.
+
+
+Summary
+-------
+
+In this tutorial, you learned how to use the *DetectorCalc* module to simulate a real-life detector. You got to know the different curves that |artist| uses to calculate the grey values of a projection image, and you saw an approach to alter the grey value characteristics to get better matching grey values.
+
+| The scene that we created in this tutorial is available for download:
+| :download:`tutorial_detector.aRTist <files/tutorial_detector.aRTist>` (2.3 MB)
