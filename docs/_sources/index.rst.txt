@@ -41,6 +41,7 @@ Publisher
    gui
    modules
    fileformats
+   quickstart_ct
 
 .. toctree::
    :maxdepth: 2

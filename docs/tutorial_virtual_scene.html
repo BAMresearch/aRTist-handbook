@@ -45,6 +45,7 @@
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart_ct.html">Quick Start: CT Scans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
 <ul class="current">
@@ -109,18 +110,18 @@
 <span id="thevirtualscenechapter"></span><h1>The Virtual Scene<a class="headerlink" href="#the-virtual-scene" title="Permalink to this heading"></a></h1>
 <section id="a-blank-scene">
 <h2>A Blank Scene<a class="headerlink" href="#a-blank-scene" title="Permalink to this heading"></a></h2>
-<p>When you start <em>aRT</em>ist, it will show you an empty <strong>scene</strong> (<a class="reference internal" href="#blankscene"><span class="std std-numref">Fig. 13</span></a>). There is a <strong>detector</strong> and a <strong>source</strong>, and the rest is invisibly filled with <strong>air</strong>, the standard <em>environment material</em>.</p>
+<p>When you start <em>aRT</em>ist, it will show you an empty <strong>scene</strong> (<a class="reference internal" href="#blankscene"><span class="std std-numref">Fig. 28</span></a>). There is a <strong>detector</strong> and a <strong>source</strong>, and the rest is invisibly filled with <strong>air</strong>, the standard <em>environment material</em>.</p>
 <figure class="align-default" id="id1">
 <span id="blankscene"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-artist-blank.png"><img alt="_images/tutorial-virtualscene-artist-blank.png" src="_images/tutorial-virtualscene-artist-blank.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">The <em>aRT</em>ist window with a blank scene.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">The <em>aRT</em>ist window with a blank scene.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p><em>aRT</em>ist’s standard coordinate system is shown in <a class="reference internal" href="#standardcoordinatesystem"><span class="std std-numref">Fig. 14</span></a>. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the <em>Z</em> axis. For a standard CT set-up, the axis of rotation would point in the direction of the <em>Y</em> axis.</p>
+<p><em>aRT</em>ist’s standard coordinate system is shown in <a class="reference internal" href="#standardcoordinatesystem"><span class="std std-numref">Fig. 29</span></a>. The detector is placed at the origin of the world coordinate system. The source is located at a positive point somewhere along the <em>Z</em> axis. For a standard CT set-up, the axis of rotation would point in the direction of the <em>Y</em> axis.</p>
 <figure class="align-default" id="id2">
 <span id="standardcoordinatesystem"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-coordinate-system.png"><img alt="aRTist standard coordinate system" src="_images/tutorial-virtualscene-coordinate-system.png" style="width: 65%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">aRTist’s standard coordinate system</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">aRTist’s standard coordinate system</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>You are free to change the position and orientation of any of the components in a scene, including the source and the detector. Some modules, like the <em>CtScan</em> module that we will use later, assume a certain coordinate system, for example that the <em>Y</em> axis is the axis of rotation. To stay on the safe side, it may be a good idea to stick with this convention.</p>
@@ -138,11 +139,11 @@
 <p>Click the <a class="reference internal" href="_images/32x32_library.png"><img alt="32x32_library" src="_images/32x32_library.png" style="width: 32px;" /></a> <span class="guilabel">Library</span> button in the toolbar or choose from the menu: <span class="guilabel">File</span> → <span class="guilabel">Open Library…</span>.</p>
 <p>Load the <em>Rotor</em> surface model from <code class="file docutils literal notranslate"><span class="pre">ExampleParts</span></code> → <code class="file docutils literal notranslate"><span class="pre">Rotor.ply</span></code>.</p>
 </div>
-<p>The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (<a class="reference internal" href="#rotorloaded"><span class="std std-numref">Fig. 15</span></a>). Additionally, the rotor appears on the left-hand side in the <em>Assembly list</em> of the <em>Parameter panel</em>. It gets a random colour and the default material is iron (Fe).</p>
+<p>The rotor is loaded and placed into the scene at the center of the detector, because that is the origin of the coordinate system (<a class="reference internal" href="#rotorloaded"><span class="std std-numref">Fig. 30</span></a>). Additionally, the rotor appears on the left-hand side in the <em>Assembly list</em> of the <em>Parameter panel</em>. It gets a random colour and the default material is iron (Fe).</p>
 <figure class="align-default" id="id3">
 <span id="rotorloaded"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-rotor-loaded.png"><img alt="_images/tutorial-virtualscene-rotor-loaded.png" src="_images/tutorial-virtualscene-rotor-loaded.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">The rotor is loaded into the scene.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">The rotor is loaded into the scene.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>If you want to load a surface model at its native position (as defined in the file) instead of centred at the origin of the coordinate system, turn off the button <a class="reference internal" href="_images/32x32_center-new.png"><img alt="32x32_center-new" src="_images/32x32_center-new.png" style="width: 32px;" /></a> <span class="guilabel">Center new parts</span> in the toolbar or turn it off in the menu: <span class="guilabel">Geometry</span> → <span class="guilabel">Center New Parts</span>.</p>
@@ -154,11 +155,11 @@
 <p class="admonition-title">Note</p>
 <p>Double-click on the rotor’s colour.</p>
 </div>
-<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 16</span></a>). There, you can choose a new colour by clicking the <a class="reference internal" href="_images/16x16_colorwheel.png"><img alt="16x16_colorwheel" src="_images/16x16_colorwheel.png" style="width: 16px;" /></a> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
+<p>The <em>Display Parameters</em> open (<a class="reference internal" href="#displayparameters"><span class="std std-numref">Fig. 31</span></a>). There, you can choose a new colour by clicking the <a class="reference internal" href="_images/16x16_colorwheel.png"><img alt="16x16_colorwheel" src="_images/16x16_colorwheel.png" style="width: 16px;" /></a> <strong>Colour Wheel.</strong> You can also set up transparency with the <strong>Opacity</strong> slider. The parameters <strong>Diffuse</strong>, <strong>Specular</strong> and <strong>Power</strong> control the object’s ability to cast shadows and its “shininess”. For details, take a look at the <a class="reference external" href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.</p>
 <figure class="align-default" id="id4">
 <span id="displayparameters"></span><a class="reference internal image-reference" href="_images/tutorial-display-parameters.png"><img alt="_images/tutorial-display-parameters.png" src="_images/tutorial-display-parameters.png" style="width: 60%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The <em>Display Parameters</em> let you change the colour and appearance of an object.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">The <em>Display Parameters</em> let you change the colour and appearance of an object.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -168,7 +169,7 @@
 <figure class="align-default" id="id5">
 <span id="colorchanged"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-color-changed.png"><img alt="_images/tutorial-virtualscene-color-changed.png" src="_images/tutorial-virtualscene-color-changed.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">We have changed the colour of the rotor.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">We have changed the colour of the rotor.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -188,12 +189,12 @@
 <p>Some of these only work once a part is selected.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Select the rotor: either click on it in the <em>Assembly List</em> or click on it in the scene. It should now be highlighted in the <em>Assembly List</em> and a bounding box with yellow corners should appear that encloses the <em>Rotor</em> in the virtual scene (<a class="reference internal" href="#rotorselected"><span class="std std-numref">Fig. 18</span></a>).</p>
+<p>Select the rotor: either click on it in the <em>Assembly List</em> or click on it in the scene. It should now be highlighted in the <em>Assembly List</em> and a bounding box with yellow corners should appear that encloses the <em>Rotor</em> in the virtual scene (<a class="reference internal" href="#rotorselected"><span class="std std-numref">Fig. 33</span></a>).</p>
 </div>
 <figure class="align-default" id="id6">
 <span id="rotorselected"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-rotor-selected.png"><img alt="_images/tutorial-virtualscene-rotor-selected.png" src="_images/tutorial-virtualscene-rotor-selected.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">The <em>Rotor</em> is selected: it is highlighted with a blue background in the <em>Assembly List</em> and enclosed in a yellow-cornered bounding box in the virtual scene.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">The <em>Rotor</em> is selected: it is highlighted with a blue background in the <em>Assembly List</em> and enclosed in a yellow-cornered bounding box in the virtual scene.</span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <section id="view-directions">
@@ -216,12 +217,12 @@
 <p>You can also find this function in the menu bar: <span class="guilabel">View</span> → <a class="reference internal" href="_images/16x16_zoom-select.png"><img alt="16x16_zoom-select" src="_images/16x16_zoom-select.png" style="width: 16px;" /></a> <span class="guilabel">Zoom to Selection</span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Change the view to <a class="reference internal" href="_images/32x32_default-view-top-right.png"><img alt="32x32_default-view-top-right" src="_images/32x32_default-view-top-right.png" style="width: 32px;" /></a> <strong>top right,</strong> then <a class="reference internal" href="_images/32x32_zoom-select.png"><img alt="32x32_zoom-select" src="_images/32x32_zoom-select.png" style="width: 32px;" /></a> <strong>zoom in</strong> to the selected rotor (<a class="reference internal" href="#zoomedin"><span class="std std-numref">Fig. 19</span></a>).</p>
+<p>Change the view to <a class="reference internal" href="_images/32x32_default-view-top-right.png"><img alt="32x32_default-view-top-right" src="_images/32x32_default-view-top-right.png" style="width: 32px;" /></a> <strong>top right,</strong> then <a class="reference internal" href="_images/32x32_zoom-select.png"><img alt="32x32_zoom-select" src="_images/32x32_zoom-select.png" style="width: 32px;" /></a> <strong>zoom in</strong> to the selected rotor (<a class="reference internal" href="#zoomedin"><span class="std std-numref">Fig. 34</span></a>).</p>
 </div>
 <figure class="align-default" id="id7">
 <span id="zoomedin"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-view-top-right.png"><img alt="_images/tutorial-virtualscene-view-top-right.png" src="_images/tutorial-virtualscene-view-top-right.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">We have zoomed in to see the selected rotor and changed the view direction to <em>top right</em>.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">We have zoomed in to see the selected rotor and changed the view direction to <em>top right</em>.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -235,11 +236,11 @@
 </section>
 <section id="x32-switch-wireframe-wireframe-and-solid-view">
 <h3><a class="reference internal" href="_images/32x32_switch-wireframe.png"><img alt="32x32_switch-wireframe" src="_images/32x32_switch-wireframe.png" style="width: 32px;" /></a> Wireframe and Solid View<a class="headerlink" href="#x32-switch-wireframe-wireframe-and-solid-view" title="Permalink to this heading"></a></h3>
-<p>Instead of viewing a part as a solid surface, you can use this button to display a wireframe model of the triangular mesh. The <em>Rotor</em> has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (<a class="reference internal" href="#wireframe"><span class="std std-numref">Fig. 20</span></a>). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).</p>
+<p>Instead of viewing a part as a solid surface, you can use this button to display a wireframe model of the triangular mesh. The <em>Rotor</em> has a lot of triangles, so you will need to zoom in to see the detailed wireframe mesh (<a class="reference internal" href="#wireframe"><span class="std std-numref">Fig. 35</span></a>). On less powerful computers, a reduced mesh will be displayed (possibly even instead of the solid model).</p>
 <figure class="align-default" id="id8">
 <span id="wireframe"></span><a class="reference internal image-reference" href="_images/tutorial-virtualscene-wireframe.png"><img alt="_images/tutorial-virtualscene-wireframe.png" src="_images/tutorial-virtualscene-wireframe.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Solid surface (left) and wireframe view (right).</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">Solid surface (left) and wireframe view (right).</span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>
@@ -290,7 +291,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 
