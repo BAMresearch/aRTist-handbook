@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start: CT Scans &mdash; aRTist 2.12 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Tutorials" href="tutorial_introduction.html" />
+    <link rel="prev" title="VGI File Format" href="fileformats_vgi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> aRTist
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start: CT Scans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-ct-scan">A Simple CT Scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ctscan-setup">CtScan Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#assembly-setup">Assembly Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-setup">Source Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detector-setup">Detector Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ideal-model">Ideal Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#experimental-model">Experimental Model</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tutorials:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_introduction.html">Introduction to Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_virtual_scene.html">The Virtual Scene</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_positioning_orientation_size.html">Position, Orientation &amp; Size</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_materials.html">Materials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_projection_images.html">Projection Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_multi_component_parts.html">Multi-Component Parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_ctscan_module.html">CtScan Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_xray_source.html">X-ray Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_detector.html">Detector</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgments.html">Acknowledgments</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aRTist</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Quick Start: CT Scans</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart_ct.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start-ct-scans">
+<h1>Quick Start: CT Scans<a class="headerlink" href="#quick-start-ct-scans" title="Permalink to this heading"></a></h1>
+<p id="quickstartct">This part of the handbook explains the important modules and functionalities of <em>aRT</em>ist that you need when simulating full CT scans.</p>
+<p>We will use the <em>CtScan</em> module, a modular extension of <em>aRT</em>ist which provides the tools (compare <a class="reference internal" href="#quickstartctoverview"><span class="std std-numref">Fig. 13</span></a>) to simulate a typical circular CT scan. By default the <em>CtScan</em> module is deployed with the <em>aRT</em>ist installation and can be accessed via the <span class="guilabel">Modules</span> tab.</p>
+<figure class="align-default" id="id11">
+<span id="quickstartctoverview"></span><a class="reference internal image-reference" href="_images/QuickStartCT_Overview.svg"><img alt="_images/QuickStartCT_Overview.svg" src="_images/QuickStartCT_Overview.svg" width="95%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Process of a dimensional measurement with CT. Process steps, which are highlighted in red, can be simulated with the <em>aRT</em>ist <em>CtScan</em> module. <span id="id1">[<a class="reference internal" href="references.html#id4" title="Felix Binder, Carsten Bellon, Florian Wohlgemuth, and Tino Hausotte. Ein praxisnaher Leitfaden für computertomografische Untersuchungen mit der radiografischen Simulationsumgebung aRTist. In DGZfP Jahrestagung 2021. 2021. URL: https://jahrestagung.dgzfp.de/portals/jt2021/bb176/inhalt/p4.pdf.">1</a>]</span></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pagination of the listed modules in the <span class="guilabel">Modules</span> depend on the installed modules.</p>
+</div>
+<p>For the following quick start guide it is advised to be comfortable with the basic elements of <em>aRT</em>ist. However, if you are not yet familiar with <em>aRT</em>ist, you will probably learn it “along the way.” If you want to be better prepared or brush up on your <em>aRT</em>ist knowledge, you can first take a look at the following sections of the handbook:</p>
+<ul class="simple">
+<li><p>In section <a class="reference internal" href="gui-setup.html#setuppanelsection"><span class="std std-ref">Setup Panel</span></a> a description of the setup panel and the axis definition used within <em>aRT</em>ist can be found.</p></li>
+<li><p>The section <a class="reference internal" href="gui-source.html#sourcepanelsection"><span class="std std-ref">Source Panel</span></a> describes the basics of the source GUI, which will be used to define an X-ray source.</p></li>
+<li><p>The <a class="reference internal" href="gui-setup.html#setuppanelsection"><span class="std std-ref">Detector Panel</span></a> section covers the basics of the detector GUI, which is also necessary for a CT scan setup.</p></li>
+<li><p>The basic elements of the <em>CtScan</em> module itself are described in the <a class="reference internal" href="modules-ctscan.html#ctscansection"><span class="std std-ref">Module CtScan</span></a>.</p></li>
+</ul>
+<p>In the following chapters of this guide, first a simple CT scan is described, which shows the basics of the <em>CtScan</em> module. After that, a typical setup of the module is shown, which can be transferred to a custom CT scan setup. In the <a class="reference internal" href="#ctmoduleexamples"><span class="std std-ref">Examples</span></a> section two examples are provided, which shows the difference between a ideal simulation and an experimental model in <em>aRT</em>ist. In the last section of this guide, the limitations of the current models – while using the <em>CtScan</em> module – are discussed.</p>
+<section id="a-simple-ct-scan">
+<h2>A Simple CT Scan<a class="headerlink" href="#a-simple-ct-scan" title="Permalink to this heading"></a></h2>
+<p id="quickstartctasimplectscan">Download the example file <a class="reference download internal" download="" href="_downloads/c11efa0c549c9097111c1c1ca5c5399d/tutorial_simple_ctscan.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">tutorial_simple_ctscan.aRTist</span></code></a> (4.5 MB) and open it with <em>aRT</em>ist.</p>
+<p>In the <em>Parameter Panel</em> on the left-hand side, open the <span class="guilabel">Detector</span> tab. In the <span class="guilabel">Geometry</span> group, select <span class="guilabel">Res. [mm]</span> to fixate the pixel resolution and enable editing for the actual physical size and the number of pixels along the detector x- and y-axis. For <span class="guilabel">Pixel</span>, enter <code class="code docutils literal notranslate"><span class="pre">250</span></code> for both <span class="guilabel">X</span> and <span class="guilabel">Y</span> (<a class="reference internal" href="#detectorsettingspixels"><span class="std std-numref">Fig. 14</span></a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a fast demonstration the detector resolution will be reduced to 250×250 px.</p>
+</div>
+<figure class="align-default" id="id12">
+<span id="detectorsettingspixels"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-detector-settings.png"><img alt="_images/tutorial-ctscan-detector-settings.png" src="_images/tutorial-ctscan-detector-settings.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Detector geometry settings with a reduced resolution of 250×250 px.</span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Next open the <em>CtScan</em> module from the menu bar: <span class="guilabel">Modules</span> → <span class="guilabel">CtScan</span> (<a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 15</span></a>).</p>
+<figure class="align-default" id="id13">
+<span id="ctscanwindow"></span><a class="reference internal image-reference" href="_images/tutorial-ctscan-window.png"><img alt="_images/tutorial-ctscan-window.png" src="_images/tutorial-ctscan-window.png" style="width: 55%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">The <em>CtScan</em> module window.</span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To simulate a full rotation, set the <span class="guilabel">Total Angle [°]</span> to <code class="code docutils literal notranslate"><span class="pre">360</span></code> degree.</p>
+<p>The angular steps define the number of projections simulated. A good estimation to suffice the Nyquist-Shannon theorem for the Feldkamp reconstruction is to choose <img class="math" src="_images/math/80226da4f343cbf8f0c3d63c02b440b8cda104d4.png" alt="P"/> projections based on the sampling points <img class="math" src="_images/math/d2e6ec485d5900ee499e26a2f6c96b84330554ad.png" alt="S"/> along the object. <span id="id2">[<a class="reference internal" href="references.html#id3" title="Faycal Kharfi. Mathmatics and Physics of Computed Tomography (CT): Demonstrations and Practical Examples. IntechOpen, 2013. doi:10.5772/52351.">2</a>]</span></p>
+<div class="math">
+<p><img src="_images/math/2d064722ce0ac91d535e1d0f4063d7b2bd77ddac.png" alt="P \ge S \cdot \frac{\pi}{2}"/></p>
+</div><p>The sampling points along the object are defined by the detector width. In this case 250 px.</p>
+<div class="math">
+<p><img src="_images/math/bcd0dd5ccbd79da8cab29182ad6206ff56ef0d61.png" alt="P \ge 250 \cdot \frac{\pi}{2} \approx 392.69"/></p>
+</div><p>Including a small buffer, <img class="math" src="_images/math/80226da4f343cbf8f0c3d63c02b440b8cda104d4.png" alt="P"/> is set as <span class="guilabel">Number of Steps</span> to <code class="code docutils literal notranslate"><span class="pre">400</span></code>. The <span class="guilabel">Angle Step Size [°]</span> will be automatically calculated and display <code class="code docutils literal notranslate"><span class="pre">0.9</span></code>.</p>
+<p>Next choose an output <span class="guilabel">directory</span> for the projection files and enter a <span class="guilabel">File Name</span> for the projection files. In this demonstration, the name <code class="code docutils literal notranslate"><span class="pre">rotor</span></code> is chosen.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">#</span></code> directory is a placeholder for the <em>Default Directory</em>, which can be set in the settings: From the menu bar, select <span class="guilabel">Tools</span> → <a class="reference internal" href="_images/16x16_preferences-system.png"><img alt="icon-settings" src="_images/16x16_preferences-system.png" style="width: 16px;" /></a> <span class="guilabel">Settings</span>.</p>
+</div>
+<p>As export <span class="guilabel">File Type</span>, either as a stack of <span class="guilabel">TIFF</span> images or the <span class="guilabel">BAM CT</span> format can be chosen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><strong>TIFFs:</strong> Each projection image will be saved as a single <code class="code docutils literal notranslate"><span class="pre">.tif</span></code> file. A projection number will be added to the file name. If this format is chosen, <em>aRT</em>ist’s reconstruction software will not be able to reconstruct the CT scan, since the geometrical settings are not saved separately.</p></li>
+<li><p><strong>BAM CT:</strong> Is a format where all projections are stored in a single <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file. It has a header of variable size, followed by the raw data of the projection images. <em>aRT</em>ist’s Feldkamp reconstruction software is able to reconstruct scans from this file format, since the geometric settings are stored in the <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file. A detailed documentation of the <code class="code docutils literal notranslate"><span class="pre">.dd</span></code> file format can be found under <a class="reference external" href="bamct_file_format.html">BAM CT File Format</a>.</p></li>
+</ul>
+</div>
+<p>For this simple <em>CtScan</em>, set the <span class="guilabel">File Type</span> output to <span class="guilabel">TIFFs</span> (as shown for example in <a class="reference internal" href="#ctscanwindow"><span class="std std-numref">Fig. 15</span></a>). With a click on the <a class="reference internal" href="_images/16x16_compute-run.png"><img alt="icon-run" src="_images/16x16_compute-run.png" style="width: 16px;" /></a> <span class="guilabel">Run</span> button the scan simulation will start. During the scan, the circular rotation of <em>Rotor</em> around its own rotation centre can be observed in the virtual scene. The simulated projections will be saved as enumerated <code class="code docutils literal notranslate"><span class="pre">.tif</span></code> files on the file system.</p>
+</section>
+<section id="ctscan-setup">
+<h2>CtScan Setup<a class="headerlink" href="#ctscan-setup" title="Permalink to this heading"></a></h2>
+<p id="quickstartctctscansetup">In the previous section <a class="reference internal" href="#quickstartctasimplectscan"><span class="std std-ref">A Simple CT Scan</span></a> the basic functionality of the <em>CtScan</em> module has been demonstrated. Therefore, a template <em>aRT</em>ist project has been provided, which already included definitions of the basic components of a CT system. Generally for a CT scan simulation, there are several parameters to be considered as displayed in <a class="reference internal" href="#quickstartctcomponents"><span class="std std-numref">Fig. 16</span></a>.</p>
+<figure class="align-default" id="id14">
+<span id="quickstartctcomponents"></span><a class="reference internal image-reference" href="_images/QuickStartCT_Components.svg"><img alt="_images/QuickStartCT_Components.svg" src="_images/QuickStartCT_Components.svg" width="95%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Overview of the basic components and settings of the <em>CtScan</em> module (scattering excluded) <span id="id3">[<a class="reference internal" href="references.html#id4" title="Felix Binder, Carsten Bellon, Florian Wohlgemuth, and Tino Hausotte. Ein praxisnaher Leitfaden für computertomografische Untersuchungen mit der radiografischen Simulationsumgebung aRTist. In DGZfP Jahrestagung 2021. 2021. URL: https://jahrestagung.dgzfp.de/portals/jt2021/bb176/inhalt/p4.pdf.">1</a>]</span></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For that reason, the following sections will cover the necessary setups to define a CT scan model with <em>aRT</em>ist from scratch, which later on can be exercised in the <a class="reference internal" href="#ctmoduleexamples"><span class="std std-ref">Examples</span></a> section.</p>
+<section id="assembly-setup">
+<h3>Assembly Setup<a class="headerlink" href="#assembly-setup" title="Permalink to this heading"></a></h3>
+<p id="quickstartctassemblysetup">In this first section, the assembly setup will be covered. It includes the geometrical setup for the three main components (X-ray source, detector, measurement object) and defines the surrounding environment.</p>
+<figure class="align-default" id="id15">
+<span id="quickstartctassemblylist"></span><a class="reference internal image-reference" href="_images/QuickStartCT_AssemblyList.svg"><img alt="_images/QuickStartCT_AssemblyList.svg" src="_images/QuickStartCT_AssemblyList.svg" width="65%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Exemplary overview of the setup panel with the environment material definition, the assembly list and the transformation parameters of the selected tube.</span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In many scenarios, the environmental material, which is part of the simulated attenuation, can be used with the standard material <em>air</em>. By default <em>air</em> is defined as a simplified composition of nitrogen, oxygen and argon. The definition of air or any other material can be defined in the <span class="guilabel">Materials…</span> editor, which can be found in the <span class="guilabel">Tools</span> menu of <em>aRT</em>ist. The resulting attenuation coefficients can be viewed with the <span class="guilabel">AttenuationViewer</span> and are based on the ENDF/B-VIII.0 database <span id="id4">[<a class="reference internal" href="references.html#id5" title="D.A. Brown and M.B. Chadwick and R. Capote and A.C. Kahler and A. Trkov and M.W. Herman and A.A. Sonzogni and Y. Danon and A.D. Carlson and M. Dunn and D.L. Smith and G.M. Hale and G. Arbanas and R. Arcilla and C.R. Bates and B. Beck and B. Becker and F. Brown and R.J. Casperson and J. Conlin and D.E. Cullen and M.-A. Descalle and R. Firestone and T. Gaines and K.H. Guber and A.I. Hawari and J. Holmes and T.D. Johnson and T. Kawano and B.C. Kiedrowski and A.J. Koning and S. Kopecky and L. Leal and J.P. Lestone and C. Lubitz and J.I. Márquez Damián and C.M. Mattoon and E.A. McCutchan and S. Mughabghab and P. Navratil and D. Neudecker and G.P.A. Nobre and G. Noguere and M. Paris and M.T. Pigni and A.J. Plompen and B. Pritychenko and V.G. Pronyaev and D. Roubtsov and D. Rochman and P. Romano and P. Schillebeeckx and S. Simakov and M. Sin and I. Sirakov and B. Sleaford and V. Sobes and E.S. Soukhovitskii and I. Stetcu and P. Talou and I. Thompson and S. van der Marck and L. Welser-Sherrill and D. Wiarda and M. White and J.L. Wormald and R.Q. Wright and M. Zerkle and G. Žerovnik and Y. Zhu. ENDF/B-VIII.0: The 8th Major Release of the Nuclear Reaction Data Library with CIELO-project Cross Sections, New Standards and Thermal Scattering Data. Nuclear Data Sheets, 148:1-142, 2018. Special Issue on Nuclear Reaction Data. URL: https://www.sciencedirect.com/science/article/pii/S0090375218300206, doi:https://doi.org/10.1016/j.nds.2018.02.001.">3</a>]</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a material is added or modified, the material can either be defined by its structural formula or by a mass fraction. If the material is defined by a mass fraction, the relative mass fractions will always be normalized to 1.</p>
+</div>
+<p>The assembly list contains by default the <em>Source</em> and the <em>Detector</em>. Both elements don’t have a material assigned in the assembly list. The material dependend properties for the <em>Source</em> and the <em>Detector</em> will be covered in the <a class="reference internal" href="#quickstartctsourcesetup"><span class="std std-ref">Source Setup</span></a> and the <a class="reference internal" href="#quickstartctdetectorsetup"><span class="std std-ref">Detector Setup</span></a> section. Any surface model (.stl, .ply, .obj or .vtk) can be imported into the assembly list with the <span class="guilabel">Open…</span> dialogue in the <span class="guilabel">File</span> menu. Additionally, simple geometries like tubes, ellipsoids or cuboids can be generated by <em>aRT</em>ist with the <span class="guilabel">Solid</span> module.</p>
+<p>In computed tomography, the ratio <img class="math" src="_images/math/1c474ad3035c533bcd8b9349e737fdeb97bbd501.png" alt="M"/> of the distance between the X-ray source and the object rotation axis (abbr.: <img class="math" src="_images/math/daa82193d15499c295f0ad4d1d4f8585550c0b17.png" alt="SOD"/>) and the distance between the source and the detector (abbr.: <img class="math" src="_images/math/c1b52b4e4f5eb45e24af6004259d4db5f76be8cc.png" alt="SDD"/>) is an important geometrical parameter.</p>
+<div class="math">
+<p><img src="_images/math/684992e4fc446b789033c9e803733e58a907e2f8.png" alt="M = \frac{SOD}{SDD}"/></p>
+</div><p>This ratio, also called <em>magnification</em>, is used in the reconstruction process to scale the acquired projections in order to reconstruct the actual size of the measured volume. Therefore, the relative position between the X-ray source and the detector in <em>aRT</em>ist has to be adjusted. By default, the source and the detector are placed along the global z-Axis with a distance of 100 mm and the centrepoint of the detector plane as origin of the global coordinate system. Each object in the assembly list can be adjusted by its position, orientation and size inside the scene. Therefore, each object has to be selected from the assembly list (compare <a class="reference internal" href="#quickstartctassemblylist"><span class="std std-numref">Fig. 17</span></a>.) and can be adjusted in the transformation section either using the <a class="reference internal" href="_images/22x22_world-coordinate-system.png"><img alt="icon-world" src="_images/22x22_world-coordinate-system.png" style="width: 22px;" /></a> <strong>world coordinate system</strong> or the <a class="reference internal" href="_images/22x22_object-coordinate-system.png"><img alt="icon-local" src="_images/22x22_object-coordinate-system.png" style="width: 22px;" /></a> <strong>local coordinate system</strong>, which is based on a minimum bounding box that will be fitted automatically if an object is imported into the scene. By default <em>aRT</em>ist will define the X-ray direction based on the line direction between the source centrepoint and the detector centrepoint.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If <em>McRay</em> scattering is enabled, the default position of the X-ray source in positive direction of the global z-axis shall not be changed, since the internal definition of the <em>McRay</em> module depends on this axis definition.</p></li>
+<li><p>To avoid ambiguities, every orientation transformation will be applied first along the selected z-axis, then the x-axis and last the y-axis. This sequence will be applied for every change in the transformation tab of the selected object.</p></li>
+</ul>
+</div>
+<p>For more information on the available coordinate systems in <em>aRT</em>ist follow to <a class="reference internal" href="tutorial_virtual_scene.html#thevirtualscenechapter"><span class="std std-ref">The Virtual Scene</span></a> section. More details about transforming an object inside the scene please have a look at the <a class="reference internal" href="tutorial_positioning_orientation_size.html#positionorientationsizechapter"><span class="std std-ref">Position, Orientation &amp; Size</span></a> chapter.</p>
+</section>
+<section id="source-setup">
+<h3>Source Setup<a class="headerlink" href="#source-setup" title="Permalink to this heading"></a></h3>
+<p id="quickstartctsourcesetup">In industrial CT systems the operator is usually in control of the X-ray tube parameters, like the acceleration voltage and the tube current, which are important to adjust the system on an individual measurement object. In <em>aRT</em>ist both settings can be found in the <em>Source</em> tab, even though the acceleration voltage is included into the spectrum definition, which can be generated by the <em>spectrum calculator</em>.</p>
+<figure class="align-default" id="id16">
+<span id="quickstartctsourcetab"></span><a class="reference internal image-reference" href="_images/QuickStartCT_SourceTab.svg"><img alt="_images/QuickStartCT_SourceTab.svg" src="_images/QuickStartCT_SourceTab.svg" width="55%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Overview of the source tab in <em>aRT</em>ist highlighted with the essential menus to define a X-ray tube.</span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><em>aRT</em>ist supports two different ways to define the spectrum of a X-ray tube. Both can be found in the <em>spectrum calculator</em> menu located at the <em>Source</em> tab. Within this extra window, either a simple monochromatic tube (Tube: <em>Mono</em>) or a general model (Tube: <em>General</em>) can be chosen. The general spectrum calculator supports X-ray tubes with a reflection or a transmission target and is based on the work of Deresch et al. <span id="id5">[<a class="reference internal" href="references.html#id6" title="A. Deresch, C. Bellon, and G.-R. Jaenisch. A general spectrum model for x-ray generators. NDT &amp; E International, 79:92–97, apr 2016. doi:10.1016/j.ndteint.2015.12.007.">4</a>]</span>. The calculated spectrum is displayed in the <em>Soure</em> tab as a function of the acceleration voltage and the number of photons.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The target thickness of the spectrum calculator will only be used if a transmission target is defined.</p></li>
+<li><p>The settings <span class="guilabel">Maximum Voltage</span>, <span class="guilabel">Maximum Current</span> and <span class="guilabel">Maximum Power</span> are not mandatory for the calculation.</p></li>
+<li><p>If more than 128 sampling points are defined by the acceleration voltage and the resolution, <em>aRT</em>ist will prompt to reduce the calculated spectrum to 128 datapoints, which is sufficient for most use cases.</p></li>
+</ul>
+</div>
+<p>The tube current can be set in the in the <span class="guilabel">Exposure</span> menu and adjusts the intensity of the defined X-ray source.</p>
+<p><em>aRT</em>ist supports three general types of focal spot definitions, which can be adjusted in the <span class="guilabel">Focal spot</span> menu. By default every focal spot is defined as a single point inside the focal spot plane. If the <span class="guilabel">Spot type</span> <code class="code docutils literal notranslate"><span class="pre">point</span></code> is chosen, the focal spot plane size will be ignored and replaced with a single point at the defined position in the assembly list. Alternatively, either a regular grid of <img class="math" src="_images/math/138c246b7da8e2d02659b29acbb91cd3c09ed738.png" alt="m \times n"/> focal spot points or a randomly distributed number of <img class="math" src="_images/math/2700d442673123c2ba492b6449cef7d169bfeb89.png" alt="m"/> focal spot points can be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The <span class="guilabel">Spot type</span> entries in <em>aRT</em>ist are examples. Every regular grid combination of <img class="math" src="_images/math/138c246b7da8e2d02659b29acbb91cd3c09ed738.png" alt="m \times n"/> spots or <img class="math" src="_images/math/2700d442673123c2ba492b6449cef7d169bfeb89.png" alt="m"/> random distributed spots can be used.</p></li>
+<li><p>Every additional defined focal spot point will increase the necessary computational time for a single projection, since every spot is connected to every pixel of the defined detector.</p></li>
+<li><p>If a single point <img class="math" src="_images/math/9b869dfaf88e7d15c6352109f7c505b75f49c17f.png" alt="m &gt; 1"/> is chosen, the focal spots will be randomly distributed with a Poisson disc pattern, to centralize the focal spots to the centre of the focal spot plane and avoid overlapping.</p></li>
+</ul>
+</div>
+<p>Hence every focal spot is defined a single point, the shape of a focal spot plane can be adjusted with a focal spot weight. This weight can either be loaded as an image, which will be converted to a normalized weight ranging from <img class="math" src="_images/math/8eaa8b806b3f29007cec04916ea6af5d0e02e841.png" alt="\left[0,1\right]"/> or it can be generated with an additional focal spot image generator. The integrated generator for the focal spot weights is described in the chapter <a class="reference internal" href="tutorial_xray_source.html#tutorialxraysourcespotintensityprofile"><span class="std std-ref">Spot Intensity Profile</span></a> of the X-ray source tutorial.</p>
+<figure class="align-default" id="id17">
+<span id="quickstartctfocalspotmechanic"></span><a class="reference internal image-reference" href="_images/QuickStartCT_FocalSpotMechanic.svg"><img alt="_images/QuickStartCT_FocalSpotMechanic.svg" src="_images/QuickStartCT_FocalSpotMechanic.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Image projection (A and C) of an 1:1 detector in <em>aRT</em>ist with a distance of 5 mm between source and detector (1000x1000 px). Figure (A) is a raw projection defined by a 5x5 focal spot grid. (C) is the weighted result of the raw projection (A) and the gaussian focal spot weight (B). <span id="id6">[<a class="reference internal" href="references.html#id4" title="Felix Binder, Carsten Bellon, Florian Wohlgemuth, and Tino Hausotte. Ein praxisnaher Leitfaden für computertomografische Untersuchungen mit der radiografischen Simulationsumgebung aRTist. In DGZfP Jahrestagung 2021. 2021. URL: https://jahrestagung.dgzfp.de/portals/jt2021/bb176/inhalt/p4.pdf.">1</a>]</span></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#quickstartctfocalspotmechanic"><span class="std std-numref">Fig. 19</span></a> shows exemplary the mechanics behind the spot distribution and the spot intensity profile. Please note that the displayed blurriness of the projections (A) and (C) are a result of the 5 mm distance between the source and detector. Alternatively, a pinhole setup as shown in <a class="reference internal" href="tutorial_xray_source.html#spot4x4imageviewer"><span class="std std-numref">Fig. 90</span></a> can be used to further visualize the distribution of the focal spot.</p>
+</section>
+<section id="detector-setup">
+<h3>Detector Setup<a class="headerlink" href="#detector-setup" title="Permalink to this heading"></a></h3>
+<p id="quickstartctdetectorsetup">The last mandatory setup to simulate a full CT scan with <em>aRT</em>ist is the detector setup. <em>aRT</em>ist supports out of the box a variety of different detector types. However, in this guide the two most versatile detector types <span class="guilabel">1:1</span> and <span class="guilabel">flatpanel</span> will be described. An overview of the available detector settings is given in <a class="reference internal" href="#quickstartctdetectorpanel"><span class="std std-numref">Fig. 20</span></a>.</p>
+<figure class="align-default" id="id18">
+<span id="quickstartctdetectorpanel"></span><a class="reference internal image-reference" href="_images/QuickStartCT_DetectorPanel.svg"><img alt="_images/QuickStartCT_DetectorPanel.svg" src="_images/QuickStartCT_DetectorPanel.svg" width="75%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Overview of the common setup options of the detector panel in <em>aRT</em>ist.</span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The settings in <a class="reference internal" href="#quickstartctdetectorpanel"><span class="std std-numref">Fig. 20</span></a> are set by default if a new <code class="code docutils literal notranslate"><span class="pre">.artist</span></code> project is created. In the <span class="guilabel">Geometry</span> tab, the size and the resolution of the detector can be adjusted. By default a detector with the actual size of <img class="math" src="_images/math/590e5326751dd79d288b883f5a5155451f4d2fe3.png" alt="100x100 \mathrm{mm}"/> is created and placed at the origin of the scene. This default detector consists of <img class="math" src="_images/math/ad31d1d5431810be69c914990ff4fca958b1cb8f.png" alt="1000x1000 \mathrm{px}"/> which results in a resolution/pixelpitch of <img class="math" src="_images/math/0761c176a92a74d65c58c5c51af032ae9d13ab82.png" alt="0.1 \mathrm{mm}"/>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>By selecting either <span class="guilabel">Size [mm]</span>, <span class="guilabel">Pixel</span> or <span class="guilabel">Res. [mm]</span> in the geometry tab, the selected column will be fixed and automatically calculated if one of the other columns is changed.</p></li>
+<li><p>By default the pixels are considered as squares. To disable this boundary, the <span class="guilabel">square pixel</span> button next to the resolution column has to be disjointed.</p></li>
+</ul>
+</div>
+<p>In the geometry section the multi-sampling behavior can be adjusted, which is by default set to <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">dependent</span></code>. There are three options available for multi-sampling:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">dependent</span></code>: The pattern of the focal <span class="guilabel">Spot type</span> is mirrored on every pixel of the detector. The point of detection is the central point of each subpixel.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">nxm</span></code>: Every pixel is separated into a regular <img class="math" src="_images/math/138c246b7da8e2d02659b29acbb91cd3c09ed738.png" alt="m \times n"/> grid. The point of detection is the central point of each subpixel.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">n</span></code>: Every pixel is separated into <img class="math" src="_images/math/0f090cbd819c3ecf144007e718b58d5e2e6e442b.png" alt="n"/> subpixel based on a Poisson disc pattern. The point of detection is in the center of the Poisson discs.</p></li>
+</ul>
+<p>A quick visualization of the different detector mutli-sampling and focal spot type combinations can be seen in the following <a class="reference internal" href="#quickstartctdetectormultisampling"><span class="std std-numref">Fig. 21</span></a>.</p>
+<figure class="align-default" id="id19">
+<span id="quickstartctdetectormultisampling"></span><a class="reference internal image-reference" href="_images/QuickStartCT_DetectorMultisamplingGrid.svg"><img alt="_images/QuickStartCT_DetectorMultisamplingGrid.svg" src="_images/QuickStartCT_DetectorMultisamplingGrid.svg" width="80%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text">Overview of the multi-sampling behavior for different source-detector combinations.</span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sub figures C and D in <a class="reference internal" href="#quickstartctdetectormultisampling"><span class="std std-numref">Fig. 21</span></a> show that if multi-sampling is used without the <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">dependent</span></code> option, the computational effort will increase exponentially, which results in a longer computational time for each projection.</p>
+</div>
+<p>In the <span class="guilabel">detector type</span> field at the <span class="guilabel">Characteristics</span> section a specific detector can be selected. By default the <code class="code docutils literal notranslate"><span class="pre">1:1</span></code> detector is selected. The 1:1 detector performs a direct transformation of radiant exposure <img class="math" src="_images/math/1e70a5477ef797de92eab8231f9b3c71404f1ecd.png" alt="\left( \mathrm{\frac{J}{m^2}} \right)"/> to grey values (<img class="math" src="_images/math/0d80d7cbea424c4b57f9aa09bbe842ed99145b37.png" alt="\mathrm{GV}"/>). By selecting <span class="guilabel">Tools</span> <img class="math" src="_images/math/73676a43be371f6b42a5fd92bb872e3a26ecdb5c.png" alt="\rightarrow"/> <span class="guilabel">Detector Properties</span> from the main menu, an overview of the selected detector type characteristic is provided as seen in <a class="reference internal" href="#quickstartct1on1dectorviewer"><span class="std std-numref">Fig. 22</span></a>.</p>
+<figure class="align-default" id="id20">
+<span id="quickstartct1on1dectorviewer"></span><a class="reference internal image-reference" href="_images/QuickStartCT_1-1DetectorViewer.png"><img alt="_images/QuickStartCT_1-1DetectorViewer.png" src="_images/QuickStartCT_1-1DetectorViewer.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text">Detector viewer settings of the 1:1 detector.</span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The displayed <span class="guilabel">Characteristic</span> curve visualizes the direct relation between the displayed grey values and detected energy density.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The displayed pixel size of the detector viewer is the defined pixel size of the <code class="code docutils literal notranslate"><span class="pre">.artdet</span></code> detector file. Any changes in the <span class="guilabel">Detector</span> tab will overwrite the data from the file.</p>
+</div>
+<p><em>aRT</em>ist needs at least a <code class="code docutils literal notranslate"><span class="pre">Characteristic</span></code> curve to describe the response behaviour of a detector. Such a “most minimal” detector is the  1:1 detector. Further elaborated detector models consist of at least an additional <code class="code docutils literal notranslate"><span class="pre">Noise</span></code> curve and optionally a <code class="code docutils literal notranslate"><span class="pre">Sensitivity</span></code> curve, which can be specified by an <code class="code docutils literal notranslate"><span class="pre">Attenuation</span></code> and <code class="code docutils literal notranslate"><span class="pre">Deposit</span></code> curve. The additional curves of an <em>aRT</em>ist detector model will be discussed later in the section <a class="reference internal" href="#quickstartctexperimentalmodel"><span class="std std-ref">Experimental Model</span></a>.</p>
+<p>On a new project, the <span class="guilabel">Exposure</span> settings are set like in <a class="reference internal" href="#quickstartctdetectorpanel"><span class="std std-numref">Fig. 20</span></a>. With the <span class="guilabel">reference point</span> option, a custom reference behavior can be enabled, which is useful in combination with the <code class="code docutils literal notranslate"><span class="pre">1:1</span></code> detector and therefore enabled by default. If the <span class="guilabel">reference point</span> option is enabled, a reference point according to the selected settings will be chosen and the <span class="guilabel">Exposure time [s]</span> automatically adjusted until the reference point reaches the threshold defined in <span class="guilabel">set to [D or GV]</span>. There are four ways to choose such a reference point:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">max</span></code>: The reference point is determined by the pixel with the maximum primary intensity (W/m²).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">min</span></code>: The reference point is determined by the pixel with the minimum primary intensity (W/m²).</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">center</span></code>: The reference point is the central pixel of the detector.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">picked</span></code>: The reference point is the pixel, which either can be set via coordinates or manually selected with the auto selection tool inside the <span class="guilabel">Image Viewer</span>.</p></li>
+</ul>
+<p>Alternatively, with the <span class="guilabel">reference point</span> set to <code class="code docutils literal notranslate"><span class="pre">off</span></code>, no reference point is used at all. In case of the <code class="code docutils literal notranslate"><span class="pre">1:1</span></code> detector a reference point is useful, since the defined energy densities are way higher than usual industrial CTs operate with. Consequently, without an adjusted <code class="code docutils literal notranslate"><span class="pre">exposure</span> <span class="pre">time</span></code> to compensate this, the resulting projections would appear to have very low contrast. Therefore, the default settings for the <span class="guilabel">Exposure</span> use the reference point <code class="code docutils literal notranslate"><span class="pre">max</span></code>, which finds the first pixel within the projection image that would reach a grey value of <code class="code docutils literal notranslate"><span class="pre">50000</span></code> (i.e., the pixel with the highest radiation intensity). The necessary exposure time that would lead to this grey value is a result of the complete simulation setup (assembly, source, detector). In our example, it is automatically calculated to be 433 weeks, 6 hours, 49 minutes and 2 seconds.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If a reference point is selected the <code class="code docutils literal notranslate"><span class="pre">exposure</span> <span class="pre">time</span></code> will automatically be adjusted every time a relevant parameter changes, like the distance between source and detector or the definition of the source or the detector. The <code class="code docutils literal notranslate"><span class="pre">exposure</span> <span class="pre">time</span></code> is only approximated and will be calculated correctly if the simulation is actually run.</p></li>
+<li><p>Due to scattering or small deviations of the Monte Carlo simulation, the calculated <code class="code docutils literal notranslate"><span class="pre">exposure</span> <span class="pre">time</span></code> can also vary for empty projections.</p></li>
+<li><p>The reference point may be influenced by the measurement object. For example if the <code class="code docutils literal notranslate"><span class="pre">center</span></code> reference point is chosen, the resulting grey value of the detector center depends also on any absorption caused by a measurement object in-between the source and the detector. Consequently, the resulting exposure times may change drastically, due to different penetration lengths</p></li>
+</ul>
+</div>
+<p>The last option in the <span class="guilabel">Exposure</span> section is the averaging option, which is also a common option in many CT systems. In a real system this usually means that the same projection is repeated at the same rotation angle by a specified <span class="guilabel"># of frames to average</span>. Averaging projections results in an stable mean grey value for individual pixels and in a reduction of overall noise which is demonstrated in <a class="reference internal" href="#quickstartctnoisyaveraging"><span class="std std-numref">Fig. 23</span></a>.</p>
+<figure class="align-default" id="id21">
+<span id="quickstartctnoisyaveraging"></span><a class="reference internal image-reference" href="_images/QuickStartCT_NoisyAveraging.svg"><img alt="_images/QuickStartCT_NoisyAveraging.svg" src="_images/QuickStartCT_NoisyAveraging.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text">Exemplary noisy projection without averaging (left) and with #3 frames averaged (right).</span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In order to reduce the computational effort and therefore reduce the computation time per projection, <em>aRT</em>ist does not simply calculate a series of images and averages them, but changes temporarily the energy density proportional to the <span class="guilabel"># of frames to average</span> of the corresponding signal to noise ratio (abbr.: SNR, see <a class="reference internal" href="#quickstartctaveragingexample"><span class="std std-numref">Fig. 24</span></a>). In that way, the overall noise level will be reduced with only a single simulated projection per angle iteration.</p>
+<figure class="align-default" id="id22">
+<span id="quickstartctaveragingexample"></span><a class="reference internal image-reference" href="_images/QuickStartCT_AveragingExample.svg"><img alt="_images/QuickStartCT_AveragingExample.svg" src="_images/QuickStartCT_AveragingExample.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text">Example of the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames (detector type: ST-VI Dynamix SK 7083).</span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the calculated energy densities exceed the temporary density axis, the SNR curve will be extrapolated based on the linear slope of the last two values of the curve. However, this may result in a faster saturation if averaging is enabled.</p>
+</div>
+<p>With the parameter override section, a manual override of the detector parameters can be enabled. By default <em>aRT</em>ist uses the parameters of the characteristics for unsharpness or noise, which are defined either by selecting a provided detector type or by loading a custom detector file. The unsharpness model in <em>aRT</em>ist follows the guideline as described in the ASTM E2597/E2597M-14 standard. <span id="id7">[<a class="reference internal" href="references.html#id7" title="ASTM E2597/E2597M-14. Practice for Manufacturing Characterization of Digital Detector Arrays. doi:10.1520/e2597_e2597m-14.">5</a>]</span>
+Any detector unsharpness contribution is applied as a 2D Gaussian convolution. The <code class="code docutils literal notranslate"><span class="pre">Unsharpness</span> <span class="pre">[mm]</span></code> and the <code class="code docutils literal notranslate"><span class="pre">Long</span> <span class="pre">range</span> <span class="pre">unsharpness</span> <span class="pre">[mm]</span></code> are the standard deviations of the two 2D Gaussian functions, which contribute to the overall unsharpness model of the detector. Additionally, the <code class="code docutils literal notranslate"><span class="pre">Long</span> <span class="pre">range</span> <span class="pre">unsharpness</span> <span class="pre">contribution</span> <span class="pre">[%]</span></code> is a linear scaling factor according to the ASTM E2597/E2597M-14 standard. <span id="id8">[<a class="reference internal" href="references.html#id7" title="ASTM E2597/E2597M-14. Practice for Manufacturing Characterization of Digital Detector Arrays. doi:10.1520/e2597_e2597m-14.">5</a>]</span>
+Furthermore, using the <code class="code docutils literal notranslate"><span class="pre">noise</span> <span class="pre">factor</span></code> in the override mode allows to manually scale the standard deviation of the SNR (compare <span id="id9">[<a class="reference internal" href="references.html#id8" title="DIN EN 14784-1:2005-11. Zerstörungsfreie Prüfung - Industrielle Computer-Radiographie mit Phosphor-Speicherfolien - Teil 1: Klassifizierung der Systeme - Deutsche Fassung EN 14784-1:2005. doi:10.31030/9626403.">6</a>]</span>).</p>
+<p>The last section allows to use a <span class="guilabel">Flat Field Correction</span> in <em>aRT</em>ist. In actual CT systems, this usually requires a set of dark and bright images which are used for a gain and offset correction of each projection. In <em>aRT</em>ist only a single free beam image is used to normalize a projection. For that purpose, the internal flat field generator can be used, which will use the current scene settings in order to get a free beam image. Alternatively, an external image can be loaded, too. If <span class="guilabel">apply flat field correction</span> is enabled, each projection <img class="math" src="_images/math/d0f09bf2e2466f7011a61761bbc8ecfccb096350.png" alt="P_i"/> of <img class="math" src="_images/math/0f090cbd819c3ecf144007e718b58d5e2e6e442b.png" alt="n"/> projections of a scan with will be corrected with the flat field image <img class="math" src="_images/math/3c82d2acc7b631acf335cd6649abbe2305feb652.png" alt="F"/> and scaled according to the mean of the flat field image <img class="math" src="_images/math/5da7429939f167fe0e27f4687b4bf286216fd7b1.png" alt="\overline{F}"/> to acquire the normalized projection <img class="math" src="_images/math/bcafcc10eecfd7ec8f01190a01d477330bc5bdc7.png" alt="N_i"/>.</p>
+<div class="math">
+<p><img src="_images/math/91d2f914fb239fba5f8cfd7d58a661ada2fb01d2.png" alt="N_i = \frac{P_i}{F} \cdot \overline{F} \qquad \mathrm{for} \quad i = 1, 2,  \dots n"/></p>
+</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span class="guilabel">apply flat field correction</span> is enabled, <em>aRT</em>ist will automatically set all objects temporarily invisible and acquire a free beam image of the current scene and settings if the simulation is run. Then the acquired flat field image will be stored in the <code class="code docutils literal notranslate"><span class="pre">.artist</span></code> project file. If the simulation is run and a flat field image is already present, changing the settings will not generate a new flat field image. Therefore, it is good practice to delete the stored flat field image if any relevant settings change.</p>
+</div>
+</section>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<p id="ctmoduleexamples">After getting familiar with the settings of the <em>CtScan</em> module and the general procedure to set up the assembly, the source and the detector, the following chapter will provide two additional examples. In the follow-up section <a class="reference internal" href="#quickstartctidealmodel"><span class="std std-ref">Ideal model</span></a> an aluminium measurand will be simulated with ideal settings (point source, no unsharpness, no noise) and compared to the original <code class="code docutils literal notranslate"><span class="pre">.stl</span></code> volume. The second example given in the section <a class="reference internal" href="#quickstartctexperimentalmodel"><span class="std std-ref">Experimental model</span></a> will adjust some of the settings to an exemplary CT system. This will include a custom source and detector definition. Both examples will be explained step by step and will be compared against the orignal volume. For the nominal to actual surface comparison, the external software <em>VG Studio MAX (v. 3.5)</em> is used.</p>
+<section id="ideal-model">
+<h3>Ideal Model<a class="headerlink" href="#ideal-model" title="Permalink to this heading"></a></h3>
+<p id="quickstartctidealmodel">For both examples, the <a class="reference download internal" download="" href="_downloads/ce0c4cf6d5e45f05757b035009c77aa5/FMT_StackCube.stl"><code class="xref download docutils literal notranslate"><span class="pre">FMT_StackCube.stl</span></code></a> (1.8 MB) is used as a non-trivial measurement object with different dimensional features. At first download the <code class="code docutils literal notranslate"><span class="pre">FMT_StackCube.stl</span></code> file and start a new <em>aRT</em>ist project. Next load the <code class="code docutils literal notranslate"><span class="pre">FMT_StackCube.stl</span></code> into the scene either via <span class="guilabel">File</span> <img class="math" src="_images/math/73676a43be371f6b42a5fd92bb872e3a26ecdb5c.png" alt="\rightarrow"/> <span class="guilabel">Open…</span> or by dragging and dropping the file right into the scene. Now start with the assembly setup by changing the position and orientation of the <span class="guilabel">Source</span>, the <span class="guilabel">Detector</span> and the <span class="guilabel">FMT_StackCube</span> according to the values given in <a class="reference internal" href="#quickstartctexamplesimulationsetup"><span class="std std-numref">Fig. 25</span></a>.</p>
+<figure class="align-default" id="id23">
+<span id="quickstartctexamplesimulationsetup"></span><a class="reference internal image-reference" href="_images/QuickStartCT_ExampleSimulationSetup.svg"><img alt="_images/QuickStartCT_ExampleSimulationSetup.svg" src="_images/QuickStartCT_ExampleSimulationSetup.svg" width="100%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text">Geometric setup of the example simulation.</span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>By default, new objects are assigned <span class="guilabel">Fe</span> as material. Since the stack cube is made of aluminium, change its material to <span class="guilabel">Al</span> in the <span class="guilabel">AssemblyList</span>. The environmental material <span class="guilabel">air</span> remains unchanged.</p>
+<p>For an ideal source, the tube type <span class="guilabel">Mono</span> has to be selected in the <span class="guilabel">Spectrum calculator</span>. The acceleration voltage of this exemplary tube is given by <code class="code docutils literal notranslate"><span class="pre">170</span> <span class="pre">kV</span></code>. Compute the spectrum and make sure that the graph of the source spectrum represents a monochromatic spectrum at 170 kV. For exposure, a high current of <code class="code docutils literal notranslate"><span class="pre">1000</span> <span class="pre">mA</span></code> is chosen. Since in an ideal simulation, the focal spot is a single point, the <span class="guilabel">Spot type</span> <code class="code docutils literal notranslate"><span class="pre">point</span></code> is chosen. In that way there is only one single point source to emit X-radiation.</p>
+<p>For the detector assembly, the <span class="guilabel">1:1</span> detector is chosen, which has no noise, no unsharpness and uses a linear characteristic between the energy density and the displayed grey value (compare <a class="reference internal" href="#quickstartct1on1dectorviewer"><span class="std std-numref">Fig. 22</span></a>). Change the default geometry of the detector to a squared size of <code class="code docutils literal notranslate"><span class="pre">102.4</span> <span class="pre">mm</span></code> with <code class="code docutils literal notranslate"><span class="pre">1024</span> <span class="pre">px</span></code> and a resolution of <code class="code docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">mm</span></code>. Keep the <span class="guilabel">Multisampling</span> as <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">dependent</span></code> and the <span class="guilabel">Curvature</span> as <code class="code docutils literal notranslate"><span class="pre">off</span></code>. In the <span class="guilabel">Exposure</span> tab, the standard settings are kept, which will guarantee that the projections gain enough contrast for the reconstruction, even though the detector characteristics demand a high exposure time. Since the <span class="guilabel">1:1</span> detector has no a noise curve, averaging can be disabled, which is the default for a new project. Further parameter overrides are not necessary to define a near ideal detector.</p>
+<p>Even though there is no noise or non-linearity of the detector pixels, a flat field correction will at least account for the cone beam characteristic and level out the grey values for each projection. Therefore, enable the flat field correction with the checkbox <span class="guilabel">apply flat field correction</span>.</p>
+<p>At this stage, it is useful to run the simulation (<span class="guilabel">Compute</span> <img class="math" src="_images/math/73676a43be371f6b42a5fd92bb872e3a26ecdb5c.png" alt="\rightarrow"/> <span class="guilabel">Run</span>) which will trigger the automated flat field acquisition routine. Furthermore, the preview of the current projection in the <span class="guilabel">ImageViewer</span> will be replaced by a correctly rendered projection.</p>
+<p>Now the CT setup is done and only the settings in the <span class="guilabel">CTScan</span> (<span class="guilabel">Modules</span> <img class="math" src="_images/math/73676a43be371f6b42a5fd92bb872e3a26ecdb5c.png" alt="\rightarrow"/> <span class="guilabel">CtScan</span>) module have to be adjusted. The simulation shall take <code class="code docutils literal notranslate"><span class="pre">1800</span></code> projections at a total angle of <code class="code docutils literal notranslate"><span class="pre">360</span> <span class="pre">°</span></code>. Next chose a suitable output <span class="guilabel">Directory</span> and a <span class="guilabel">File Name</span>. Be sure to use the <code class="code docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code> <span class="guilabel">File Type</span> with a depth of <code class="code docutils literal notranslate"><span class="pre">16</span> <span class="pre">bit</span></code>. Finally enable the Feldkamp reconstruction (<span class="guilabel">Run Feldkamp</span>) and click on the <span class="guilabel">Run</span> button to start the simulation.</p>
+<p>The object will now rotate around the global y-axis and the reconstruction will trigger automatically after all projections are acquired. If everything is finished the progress bar will disappear and the projection stack (<code class="code docutils literal notranslate"><span class="pre">.dd</span></code>), the reconstructed volume (<code class="code docutils literal notranslate"><span class="pre">.bd</span></code>) and the open volume project file (<code class="code docutils literal notranslate"><span class="pre">.vgi</span></code>) can be used for further analysis.</p>
+<p>As comparison, the complete <em>aRT</em>ist project file for this ideal simulation is available for download: <a class="reference download internal" download="" href="_downloads/b8da8bcb3f79a9aa13c98c90e6af0a06/Example_QuickStartCT_Ideal.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">Example_QuickStartCT_Ideal.aRTist</span></code></a> (2.8 MB).</p>
+</section>
+<section id="experimental-model">
+<h3>Experimental Model<a class="headerlink" href="#experimental-model" title="Permalink to this heading"></a></h3>
+<p id="quickstartctexperimentalmodel">In the previous section, an ideal model has been set up with <em>aRT</em>ist which neither accounts for noise nor unsharpness. Furthermore, the source and the detector were idealized in their characteristic behaviour (point source and 1:1 detector). In this example, a more realistic model will be created with custom source and detector setups. Generally, every time a new <em>aRT</em>ist project is created, it is advised to follow the same setup procedure as described before:</p>
+<ol class="arabic simple">
+<li><p>Load all objects into the scene</p></li>
+<li><p>Assign the correct object materials and the environmental material</p></li>
+<li><p>Set up the geometrical parameters within the assembly list</p></li>
+<li><p>Set up the source and define a focal spot</p></li>
+<li><p>Set up the detector settings</p></li>
+<li><p>Create a flat field image</p></li>
+<li><p>Finalize the <em>CtScan</em> module parameters and run the simulation</p></li>
+</ol>
+<p>For the experimental model the source and the detector setup have to change. The geometrical settings will be the same as in the ideal example. Hence, the previous model <a class="reference download internal" download="" href="_downloads/b8da8bcb3f79a9aa13c98c90e6af0a06/Example_QuickStartCT_Ideal.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">Example_QuickStartCT_Ideal.aRTist</span></code></a> (2.8 MB) will be used as basis, which skips steps 1 to 3.</p>
+<p>The spectrum of an industrial CT is usually polychromatic. Thus a <span class="guilabel">general</span> tube has to be simulated in the <span class="guilabel">Spectrum calculator</span>. Open the <span class="guilabel">Spectrum calculator</span> and select <code class="code docutils literal notranslate"><span class="pre">General</span></code> for the <span class="guilabel">Tube</span>. Enter the <span class="guilabel">Tube settings</span> according to <a class="reference internal" href="#quickstartctspectrumexperimental"><span class="std std-numref">Fig. 26</span></a>. The provided parameters represent a tungsten reflection tube with a maximum acceleration voltage of <code class="code docutils literal notranslate"><span class="pre">150</span> <span class="pre">kV</span></code> and a current of <code class="code docutils literal notranslate"><span class="pre">1.2</span> <span class="pre">mA</span></code>. For this simulated measurement, the maximum acceleartion voltage will be used, which is defined in the <span class="guilabel">voltage (kV)</span> setting. Additionally, an iron pre-filter with a thickness of <code class="code docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">mm</span></code> is also defined in the spectrum calculator in order to reduce beam hardening artefacts. Compute the spectrum and verify in the spectrum graph that a polychromatic spectrum is assigned.</p>
+<figure class="align-default" id="id24">
+<span id="quickstartctspectrumexperimental"></span><a class="reference internal image-reference" href="_images/QuickStartCT_SpectrumExperimental.svg"><img alt="_images/QuickStartCT_SpectrumExperimental.svg" src="_images/QuickStartCT_SpectrumExperimental.svg" width="40%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 26 </span><span class="caption-text">Exemplary settings of the spectrum calculator for the experimental model.</span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <span class="guilabel">target angle (deg)</span> and the <span class="guilabel">angle of e- incidence (deg)</span> are in this specific case both <code class="code docutils literal notranslate"><span class="pre">45°</span></code>. Depending on the actual construction of the target, both angles do not necessarily combine to <code class="code docutils literal notranslate"><span class="pre">90°</span></code>.</p>
+</div>
+<p>For the <span class="guilabel">exposure [mA or GBq]</span> a total of <code class="code docutils literal notranslate"><span class="pre">1</span> <span class="pre">mA</span></code> is used, which is a far more realistc value than the <code class="code docutils literal notranslate"><span class="pre">1000</span> <span class="pre">mA</span></code> that were used in the ideal example. Industrial CTs usually have an extended focal spot area in order to spread the thermal load and avert material burn-ins. In this specific setting, the size and the shape of the focal spot area is known. First the <span class="guilabel">Spot type</span> is changed from <code class="code docutils literal notranslate"><span class="pre">point</span></code> to <code class="code docutils literal notranslate"><span class="pre">3x3</span></code>. This results in a 3x3 regular grid of 9 X-ray sources. The general shape of the focal spot intensity is known be a 2D Gaussian. This can be integrated with the focal spot profile generator at default settings. If the focal spot weight is set, the size has to be adjusted and is set in this case to be <code class="code docutils literal notranslate"><span class="pre">0.01</span> <span class="pre">mm</span></code> in x- and y-direction.</p>
+<p>After finishing the source, the detector is set up next. The <code class="code docutils literal notranslate"><span class="pre">1:1</span></code> detector which has been used before does not support any noise which is usually present in every real detector. Therefore, a different <span class="guilabel">detector type</span> has to be used. There are several options in <em>aRT</em>ist to generate a custom detector. Either a detector can be generated with the <em>DigRad</em> (based on the ASTM E2597 <span id="id10">[<a class="reference internal" href="references.html#id7" title="ASTM E2597/E2597M-14. Practice for Manufacturing Characterization of Digital Detector Arrays. doi:10.1520/e2597_e2597m-14.">5</a>]</span>) or the <em>DetectorCalc</em> module (based on a layer model). Furthermore, a custom <code class="code docutils literal notranslate"><span class="pre">.artdet</span></code> file (see <a class="reference internal" href="fileformats_detector.html#detectordefinitionsection"><span class="std std-ref">Detector Definition</span></a>) can be generated and read into <em>aRT</em>ist. In this case, the provided <code class="code docutils literal notranslate"><span class="pre">flat</span> <span class="pre">panel</span></code> is used as <span class="guilabel">detector type</span> and adjusted to the simulation. Upon loading the <code class="code docutils literal notranslate"><span class="pre">flat</span> <span class="pre">panel</span></code> the default settings of the <code class="code docutils literal notranslate"><span class="pre">.artdet</span></code> file are loaded into the <span class="guilabel">Detector</span> tab. Hence, the size has to be reduced to the setting of the ideal example, which includes a squared size of <code class="code docutils literal notranslate"><span class="pre">102.4</span> <span class="pre">mm</span></code>, <code class="code docutils literal notranslate"><span class="pre">1024</span> <span class="pre">px</span></code> and a resolution of <code class="code docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">mm</span></code>. Since the source is already represented by 9 independent sources, the <span class="guilabel">Multisampling</span> option is kept at <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">dependent</span></code>. In the exposure tab, set the <span class="guilabel">reference point</span> <code class="code docutils literal notranslate"><span class="pre">off</span></code>. Now the exposure time is not adjusted for every projection but kept on a constant value, in this case <code class="code docutils literal notranslate"><span class="pre">1</span> <span class="pre">s</span></code>. Since the SNR curve of the <code class="code docutils literal notranslate"><span class="pre">flat</span> <span class="pre">panel</span></code> detector is quite noisy, an average of <code class="code docutils literal notranslate"><span class="pre">2</span></code> frames is applied.</p>
+<p>Even with averaging enabled, the <code class="code docutils literal notranslate"><span class="pre">flat</span> <span class="pre">panel</span></code> model is still quite noisy. To further reduce the noise contribution, override the <span class="guilabel">noise factor</span> to <code class="code docutils literal notranslate"><span class="pre">0.2</span></code>. The unsharpness settings of the detector are kept untouched. Now that all relevant settings are done, finish the detector setup with a new flat field image. Otherwise the old flat field image of the ideal example will be used, which will mislead the simulation.</p>
+<p>Last but not least, change the output <span class="guilabel">File Name</span> and the <span class="guilabel">Directory</span> in the <em>CtScan</em> module. All other settings in the <em>CtScan</em> module can be kept the same as in the ideal example. After each change has been applied correctly, run the simulation. Due to the 9-fold of the computational effort (9 sources), the calculation time per projection will increase according to the available resources of the calculating system. Again, if the simulation and the reconstruction is finished, the projection stack (<code class="code docutils literal notranslate"><span class="pre">.dd</span></code>), the reconstructed volume (<code class="code docutils literal notranslate"><span class="pre">.bd</span></code>) and the open volume project file (<code class="code docutils literal notranslate"><span class="pre">.vgi</span></code>) can be found in the output folder.</p>
+<p>The full example of the experimental model is provided as download: <a class="reference download internal" download="" href="_downloads/6227e088c1787b20dc6ac4a645a31412/Example_QuickStartCT_Experimental.aRTist"><code class="xref download docutils literal notranslate"><span class="pre">Example_QuickStartCT_Experimental.aRTist</span></code></a> (2.0 MB)</p>
+<p>Even though <em>aRT</em>ist can simulate projections and reconstruct the volume, any further analysis of the volumes has to be done outside of <em>aRT</em>ist. Therefore the open volume project files (<code class="code docutils literal notranslate"><span class="pre">.vgi</span></code>) can be imported into a volume analysis software like <em>VG Studio MAX</em>. Within <em>VG Studio MAX</em> both volumes have been treated equally. Which means that first a surface was determined (classic surface determination with self healing start contour enabled) and then the resulting volume was fitted against the ideal <code class="code docutils literal notranslate"><span class="pre">FMT_StackCube.stl</span></code> surface (feature based registration). The resulting deviation distributions are summarized in <a class="reference internal" href="#quickstartctcomparisonidealexperimental"><span class="std std-numref">Fig. 27</span></a>.</p>
+<figure class="align-default" id="id25">
+<span id="quickstartctcomparisonidealexperimental"></span><a class="reference internal image-reference" href="_images/QuickStartCT_ComparisonIdealExperimental.svg"><img alt="_images/QuickStartCT_ComparisonIdealExperimental.svg" src="_images/QuickStartCT_ComparisonIdealExperimental.svg" width="80%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27 </span><span class="caption-text">Nominal to actual comparison between the surfaces of the reconstructed volumes and the nominal surface of the FMT_StackCube.stl.</span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
+<p id="quickstartctsummary">In this guide, a basic procedure to set up a <em>CtScan</em> in <em>aRT</em>ist has been provided. Additionally, some of <em>aRT</em>ist’s hidden mechanics, like the handling of averaged images or the source dependent multi-sampling has been explained. Moreover, three examples with increasing complexity have been provided that show how to set up a CT scan from scratch or update an existing model with new parameters.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fileformats_vgi.html" class="btn btn-neutral float-left" title="VGI File Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_introduction.html" class="btn btn-neutral float-right" title="Introduction to Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+    <p></p>
+    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
+     
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

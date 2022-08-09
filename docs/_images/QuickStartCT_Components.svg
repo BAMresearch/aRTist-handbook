@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="216.2663mm"
+   height="105.10806mm"
+   viewBox="0 0 216.26629 105.10804"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="CtScanModule_Components.svg"
+   inkscape:export-filename="C:\Users\Felix Binder\HiDrive\Private\05_Publikationen\03_DGZfP 2021, Osnabrück\04_Manuskript\Grafiken\aRTist_Module.png"
+   inkscape:export-xdpi="400.04523"
+   inkscape:export-ydpi="400.04523"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path982" />
+    </marker>
+    <rect
+       x="37.737991"
+       y="24.347092"
+       width="74.461311"
+       height="65.20089"
+       id="rect901" />
+    <rect
+       x="263.01181"
+       y="39.844116"
+       width="74.272324"
+       height="87.123512"
+       id="rect891" />
+    <rect
+       x="190.25137"
+       y="54.018223"
+       width="84.666664"
+       height="38.364582"
+       id="rect885" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path981" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path978" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="307.5"
+     inkscape:cy="242.5"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="848"
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(27.865211,-8.381865)">
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="-18.440239"
+       y="75.902191"
+       id="text835"><tspan
+         sodipodi:role="line"
+         id="tspan833"
+         x="-18.440239"
+         y="75.902191"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583">Source setup:</tspan><tspan
+         sodipodi:role="line"
+         x="-18.440239"
+         y="80.752892"
+         style="stroke-width:0.264583"
+         id="tspan837">- Spectrum definition</tspan><tspan
+         sodipodi:role="line"
+         x="-18.440239"
+         y="85.603592"
+         style="stroke-width:0.264583"
+         id="tspan839">- Focal spot</tspan><tspan
+         sodipodi:role="line"
+         x="-18.440239"
+         y="90.454292"
+         style="stroke-width:0.264583"
+         id="tspan841">- Source current</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.750001"
+       id="rect843"
+       width="48.317165"
+       height="22.864977"
+       x="-21.781105"
+       y="70.155884" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="35.58601"
+       y="75.902176"
+       id="text835-9"><tspan
+         sodipodi:role="line"
+         id="tspan833-9"
+         x="35.58601"
+         y="75.902176"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583">Detector setup:</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="80.752876"
+         style="stroke-width:0.264583"
+         id="tspan841-6">- Size and resolution</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="85.603577"
+         style="stroke-width:0.264583"
+         id="tspan943">- Integration time</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="90.454277"
+         style="stroke-width:0.264583"
+         id="tspan905">- Averaging</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="95.304977"
+         style="stroke-width:0.264583"
+         id="tspan945">- Unsharpness</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="100.15568"
+         style="stroke-width:0.264583"
+         id="tspan909">- Noise</tspan><tspan
+         sodipodi:role="line"
+         x="35.58601"
+         y="105.00638"
+         style="stroke-width:0.264583"
+         id="tspan913">- Flatfield correction</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.75"
+       id="rect843-2"
+       width="56.254665"
+       height="38.550991"
+       x="32.245163"
+       y="70.155884" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="97.549789"
+       y="75.902191"
+       id="text835-9-0"><tspan
+         sodipodi:role="line"
+         x="97.549789"
+         y="75.902191"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         id="tspan896">Assembly setup:</tspan><tspan
+         sodipodi:role="line"
+         x="97.549789"
+         y="80.752892"
+         style="stroke-width:0.264583"
+         id="tspan921">- Position of source, detector and object</tspan><tspan
+         sodipodi:role="line"
+         x="97.549789"
+         y="85.603592"
+         style="stroke-width:0.264583"
+         id="tspan923">- Orientation source, detector and object </tspan><tspan
+         sodipodi:role="line"
+         x="97.549789"
+         y="90.454292"
+         style="stroke-width:0.264583"
+         id="tspan900">- Environmental material</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.750001"
+       id="rect843-2-9"
+       width="87.821907"
+       height="23.783056"
+       x="94.208931"
+       y="70.155884" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="-21.996086"
+       y="42.658604"
+       id="text835-9-3"><tspan
+         sodipodi:role="line"
+         x="-21.996086"
+         y="42.658604"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583"
+         id="tspan841-6-1">CtScan module:</tspan><tspan
+         sodipodi:role="line"
+         x="-21.996086"
+         y="47.509304"
+         style="stroke-width:0.264583"
+         id="tspan972">- Export format</tspan><tspan
+         sodipodi:role="line"
+         x="-21.996086"
+         y="52.360004"
+         style="stroke-width:0.264583"
+         id="tspan897">- Total angle</tspan><tspan
+         sodipodi:role="line"
+         x="-21.996086"
+         y="57.210705"
+         style="stroke-width:0.264583"
+         id="tspan974">- Number of steps</tspan><tspan
+         sodipodi:role="line"
+         x="-21.996086"
+         y="62.061401"
+         style="stroke-width:0.264583"
+         id="tspan895">- Direction of rotation</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:0.75"
+       id="rect843-2-1"
+       width="215.5163"
+       height="76.675568"
+       x="-27.490211"
+       y="36.439354" />
+    <text
+       xml:space="preserve"
+       id="text883"
+       style="font-size:5.64444px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect885)" />
+    <text
+       xml:space="preserve"
+       id="text889"
+       style="font-size:5.64444px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect891)" />
+    <text
+       xml:space="preserve"
+       id="text899"
+       style="font-size:5.64444px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect901)" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.88056px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.264583"
+       x="115.95003"
+       y="14.503172"
+       id="text835-9-0-7"><tspan
+         sodipodi:role="line"
+         id="tspan833-9-0-1"
+         x="115.95003"
+         y="14.503172"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583">Object:</tspan><tspan
+         sodipodi:role="line"
+         x="115.95003"
+         y="19.353872"
+         style="stroke-width:0.264583"
+         id="tspan923-5">- 3D model</tspan><tspan
+         sodipodi:role="line"
+         x="115.95003"
+         y="24.204571"
+         style="stroke-width:0.264583"
+         id="tspan969">- Material definition</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.750001"
+       id="rect843-2-9-8"
+       width="44.537395"
+       height="19.463192"
+       x="112.60918"
+       y="8.7568655" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2, 1;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
+       d="M 134.12192,28.315842 V 67.436377"
+       id="path971"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
