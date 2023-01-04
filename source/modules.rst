@@ -17,7 +17,7 @@ The :guilabel:`Modules` drop-down menu contains different modules that can all b
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Modules elements:
    
    modules-manage
