@@ -5,19 +5,22 @@
 Modules
 =======
 
-When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`) with the following areas.
+The :guilabel:`Modules` drop-down menu contains different modules that can all be docked in the docking area or be handled as separate windows (:numref:`neu_module`).
 
-* **Menu bar**, used to access detailed settings and commands.
-* **Toolbar**, used to access the most commonly used functions and viewer settings.
-* **Parameter panel**, used to control the current model parameters for the scene, X-ray source and detector.
-* **Virtual scene**, a 3D scene view of the radiographic setup.
-* **Docking area**, integrates additional program windows and modules. By default, the **Image Viewer** showing the simulated radiograph is placed here.
-* **Status bar** displays what's currently going on.
+.. _neu_module:	
+			
+.. figure:: pictures/neu_module.png
+    :alt: Picture of the dropdown Modules menu	
+    :width: 21.3%
+    
+    Modules Menu.
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: User interface elements:
-
+   :caption: Modules elements:
+   
+   modules-manage
    modules-imageviewer
    modules-solid
    modules-ctscan
@@ -25,3 +28,5 @@ When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`)
    modules-digrad
    modules-tomosynth
    modules-mcray
+
+
