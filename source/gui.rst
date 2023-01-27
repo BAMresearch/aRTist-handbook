@@ -15,6 +15,7 @@ When you open |artist|, you will see its main window (:numref:`guiMainWindow`) w
 :numref:`guiMainWindow` shows the default view of the user interface. The scene already contains two items: source and detector. The three main areas (parameter panel, virtual scene, docking area) can be scaled by clicking and dragging the edges of the respective areas.
 
 .. _guiMainWindow:
+
 .. figure:: pictures/gui-main-window.png
     :alt: aRTist main window
     :width: 100%
@@ -29,7 +30,5 @@ When you open |artist|, you will see its main window (:numref:`guiMainWindow`) w
 
    gui-menu-bar
    gui-scene
-   gui-setup
-   gui-source
-   gui-scattering
-   gui-detector
+   gui-parameter
+
