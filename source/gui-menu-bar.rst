@@ -1,14 +1,18 @@
 .. include:: _templates/icons.rst
 
+.. _MenuBarSection:
+
 Menu bar
 --------
-.. _MenuBarSection:
+
 
 The Menu bar consists of different drop-down menus with common Windows commands and program specific functions. Some of the menu entries can also be found in the toolbar indicated by the same icon. If that is the case, the icon is next to the command/option in this manual.
 
+.. _FileMenuSubsection:
+
 File menu
 ^^^^^^^^^
-.. _FileMenuSubsection:
+
 
 The :guilabel:`File` drop-down menu comprises commands referring to the current project.
 
@@ -30,11 +34,11 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 * **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
 * |16x16_window-close| **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
 
-
+.. _EditMenuSubsection:
 
 Edit menu
 ^^^^^^^^^
-.. _EditMenuSubsection:
+
 
 The :guilabel:`Edit` menu contains undo/redo functionalities with the project's history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.
 
@@ -53,10 +57,11 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 * |16x16_edit-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
 * |16x16_edit-delete| **Delete** removes selected parts from the *Assembly List*.
 
+.. _GeometryMenuSubsection:
 
 Geometry menu
 ^^^^^^^^^^^^^
-.. _GeometryMenuSubsection:
+
 
 The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more in-depth in the separate chapter.
 
@@ -79,10 +84,11 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 * |16x16_icon-arrange| **Arrange** is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: *none*, *-*, *center*, *+* are available for each of the three axes. The parts will be aligned with the first selected part.
 * |16x16_edit-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
 
+.. _ComputeMenuSubsection:
 
 Compute menu
 ^^^^^^^^^^^^^
-.. _ComputeMenuSubsection:
+
 
 The :guilabel:`Compute` menu includes the button to start a simulation and offers different options for the simulation.
 
@@ -99,10 +105,11 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 * **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumption and computing time.
 * **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labeled |16x16_image-preview| (not final) to set apart from final |16x16_image-final| results.
 
+.. _ModulesMenuSubsection:
 
 Modules menu
 ^^^^^^^^^^^^^
-.. _ModulesMenuSubsection:
+
 
 The :guilabel:`Modules` menu offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
 
@@ -123,9 +130,11 @@ The :guilabel:`Modules` menu offers the selection of the available extension mod
 * |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.
 * **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene.
 
+.. _ToolsMenuSubsection:
+
 Tools menu
 ^^^^^^^^^^
-.. _ToolsMenuSubsection:
+
 
 The :guilabel:`Tools` menu provides several dialogs to control the program.
 
@@ -147,9 +156,11 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 * |16x16_xray-tube| **Spectrum...** opens the X-ray spectrum generator.
 * |16x16_preferences-system| **Settings** opens the preferences dialog.
 
+.. _ViewMenuSubsection:
+
 View menu
 ^^^^^^^^^^^^^
-.. _ViewMenuSubsection:
+
 
 The :guilabel:`View` menu provides commands ot control the various rendering and display parameters. 
 
@@ -182,9 +193,11 @@ The :guilabel:`View` menu provides commands ot control the various rendering and
 * |16x16_open-dock| **Toggle Dock Visibility** switches the docking area on and off.
 * **Toggle Setup Visibility** switches the parameter panel on and off.
 
+.. _HelpMenuSubsection:
+
 Help menu
 ^^^^^^^^^
-.. _HelpMenuSubsection:
+
 
 The :guilabel:`Help` menu provides information about the program itself, its installation and its license status.
 
