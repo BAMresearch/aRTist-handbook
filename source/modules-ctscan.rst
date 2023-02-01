@@ -53,13 +53,16 @@ For an improved view deactivate the solid or minimize the opacity (double-click 
 
 **Advanced**
 
+By marking **Only selected objects** you can include chosen objects of your assembly in the simulation. 
+That means the selected objects rotate and the others do not. 
+To do this, you should select the corresponding components in the :ref:`Parameter Panel <ParameterPanel>` beforehand. Select a single object by clicking on it. 
+Select two or more by holding down the Ctrl key and clicking on the other components to be included in the simulation. 
+The components are selected when they are highlighted in blue.
+
 * **Direction** is used to choose between clockwise or counterclockwise direction.
 * **Scattering** is used to choose between off or McRay scatter-attitude.
 * **Interval [°]** sets the interval for using the same scatter image (to save some time by not recalculating for each projection).
  
-You may also choose to only include selected parts of your assembly in the simulation.
-
-
 .. _FeldkampSubsection:
 
 Feldkamp
@@ -107,7 +110,7 @@ Settings for Volume View:
 * **Level**
 * **Contrast**
 * Activate/Deactivate **Use 3D texture**
-* **Gradient**/**GradientROI** → choose between **All**, **Min/Max** or **Level/Contrast**
+* **Gradient**/ **GradientROI** → choose between **All**, **Min/Max** or **Level/Contrast**
 
 In **Positioning**, the scene is affected. It is possible to **Position** the voxel packet. With **Spacing**, the size of the scene can be influenced (in X, Y, Z).
 
