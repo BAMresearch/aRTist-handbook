@@ -92,4 +92,5 @@ Set the reference values for your new detector:
 * **Grey value**
 * **SNR unnormalized**
   
- Afterwards the new detector can be loaded and applied at **Parameter Panel** → **Detector** → **Characteristic** → **detector type** → **Extern**.
+ Afterwards the new detector can be loaded and applied at **Parameter Panel** → **Detector** → **Characteristic** → **detector type** → **Extern**. 
+ Another possibility is that the new detector with the file extension .aRTdet can also be drop-in to the aRTist scene.
