@@ -1,14 +1,12 @@
 .. include:: _templates/icons.rst
 
 .. _SolidSection:
+
 |32x32_icon-solid| Solid
 ========================
 
-
-
-.. 3.2	Solid (from existing tutorial)
-
 .. _GeometryTypeSubsection:
+
 Geometry Type
 -------------
 
@@ -25,6 +23,7 @@ It offers different geometric shapes to choose from:
 * step wedge
 
 .. _DimensionsSubsection:
+
 Dimensions
 ----------
 
