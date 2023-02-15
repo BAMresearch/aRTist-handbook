@@ -5,14 +5,12 @@
 McRay
 =====
 
-.. 3.7	McRay (incl. menu description)
-
 McRay is a Monte Carlo raytracing implementation of electron and photon transport. 
 This module forms a graphical interface for McRay, in order to configure and run simulations using it from within |artist|. 
-If you activate the inline help icon an additional tab (Help) will appear.
+If you activate the inline help icon an additional tab (Help) will appear (see: :ref:`Help menu <HelpMenuSubsection>`).
 In this user guide, the McRay module topics Expert, Manual, Cluster and Interactive are not being explained.
 
-A Run/Stop button and a progress bar are located at bottom of module window. The first four tabs expose the configuration in order of increasing complexity.
+A **Run/Stop** button and a progress bar are located at bottom of module window. The first four tabs expose the configuration in order of increasing complexity.
 
 .. _McRayBasicSubSection:
 
@@ -38,7 +36,7 @@ Options
 Internally most material data (attenuation-coefficients, differential scatter cross-sections, etc.) is kept in lookup structures for fast access. 
 The default value of 1 keV does not normally need to be changed, but for low-energy calculations, especially including fluorescence, a smaller value of e.g. 0.1 keV may be advisable.
 
-* **File prefix** is used to set a project name in this field. Default name is ‚ÄúNew‚Äù.
+* **File prefix** is used to set a project name in this field. Default name is ìNewî.
 
 Output directory
 ^^^^^^^^^^^^^^^^
@@ -91,8 +89,8 @@ Since the scattered X-ray photon has less energy, it has a longer wavelength and
 * **Pair production** considers pair production when elected.
 
 Pair production often refers specifically to a photon creating an electron-positron pair near a nucleus but can more generally refer to any neutral boson creating a 
-particle-antiparticle pair. In order for pair production to occur, the incoming energy of the interaction must be above a threshold in order to create the pair ‚Äì at least the total 
-rest mass energy of the two particles ‚Äì and that the situation allows both energy and momentum to be conserved.
+particle-antiparticle pair. In order for pair production to occur, the incoming energy of the interaction must be above a threshold in order to create the pair ñ at least the total 
+rest mass energy of the two particles ñ and that the situation allows both energy and momentum to be conserved.
 
 * **Fluorescence** considers flourescence when elected. Photons, and electrons if enabled, can excite the bound electrons of the material's atoms. During relaxation fluorescence photons, fluorescence electrons, and Auger electrons may be emitted.
 
@@ -107,7 +105,7 @@ the device under the influence of an electric field using classical mechanics. T
 
 * **Bremsstahlung** (photons) are created during electron interactions when elected and requires electron transport.
 
-The ‚Äúbraking radiation‚Äù or ‚Äúdeceleration radiation‚Äù is electromagnetic radiation produced by the deceleration of a charged particle when deflected by another charged particle, 
+The ìbraking radiationî or ìdeceleration radiationî is electromagnetic radiation produced by the deceleration of a charged particle when deflected by another charged particle, 
 typically an electron by an atomic nucleus. The moving particle loses kinetic energy, which is converted into a photon, thus satisfying the law of conservation of energy. 
 The term is also used to refer to the process of producing the radiation. Bremsstrahlung has a continuous spectrum, which becomes more intense and whose peak intensity shifts toward 
 higher frequencies as the change of the energy of the decelerated particles increases.
