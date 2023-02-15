@@ -88,6 +88,7 @@ Bar on the right
 |16x16_legend| Show legend opens a legend with grey or thickness values. Minimum and maximum values are determined by the display range. Height, width and position of the legend are adjustable.
 
 .. _ImageViewerToolsMenuSubsection:
+
 Tools Menu: ImageViewer
 -----------------------
 

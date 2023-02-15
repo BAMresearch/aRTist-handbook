@@ -5,17 +5,10 @@
 Manage Modules
 ==============
 
-Manage Modules (:numref:`modulesManage`) allows you to select that should be loaded when |artist| is started. The following modules can be activated or deactivated: 
-
-* :ref:`DetectorCalc <DetectorCalcSection>`, 
-* :ref:`CtScan <CtScanSection>`, 
-* :ref:`DigRad <DigRadSection>`, 
-* :ref:`McRay <McRaySection>` and 
-* :ref:`TomoSynth <TomoSynthSection>`
-
-Modules like :ref:`ImageViewer <ImageViewerSection>`, LogViewer and :ref:`Solid <SolidSection>` are obgligatory and cannot be disabled (:numref:`modulesManage`). 
-
-The changes will only take effect after a restart of aRTist.
+Manage Modules (:numref:`modulesManage`) lists all the installed modules and thier version.
+Unchecked modules are ignored at program start and cannot be used.  
+Modules can be installed for all users (**system**) or only for the current user (**user**). 
+Use the :guilabel:`Open aRTist package...` button for the dialog to install additional modules.
 
 .. _modulesManage:	
 			
