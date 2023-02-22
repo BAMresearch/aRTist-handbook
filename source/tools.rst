@@ -4,3 +4,9 @@
 
 Tools
 =====
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Tools elements:
+   
+   tools-spectrum
