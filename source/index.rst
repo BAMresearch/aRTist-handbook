@@ -40,6 +40,7 @@ Publisher
    installation
    gui
    modules
+   tools
    fileformats
    quickstart_ct
 
