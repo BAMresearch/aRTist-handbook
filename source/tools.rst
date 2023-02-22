@@ -9,4 +9,5 @@ Tools
    :maxdepth: 1
    :caption: Tools elements:
    
+   tools-attenuation-data
    tools-spectrum
