@@ -43,9 +43,9 @@ Bottom:
 * Enable/Disable **log x, log y, Lines, Grid** via checkboxes.
 * |22x22_document-open-folder| Spectrum from |artist| library. You can choose from four different spectra: Co-60, Ir-192, Se-75, Yb-169.
 * |22x22_document-save-as| Save current spectrum as a :code:`.xrs` file.
-* |22x22_xray-tube| Calculate x-ray tube spectrum opens the Spectrum calculator where you can make detailed adjustments to the tube. Important details of the current tube settings are displayed directly above the Graph/Text tabs. A more in-depth explanation of the spectrum calculator can be found in the :guilabel:`Tools` → :ref:`Spectrum <SpectrumSection>` section of this tutorial.
+* |22x22_xray-tube| Calculate x-ray tube spectrum opens the Spectrum calculator where you can make detailed adjustments to the tube. Important details of the current tube settings are displayed directly above the Graph/Text tabs. A more in-depth explanation of the spectrum calculator can be found in the :ref:`Spectrum <SpectrumSection>` section of this tutorial.
 * |22x22_plot-spectrum| Show current spectrum opens the current spectrum in a seperate window. Click and hold for a second or right-click for more options (**Show original spectrum, Show reduced spectrum or Show preview spectrum**).
-* |22x22_show-attenuation| Plot attenuation data displays the attenuation data for the current settings. In the separate section of this tutorial :guilabel:`Tools` under :ref:`Attenuation Data <AttenuationDataSection>` more information can be found.
+* |22x22_show-attenuation| Plot attenuation data displays the attenuation data for the current settings. In the separate section of this tutorial :ref:`Attenuation Data <AttenuationDataSection>` more information can be found.
 * |22x22_edit-pickposition| Show attenuated spectrum for picked position opens the Spectrum Picker. The incident beam is shown in black, the attenuated beam in blue (:numref:`guiSpectrumPicker`). You can dock the window in the docking area.
 
 .. _guiSpectrumPicker:
