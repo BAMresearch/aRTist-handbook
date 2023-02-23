@@ -5,7 +5,7 @@
 Setup Panel
 -----------
 
-The Setup of Parameter Panel is mainly pertinent for positioning items in the assembly.
+The :guilabel:`Setup` of Parameter Panel is mainly pertinent for positioning items in the assembly.
 
 The default settings of the Setup for the environment is air, for the Transformation are |16x16_world-coordinate-system| world coordinate system and |16x16_transformation-move| translate mode. This settings can be seen in :numref:`guiSetupDefault`.
 
@@ -23,8 +23,11 @@ Environment
 
 Open the drop-down menu and select an environmental material of your choice. 
 This material applies everywhere at the space of the scene outside of any part. 
-You can choose between the following materials: Al, Be, Cu, Fe, Mg, Mo, Ni, Pb, Pt, Ti, W, Pe (HDPE), air, water, glass or lead, void, Daunen, wood (oak/dry), Ta, Pe.
-In the Materials editor, these preset materials are provided with the comment (preset of aRTist). The default setting of the environment material is air.
+
+.. note::
+
+   You can choose between the following materials: :class:`Al`, :class:`Be`, :class:`Cu`, :class:`Fe`, :class:`Mg`, :class:`Mo`, :class:`Ni`, :class:`Pb`, :class:`Pt`, :class:`Ti`, :class:`W`, :class:`Pe (HDPE)`, :class:`air`, :class:`water`, :class:`glass` or :class:`lead`, :class:`void`, :class:`Daunen`, :class:`wood (oak/dry)`, :class:`Ta`, :class:`Pe`. 
+   These preset materials are provided with the comment: preset of |artist| in the |22x22_edit-materials| Materials editor.
 
 .. _SetupAssemblyListSubSection:
 
@@ -33,7 +36,7 @@ Assembly list
 
 The Assembly List consists of five columns (:numref:`guiEnvironmentAssembly`). 
 You can select an item from the assembly either from the list or the virtual scene. 
-Use therefore the Ctrl key on the keyboard and click on them with the left mouse. 
+Use therefore the :kbd:`Ctrl` key on the keyboard and click on them with the left mouse. 
 It will be highlighted blue in the list and marked with yellow corners in the virtual scene. 
 All subsequent items in the scene will be marked with white corners.
 
@@ -66,9 +69,9 @@ Under transformation you can find a number of options to manipulate and scale ea
 
 3.  Choose type of transformation: |16x16_transformation-rotate| rotate, |16x16_transformation-move| translate or |16x16_transformation-scale| scale.
 
-4.  |gui-parameterP-SetupSelectAxis| Select an **axis** or all three with a click on one of the green arrows. 0 = axis is currently not selected, 1 = axis is currently selected.
+4.  |gui-parameterP-SetupSelectAxis| Select an **Axis** or all three with a click on one of the green arrows. :class:`0` = axis is currently not selected, :class:`1` = axis is currently selected.
 
-5.  |16x16_set-coordinate-arrow-down| |16x16_set-coordinate-arrow-up| Set the step size with the green arrows or type in a **value**. The unit matches the type of transformation: degree, mm or 10 % magnification.
+5.  |16x16_set-coordinate-arrow-down| |16x16_set-coordinate-arrow-up| Set the step size with the green arrows or type in a **Value**. The unit matches the type of transformation: degree (for |16x16_transformation-rotate| rotate), mm (for |16x16_transformation-move| translate) or 10 % (for |16x16_transformation-scale| scale) magnification.
 
 6.  |gui-parameterP-SetupSlideTransform| Rotate, translate or scale the item with the slide control or directly in the scene with the left mouse button. You can monitor the movement/modification of **Reference position**, **Position**, **Orientation** and **Size** over the display fields in the bottom of the Setup page and also put in values yourself as an alternative to the previously explained approach.
 
