@@ -5,9 +5,7 @@
 Scattering Panel
 ================
 
-The Scattering tab of Parameter Panel is useful for different scattering settings (homogenous, McRay etc.) in the stimulated radiation.
-
-The scattering is by default (:numref:`guiparameterPSetupScattering`) in the :class:`off` **Mode** and the **reference point** is **min**. In addition, **Set defaults** for the McRay are **marked** and number **# of photons** is :class:`2e+007`.
+The :guilabel:`Scattering` tab of Parameter Panel is useful for different scattering settings (homogenous, McRay etc.) in the stimulated radiation.
 
 .. _guiparameterPSetupScattering:
 .. figure:: pictures/gui-parameterP-setup_scat.jpg
@@ -20,6 +18,12 @@ The scattering is by default (:numref:`guiparameterPSetupScattering`) in the :cl
 
 Parameters
 ----------
+
+ .. |gui-parameterP-focal_spot2| image:: pictures/gui-parameterP-focal_spot2.jpg
+ .. |gui-parameterP-focal_spot3| image:: pictures/gui-parameterP-focal_spot3.jpg
+ .. |gui-parameterP-focal_spot4| image:: pictures/gui-parameterP-focal_spot4.jpg
+ .. |gui-parameterPpickedPosition1| image:: pictures/gui-parameterP-scattering-picked_position1.jpg
+ .. |gui-parameterPscattering_para4| image:: pictures/gui-parameterP-scattering_para4.jpg
 
 |gui-parameterP-focal_spot2| |gui-parameterP-focal_spot3| |gui-parameterP-focal_spot4| |gui-parameterPscattering_para4| : Load, delete, show or smooth scatter image.
 
@@ -69,12 +73,6 @@ Select the reference point within the detector image. Available settings:
 * :class:`max` selects the image point of maximum grey value as the reference.
 * :class:`center` selects the image center as the reference point.
 * :class:`Picked` is used
-
- .. |gui-parameterP-focal_spot2| image:: pictures/gui-parameterP-focal_spot2.jpg
- .. |gui-parameterP-focal_spot3| image:: pictures/gui-parameterP-focal_spot3.jpg
- .. |gui-parameterP-focal_spot4| image:: pictures/gui-parameterP-focal_spot4.jpg
- .. |gui-parameterPpickedPosition1| image:: pictures/gui-parameterP-scattering-picked_position1.jpg
- .. |gui-parameterPscattering_para4| image:: pictures/gui-parameterP-scattering_para4.jpg
 
  * |16x16_edit-pickposition| to pick a scatter image reference point in :ref:`Image Viewer <ImageViewer>` (click and hold) or
  * |gui-parameterPpickedPosition1| to put in the X and Y coordinates manually.
