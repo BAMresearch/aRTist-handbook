@@ -7,8 +7,7 @@ Source Panel
 
 The :guilabel:`Source` tab of Parameter Panel is important for defining the radiation source settings.
 
-The default setting (:numref:`guiSourceDefault`) of the source is a monochromatic point source with a voltage of 150kV. 
-In addition, the graphical display is preselected as well as an **exposure** of **1mA or 1GBq**.
+.. The default setting (:numref:`guiSourceDefault`) of the source is a monochromatic point source with a voltage of 150kV. In addition, the graphical display is preselected as well as an **exposure** of **1mA or 1GBq**.
 
 .. _guiSourceDefault:
 .. figure:: pictures/gui-parameterP-SourceDefault.png
@@ -43,19 +42,26 @@ Bottom:
 * Enable/Disable **log x, log y, Lines, Grid** via checkboxes.
 * |22x22_document-open-folder| Spectrum from |artist| library. You can choose from four different spectra: Co-60, Ir-192, Se-75, Yb-169.
 * |22x22_document-save-as| Save current spectrum as a :code:`.xrs` file.
-* |22x22_xray-tube| Calculate x-ray tube spectrum opens the Spectrum calculator where you can make detailed adjustments to the tube. Important details of the current tube settings are displayed directly above the Graph/Text tabs. A more in-depth explanation of the spectrum calculator can be found in the :ref:`Spectrum <SpectrumSection>` section of this tutorial.
+* |22x22_xray-tube| Calculate x-ray tube spectrum opens the Spectrum calculator where you can make detailed adjustments to the tube. 
+   .. note::
+
+      Important details of the current tube settings are displayed directly above the Graph/Text tabs. A more in-depth explanation of the spectrum calculator can be found in the :ref:`Spectrum <SpectrumSection>` section of this tutorial.
 * |22x22_plot-spectrum| Show current spectrum opens the current spectrum in a seperate window. Click and hold for a second or right-click for more options (**Show original spectrum, Show reduced spectrum or Show preview spectrum**).
-* |22x22_show-attenuation| Plot attenuation data displays the attenuation data for the current settings. In the separate section of this tutorial :ref:`Attenuation Data <AttenuationDataSection>` more information can be found.
-* |22x22_edit-pickposition| Show attenuated spectrum for picked position opens the Spectrum Picker. The incident beam is shown in black, the attenuated beam in blue (:numref:`guiSpectrumPicker`). You can dock the window in the docking area.
+* |22x22_show-attenuation| Plot attenuation data displays the attenuation data for the current settings. 
+   .. note::
+      In the separate section of this tutorial :ref:`Attenuation Data <AttenuationDataSection>` more information can be found.
+* |22x22_edit-pickposition| Show attenuated spectrum for picked position opens the Spectrum Picker. The incident beam is shown in black, the attenuated beam in blue (:numref:`guiSpectrumPicker`). 
+   .. note::
+       You can dock the window in the docking area.
 
 .. _guiSpectrumPicker:
 .. figure:: pictures/gui-parameterP-spectrumpicker.jpg
     :alt: Source spectrum
     :width: 41.3%
 
-    Spectrum Picker.
+    Spectrum Picker. The beam shown in here is attenuated by an aluminum cube.
 
-* |16x16_edit-pickposition| Pick image position to calculate attenuation for is used to pick a spectrum reference position in :ref:`Image Viewer <ImageViewerSection>` (click with the left mouse button and hold). Alternatively, you may put in the X- and Y- coordinates manually. The beam shown in :numref:`guiSpectrumPicker` is attenuated by an aluminum cube.
+* |16x16_edit-pickposition| Pick image position to calculate attenuation for is used to pick a spectrum reference position in :ref:`Image Viewer <ImageViewerSection>` (click with the left mouse button and hold). Alternatively, you may put in the X- and Y- coordinates manually. 
 * |16x16_document-save-as| Save current data as a :code:`.txt` file.
 * |16x16_aRTist| Recalculate attenuation data
 
