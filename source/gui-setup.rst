@@ -7,7 +7,7 @@ Setup Panel
 
 The :guilabel:`Setup` of Parameter Panel is mainly pertinent for positioning items in the assembly.
 
-The default settings of the Setup for the environment is air, for the Transformation are |16x16_world-coordinate-system| world coordinate system and |16x16_transformation-move| translate mode. This settings can be seen in :numref:`guiSetupDefault`.
+.. The default settings of the Setup for the environment is air, for the Transformation are |16x16_world-coordinate-system| world coordinate system and |16x16_transformation-move| translate mode. This settings can be seen in :numref:`guiSetupDefault`.
 
 .. _guiSetupDefault:
 .. figure:: pictures/gui-parameterP-SetupDefault.png
