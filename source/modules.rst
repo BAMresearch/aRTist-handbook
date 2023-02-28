@@ -5,10 +5,9 @@
 Modules
 =======
 
-Modules are independent parts of the |aRTist| software that provide additional functuality and their own program windows. These windows can run separately or be integrated into the docking area of the main window. You can use the |16x16_window-dock| **Pin** to put a module in a separate window or attach it to the *Docking Area*.
+:guilabel:`Modules` are independent parts of the |aRTist| software that provide additional functuality and their own program windows. These windows can run separately or be integrated into the docking area of the main window. You can use the |16x16_window-dock| **Pin** to put a module in a separate window or attach it to the *Docking Area*.
 
-Several modules are included with |aRTist|. Additional or updated modules can also be provided individually using |aRTist| package files (.artp) for subsequent installation.  
-The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to access the modules.
+Several modules are included with |aRTist|. The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to access the modules.
 
 .. _neu_module:	
 
@@ -18,12 +17,14 @@ The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to acc
     
     Modules Menu.
 
+.. note::
+    
+    Additional or updated modules can also be provided individually using |aRTist| package files (:code:`.artp`) for subsequent installation.  
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Modules elements:
    
-   modules-manage
    modules-ctscan
    modules-detectorcalc
    modules-digrad
@@ -31,5 +32,4 @@ The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to acc
    modules-mcray
    modules-solid
    modules-tomosynth
-
-
+   modules-manage
