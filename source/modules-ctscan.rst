@@ -76,7 +76,7 @@ Advanced
 By marking **Only selected objects** you can include chosen objects of your assembly in the simulation. 
 That means the selected objects rotate and the others do not. 
 
-.. todo::
+.. note::
 
    To do this, you should select the corresponding components in the :ref:`Parameter Panel <ParameterPanel>` beforehand. Select a single object by clicking on it. 
    Select two or more by holding down the :kbd:`Ctrl` key and clicking on the other components to be included in the simulation. 
@@ -91,21 +91,21 @@ That means the selected objects rotate and the others do not.
 Feldkamp
 --------
 
+Set the parameters for reconstruction on the second tab - the :guilabel:`Feldkamp` (:numref:`modules-cttfeldk`). 
+Check the **Run Feldkamp** box on the first page - the :guilabel:`Setup` - to start reconstruction automatically after the necessary data has been acquired. 
+
 .. _OptionsSubsubsection:
 
 Options
 ^^^^^^^
 
-Set the parameters for reconstruction on the second tab - the :guilabel:`Feldkamp` (:numref:`modules-cttfeldk`). 
-Check the **Run Feldkamp** box on the first page - the :guilabel:`Setup` - to start reconstruction automatically after the necessary data has been acquired. 
-
 .. hint::
     
-    Otherwise, you may start reconstruction manually by pressing the **Reconstruct** button in the lower half of the :guilabel:`Feldkamp` page.
+    Otherwise, you may start reconstruction manually by pressing the :guilabel:`Reconstruct` button in the lower half of the :guilabel:`Feldkamp` page.
 
 **File name**: You may load previously acquired data with a click on the file symbol |16x16_document-open-folder| or use the recently acquired data.
 
-Enable or disable **Interpolation** or/and the **Use of :abbr:`GPU (graphics processing unit)` **, with **Use multiple textures** or/and **Use half precision**.
+Enable or disable **Interpolation** or/and the **Use of GPU**, with **Use multiple textures** or/and **Use half precision**.
 
 .. _OutputFeldSubsubsection:
 
