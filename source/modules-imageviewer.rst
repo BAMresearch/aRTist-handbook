@@ -39,7 +39,7 @@ and the energy density [in J/m²] or primary intensities in grey value or thickn
 Lower bar
 ---------
 
-**display range** indicates min. and max. grey value/thickness of the current image. If needed, you may change those values with your keyboard. Press Enter when finished.
+**display range** indicates min. and max. grey value/thickness of the current image. If needed, you may change those values with your keyboard. Press :kbd:`Enter` when finished.
 
 |16x16_optimize-contrast| Optimize display range (dependent on current image).
 
@@ -80,7 +80,7 @@ Bar on the right
 
 * **0°** / **90°** / **180°** / **270°**  is used to orientate the image (between four different angles).
 
-   .. note::
+   .. seealso::
     
        The same menu like in :numref:`ImageViewRot` can be found in the :guilabel:`Tools` menu under  **Image Viewer** → **View** → **Orientation**. Please note that the changes made with commands from either one of those menus do not have lasting effects, for example, when saving the image. If you want to permanently edit an image use the commands from the following menu: :guilabel:`Tools` →  **Image Viewer** → **Image**.
     
@@ -136,10 +136,10 @@ Image
 ^^^^^
 
 Under Image you can find different filters and options to mirror or rotate the current image (:numref:`image_viewer2`). 
-Please note that changes made with commands from this submenu are permanent (for example when saving the image). 
 
 .. note::
-    
+
+    Please note that changes made with commands from this submenu are permanent (for example when saving the image).
     For non-permanent modifications use commands from the View submenu.
 
 .. _image_viewer2:
@@ -169,7 +169,7 @@ Please note that changes made with commands from this submenu are permanent (for
 
 * **Math** opens the ImageMath window (:numref:`imagemath1`). It offers several arithmetic operations and point operations that can be applied the current image.
 
-    The first drop-down menu of the ImageMath offers the following arithmetic operations. In order for them to work the input field for C or K has to be filled in. Except for the first two functions, MultiplyByK and AddConstant, the actual number is not important. Press compute to run the operation and cancel to reverse it:
+    The first drop-down menu of the ImageMath offers the following arithmetic operations. In order for them to work the input field for **C** or **K** has to be filled in. Except for the first two functions, :class:`MultiplyByK` and :class:`AddConstant`, the actual number is not important. Press :guilabel:`Compute` to run the operation and :guilabel:`Cancel` to reverse it:
 
 .. _imagemath1:
 .. figure:: pictures/modules-ImageView-imagemath1.jpg
@@ -178,26 +178,31 @@ Please note that changes made with commands from this submenu are permanent (for
 
     Image Viewer, Image, Math.
 
-* **MultiplyByK** is used for pointwise multiplication of each pixel with K.
-* **AddConstant** is used for pointwise addition of each pixel and C.
-* **Exp** is point operator based on the exponential function and changes the dynamic range of the image.
-* **Log** is point operator based on the log function and changes the dynamic range of the image.
-* **Invert** inverts the current picture.
-* **AbsoluteValue** takes the absolute value of each pixel.
-* **Square** squares the value of each pixel.
-* **SquareRoot** takes the square root of each pixel.
-* **Sin** calculates the sine of each pixel.
-* **Cos** calculates the cosine of each pixel.
-* **ATAN** calculates the arctangent of each pixel.
 
-The following operations calculate a new image out of two images therefore the third drop-down menu is enabled. C and K may be left empty.
+* :class:`MultiplyByK` is used for pointwise multiplication of each pixel with K.
+* :class:`AddConstant` is used for pointwise addition of each pixel and C.
+* :class:`Exp` is point operator based on the exponential function and changes the dynamic range of the image.
+* :class:`Log` is point operator based on the log function and changes the dynamic range of the image.
+* :class:`Invert` inverts the current picture.
+* :class:`AbsoluteValue` takes the absolute value of each pixel.
+* :class:`Square` squares the value of each pixel.
+* :class:`SquareRoot` takes the square root of each pixel.
+* :class:`Sin` calculates the sine of each pixel.
+* :class:`Cos` calculates the cosine of each pixel.
+* :class:`ATAN` calculates the arctangent of each pixel.
 
-* **Add** sums every corresponding pixel value of the two images.
-* **Subtract** deducts every corresponding pixel value of the second image from the first image.
-* **Multiply** multiplies every corresponding pixel value of the two images.
-* **Divide** divides every pixel value of the first image by corresponding pixel value of the second image.
-* **Min** shows minimum grey values of the two images.
-* **Max** shows maximum grey values of the two images.
+The following operations calculate a new image out of two images therefore the third drop-down menu is enabled. 
+
+.. hint::
+    
+    **C** and **K** may be left empty.
+
+* :class:`Add` sums every corresponding pixel value of the two images.
+* :class:`Subtract` deducts every corresponding pixel value of the second image from the first image.
+* :class:`Multiply` multiplies every corresponding pixel value of the two images.
+* :class:`Divide` divides every pixel value of the first image by corresponding pixel value of the second image.
+* :class:`Min` shows minimum grey values of the two images.
+* :class:`Max` shows maximum grey values of the two images.
 
 .. _ViewSubsubSection:
 
@@ -214,7 +219,7 @@ Please note that the changes will not be visible when you save the image or open
 
     Image Viewer, View, Orientation Menu.
 
-**Interpolate** activates/deactivates interpolation. aRTist uses linear interpolation.
+**Interpolate** activates/deactivates interpolation. |artist| uses linear interpolation.
 
 **Logarithmic** is point operator based on the log function and changes the dynamic range of the image.
 
