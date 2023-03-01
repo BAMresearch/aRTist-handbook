@@ -210,7 +210,10 @@ View
 ^^^^
 
 Under View you can find the same four mirror and rotate commands explained under Image and additional options (:numref:`image_viewer3`). 
-Please note that the changes will not be visible when you save the image or open it in an external viewer as opposed to the commands found in the Image submenu.
+
+.. note::
+    
+    Please note that the changes will not be visible when you save the image or open it in an external viewer as opposed to the commands found in the Image submenu.
 
 .. _image_viewer3:
 .. figure:: pictures/modules-image_viewer3.jpg
