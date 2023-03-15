@@ -144,3 +144,23 @@ An entry of the form NxM denotes a regular grid. Geometric unsharpness is neglig
 |gui-parameterP-focal_spot3| Delete spot profile image
 
 |gui-parameterP-focal_spot4| Show spot profile image
+
+.. note::
+
+    **Focal Spot**
+    
+    A planar focal spot is simulated by averaging projections from several point sources. 
+    This could be a regular grid of point sources (e.g. **Spot type**: :class:`5×5`) or an algorithmic distribution good for sampling (e.g. **Spot type**: :class:`25`). 
+    The point sources are distributed over a rectangular area (defined by **Size [mm]** :class:`X`/:class:`Y`) and by default contribute in the same way (same spectra and weighting).
+    
+    Non-uniform spot profiles can be realized by using a profile image. With a spot profile image, the **Size [mm]** :class:`X`/:class:`Y` parameters are defining the image extension. 
+    In this case, the focal spot size depends on this image size and the image content as well. 
+    
+    The number of source points (defined by **Spot type**) is generally the same, with or without spot profile image. 
+    But some point sources may end up with a weight of zero and are neglected. The gray value distribution of the image is used to adjust the point sources. 
+    
+    For a regular grid, just the weight of the point sources is adjusted to follow the gray value distribution of the spot profile image. 
+    
+    For unstructured point sources (**Spot type**: :class:`N`; just one number) the weight and the position of the point sources will be adjusted to follow the shape of the spot profile image.
+    To play with the focal spot parameters of |artist| there is a special project file, :code:`SourceSampling.aRTist`, in ExampleProjects (**Menu bar**: :guilabel:`File` → |16x16_library| **Open Library…**). 
+    By defining a detector close to the source, and with a size equal to the focus it will directly image the source point distribution.
