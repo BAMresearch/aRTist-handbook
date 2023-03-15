@@ -50,7 +50,7 @@ You can also set the **filter material** and **thickness (mm)**. The following *
 Tube Settings
 -------------
 
-Under **Tube Settings** (:numref:`tools-spectru`) you can set maximum values for the tube and adjust the **target_material**, **target thickness (mm) ** and **target angle**, the **angle of e- incidence (deg)** and the **window material** and **window thickness (mm)**. 
+Under **Tube Settings** (:numref:`tools-spectru`) you can set maximum values for the tube and adjust the **target_material**, **target thickness (mm)** and **target angle**, the **angle of e- incidence (deg)** and the **window material** and **window thickness (mm)**. 
 Mark the **Show principle** checkbox in the bottom row and a schematic drawing appears which shows the principle of the simulated tube. 
 Press the :guilabel:`Compute` button in the lower part of the window to apply changes when finished.
 
