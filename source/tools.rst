@@ -16,3 +16,6 @@ In this chapter the following :guilabel:`Tools` of the :ref:`Menu Bar <MenuBarSe
    tools-materials
    tools-spectrum
    tools-settings
+   tools-graphs
+
+The subchapter **Graphs** is not an original artist's tool, but it is listed here to explain the graphs.
