@@ -2,8 +2,8 @@
 
 .. _Modules:
 
-Modules
-=======
+:guilabel:`Modules`
+===================
 
 :guilabel:`Modules` are independent parts of the |aRTist| software that provide additional functuality and their own program windows. These windows can run separately or be integrated into the docking area of the main window. You can use the |16x16_window-dock| **Pin** to put a module in a separate window or attach it to the *Docking Area*.
 
