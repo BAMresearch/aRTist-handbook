@@ -2,8 +2,8 @@
 
 .. _Tools:
 
-Tools
-=====
+:guilabel:`Tools`
+=================
 
 In this chapter the following :guilabel:`Tools` of the :ref:`Menu Bar <MenuBarSection>` are being explained:
 
