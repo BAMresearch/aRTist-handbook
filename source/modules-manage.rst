@@ -6,9 +6,9 @@ Manage Modules
 ==============
 
 **Manage Modules** (:numref:`modulesManage`) lists all the installed modules and their version.
-Unchecked modules are ignored at program start and cannot be used.  
-Modules can be installed for all users (**system**) or only for the current user (**user**). 
-Use the :guilabel:`Open aRTist package...` button for the dialog to install additional modules. 
+Unchecked modules are ignored at program start and cannot be used. 
+
+Use the :guilabel:`Open aRTist package...` button for the dialog to install additional modules. Modules can be installed for all users (**system**) or only for the current user (**user**). 
 
 .. _modulesManage:	
 			
