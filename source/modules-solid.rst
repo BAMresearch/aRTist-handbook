@@ -5,7 +5,8 @@
 |32x32_icon-solid| Solid
 ========================
 
-The |16x16_icon-solid| **Solid** module allows you to create simple parts of different sizes to construct your assembly as desired (:numref:`modules-solid1`). 
+The |16x16_icon-solid| **Solid** module can be used to generate triangulated surfaces of simple geometric solids like spheres, cuboids, etc. and also 3D letters with customizable text (:numref:`modules-solid1`). 
+The created solids are loaded into the scene and contribute to the assembly of parts. 
 
 .. _modules-solid1:
 .. figure:: pictures/modules-solid1.png
@@ -24,36 +25,29 @@ Under **Geometry** you can select the **Type**. The following types are availabl
 * :class:`cylinder`
 * :class:`tube`
 * :class:`cone`
-* If you choose :class:`text` the input field **Text** under **Type** is enabled.
+* :class:`text` (to define a text marker that can be radiographed) 
 * :class:`wedge`
 * :class:`step wedge`
 
 Dimensions
 ----------
 
-Select the part of your choice from the drop-down menu and set the **Dimensions** in mm and the **Phi steps** and **Theta steps** if applicable. You may predetermine equal values for 
-**X [mm]**, **Y [mm]** and **Z [mm]** by checking the box at the bottom of the module. When finished press the :guilabel:`Create` button.
+The size of the solid can be defined by the **X**, **Y** and **Z** extent of its bounding box. By activating the checkbox **X=Y** (**=Z**) you can force equal values for **X [mm]**, **Y [mm]** and **Z [mm]**. 
 
-Additionally, when selecting **wedge**, **step wedge**  or **tube**, it is possible to set the **W** parameter. Then for example the diameter of a tube or the foundation size of a wedge can be set. 
-If you choose **cylinder** and **cone**, you can turn **volume correction** on and off in **Options**. If you select an **ellipsoid**, you can additionally decide whether to use a **regular ellipsoid grid**.
+The **W** defines the wall thickness of a tube, or the final thickness (in Z dimension) of a wedge (**Z** sets the initial thickness).
+The **Phi steps** and **Theta steps** control the accuracy of the faceting of the ellipsoid, cylinder and cone.
 
 Options
 -------
 
-In case the **volume correction** is deactivated, the object to be created always approaches the volume of the ideal object determined by the set parameters x y z and becomes smaller. 
-The reason is that the faceting of the object via triangles basically takes place within an object. 
-If the **Volume correction** is activated, the exact volume of the ideal object is forced, but a larger created object is accepted in order to obtain the correct volume.
+For an ellipsoid, you can additionally decide whether to use facetting in a **regular ellipsoid grid** using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles.
+
+For ellipsoid, cylinder and cone, you can activate the **volume correction**, where the facetted solid will be scaled up to meet the exact volume of the ideal solid. 
 
 .. note::
 
-    The default material for new parts is :class:`Fe`. 
-
-.. hint::
-
-    A list with available materials can be accessed from the :guilabel:`Menu Bar` → **Geometry**  → **Set Material** or 
-    the Assembly List of the :ref:`Parameter Panel <ParameterPanel>`
+    The default material for new parts is :class:`Fe` and can be adjusted at :guilabel:`Menu Bar` → **Tools** → **Settings...** → **Advanced** → **Geometry**. But **text** is always created with material :class:`Pb`.
 
 .. tip::
 
-    After the object has been created, it can also be saved individually. To do this, select your object in the :ref:`Parameter Panel <ParameterPanel>` so that it is highlighted in blue. Then go via :guilabel:`File` to |16x16_document-save-as| ***Save as***... . A new window will open. 
-    At the bottom you can now choose under **File type** :class:`selected parts`. This way you can also create :code:`.stl` files with artist for instance.
+    After the solid is created, it can also be saved in a file (STL or PLY). To do this, select the part of your solid in the :class:`Assambly List` (e.g., by clicking at it in the scene) alone. Than use the general dialog :guilabel:`File` → |16x16_document-save-as| **Save as ...** to save, selecting :class:`File type` **Selected Parts**. 
