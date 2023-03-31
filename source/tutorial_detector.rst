@@ -98,7 +98,7 @@ The detector size is calculated automatically. You should now see a preview imag
 Note that you can set :guilabel:`Multisampling` for each pixel. It works in the same way as for the source. If you activate a certain type of pixel multisampling, a ray will be simulated connecting each source point with each pixel point (or subpixel). As described for the :ref:`Spot Type in the Source tutorial <sourceTutorialSpotChapter>`, you can define regular subpixel grids (e.g. :code:`3x3`) or quasi-random patterns using Poisson Disc Sampling (any integers, e.g. :code:`11`). The number of rays that will be simulated per pixel is the product of the source spot multisampling points and the detector (pixel) multisampling points. If you choose :guilabel:`source dependent` for the pixel multisampling (the default setting), the pattern defined for the source will also be used for each pixel (with the exception that it will be flipped in both spatial directions compared to the source pattern). Each spot point is then connected to its corresponding point on the pixel: the number of rays per pixel will remain the number of spot points and will not multiply (:numref:`DetectorPixelMultisampling`).
 
 .. _DetectorPixelMultisampling:
-.. figure:: pictures/QuickStartCT_DetectorMultisamplingGrid.svg
+.. figure:: pictures/QuickStartCT_DetectorMultisamplingGrid.*
 	:width: 80%
 
 	Overview of the multi-sampling behavior for different source-detector combinations.
@@ -498,7 +498,7 @@ Frame Averaging
 To simulate the averaging of multiple frames, |artist| does not simulate the requested number of frames and averages them. Instead, it temporarily adjusts the energy density on the detector and therefore looks up a different SNR on your detector's noise curve (:numref:`FrameAveragingExample`).
 
 .. _FrameAveragingExample:
-.. figure:: pictures/QuickStartCT_AveragingExample.svg
+.. figure:: pictures/QuickStartCT_AveragingExample.*
     :width: 100%
 
     Example for the temporary adjustment of the energy density axis to the original SNR curve for an averaging of two frames.

@@ -36,7 +36,11 @@ extensions = [
 	"sphinx_rtd_theme",
 	"sphinx.ext.autosectionlabel",
 	"sphinxcontrib.bibtex",
-	"sphinx.ext.imgmath"   # to render equations as PNG images and avoid externally loaded JavaScript libraries
+	"sphinx.ext.imgmath",   # to render equations as PNG images and avoid externally loaded JavaScript libraries
+    # for exclude part of documents
+	'sphinx_selective_exclude.eager_only',
+    'sphinx_selective_exclude.search_auto_exclude',
+    'sphinx_selective_exclude.modindex_exclude',
 ]
 
 # Add the path of a bibliography (.bib) file
@@ -105,11 +109,23 @@ latex_elements = {
 	'papersize': 'a4paper',
 	'pointsize': '11pt',
 	'fontpkg': r'''
-		\usepackage{ptsans}
+		\usepackage{PTSans}
 		\usepackage{charter}
 	''',
 	'preamble': r"""
-		\usepackage{newunicodechar}
+		%% %add number to subsubsection 2=subsection, 3=subsubsection
+		\setcounter{secnumdepth}{3}
+		%% %% Table of content upto 2=subsection, 3=subsubsection
+		\setcounter{tocdepth}{1}
+        %% Force table of contents onto one page
+        %%\addtocontents{toc}{\protect\enlargethispage{1\normalbaselineskip}}
+        
+        %% Default title headings of document class Book Chapter one... is deleted
+		\usepackage{titlesec}
+		\titleformat{\chapter}[display]
+  		{\normalfont\bfseries}{}{0pt}{\Huge}
+        
+      	\usepackage{newunicodechar}
 		\newunicodechar{≤}{\ensuremath{\leq}}
 		\newunicodechar{≥}{\ensuremath{\geq}}
 		\newunicodechar{⋅}{\ensuremath{\cdot}}

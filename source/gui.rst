@@ -16,7 +16,7 @@ When you open |artist|, you will see its main window (:numref:`guiMainWindow`) w
 
 .. _guiMainWindow:
 
-.. figure:: pictures/gui-main-window.png
+.. figure:: pictures/gui-main-window.*
     :alt: aRTist main window
     :width: 100%
 

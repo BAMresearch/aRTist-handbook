@@ -19,13 +19,11 @@ The information in this manual is for reference and informational use only. We a
 
 .. note:: This manual refers to |artist| version **2.12**.
 
-Contact
--------
+**Contact**
 
 `aRTist@bam.de <mailto:aRTist@bam.de>`_
 
-Publisher
----------
+**Publisher**
 
 | Bundesanstalt für Materialforschung und -prüfung (BAM)
 | Unter den Eichen 87, 12205 Berlin, Germany
@@ -44,24 +42,28 @@ Publisher
    fileformats
    quickstart_ct
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Tutorials:
+.. only:: html
 
-   tutorial_introduction
-   tutorial_virtual_scene
-   tutorial_positioning_orientation_size
-   tutorial_materials
-   tutorial_projection_images
-   tutorial_multi_component_parts
-   tutorial_ctscan_module
-   tutorial_xray_source
-   tutorial_detector
+   .. toctree::
+      :maxdepth: 2
+      :caption: Tutorials:
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Appendix:
+      tutorial_introduction
+      tutorial_virtual_scene
+      tutorial_positioning_orientation_size
+      tutorial_materials
+      tutorial_projection_images
+      tutorial_multi_component_parts
+      tutorial_ctscan_module
+      tutorial_xray_source
+      tutorial_detector
 
-   faq
-   references
-   acknowledgments
+.. only:: html
+
+   .. toctree::
+      :maxdepth: 2
+      :caption: Appendix:
+      
+      faq
+      references
+      acknowledgments
