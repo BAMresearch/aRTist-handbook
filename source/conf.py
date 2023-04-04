@@ -38,9 +38,9 @@ extensions = [
 	"sphinxcontrib.bibtex",
 	"sphinx.ext.imgmath",   # to render equations as PNG images and avoid externally loaded JavaScript libraries
     # for exclude part of documents
-	'sphinx_selective_exclude.eager_only',
-    'sphinx_selective_exclude.search_auto_exclude',
-    'sphinx_selective_exclude.modindex_exclude',
+	#'sphinx_selective_exclude.eager_only',
+    #'sphinx_selective_exclude.search_auto_exclude',
+    #'sphinx_selective_exclude.modindex_exclude',
 ]
 
 # Add the path of a bibliography (.bib) file
@@ -84,7 +84,11 @@ rst_prolog = """
     :trim:
 .. |artist| replace:: *aRT*\\ ist
 """
+# The html index document.
+master_doc = 'index'
 
+# The latex index document
+latex_doc = 'index_latex'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -105,6 +109,13 @@ html_show_copyright = False
 # -- Options for LaTeX output -------------------------------------------------
 latex_engine = 'pdflatex'
 latex_toplevel_sectioning = 'chapter'  # part, section or chapter
+
+# to take index_latex as index for the latexPDF
+latex_documents = [
+  (latex_doc, 'artisthandbook.tex', project,
+   author, 'manual'),
+]
+
 latex_elements = {
 	'papersize': 'a4paper',
 	'pointsize': '11pt',
@@ -124,7 +135,7 @@ latex_elements = {
 		\usepackage{titlesec}
 		\titleformat{\chapter}[display]
   		{\normalfont\bfseries}{}{0pt}{\Huge}
-        
+       
       	\usepackage{newunicodechar}
 		\newunicodechar{≤}{\ensuremath{\leq}}
 		\newunicodechar{≥}{\ensuremath{\geq}}

@@ -192,9 +192,14 @@ Hence every focal spot is defined a single point, the shape of a focal spot plan
 
 	Image projection (A and C) of an 1:1 detector in |artist| with a distance of 5 |nbsp| mm between source and detector (1000x1000 |nbsp| px). Figure (A) is a raw projection defined by a 5x5 focal spot grid. (C) is the weighted result of the raw projection (A) and the gaussian focal spot weight (B). :cite:p:`Binder2021`
 
-:numref:`QuickStartCTFocalSpotMechanic` shows exemplary the mechanics behind the spot distribution and the spot intensity profile. Please note that the displayed blurriness of the projections (A) and (C) are a result of the 5 |nbsp| mm distance between the source and detector. Alternatively, a pinhole setup as shown in :numref:`spot4x4imageViewer` can be used to further visualize the distribution of the focal spot.
+:numref:`QuickStartCTFocalSpotMechanic` shows exemplary the mechanics behind the spot distribution and the spot intensity profile. Please note that the displayed blurriness of the projections (A) and (C) are a result of the 5 |nbsp| mm distance between the source and detector. Alternatively, a pinhole setup as shown in :numref:`spot4x4imageViewer2` can be used to further visualize the distribution of the focal spot.
 
 .. ############################################################################
+.. _spot4x4imageViewer2:
+.. figure:: pictures/tutorial-xraysource-spot-4x4-image-viewer.png
+    :width: 50%
+
+    Image of the magnified focal spot, simulated as 16 individual point sources arranged in a regular grid.
 
 Detector Setup
 ~~~~~~~~~~~~~~
