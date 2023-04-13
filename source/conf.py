@@ -135,7 +135,13 @@ latex_elements = {
 		\usepackage{titlesec}
 		\titleformat{\chapter}[display]
   		{\normalfont\bfseries}{}{0pt}{\Huge}
-       
+
+        % package for eps-figures  
+		\usepackage{epstopdf}
+      
+		% background in title
+		\usepackage{wallpaper}
+
       	\usepackage{newunicodechar}
 		\newunicodechar{≤}{\ensuremath{\leq}}
 		\newunicodechar{≥}{\ensuremath{\geq}}
@@ -182,5 +188,13 @@ latex_elements = {
 		\newunicodechar{Φ}{\ensuremath{\Phi}}
 		\newunicodechar{Ψ}{\ensuremath{\Psi}}
 		\newunicodechar{Ω}{\ensuremath{\Omega}}
-	"""
+	""",
+    
+    'maketitle': r'''
+    	\pagenumbering{Roman} %% % to avoid page 1 conflict with actual page 1
+	 	\begin{titlepage}
+         		\ThisLRCornerWallPaper{1}{artistHandbook.eps}  
+                 \mbox{} \thispagestyle{empty}
+	 	\end{titlepage}
+    '''
 }

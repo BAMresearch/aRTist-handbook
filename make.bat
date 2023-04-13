@@ -26,6 +26,9 @@ if errorlevel 9009 (
 )
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+if "%1" == "latex" (
+	copy %SOURCEDIR%\pictures\artistHandbook.eps %BUILDDIR%\latex
+)
 goto end
 
 :help
