@@ -5,22 +5,19 @@
 |32x32_image-radiography| Image Viewer 
 ======================================
 
-The |16x16_image-radiography| **Image Viewer** module is the only module that is in the docking area by default (:numref:`ImageViewerPic1`). 
-It displays the preview image and the finished simulation. You may choose between two options as
-mentionend before: radiography and thickness maps (see: :ref:`Compute menu <ComputeMenuSubsection>`). 
-The different settings and functions of Image Viewer will be explained in this chapter.
+The |16x16_image-radiography| **Image Viewer** module displays the simulation results. 
 
 .. _ImageViewerPic1:
 .. figure:: pictures/modules-imageviewer-ViewerPic1.png
-    :alt: View of the Image Viewer directly after the start
+    :alt: View of the Image Viewer at program start
     :width: 71.3%
 
-    Image Viewer picture after start.
+    Image Viewer module.
 
 .. _UpperBarSubSection:
 
-Upper bar
----------
+Upper toolbar
+-------------
 
 |16x16_image-status-undefined| : A grayed out check mark means that no images have been loaded into Image Viewer before.
 
@@ -36,8 +33,8 @@ and the energy density [in J/m²] or primary intensities in grey value or thickn
 
 .. _LowerBarSubSection:
 
-Lower bar
----------
+Lower toolbar
+-------------
 
 **display range** indicates min. and max. grey value/thickness of the current image. If needed, you may change those values with your keyboard. Press :kbd:`Enter` when finished.
 
@@ -59,8 +56,8 @@ Lower bar
 
 .. _BarOnTheRightSubsection:
 
-Bar on the right
-----------------
+Right toolbar
+-------------
 
 |16x16_document-save| Save the current image.
 
@@ -101,7 +98,7 @@ Bar on the right
 Tools Menu: Image Viewer
 ------------------------
 
-In the following every command of the  Image Viewer submenu from the Tools Menu (:numref:`ImageViewToolsNeu`) will be explained.
+In the following every command of the Image Viewer submenu from the Tools Menu (:numref:`ImageViewToolsNeu`) will be explained.
 
 .. _ImageViewToolsNeu:
 .. figure:: pictures/modules-ImageView-tools_neu.png

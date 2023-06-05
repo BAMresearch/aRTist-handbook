@@ -5,7 +5,7 @@
 Modules
 =======
 
-Modules are independent parts of the |aRTist| software that provide additional functionality in their own program window. These module windows can run separately or be integrated into the docking area of the main window. With the |16x16_window-dock| **Pin** you can switch these operating modes.
+Modules are parts of the |aRTist| software that provide additional functionality in their own program window. These module windows can run separately or be integrated into the docking area of the main window. With the |16x16_window-dock| **Pin** you can switch these operating modes.
 
 Several modules are included with |aRTist|. The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to access the modules.
 
@@ -19,7 +19,7 @@ Several modules are included with |aRTist|. The :guilabel:`Modules` drop-down me
 
 .. note::
     
-    Additional or updated modules can also be provided individually using |aRTist| package files (:code:`.artp`) for subsequent installation.  
+    Additional or updated modules can also be provided individually using |aRTist| package files (:code:`.artp`) for subsequent installation. See also :ref:`manageModules`.
 
 .. toctree::
    :maxdepth: 1
