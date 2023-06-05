@@ -5,12 +5,13 @@
 CtScan
 ======
 
-With the **CtScan** module, a :abbr:`CT (computerized tomography)` scan can be simulated. The module is accomplished by Feldkamp reconstruction and volume visualization. 
+The **CtScan** module can be used to simulate cone beam :abbr:`CT (computerized tomography)` scans, applying the conventional circular scanning trajectory.
+The module is accomplished by Feldkamp reconstruction and volume visualization. 
 The simulated projections can be processed in the same way as experimental CT projections by external reconstruction programs. 
 
 .. note::
     
-    It is recommended to use the :abbr:`TIFF (Tagged Image File Format)` file format for easy data exchange in this case.
+    It is recommended to use the :abbr:`TIFF (Tagged Image File Format)` file format for easy data exchange, while the internal Feldkamp reconstruction requires projections in *BAM CT* format.
 
 The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the **Setup**, the **Feldkamp** and the **Volume View** (:numref:`modules-CtScan1`). 
 At bottom of module window, you can find a :guilabel:`Run` button to start or to :guilabel:`Stop` the simulation and a progress bar. 
@@ -26,7 +27,7 @@ All three pages will be explained in detail below.
 
 
 .. _modules-CtScan1:
-.. figure:: pictures/modules-CTScan1.png
+.. figure:: pictures/modules-CtScan1.*
     :alt: CtScan1
     :width: 71.3%
     
@@ -115,7 +116,7 @@ Output
 You can choose between different **File type**: :class:`BAM CT`, :class:`VTK` and :class:`RAW` as :class:`8bit`, :class:`16bit`, :class:`32bit` or :class:`float`.
 
 .. _modules-cttfeldk:
-.. figure:: pictures/modules-cttfeldk.png
+.. figure:: pictures/modules-cttfeldk.*
     :alt: Feldkamp
     :width: 71.3%
 
@@ -130,7 +131,7 @@ With the tab :guilabel:`Volume View` (:numref:`modules-cttvv`) it is possible to
 Alternatively, you may load previously acquired data. Supported file types are: :code:`.bd`, :code:`.raw`, :code:`.bin`, :code:`.vtk`.
 Press the :guilabel:`Show` button on this page or the first page to start the calculation. This will take a few seconds. 
 Then you can view the 3D-Scan of the part in the scene. Deactivate the part or minimize the opacity for an improved view of the 3D-Scan.
-With the option **Slice View** → **Show plane** a sectional image of the part for the respectivly axis (**X**, **Y** or **Z**) will appear in :ref:`Image Viewer <ImageViewerSection>`. 
+With the option **Slice View** → **Show plane** a sectional image of the part for the respectively axis (**X**, **Y** or **Z**) will appear in :ref:`Image Viewer <ImageViewerSection>`. 
 If **Show slice** is activated, borders of the object can be seen in the plane. Choose an **Axis** and move the plane with the slider to see a sectional image of the part.
 
 Settings for Volume View:
@@ -149,4 +150,4 @@ In **Positioning**, the scene is affected. It is possible to **Position** the vo
     :alt: Feldkamp
     :width: 71.3%
 
-    CtScan: Parameter for voluming rendering.
+    CtScan: Parameter for volume rendering.

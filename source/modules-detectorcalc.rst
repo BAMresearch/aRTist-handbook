@@ -5,18 +5,18 @@
 DetectorCalc
 ============
 
-The **DetectorCalc** module opens the Detector calculator (:numref:`detectorcalcSettingsgeneral`). It is useful for the detector's flat panel settings and calculating the captured photons. 
+The **DetectorCalc** can be used to generate new detector models for digital detectors. 
 
-.. hint::
+.. note::
     
     In addition to the more general DetectorCalc there is a simplified detector calculator: :ref:`DigRad <DigRadSection>`.
 
 .. _detectorcalcSettingsgeneral:
 .. figure:: pictures/modules-artist-detectorcalc-settings.png
-    :alt: Detector calculator, Settings
+    :alt: Detector calculator module
     :width: 60.3%
 
-    Detector calculator, Settings.
+    DetectorCalc module.
 
 .. _DetectorSettingsSubSection:
 
