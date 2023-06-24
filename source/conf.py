@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'aRTist Handbook'
-copyright = '2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM)'
+copyright = '2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM)'
 author = 'BAM, Bundesanstalt für Materialforschung und -prüfung'
 
 # The full version, including alpha/beta/rc tags
