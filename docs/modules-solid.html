@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solid &mdash; aRTist 2.12 documentation</title>
+  <title>Solid &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,16 +12,16 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="CtScan" href="modules-ctscan.html" />
-    <link rel="prev" title="Image Viewer" href="modules-imageviewer.html" /> 
+    <link rel="next" title="TomoSynth" href="modules-tomosynth.html" />
+    <link rel="prev" title="McRay" href="modules-mcray.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,28 +29,38 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Solid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-ctscan.html">CtScan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-detectorcalc.html">DetectorCalc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-digrad.html">DigRad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html"> Image Viewer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-mcray.html">McRay</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"> Solid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dimensions">Dimensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-manage.html">Manage Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
@@ -81,16 +91,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>Solid</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active"> Solid</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modules-solid.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -100,17 +110,57 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="solid">
-<h1>Solid<a class="headerlink" href="#solid" title="Permalink to this heading"></a></h1>
-<p id="solidsection">3.2     Solid (from existing tutorial)</p>
+  <section id="x32-icon-solid-solid">
+<span id="solidsection"></span><h1><a class="reference internal" href="_images/32x32_icon-solid.png"><img alt="32x32_icon-solid" src="_images/32x32_icon-solid.png" style="width: 32px;" /></a> Solid<a class="headerlink" href="#x32-icon-solid-solid" title="Permalink to this heading"></a></h1>
+<p>The <a class="reference internal" href="_images/16x16_icon-solid.png"><img alt="16x16_icon-solid" src="_images/16x16_icon-solid.png" style="width: 16px;" /></a> <strong>Solid</strong> module can be used to generate triangulated surfaces of simple geometric solids like spheres, cuboids, etc. and also 3D letters with customizable text (<a class="reference internal" href="#modules-solid1"><span class="std std-numref">Fig. 31</span></a>).
+The created solids are loaded into the scene and contribute to the assembly of parts.</p>
+<figure class="align-default" id="id1">
+<span id="modules-solid1"></span><a class="reference internal image-reference" href="_images/modules-solid1.png"><img alt="Solid" src="_images/modules-solid1.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Solid.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="geometry">
+<h2>Geometry<a class="headerlink" href="#geometry" title="Permalink to this heading"></a></h2>
+<p>Under <strong>Geometry</strong> you can select the <strong>Type</strong>. The following types are available for selection:</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cuboid</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ellipsoid</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cylinder</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">tube</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">cone</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">text</span></code> (to define a text marker that can be radiographed)</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">wedge</span></code></p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">step</span> <span class="pre">wedge</span></code></p></li>
+</ul>
+</section>
+<section id="dimensions">
+<h2>Dimensions<a class="headerlink" href="#dimensions" title="Permalink to this heading"></a></h2>
+<p>The size of the solid can be defined by the <strong>X</strong>, <strong>Y</strong> and <strong>Z</strong> extent of its bounding box. By activating the checkbox <strong>X=Y</strong> (<strong>=Z</strong>) you can force equal values for <strong>X [mm]</strong>, <strong>Y [mm]</strong> and <strong>Z [mm]</strong>.</p>
+<p>The <strong>W</strong> defines the wall thickness of a tube, or the final thickness (in Z dimension) of a wedge (<strong>Z</strong> sets the initial thickness).
+The <strong>Phi steps</strong> and <strong>Theta steps</strong> control the accuracy of the faceting of the ellipsoid, cylinder and cone.</p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h2>
+<p>For an ellipsoid, you can additionally decide whether to use facetting in a <strong>regular ellipsoid grid</strong> using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles.</p>
+<p>For ellipsoid, cylinder and cone, you can activate the <strong>volume correction</strong>, where the facetted solid will be scaled up to meet the exact volume of the ideal solid.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default material for new parts is <code class="xref py py-class docutils literal notranslate"><span class="pre">Fe</span></code> and can be adjusted at <span class="guilabel">Menu Bar</span> → <strong>Tools</strong> → <strong>Settings…</strong> → <strong>Advanced</strong> → <strong>Geometry</strong>. But <strong>text</strong> is always created with material <code class="xref py py-class docutils literal notranslate"><span class="pre">Pb</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After the solid is created, it can also be saved in a file (STL or PLY). To do this, select the part of your solid in the <code class="xref py py-class docutils literal notranslate"><span class="pre">Assambly</span> <span class="pre">List</span></code> (e.g., by clicking at it in the scene) alone. Than use the general dialog <span class="guilabel">File</span> → <a class="reference internal" href="_images/16x16_document-save-as.png"><img alt="16x16_document-save-as" src="_images/16x16_document-save-as.png" style="width: 16px;" /></a> <strong>Save as …</strong> to save, selecting <code class="xref py py-class docutils literal notranslate"><span class="pre">File</span> <span class="pre">type</span></code> <strong>Selected Parts</strong>.</p>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules-imageviewer.html" class="btn btn-neutral float-left" title="Image Viewer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="modules-ctscan.html" class="btn btn-neutral float-right" title="CtScan" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules-mcray.html" class="btn btn-neutral float-left" title="McRay" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules-tomosynth.html" class="btn btn-neutral float-right" title="TomoSynth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -124,7 +174,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 

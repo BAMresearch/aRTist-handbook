@@ -9,7 +9,6 @@ All file formats supported by the :guilabel:`File` → :guilabel:`Open...` dialo
 
 .. toctree::
    :maxdepth: 2
-   :caption: File Formats:
 
    fileformats_artist
    fileformats_tube

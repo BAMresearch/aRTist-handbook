@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Materials &mdash; aRTist 2.12 documentation</title>
+  <title>Materials &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,11 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,17 +29,21 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
@@ -78,15 +82,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Materials</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Materials</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/tutorial_materials.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -106,7 +110,7 @@
 </div>
 <section id="materials-editor">
 <h2>Materials Editor<a class="headerlink" href="#materials-editor" title="Permalink to this heading"></a></h2>
-<p><em>aRT</em>ist has a built-in materials editor (<a class="reference internal" href="#materialseditor"><span class="std std-numref">Fig. 43</span></a>) that helps you manage your library of materials. You can change and add entries there, and inspect the attenuation coefficients that <em>aRT</em>ist has calculated.</p>
+<p><em>aRT</em>ist has a built-in materials editor (<a class="reference internal" href="#materialseditor"><span class="std std-numref">Fig. 63</span></a>) that helps you manage your library of materials. You can change and add entries there, and inspect the attenuation coefficients that <em>aRT</em>ist has calculated.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In the toolbar, click the button <a class="reference internal" href="_images/22x22_edit-materials.png"><img alt="22x22_edit-materials" src="_images/22x22_edit-materials.png" style="width: 22px;" /></a> <span class="guilabel">Edit material properties</span> or open it from the Menu bar: <span class="guilabel">Tools</span> → <span class="guilabel">Materials…</span></p>
@@ -114,7 +118,7 @@
 <figure class="align-default" id="id1">
 <span id="materialseditor"></span><a class="reference internal image-reference" href="_images/tutorial-materials-editor.png"><img alt="_images/tutorial-materials-editor.png" src="_images/tutorial-materials-editor.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Materials Editor</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">Materials Editor</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>We will create a simple glass ceramic that has the following composition:</p>
@@ -126,7 +130,7 @@
 <p>In the materials editor, this compound would be represented as <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">0.4</span> <span class="pre">SiO2</span> <span class="pre">0.6</span></code>. Each of the two components is written in its empirical formula, using the chemical symbols from the periodic table of elements, followed by the number of atoms. After a compound, its <em>mass fraction</em> may follow (separated by a space from the empirical formula). The mass fractions will be automatically normalized to their total sum. For example, <code class="code docutils literal notranslate"><span class="pre">Al2O3</span> <span class="pre">40</span> <span class="pre">SiO2</span> <span class="pre">60</span></code> would represent the same material as above.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In the <em>Materials Editor,</em> click on <a class="reference internal" href="_images/16x16_list-add.png"><img alt="16x16_list-add" src="_images/16x16_list-add.png" style="width: 16px;" /></a> <span class="guilabel">Add new material definition</span>. An empty row will appear where you can fill in the new material information (<a class="reference internal" href="#materialseditoraddnew"><span class="std std-numref">Fig. 44</span></a>).</p>
+<p>In the <em>Materials Editor,</em> click on <a class="reference internal" href="_images/16x16_list-add.png"><img alt="16x16_list-add" src="_images/16x16_list-add.png" style="width: 16px;" /></a> <span class="guilabel">Add new material definition</span>. An empty row will appear where you can fill in the new material information (<a class="reference internal" href="#materialseditoraddnew"><span class="std std-numref">Fig. 64</span></a>).</p>
 <ol class="arabic simple">
 <li><p>Enter a material name, e.g. <code class="code docutils literal notranslate"><span class="pre">Glass</span> <span class="pre">Ceramic</span></code>.</p></li>
 <li><p>Enter the density: <code class="code docutils literal notranslate"><span class="pre">2.53</span></code>.</p></li>
@@ -138,7 +142,7 @@
 <figure class="align-default" id="id2">
 <span id="materialseditoraddnew"></span><a class="reference internal image-reference" href="_images/tutorial-materials-editor-add-material.png"><img alt="_images/tutorial-materials-editor-add-material.png" src="_images/tutorial-materials-editor-add-material.png" style="width: 70%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 44 </span><span class="caption-text">We add the glass ceramic as a new material.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">We add the glass ceramic as a new material.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>It is important to click <span class="guilabel">Apply</span> to save the changes you have made. The button <span class="guilabel">Refresh</span> will re-load the internal library, delete any unsaved changes you have made, and show changes that other <em>aRT</em>ist modules have made in the material library in the time since you have opened the <em>Materials Editor.</em></p>
@@ -150,11 +154,11 @@
 <p class="admonition-title">Note</p>
 <p>Make sure that our <em>Glass Ceramic</em> is selected in the <em>Materials Editor</em> and click on <a class="reference internal" href="_images/16x16_show-attenuation.png"><img alt="16x16_show-attenuation" src="_images/16x16_show-attenuation.png" style="width: 16px;" /></a>.</p>
 </div>
-<p>The <strong>Attenuation Viewer</strong> (<a class="reference internal" href="#attenuationviewerplot"><span class="std std-numref">Fig. 45</span></a>) will appear and show a plot of the attenuation coefficients.</p>
+<p>The <strong>Attenuation Viewer</strong> (<a class="reference internal" href="#attenuationviewerplot"><span class="std std-numref">Fig. 65</span></a>) will appear and show a plot of the attenuation coefficients.</p>
 <figure class="align-default" id="id3">
 <span id="attenuationviewerplot"></span><a class="reference internal image-reference" href="_images/tutorial-materials-attenuation-viewer-plot.png"><img alt="_images/tutorial-materials-attenuation-viewer-plot.png" src="_images/tutorial-materials-attenuation-viewer-plot.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 45 </span><span class="caption-text">The attenuation viewer shows a plot of the attenuation coefficients.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">The attenuation viewer shows a plot of the attenuation coefficients.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>If you want to display a different photon energy range, you can enter it in the upper part of the window: <strong>min. energy</strong> and <strong>max. energy</strong>. The plot displays five curves that represent the following:</p>
@@ -167,12 +171,12 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Switch to the <span class="guilabel">Text</span> tab to display the data as a text table. (<a class="reference internal" href="#attenuationviewertext"><span class="std std-numref">Fig. 46</span></a>)</p>
+<p>Switch to the <span class="guilabel">Text</span> tab to display the data as a text table. (<a class="reference internal" href="#attenuationviewertext"><span class="std std-numref">Fig. 66</span></a>)</p>
 </div>
 <figure class="align-default" id="id4">
 <span id="attenuationviewertext"></span><a class="reference internal image-reference" href="_images/tutorial-materials-attenuation-viewer-text.png"><img alt="_images/tutorial-materials-attenuation-viewer-text.png" src="_images/tutorial-materials-attenuation-viewer-text.png" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 46 </span><span class="caption-text">The calculated data points for the attenuation coefficients are shown in a text table.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">The calculated data points for the attenuation coefficients are shown in a text table.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>You can save the attenuation data as a text file with the <a class="reference internal" href="_images/16x16_document-save-as.png"><img alt="16x16_document-save-as" src="_images/16x16_document-save-as.png" style="width: 16px;" /></a> <span class="guilabel">Save</span> button in the upper right corner of the <em>Attenuation Viewer</em>.</p>
@@ -186,12 +190,12 @@
 <p>We now want to set the <em>Rotor’s</em> material to the <em>Glass Ceramic</em> that we have created. You can do this in the <em>Material</em> column in the <em>Assembly List.</em></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Click on the current <em>Material</em> of the <em>Rotor</em> (should be <em>Fe</em>). From the list, choose the <em>Glass Ceramic</em> that we have created. (<a class="reference internal" href="#materialdropdown"><span class="std std-numref">Fig. 47</span></a>)</p>
+<p>Click on the current <em>Material</em> of the <em>Rotor</em> (should be <em>Fe</em>). From the list, choose the <em>Glass Ceramic</em> that we have created. (<a class="reference internal" href="#materialdropdown"><span class="std std-numref">Fig. 67</span></a>)</p>
 </div>
 <figure class="align-default" id="id5">
 <span id="materialdropdown"></span><a class="reference internal image-reference" href="_images/tutorial-materials-rotor-assembly-list.png"><img alt="_images/tutorial-materials-rotor-assembly-list.png" src="_images/tutorial-materials-rotor-assembly-list.png" style="width: 40%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 47 </span><span class="caption-text">We set the <em>Glass Ceramic</em> as the <em>Rotor’s</em> material.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">We set the <em>Glass Ceramic</em> as the <em>Rotor’s</em> material.</span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The attenuation behaviour of the <em>Rotor</em> should now change and represent the one of the <em>Glass Ceramic.</em> The grey values in the projection’s preview image will become lighter as the <em>Glass Ceramic</em> absorbs less radiation than iron.</p>
@@ -225,7 +229,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 

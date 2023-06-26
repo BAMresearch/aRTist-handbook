@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CtScan &mdash; aRTist 2.12 documentation</title>
+  <title>CtScan &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,16 +12,16 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="DetectorCalc" href="modules-detectorcalc.html" />
-    <link rel="prev" title="Solid" href="modules-solid.html" /> 
+    <link rel="prev" title="Modules" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,28 +29,47 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-solid.html">Solid</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">CtScan</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CtScan</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scan-parameters">Scan Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output">Output</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#advanced">Advanced</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#feldkamp">Feldkamp</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#outputfeldsubsubsection">Output</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#volume-view">Volume View</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="modules-detectorcalc.html">DetectorCalc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-digrad.html">DigRad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html"> Image Viewer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-mcray.html">McRay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-solid.html"> Solid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-manage.html">Manage Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
@@ -81,16 +100,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>CtScan</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">CtScan</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modules-ctscan.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,17 +121,125 @@
              
   <section id="ctscan">
 <span id="ctscansection"></span><h1>CtScan<a class="headerlink" href="#ctscan" title="Permalink to this heading"></a></h1>
-<p>3.3     CtScan (from existing tutorial)
-3.3.1   Centre of Rotation
-3.3.2   Additional Settings
-3.3.3   FDK Reconstruction</p>
+<p>The <strong>CtScan</strong> module can be used to simulate cone beam <abbr title="computerized tomography">CT</abbr> scans, applying the conventional circular scanning trajectory.
+The module is accomplished by Feldkamp reconstruction and volume visualization.
+The simulated projections can be processed in the same way as experimental CT projections by external reconstruction programs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is recommended to use the <abbr title="Tagged Image File Format">TIFF</abbr> file format for easy data exchange, while the internal Feldkamp reconstruction requires projections in <em>BAM CT</em> format.</p>
+</div>
+<p>The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the <strong>Setup</strong>, the <strong>Feldkamp</strong> and the <strong>Volume View</strong> (<a class="reference internal" href="#modules-ctscan1"><span class="std std-numref">Fig. 14</span></a>).
+At bottom of module window, you can find a <span class="guilabel">Run</span> button to start or to <span class="guilabel">Stop</span> the simulation and a progress bar.
+The first two pages offer settings for the scan and for reconstruction (<em>aRT</em>ist uses the Feldkamp algorithm for reconstruction).
+The finished tomogram can be viewed in the scene with the help of the first (<strong>Setup</strong>) or third (<strong>Volume View</strong>) tab by clicking on the <span class="guilabel">Show</span> button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a> the sectional image can be seen with the Slice View in the third (Volume View) tab.</p>
+</div>
+<p>All three pages will be explained in detail below.</p>
+<figure class="align-default" id="id2">
+<span id="modules-ctscan1"></span><a class="reference internal image-reference" href="_images/modules-CtScan1.png"><img alt="CtScan1" src="_images/modules-CtScan1.png" style="width: 71.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">CtScan: General settings.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="setup">
+<span id="setupsubsection"></span><h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
+<p>The <span class="guilabel">Setup</span> tab is used to configure the CT.</p>
+<section id="scan-parameters">
+<span id="scanparameterssubsubsection"></span><h3>Scan Parameters<a class="headerlink" href="#scan-parameters" title="Permalink to this heading"></a></h3>
+<p>The adjustable <strong>Scan Parameters</strong> are <strong>Total Angle [°]</strong>, <strong>Number of Steps</strong> and
+<strong>Angle Step Size [°]</strong>.</p>
+</section>
+<section id="output">
+<span id="outputsubsubsection"></span><h3>Output<a class="headerlink" href="#output" title="Permalink to this heading"></a></h3>
+<p>At the <strong>Output</strong> choose <strong>Directory</strong> and <strong>File Type</strong> and put in a <strong>File Name</strong>. The <strong>File Type</strong> can be chosen between <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">TIFF</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">16</span> <span class="pre">bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If fields are left blank they will be filled in automatically.</p>
+</div>
+<p>If you wish to start reconstruction directly after the scan is finished check the corresponding box, <strong>Run Feldkamp</strong>.
+You may set the parameters for Feldkamp on the second page. Press the <span class="guilabel">Run</span> button on either one of the three pages when finished with the settings.
+If you choose not to check the <strong>Run Feldkamp</strong> box before starting the simulation you may initiate reconstruction manually (see: <a class="reference internal" href="#feldkampsubsection"><span class="std std-ref">Feldkamp</span></a>).
+Click on the <span class="guilabel">Show</span> button when the simulation is finished to see the tomogram in the scene.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>For an improved view deactivate the solid or minimize the opacity (double-click on the number of the object to change the opacity: <strong>Parameter Panel</strong> → <strong>Setup Panel</strong> → <strong>Display</strong>).</p>
+</div>
+</section>
+<section id="advanced">
+<span id="advancedsubsubsection"></span><h3>Advanced<a class="headerlink" href="#advanced" title="Permalink to this heading"></a></h3>
+<p>By marking <strong>Only selected objects</strong> you can include chosen objects of your assembly in the simulation.
+That means the selected objects rotate and the others do not.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To do this, you should select the corresponding components in the <span class="xref std std-ref">Parameter Panel</span> beforehand. Select a single object by clicking on it.
+Select two or more by holding down the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key and clicking on the other components to be included in the simulation.
+The components are selected when they are highlighted in blue.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Direction</strong> is used to choose between clockwise or counterclockwise direction.</p></li>
+<li><p><strong>Scattering</strong> is used to choose between off or McRay scatter-attitude.</p></li>
+<li><p><strong>Interval [°]</strong> sets the interval for using the same scatter image (to save some time by not recalculating for each projection).</p></li>
+</ul>
+</section>
+</section>
+<section id="feldkamp">
+<span id="feldkampsubsection"></span><h2>Feldkamp<a class="headerlink" href="#feldkamp" title="Permalink to this heading"></a></h2>
+<p>Set the parameters for reconstruction on the second tab - the <span class="guilabel">Feldkamp</span> (<a class="reference internal" href="#modules-cttfeldk"><span class="std std-numref">Fig. 15</span></a>).
+Check the <strong>Run Feldkamp</strong> box on the first page - the <span class="guilabel">Setup</span> - to start reconstruction automatically after the necessary data has been acquired.</p>
+<section id="options">
+<span id="optionssubsubsection"></span><h3>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h3>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Otherwise, you may start reconstruction manually by pressing the <span class="guilabel">Reconstruct</span> button in the lower half of the <span class="guilabel">Feldkamp</span> page.</p>
+</div>
+<p><strong>File name</strong>: You may load previously acquired data with a click on the file symbol <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> or use the recently acquired data.</p>
+<p>Enable or disable <strong>Interpolation</strong> or/and the <strong>Use of GPU</strong>, with <strong>Use multiple textures</strong> or/and <strong>Use half precision</strong>.</p>
+</section>
+<section id="outputfeldsubsubsection">
+<span id="id1"></span><h3>Output<a class="headerlink" href="#outputfeldsubsubsection" title="Permalink to this heading"></a></h3>
+<p>You can choose between different <strong>File type</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VTK</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">RAW</span></code> as <code class="xref py py-class docutils literal notranslate"><span class="pre">8bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">16bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">32bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<figure class="align-default" id="id3">
+<span id="modules-cttfeldk"></span><a class="reference internal image-reference" href="_images/modules-cttfeldk.png"><img alt="Feldkamp" src="_images/modules-cttfeldk.png" style="width: 71.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">CtScan: Parameters for reconstruction.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="volume-view">
+<span id="volumeviewsubsection"></span><h2>Volume View<a class="headerlink" href="#volume-view" title="Permalink to this heading"></a></h2>
+<p>With the tab <span class="guilabel">Volume View</span> (<a class="reference internal" href="#modules-cttvv"><span class="std std-numref">Fig. 16</span></a>) it is possible to show sectional image of the finished tomogram in <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a> directly after reconstruction.
+Alternatively, you may load previously acquired data. Supported file types are: <code class="code docutils literal notranslate"><span class="pre">.bd</span></code>, <code class="code docutils literal notranslate"><span class="pre">.raw</span></code>, <code class="code docutils literal notranslate"><span class="pre">.bin</span></code>, <code class="code docutils literal notranslate"><span class="pre">.vtk</span></code>.
+Press the <span class="guilabel">Show</span> button on this page or the first page to start the calculation. This will take a few seconds.
+Then you can view the 3D-Scan of the part in the scene. Deactivate the part or minimize the opacity for an improved view of the 3D-Scan.
+With the option <strong>Slice View</strong> → <strong>Show plane</strong> a sectional image of the part for the respectively axis (<strong>X</strong>, <strong>Y</strong> or <strong>Z</strong>) will appear in <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a>.
+If <strong>Show slice</strong> is activated, borders of the object can be seen in the plane. Choose an <strong>Axis</strong> and move the plane with the slider to see a sectional image of the part.</p>
+<p>Settings for Volume View:</p>
+<ul class="simple">
+<li><p><strong>Minimum</strong></p></li>
+<li><p><strong>Maximum</strong></p></li>
+<li><p><strong>Level</strong></p></li>
+<li><p><strong>Contrast</strong></p></li>
+<li><p>Activate/Deactivate <strong>Use 3D texture</strong></p></li>
+<li><p><strong>Gradient</strong>/ <strong>GradientROI</strong> → choose between <strong>All</strong>, <strong>Min/Max</strong> or <strong>Level/Contrast</strong></p></li>
+</ul>
+<p>In <strong>Positioning</strong>, the scene is affected. It is possible to <strong>Position</strong> the voxel packet. With <strong>Spacing</strong>, the size of the scene can be influenced (in X, Y, Z).</p>
+<figure class="align-default" id="id4">
+<span id="modules-cttvv"></span><a class="reference internal image-reference" href="_images/modules-cttvv.png"><img alt="Feldkamp" src="_images/modules-cttvv.png" style="width: 71.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">CtScan: Parameter for volume rendering.</span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules-solid.html" class="btn btn-neutral float-left" title="Solid" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-left" title="Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="modules-detectorcalc.html" class="btn btn-neutral float-right" title="DetectorCalc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
@@ -127,7 +254,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 

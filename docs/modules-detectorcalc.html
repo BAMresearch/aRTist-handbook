@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DetectorCalc &mdash; aRTist 2.12 documentation</title>
+  <title>DetectorCalc &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,11 +12,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,28 +29,42 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-solid.html">Solid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-ctscan.html">CtScan</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">DetectorCalc</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">DetectorCalc</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#settings">Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-settings">General Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sensitivity">Sensitivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtration">Filtration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#exposure-reference-shot">Exposure - Reference shot</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="modules-digrad.html">DigRad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html"> Image Viewer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-mcray.html">McRay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-solid.html"> Solid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-manage.html">Manage Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
@@ -81,16 +95,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>DetectorCalc</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">DetectorCalc</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modules-detectorcalc.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,7 +116,87 @@
              
   <section id="detectorcalc">
 <span id="detectorcalcsection"></span><h1>DetectorCalc<a class="headerlink" href="#detectorcalc" title="Permalink to this heading"></a></h1>
-<p>3.4     DetectorCalc (incl. menu description)</p>
+<p>The <strong>DetectorCalc</strong> can be used to generate new detector models for digital detectors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In addition to the more general DetectorCalc there is a simplified detector calculator: <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a>.</p>
+</div>
+<figure class="align-default" id="id1">
+<span id="detectorcalcsettingsgeneral"></span><a class="reference internal image-reference" href="_images/modules-artist-detectorcalc-settings.png"><img alt="Detector calculator module" src="_images/modules-artist-detectorcalc-settings.png" style="width: 60.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">DetectorCalc module.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="settings">
+<span id="detectorsettingssubsection"></span><h2>Settings<a class="headerlink" href="#settings" title="Permalink to this heading"></a></h2>
+<section id="general-settings">
+<span id="detectorcalcgeneralsettingssubsubsection"></span><h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this heading"></a></h3>
+<p>Set the general settings for your new detector:</p>
+<ul class="simple">
+<li><p><strong>Name</strong></p></li>
+<li><p><strong>Pixel size (mm)</strong></p></li>
+<li><p><strong>Pixel count X</strong></p></li>
+<li><p><strong>Pixel count Y</strong></p></li>
+<li><p><strong>Maximum grey value</strong></p></li>
+<li><p><strong>Grey value quantum (GV)</strong></p></li>
+</ul>
+</section>
+<section id="sensitivity">
+<span id="detectorcalcgeneralsensitivitysubsubsection"></span><h3>Sensitivity<a class="headerlink" href="#sensitivity" title="Permalink to this heading"></a></h3>
+<p>Set the sensitivity for your new detector:</p>
+<ul>
+<li><p><strong>Material</strong></p></li>
+<li><p><strong>Thickness (mm)</strong></p></li>
+<li><p><strong>Steps</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The amount of Steps are relevant for the layer model. The more steps you set, the more accurate the simulation will be.
+Thereby the execution time will increase. Typically two steps will be enough.</p>
+</div>
+</li>
+<li><p><strong>Min Energy (keV)</strong></p></li>
+<li><p><strong>Max Energy (keV)</strong></p></li>
+<li><p><strong>Signal Type</strong></p></li>
+</ul>
+</section>
+<section id="filtration">
+<span id="detectorcalcgeneralfiltrationsubsubsection"></span><h3>Filtration<a class="headerlink" href="#filtration" title="Permalink to this heading"></a></h3>
+<p>It is possible to add a filtration over the new detector.</p>
+<p><a class="reference internal" href="_images/16x16_list-add.png"><img alt="16x16_list-add" src="_images/16x16_list-add.png" style="width: 16px;" /></a> Click on the green button to add a filter (default filter is Al with 1.0 mm thickness).</p>
+<p><a class="reference internal" href="_images/16x16_edit-delete.png"><img alt="16x16_edit-delete" src="_images/16x16_edit-delete.png" style="width: 16px;" /></a> Click on the red button to delete a selected filter.</p>
+<p>If you want to change the settings of your filtration, click on the corresponding <strong>Material</strong> or <strong>Thickness</strong>. For the Material column you can choose a material of the editor list
+(<span class="guilabel">Tools</span> → <a class="reference internal" href="_images/16x16_edit-materials.png"><img alt="16x16_edit-materials" src="_images/16x16_edit-materials.png" style="width: 16px;" /></a> <strong>Materials</strong>). For <strong>Thickness</strong> just enter your desired value (in mm).</p>
+<p>The column <strong>Active</strong> enables to activate (<code class="xref py py-class docutils literal notranslate"><span class="pre">Yes</span></code>) or deactivate (<code class="xref py py-class docutils literal notranslate"><span class="pre">No</span></code>) the selected filter. Therefore use the left mouse button to choose <code class="xref py py-class docutils literal notranslate"><span class="pre">Yes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">No</span></code>.</p>
+</section>
+</section>
+<section id="exposure-reference-shot">
+<span id="detectorcalcexposuresubsection"></span><h2>Exposure - Reference shot<a class="headerlink" href="#exposure-reference-shot" title="Permalink to this heading"></a></h2>
+<p>For creating a new detector it is necessary to set reference values. With those, the new detector will be calibrated (with available detector settings) and considered for calculations.</p>
+<p>Set the reference values for your new detector:</p>
+<ul class="simple">
+<li><p><strong>Spectrum</strong></p></li>
+<li><p><strong>Current (mA)</strong></p></li>
+<li><p><strong>Exposure time (s)</strong></p></li>
+<li><p><strong>Number of frames</strong></p></li>
+<li><p><strong>Distance (mm)</strong></p></li>
+<li><p><strong>Long range unsharpness (mm)</strong></p></li>
+<li><p><strong>Unsharpness ratio (%)</strong></p></li>
+<li><p><strong>Grey value</strong></p></li>
+<li><p><strong>SNR unnormalized</strong></p></li>
+</ul>
+<figure class="align-default" id="id2">
+<span id="detectorcalc-exposure"></span><a class="reference internal image-reference" href="_images/modules-artist-detectorcalc-exposure.png"><img alt="Detector calculator, Exposure" src="_images/modules-artist-detectorcalc-exposure.png" style="width: 60.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Detector calculator, Exposure.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Press <span class="guilabel">Run</span> to apply these settings and save them as an <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file or <span class="guilabel">Default</span> to reset them.
+Afterwards the new detector can be loaded <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> <span class="guilabel">Load</span> and applied at <strong>Parameter Panel</strong> → <strong>Detector</strong> → <strong>Characteristic</strong> → <strong>detector type</strong> → <strong>Extern</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Another possibility is that the new detector with the file extension <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> can also be drop-in to the <em>aRT</em>ist scene.</p>
+</div>
+</section>
 </section>
 
 
@@ -124,7 +218,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DigRad &mdash; aRTist 2.12 documentation</title>
+  <title>DigRad &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,15 +12,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="TomoSynth" href="modules-tomosynth.html" />
+    <link rel="next" title="Image Viewer" href="modules-imageviewer.html" />
     <link rel="prev" title="DetectorCalc" href="modules-detectorcalc.html" /> 
 </head>
 
@@ -29,28 +29,33 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-solid.html">Solid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-ctscan.html">CtScan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-detectorcalc.html">DetectorCalc</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">DigRad</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html"> Image Viewer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-mcray.html">McRay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-solid.html"> Solid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-manage.html">Manage Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
@@ -81,16 +86,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>DigRad</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">DigRad</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modules-digrad.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -102,7 +107,28 @@
              
   <section id="digrad">
 <span id="digradsection"></span><h1>DigRad<a class="headerlink" href="#digrad" title="Permalink to this heading"></a></h1>
-<p>3.5     DigRad (incl. menu description)</p>
+<p>The <strong>DigRad</strong> module can be used to generate new detector modells for a CR (Computed Radiography) systenm or a DDA (Digital Detectr Array). The input parameters are related to the standarts for detector characterisation (ASTM E 2445, ASTM E 2597, ISO 16371-1).</p>
+<figure class="align-default" id="id1">
+<span id="digradcalculator"></span><a class="reference internal image-reference" href="_images/modules-digrad1.jpg"><img alt="DigRad calculator" src="_images/modules-digrad1.jpg" style="width: 60.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">DigRad calculator.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Pixel size (mm)</strong></p></li>
+<li><p><strong>Basic spatial resolution SRb (mm)</strong> The double SRb is used as unsharpness of the aRTist detector model.</p></li>
+<li><p><strong>Internal scatter radiation ISR (%)</strong> Scattered radiation within the detector. The percentage can be determined on an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
+<li><p><strong>ISR correlation length (mm)</strong> The double correlation length is used as long range unsharpness of the aRTist detector model (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
+<li><p><strong>Gray response (GV/mGy)</strong></p></li>
+<li><p><strong>SNRn,max</strong></p></li>
+<li><p><strong>Efficiency (SNRn/mGy^0.5)</strong></p></li>
+</ul>
+<figure class="align-default" id="id2">
+<span id="digradedgeprofile"></span><a class="reference internal image-reference" href="_images/modules-digrad-edge_profile.svg"><img alt="Edge profile indicating internal scatter radiation" src="_images/modules-digrad-edge_profile.svg" width="100.0%" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Edge profile indicating internal scatter radiation. Simulation of an edge penetration with a DigRad detector model with 5 % ISR and 5 mm correlation length. Right: Edge profile with reading of the ISR measurands (ISR = (2 * a / b) * 100 %; correlation length = c).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 </section>
 
 
@@ -110,7 +136,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="modules-detectorcalc.html" class="btn btn-neutral float-left" title="DetectorCalc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="modules-tomosynth.html" class="btn btn-neutral float-right" title="TomoSynth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules-imageviewer.html" class="btn btn-neutral float-right" title="Image Viewer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -124,7 +150,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 

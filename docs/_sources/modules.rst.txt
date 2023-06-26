@@ -5,23 +5,30 @@
 Modules
 =======
 
-When you open *aRT*\ ist, you will see its main window (:numref:`guiMainWindow`) with the following areas.
+Modules are parts of the |aRTist| software that provide additional functionality in their own program window. These module windows can run separately or be integrated into the docking area of the main window. With the |16x16_window-dock| **Pin** you can switch these operating modes.
 
-* **Menu bar**, used to access detailed settings and commands.
-* **Toolbar**, used to access the most commonly used functions and viewer settings.
-* **Parameter panel**, used to control the current model parameters for the scene, X-ray source and detector.
-* **Virtual scene**, a 3D scene view of the radiographic setup.
-* **Docking area**, integrates additional program windows and modules. By default, the **Image Viewer** showing the simulated radiograph is placed here.
-* **Status bar** displays what's currently going on.
+Several modules are included with |aRTist|. The :guilabel:`Modules` drop-down menu (:numref:`neu_module`) can be used to access the modules.
+
+.. _neu_module:	
+
+.. figure:: pictures/neu_module.png
+    :alt: Picture of the dropdown Modules menu	
+    :width: 21.3%
+    
+    Modules Menu.
+
+.. note::
+    
+    Additional or updated modules can also be provided individually using |aRTist| package files (:code:`.artp`) for subsequent installation. See also :ref:`manageModules`.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: User interface elements:
-
-   modules-imageviewer
-   modules-solid
+   :maxdepth: 1
+   
    modules-ctscan
    modules-detectorcalc
    modules-digrad
-   modules-tomosynth
+   modules-imageviewer
    modules-mcray
+   modules-solid
+   modules-tomosynth
+   modules-manage

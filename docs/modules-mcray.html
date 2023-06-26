@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>McRay &mdash; aRTist 2.12 documentation</title>
+  <title>McRay &mdash; aRTist Handbook 2.12 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -12,16 +12,16 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="File Formats" href="fileformats.html" />
-    <link rel="prev" title="TomoSynth" href="modules-tomosynth.html" /> 
+    <link rel="next" title="Solid" href="modules-solid.html" />
+    <link rel="prev" title="Image Viewer" href="modules-imageviewer.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,28 +29,45 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aRTist
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aRTist Handbook
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Manual:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gui.html">User interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html">Image Viewer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules-solid.html">Solid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-ctscan.html">CtScan</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-detectorcalc.html">DetectorCalc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-digrad.html">DigRad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-imageviewer.html"> Image Viewer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">McRay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic"><span class="guilabel">Basic</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-directory">Output directory</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced"><span class="guilabel">Advanced</span></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#simulation-options">Simulation Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#execution-options">Execution Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules-solid.html"> Solid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modules-tomosynth.html">TomoSynth</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">McRay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules-manage.html">Manage Modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="fileformats.html">File Formats</a></li>
@@ -81,16 +98,16 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">aRTist</a>
+          <a href="index.html">aRTist Handbook</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>McRay</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">McRay</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/modules-mcray.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -101,16 +118,181 @@
            <div itemprop="articleBody">
              
   <section id="mcray">
-<h1>McRay<a class="headerlink" href="#mcray" title="Permalink to this heading"></a></h1>
-<p id="mcraysection">3.7     McRay (incl. menu description)</p>
+<span id="mcraysection"></span><h1>McRay<a class="headerlink" href="#mcray" title="Permalink to this heading"></a></h1>
+<p><strong>McRay</strong> is a Monte Carlo raytracing implementation of electron and photon transport.
+This module forms a graphical interface for McRay, in order to configure and run simulations using it from within <em>aRT</em>ist.
+If you activate the inline help icon <a class="reference internal" href="_images/16x16_system-help.png"><img alt="16x16_system-help" src="_images/16x16_system-help.png" style="width: 16px;" /></a> an additional tab <span class="guilabel">Help</span> will appear (see: <a class="reference internal" href="gui-menu-bar.html#helpmenusubsection"><span class="std std-ref">Help menu</span></a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this user guide, the McRay module topics <span class="guilabel">Expert</span>, <span class="guilabel">Manual</span>, <span class="guilabel">Cluster</span> and <span class="guilabel">Interactive</span> are not being explained.</p>
+</div>
+<p>A <span class="guilabel">Run</span> or <span class="guilabel">Stop</span> button and a progress bar are located at bottom of module window. The first four tabs expose the configuration in order of increasing complexity.</p>
+<section id="basic">
+<span id="mcraybasicsubsection"></span><h2><span class="guilabel">Basic</span><a class="headerlink" href="#basic" title="Permalink to this heading"></a></h2>
+<p>This page contains everything necessary to run a Monte Carlo simulation with the default settings (<a class="reference internal" href="#mcrayy"><span class="std std-numref">Fig. 29</span></a>).
+At the top there are two buttons, <span class="guilabel">Set defaults</span> to reset all settings to the default, and <span class="guilabel">View default output</span> to load the images normally resulting from a successful simulation run.</p>
+<figure class="align-default" id="id1">
+<span id="mcrayy"></span><a class="reference internal image-reference" href="_images/modules-mcrayy.png"><img alt="McRay: Basic" src="_images/modules-mcrayy.png" style="width: 71.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">McRay: Basic.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="options">
+<span id="mcraybasicoptionssubsubsection"></span><h3>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p><strong>Number of particles</strong> is used to specify the desired number of particles (photons / electrons).</p></li>
+<li><p><strong>Data energy resolution [keV]</strong> is used to influence the energy resolution of these structures (by this parameter).</p>
+<blockquote>
+<div><div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Internally most material data (attenuation-coefficients, differential scatter cross-sections, etc.) is kept in lookup structures for fast access.
+The default value of 1 keV does not normally need to be changed, but for low-energy calculations, especially including fluorescence, a smaller value of e.g. 0.1 keV may be advisable.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>File prefix</strong> is used to set a project name in this field. Default name is <code class="xref py py-class docutils literal notranslate"><span class="pre">New</span></code>.</p></li>
+</ul>
+</section>
+<section id="output-directory">
+<span id="mcraybasicoutputsubsubsection"></span><h3>Output directory<a class="headerlink" href="#output-directory" title="Permalink to this heading"></a></h3>
+<p>Here you may change and inspect the <strong>Output directory</strong>, which will hold the configuration files, data files, and all output files (images, spectra, etc.).
+The four buttons at the top allow you to <span class="guilabel">Choose</span> the directory via a graphical dialog, <span class="guilabel">Open</span> it in an external file browser, or <span class="guilabel">Clear</span> all contained files (but not subdirectories).
+With the <span class="guilabel">Default</span> button it is possible to reset the settings to the default values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may also change the directory by typing or pasting into the text field below the buttons.</p>
+</div>
+<p>The remaining space is filled by the file listing and associated buttons. A double click in the listing will open the currently selected files with their associated application,
+as will pressing the <span class="guilabel">Open</span> button. <span class="guilabel">Show Image</span>, <span class="guilabel">Scatter Image</span>, and <span class="guilabel">TraceView</span> will load the currently selected files in the <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">ImageViewer</span></a> module, as the scatter image for subsequent
+calculations, and in the TraceView module (if installed) respectively. The TraceView module is intended to visualize trajectories saved by McRay in the 3D scene view.
+<span class="guilabel">View Spectrum</span> will attempt to pass the selected file to the included spectrum plotter.</p>
+</section>
+</section>
+<section id="advanced">
+<span id="mcrayadvancedsubsection"></span><h2><span class="guilabel">Advanced</span><a class="headerlink" href="#advanced" title="Permalink to this heading"></a></h2>
+<section id="simulation-options">
+<span id="mcrayadvancedsimulationoptionssubsubsection"></span><h3>Simulation Options<a class="headerlink" href="#simulation-options" title="Permalink to this heading"></a></h3>
+<p>The options on the left hand side are mostly concerned with physical effects and geometry handling. The right hand side allows configuration of the output to produce (<a class="reference internal" href="#mcrayy1"><span class="std std-numref">Fig. 30</span></a>).
+If the command is selected it is necessary to change the number. While if the command is not selected the default setting will be set.</p>
+<figure class="align-default" id="id2">
+<span id="mcrayy1"></span><a class="reference internal image-reference" href="_images/modules-mcrayy1.png"><img alt="McRay: Advanced" src="_images/modules-mcrayy1.png" style="width: 71.3%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 30 </span><span class="caption-text">McRay: Advanced.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="left-hand-side-of-simlulation-options">
+<h4>Left hand side of Simlulation Options:<a class="headerlink" href="#left-hand-side-of-simlulation-options" title="Permalink to this heading"></a></h4>
+<ul>
+<li><p><strong>Photo effect</strong> considers photoabsorption when elected. Should almost always be selected.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This photoemission is the emission of electrons or other free carriers when light is shone onto a material.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Rayleigh scattering</strong> considers Rayleigh scattering when elected.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This electromagnetic interaction is the mostly elastic scattering of light or other electromagnetic radiation by particles (atoms or molecules) much smaller than the wavelength of the radiation. Rayleigh scattering is a parametric process.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Compton scattering</strong> considers Compton scattering when elected.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Compton scattering occurs when the incident X-ray photon is deflected from its original path by an interaction with an electron.
+The electron is ejected from its orbital position and the X-ray photon loses energy because of the interaction but continues to travel through the material along an altered path.
+Energy and momentum are conserved in this process. The energy shift depends on the angle of scattering and not on the nature of the scattering medium.
+Since the scattered X-ray photon has less energy, it has a longer wavelength and less penetrating than the incident photon.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Pair production</strong> considers pair production when elected.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pair production often refers specifically to a photon creating an electron-positron pair near a nucleus but can more generally refer to any neutral boson creating a
+particle-antiparticle pair. In order for pair production to occur, the incoming energy of the interaction must be above a threshold in order to create the pair - at least the total
+rest mass energy of the two particles - and that the situation allows both energy and momentum to be conserved.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Fluorescence</strong> considers flourescence when elected. Photons, and electrons if enabled, can excite the bound electrons of the material’s atoms. During relaxation fluorescence photons, fluorescence electrons, and Auger electrons may be emitted.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fluorescence is the emission of light by a substance that has absorbed light or other electromagnetic radiation.
+It is a form of luminescence and in most cases, the emitted light has a longer wavelength, and therefore lower energy, than the absorbed radiation.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Electron transport</strong> considers electron transport when elected. When fluorescence or bremsstrahlung is enabled, secondary particles will be created.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Monte Carlo method for electron transport is a semiclassical Monte Carlo (MC) approach of modeling semiconductor transport.
+Assuming the carrier motion consists of free flights interrupted by scattering mechanisms, a computer is utilized to simulate the trajectories of particles as they move across
+the device under the influence of an electric field using classical mechanics. The scattering events and the duration of particle flight is determined through the use of random numbers.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Bremsstahlung</strong> (photons) are created during electron interactions when elected and requires electron transport.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The braking radiation or deceleration radiation is electromagnetic radiation produced by the deceleration of a charged particle when deflected by another charged particle,
+typically an electron by an atomic nucleus. The moving particle loses kinetic energy, which is converted into a photon, thus satisfying the law of conservation of energy.
+The term is also used to refer to the process of producing the radiation. Bremsstrahlung has a continuous spectrum, which becomes more intense and whose peak intensity shifts toward
+higher frequencies as the change of the energy of the decelerated particles increases.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>Noninteractive</strong> starts/stops calculation without further user interaction.</p></li>
+<li><p><strong>Photonsplitting</strong> applies variance reduction scheme. Photonsplitting takes into account the possible interaction process when a photon is penetrated by a medium.</p></li>
+<li><p><strong>Check object overlap</strong> notes the overlapping of parts when elected.</p></li>
+<li><p><strong>Save trajectories</strong> writes trajectory segments to disk (slow).</p></li>
+<li><p><strong>Target pixels</strong> aims photons toward each pixel (mostly for visualization purpose).</p></li>
+</ul>
+</section>
+<section id="right-hand-side-of-simlulation-options">
+<h4>right hand side of Simlulation Options:<a class="headerlink" href="#right-hand-side-of-simlulation-options" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p><strong>Image type</strong> is used to choose between different image types: TIFF, Isee, RAW, PGM or TXT. The default setting is TIFF.</p></li>
+<li><p><strong>Pixel type</strong> is used to choose between different pixel types: UInt 16, Float, Double. Usually the Float is used.</p></li>
+<li><p><strong>Pixel columns</strong> enters the number of pixel in columns.</p></li>
+<li><p><strong>Pixel rows</strong> enters the number of pixel in rows.</p></li>
+<li><p><strong>Normalize Errors</strong> normalizes a relative error of 1 to this value (relative statistically error).</p></li>
+<li><p><strong>Detector model</strong> is used to choose between different detector models: aRTist, Photons, Leptons, Electrons, Positrons or All. The default detector model is aRTist.</p></li>
+<li><p><strong>Scatter data</strong> registers data for this many scatter events separately.</p></li>
+<li><p><strong>Spectrum bins</strong> sets the number of spectrum bins. The maximum energy divide by the number of bins reveals the spectrum for each energy.</p></li>
+<li><p><strong>Max threads</strong> sets the maximum number of threads.</p></li>
+<li><p><strong>Batch size</strong> sets the batch size of trajectories.</p></li>
+<li><p><strong>Random seed</strong> sets the random seed.</p></li>
+</ul>
+</section>
+</section>
+<section id="execution-options">
+<span id="mcrayadvancedexecutionoptionssubsubsection"></span><h3>Execution Options<a class="headerlink" href="#execution-options" title="Permalink to this heading"></a></h3>
+<p><strong>Process priority</strong> is used to adjust the process priority of the background process carrying out the actual simulation with this parameter.
+You can choose between <code class="xref py py-class docutils literal notranslate"><span class="pre">Idle</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Below</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Normal</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Above</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">High</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>As calculations can potentially take a long time, a reduced priority is generally advisable (default setting: <code class="xref py py-class docutils literal notranslate"><span class="pre">Below</span></code>).</p>
+</div>
+<p>Set the <strong>Number of threads</strong>.</p>
+</section>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules-tomosynth.html" class="btn btn-neutral float-left" title="TomoSynth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="fileformats.html" class="btn btn-neutral float-right" title="File Formats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules-imageviewer.html" class="btn btn-neutral float-left" title="Image Viewer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules-solid.html" class="btn btn-neutral float-right" title="Solid" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -124,7 +306,7 @@
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
   
     <p></p>
-    <p>&#169; Copyright 2021-2022, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
+    <p>&#169; Copyright 2021-2023, Bundesanstalt für Materialforschung und -prüfung (BAM).</p>
     <p><a href="http://artist.bam.de/en/basis/impressum/index.htm">Disclaimer</a> * <a href="https://www.bam.de/Navigation/EN/Services/Privacy-Policy/privacy-policy.html">Privacy Policy</a></p>
      
 
