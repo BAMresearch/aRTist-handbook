@@ -25,6 +25,6 @@ The **DigRad** module can be used to generate new detector modells for a CR (Com
 .. _DigRadEdgeProfile:
 .. figure:: pictures/modules-digrad-edge_profile.*
     :alt: Edge profile indicating internal scatter radiation
-    :width: 60.3%
+    :width: 100%
 
     Edge profile indicating internal scatter radiation. Simulation of an edge penetration with a DigRad detector model with 5 % ISR and 5 mm correlation length. Right: Edge profile with reading of the ISR measurands (ISR = (2 * a / b) * 100 %; correlation length = c).
