@@ -16,7 +16,10 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="modules-digrad-edge_profile.svg">
+   sodipodi:docname="modules-digrad-edge_profile.svg"
+   inkscape:export-filename="D:\Programming\aRTist-handbook\source\pictures\modules-digrad-edge_profile.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2">
     <marker
@@ -401,11 +404,11 @@
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="1"
      inkscape:pageshadow="2"
      inkscape:zoom="1.1220226"
      inkscape:cx="531.54072"
-     inkscape:cy="297.08284"
+     inkscape:cy="297.52846"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -415,9 +418,10 @@
      fit-margin-bottom="0"
      inkscape:window-width="1697"
      inkscape:window-height="870"
-     inkscape:window-x="276"
-     inkscape:window-y="194"
-     inkscape:window-maximized="0" />
+     inkscape:window-x="160"
+     inkscape:window-y="142"
+     inkscape:window-maximized="0"
+     inkscape:pagecheckerboard="false" />
   <metadata
      id="metadata5">
     <rdf:RDF>
