@@ -40,7 +40,14 @@ The **Phi steps** and **Theta steps** control the accuracy of the faceting of th
 Options
 -------
 
-For an ellipsoid, you can additionally decide whether to use facetting in a **regular ellipsoid grid** using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles.
+For an ellipsoid, you can additionally decide whether to use facetting in a **regular ellipsoid grid** using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles (see :numref:`modules-solid2`).
+
+.. _modules-solid2:
+.. figure:: pictures/modules-solid2.png
+    :alt: Solid
+    :width: 60%
+    
+    Latitude/longitude tesselation (left) and geodesic tesselation of equal-sized triangles (right).
 
 For ellipsoid, cylinder and cone, you can activate the **volume correction**, where the facetted solid will be scaled up to meet the exact volume of the ideal solid. 
 
