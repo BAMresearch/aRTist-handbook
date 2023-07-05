@@ -24,15 +24,17 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
     File menu.
 
 * **New Project** opens a new |artist| scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
-* |16x16_document-open-folder| **Open** is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`.
-* |16x16_library| **Open Library**  is used to load something from the collection of example parts and projects. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
-* |16x16_document-save| **Save** the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
-* |16x16_document-save-as| **Save As** renames a project or changes the location of where you want to save it. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
+* |16x16_document-open-folder| **Open** is used to search for existing files. Then select a file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`. For supported file formats see section **File Formats**.
+* |16x16_library| **Open Library**  is used to load something from the collection of example parts, projects, Image Quality Indicators (IQIs), and spectra. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
+* |16x16_document-save| **Save** is used to save the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
+* |16x16_document-save-as| **Save As** renames a project or changes the location of where you want to save it. Additionally you can save the current image, the scene view, selected parts, the spectrum, the used detector description, and the |artist| scene. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
 * **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.
 * **Last Directories** shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.
 * **Open New Window** starts a new, additional instance of |artist|.
 * **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
 * |16x16_window-close| **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
+
+.. note:: The functionalities of |16x16_document-open-folder| **Open**, |16x16_document-save| **Save**, and |16x16_library| **Open Library** can also be accessed via the **Toolbar**.
 
 .. _EditMenuSubsection:
 
@@ -57,13 +59,15 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 * |16x16_edit-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
 * |16x16_edit-delete| **Delete** removes selected parts from the *Assembly List*.
 
+.. note:: The functionalities of |16x16_edit-undo| **Undo**, |16x16_edit-redo| **Redo**, |16x16_edit-cut| **Cut**, |16x16_edit-copy| **Copy**, |16x16_edit-paste| **Paste**, and |16x16_edit-delete| **Delete** can also be accessed via the **Toolbar**.
+
 .. _GeometryMenuSubsection:
 
 Geometry menu
 ^^^^^^^^^^^^^
 
 
-The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more in-depth in the separate chapter.
+The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more deatiled below.
 
 .. _guiGeometryMenu:
 .. figure:: pictures/gui-menu-geometry.png
@@ -84,6 +88,8 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 * |16x16_icon-arrange| **Arrange** is used to put parts in order to the assembly. Select the parts which have to be arranged, and activate this command. In the opening dialog box four options: *none*, *-*, *center*, *+* are available for each of the three axes. The parts will be aligned with the first selected part.
 * |16x16_edit-pickposition| **Pick Destination** moves item(s) from one point of the scene view to another. Click with the left mouse on the desired destination to relocate selected item(s).
 
+.. note:: The functionalities of |16x16_icon-arrange| **Arrange** and |16x16_center-new| **Center New Parts** can also be accessed via the **Toolbar**.
+
 .. _ComputeMenuSubsection:
 
 Compute menu
@@ -101,9 +107,11 @@ The :guilabel:`Compute` menu includes the button to start a simulation and offer
 
 * |16x16_aRTist| **Run** starts the simulation for the current configuration. It triggers a full-featured simulation in contrast to the preview simulations automatically performed if enabled. Resulting images are presented in the ImageViewer and labelled |16x16_image-final| as final result.
 * **Radiography** / **Thickness maps** control the simulation mode. Choose between these two options to either simulate a radiographic projection or just thickness maps for each penetrated material.
-* **Use GPU** controls the usa of an OpenGL graphics processing unit. When it is enabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
+* **Use GPU** controls the use of an OpenGL graphics processing unit (GPU). When it is enabled and a suitable GPU has been found, some image processing tasks will be transferred to the GPU. |artist|'s ray tracer runs independently of this at CPU only. If GPU usage will accelerate the simulation at all depends on the hardware configuration.
 * **Single Precision** controls the data representation at simulation: single or double precision. While double precision offers higher numerical accuracy, single precision helps to reduce memory consumption and computing time.
-* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labeled |16x16_image-preview| (not final) to set apart from final |16x16_image-final| results.
+* **Render Previews** enables/disables live rendering of preview images in ImageViewer. Preview images are labeled |16x16_image-preview| (not final) to to be distinguishable from final |16x16_image-final| results.
+
+.. note:: The functionalities of |16x16_aRTist| **Run** can also be accessed via the **Toolbar**.
 
 .. _ModulesMenuSubsection:
 
@@ -121,14 +129,16 @@ The :guilabel:`Modules` menu offers the selection of the available extension mod
     Modules menu.
 
 * **Manage Modules...** controls the activation of the installed modules. New modules can be installed from |artist| package files (:code:`*.artp`).
-* **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScan <CtScanSection>` description.
+* **CtScan** module facilitates the simulation of series of projections for virtual X-ray computerized tomography (CT) with circular trajectory. The module includes Feldkamp reconstruction and volume rendering. For more details see :ref:`CtScan <CtScanSection>` section.
 * **DetectorCalc** module will add new detector models to aRTist. Based on scintillator material and thickness the detector properties are modelled and adjusted by a reference shot of the modelled detector. For more information see :ref:`DetectorCalc <DetectorCalcSection>` section.
 * **DigRad** module will add new detector models to aRTist. It is intended to describe individual digital detectors by measured values according to detector characterization standards. For more information see :ref:`DigRad <DigRadSection>` section.
 * |16x16_image-radiography| **ImageViewer** module shows the simulation result, the virtual projections. The different settings and functions of ImageViewer will be explained in section :ref:`ImageViewer <ImageViewerSection>`.
 * **LogViewer** module displays internal messages by aRTist and its components.
 * **McRay** module is the interface to the Monte Carlo code McRay, coming with aRTist. Usually McRay is controlled at the :ref:`Scattering <ScatteringPanelSection>`. This module provides additional options for experienced users.
-* |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene.
-* **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene.
+* |16x16_icon-solid| **Solid** module presents a dialog to generate simple parts (virtual objects) of any sizes and add these to the scene. For more details see :ref:`Solid <SolidSection>` section.
+* **TomoSynth** module provides another dialog to setup a simulation series. The Laminography tab is the easy interface to define a scanning movements of tube and detector, while the Advanced tab can be used to control variations for any part in the scene. For more details see :ref:`TomoSynth <TomoSynthSection>` section.
+
+.. note:: The |16x16_icon-solid| **Solid** module can also be accessed via the **Toolbar**.
 
 .. _ToolsMenuSubsection:
 
@@ -145,16 +155,18 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 
     Tools menu.
 
-* **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation runs. 
-* **Show VTK Log** calls module LogViewer to displays internal messages by aRTist and its components.
+* **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of |artist|. Status and debug information can be observed here including potential warnings and error messages at simulation runs. 
+* **Show VTK Log** calls module LogViewer to displays internal messages by |artist| and its components.
 * **Enable remote access** opens a TCP/IP port to control |artist| from another program, e.g. Python. 
-* **Opening Angle** calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the status bar.
+* **Opening Angle** calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the **status bar**.
 * **Attenuation Data** opens a viewer of the energy-dependent attenuation coefficients used by the program.
 * **Detector Properties** opens a viewer of the currently used detector model.
 * **Image Viewer** provides the menu bar of the image viewer module (lacking a nice way to directly attach it to the module window).
 * |16x16_edit-materials| **Materials** opens the materials editor.
 * |16x16_xray-tube| **Spectrum...** opens the X-ray spectrum generator.
 * |16x16_preferences-system| **Settings** opens the preferences dialog.
+
+.. note:: The |16x16_edit-materials| **Materials** tool can also be accessed via the **Toolbar**.
 
 .. _ViewMenuSubsection:
 
@@ -192,6 +204,8 @@ The :guilabel:`View` menu provides commands ot control the various rendering and
 * **Toggle Toolbar Visibility** switches the toolbar on and off.
 * |16x16_open-dock| **Toggle Dock Visibility** switches the docking area on and off.
 * **Toggle Setup Visibility** switches the parameter panel on and off.
+
+.. note:: The |16x16_zoom-select| **Zoom to Selection**, |16x16_default-view-top-right| **Default View**, |16x16_default-view-minus-x| **View along X**, |16x16_default-view-minus-y| **View along Y**, |16x16_default-view-minus-z| **View along Z**, |16x16_pick-focalpoint| **Pick Focal Point**,  |16x16_view-orthographic| **Orthographic Projection**, |16x16_view-axes| **Toggle Axes**, and |16x16_switch-wireframe| **Toggle Wireframe** can also be accessed via the **Toolbar**.
 
 .. _HelpMenuSubsection:
 
