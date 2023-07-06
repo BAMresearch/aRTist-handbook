@@ -27,7 +27,7 @@ This material applies everywhere at the space of the scene outside of any part.
 .. note::
 
    You can choose between any preset or self-definded material. :class:`air` is the default setting. 
-   All available materials are provided in the |22x22_edit-materials| Materials editor of |artist|.
+   All available materials are provided in the |22x22_edit-materials| **Materials Editior** of |artist|. Additional you can add new materials (for details see :ref:`Materials Editor <MaterialEditiorSubSection>`).
 
 .. _SetupAssemblyListSubSection:
 
@@ -65,15 +65,15 @@ Under transformation you can find a number of options to manipulate and scale of
 
 1. Select an item.
 
-2. Choose between the |16x16_world-coordinate-system| world coordinate system or the |16x16_object-coordinate-system| local coordinate system.
+2. Choose between the |16x16_world-coordinate-system| **world coordinate system** or the |16x16_object-coordinate-system| **local coordinate system**.
 
-3.  Choose type of transformation: |16x16_transformation-rotate| rotate, |16x16_transformation-move| translate or |16x16_transformation-scale| scale.
+3.  Choose type of transformation: |16x16_transformation-rotate| **rotate**, |16x16_transformation-move| **translate** or |16x16_transformation-scale| **scale**.
 
 4.  With |gui-parameterP-SetupSelectAxis| you can select one **Axis** or all three with a click on one of the green arrows. In the axis row you can see which axis is currently not selected (:class:`0` = axis) and which axsis is currently selected (:class:`1` = axis).
 
-5.  |16x16_set-coordinate-arrow-down| |16x16_set-coordinate-arrow-up| set the step size with the green arrows or type in a **Value**. The unit matches the type of transformation: degree (for |16x16_transformation-rotate| rotate), mm (for |16x16_transformation-move| translate) or 10 % (for |16x16_transformation-scale| scale) giving the magnification.
+5.  |16x16_set-coordinate-arrow-down| |16x16_set-coordinate-arrow-up| set the step size with the green arrows or type in a **Value**. The unit matches the type of transformation: degree (for |16x16_transformation-rotate| **rotate**), mm (for |16x16_transformation-move| **translate**) or 10 % (for |16x16_transformation-scale| **scale**) giving the magnification.
 
-6. With the slide control |gui-parameterP-SetupSlideTransform| rotate, translate or scale the selected item or do it directly in the scene with the left mouse button. You can monitor the movement/modification of **Reference position**, **Position**, **Orientation** and **Size** over the display fields in the bottom of the **Transformation** page or put in values by yourself as an alternative to the previously explained approach.
+6. With the slide control |gui-parameterP-SetupSlideTransform| rotate, translate or scale the selected item or do it directly in the scene with the left mouse button. You can monitor the movement/modification of **Reference position**, **Position**, **Orientation**, and **Size** over the display fields in the bottom of the **Transformation** page or put in values by yourself as an alternative to the previously explained approach.
 
 .. _guiSetupTransformation:
 .. figure:: pictures/gui-parameterPsetup_transformation.jpg
