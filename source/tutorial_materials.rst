@@ -9,6 +9,7 @@ Materials
 
      :download:`tutorial_positioning.aRTist <files/tutorial_positioning.aRTist>` |nbsp| (4.6 MB)
 
+.. _MaterialEditiorSubSection:
 
 Materials Editor
 -----------------
@@ -47,6 +48,7 @@ In the materials editor, this compound would be represented as :code:`Al2O3 0.4 
     We add the glass ceramic as a new material.
 
 It is important to click :guilabel:`Apply` to save the changes you have made. The button :guilabel:`Refresh` will re-load the internal library, delete any unsaved changes you have made, and show changes that other |artist| modules have made in the material library in the time since you have opened the *Materials Editor.*
+
 
 
 Attenuation Data Viewer
