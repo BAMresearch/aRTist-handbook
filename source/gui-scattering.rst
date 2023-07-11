@@ -5,7 +5,7 @@
 Scattering Panel
 ================
 
-The :guilabel:`Scattering` tab of Parameter Panel is useful for different scattering settings (homogenous, McRay etc.) in the stimulated radiation.
+The :guilabel:`Scattering` tab of the Parameter Panel is designed for different scattering settings (homogenous, McRay etc.) in the stimulated radiograph (see :numref:`guiparameterPSetupScattering`).
 
 .. _guiparameterPSetupScattering:
 .. figure:: pictures/gui-parameterP-setup_scat.jpg
@@ -25,28 +25,34 @@ Parameters
  .. |gui-parameterPpickedPosition1| image:: pictures/gui-parameterP-scattering-picked_position1.jpg
  .. |gui-parameterPscattering_para4| image:: pictures/gui-parameterP-scattering_para4.jpg
 
-|gui-parameterP-focal_spot2| |gui-parameterP-focal_spot3| |gui-parameterP-focal_spot4| |gui-parameterPscattering_para4| : Load, delete, show or smooth scatter image.
+|gui-parameterP-focal_spot2| **Load scatter image from file**
 
+|gui-parameterP-focal_spot3| **Delete scatter image**
+
+|gui-parameterP-focal_spot4| **Show scatter image** 
+
+|gui-parameterPscattering_para4| **Adaptively smooth scatter image**
+ 
 Mode
 ^^^^
 
 * :class:`off` does not take into account scattered radiation at all.
 
-* :class:`build-up factor` is used to estimate a constant scatter. The build-up factor is the ratio of total to primary radiation at the reference position. Decreased contrast due to scattering is simulated. Set the build-up factor in the **build-up B** input field.  Build-up factor of :class:`2` means as much scatter radiation (S) as primary radiation (P) impinges on the detector at the reference position.
+* :class:`build-up factor` is used to assign a constant scatter contribution. The build-up factor is defined as the ratio of the total to the primary radiation at the reference position. Decreased contrast due to scattering is simulated for X-ray films. For digital detector arrays (DDA) or imaging plates (IPs) the scatter contribution to the primary radiation acrs as an offset and usulally does not decrease the contrast in the X-ray image. Set the build-up factor in the **build-up B** input field.  A Build-up factor of :class:`2` means the X-ray image contains as much scatter radiation (S) as primary radiation (P) on the detector at the reference position. The Built-up factor scatter model works fine for objects with only small wall thickness deviations, e.g., plate-like objects .
 
     .. |gui-parameterP-buildup1| image:: pictures/gui-parameterP-buildup1.jpg
 
-    |gui-parameterP-buildup1| BuildUp Estimator estimates the BuildUp Factor for a specific part. You can dock the window in :numref:`guiparameterPbuildup` in the docking area.
+    The |gui-parameterP-buildup1| BuildUp Estimator estimates the BuildUp Factor for a specific part. You can dock the window in :numref:`guiparameterPbuildup` in the docking area.
 
-    * Set **Material** and **Thickness** in mm, the number of **Layers** and the **Energy resolution** in keV
+    * Set **Material** and **Thickness** in mm, the number of **Layers**, and the **Energy resolution** in keV
     * Enable/Disable **Multiple scatter**
     * Press :guilabel:`Update` (BuildUp factor will be estimated but not set) or Set
 
-    **Layers**, **Energy resolution [keV]** and **Multiple scatter** are model parameters for the algorithmus function thereby. **Material** and **Thickness** are physical parameters for the geometric function.
+    **Layers**, **Energy resolution [keV]**, and **Multiple scatter** are model parameters for the underlaying algorithm to estimate the Build-up. **Material** and **Thickness** are physical parameters for the geometric function.
 
     .. note::
 
-        After a new simulation with the build-up factor, an additional image :class:`primary + scatter intensities` appears in the drop-down menu of the :ref:`Image Viewer <ImageViewerSection>`, showing the new build-up factor simulation step.
+        After a new simulation with the build-up factor, an additional image :class:`primary + scatter intensities` appears in the drop-down menu of the :ref:`Image Viewer <ImageViewerSection>`, showing the new build-up factor simulation.
 
 .. _guiparameterPbuildup:
 .. figure:: pictures/gui-parameterP-buildup.jpg
@@ -55,13 +61,13 @@ Mode
 
     |gui-parameterP-buildup1| BuildUp Estimator settings.
 
-* :class:`external file` is used for a user-supplied image, which is scaled and added. The corresponding primary radiation at the reference position has to be set in the box of **file primary intensity**.
+* :class:`external file` is used for a user-supplied scatter image, which is scaled and added. The corresponding primary radiation at the reference position has to be set in the box of **file primary intensity**.
 
-* :class:`McRay` is used to determine the amount of scattering with Monte Carlo simulation. It calculates fully automatic the Monte Carlo of scatter contribution. 
+* :class:`McRay` is used to determine the amount of scattering with a Monte Carlo simulation. It calculates fully automatic the Monte Carlo of scatter contribution. For information about the underlaying physics see at the |artist| website.
 
     .. note::
 
-        A larger number of photons results in a better estimate, but longer calculation times.
+        A larger number of photons results in a better scatter estimate, but longer calculation times.
 
 Reference Point
 ^^^^^^^^^^^^^^^
@@ -82,10 +88,10 @@ Select the reference point within the detector image. Available settings:
 McRay - Monte Carlo ray tracing
 -------------------------------
 
-Monte Carlo ray tracing (:numref:`guiparameterPscatteringMcray`) will contribute a image of scatter radiation based on the actual setup. This includes considerable extra computing effort. 
-Typically, it takes seconds to minutes for one calculation. 
-Worthwhile when inspecting castings (thick walls). 
-Build-up factor is recommended when inspecting metal sheets and welds. More detailed settings for McRay can be done in the :ref:`McRay of Modules <McRaySection>`.
+Monte Carlo ray tracing (:numref:`guiparameterPscatteringMcray`) will calculate a image of scatter radiation based on the actual setup. This includes considerable extra computing effort. 
+Typically, it takes seconds to minutes for one calculation depending on the coosen number of photons to be traced (:numref:`guiparameterPscatteringMcray`). 
+Monte Carlo ray tracing is worthwhile when inspecting castings (thick walls) or for object with large wall thickness differences. 
+Build-up factor is recommended when inspecting metal sheets or welds (plate-like objects). More detailed settings for McRay can be done in the :ref:`McRay of Modules <McRaySection>`.
 
 .. _guiparameterPscatteringMcray:
 .. figure:: pictures/gui-parameterP-scattering_mcray.jpg
