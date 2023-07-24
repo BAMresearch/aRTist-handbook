@@ -6,14 +6,14 @@ CtScan
 ======
 
 The **CtScan** module can be used to simulate cone beam :abbr:`CT (computerized tomography)` scans, applying the conventional circular scanning trajectory.
-The module is accomplished by Feldkamp reconstruction and volume visualization. 
+The module is accomplished by a Feldkamp reconstruction and volume visualization. 
 The simulated projections can be processed in the same way as experimental CT projections by external reconstruction programs. 
 
 .. note::
     
     It is recommended to use the :abbr:`TIFF (Tagged Image File Format)` file format for easy data exchange, while the internal Feldkamp reconstruction requires projections in *BAM CT* format.
 
-The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the **Setup**, the **Feldkamp** and the **Volume View** (:numref:`modules-CtScan1`). 
+The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the **Setup**, the **Feldkamp**, and the **Volume View** (:numref:`modules-CtScan1`). 
 At bottom of module window, you can find a :guilabel:`Run` button to start or to :guilabel:`Stop` the simulation and a progress bar. 
 The first two pages offer settings for the scan and for reconstruction (|artist| uses the Feldkamp algorithm for reconstruction). 
 The finished tomogram can be viewed in the scene with the help of the first (**Setup**) or third (**Volume View**) tab by clicking on the :guilabel:`Show` button. 
@@ -39,22 +39,22 @@ All three pages will be explained in detail below.
 Setup
 -----
 
-The :guilabel:`Setup` tab is used to configure the CT.
+The :guilabel:`Setup` tab is used to configure the CT (:numref:`modules-CtScan1`).
 
 .. _ScanParametersSubsubsection:
 
 Scan Parameters
 ^^^^^^^^^^^^^^^
 
-The adjustable **Scan Parameters** are **Total Angle [°]**, **Number of Steps** and
-**Angle Step Size [°]**.
+The adjustable **Scan Parameters** are **Total Angle [°]**, **Number of Steps**, and
+**Angle Step Size [°]**. The **Total Angle [°]** is preset to 360°. When setting the **Number of Steps**, the **Angle Step Size [°]** is automatically updated and cannot be set by the user.
 
 .. _OutputSubsubsection:
 
 Output
 ^^^^^^
 
-At the **Output** choose **Directory** and **File Type** and put in a **File Name**. The **File Type** can be chosen between :class:`BAM CT` or :class:`TIFF` and :class:`16 bit` or :class:`float`. 
+At the **Output** choose the **Directory** and the **File Type** and set a **File Name**. The **File Type** can be chosen between :class:`BAM CT` or :class:`TIFF` and :class:`16 bit` or :class:`float` with the two pull-down menus. 
 
 .. note::
 
@@ -67,32 +67,32 @@ Click on the :guilabel:`Show` button when the simulation is finished to see the 
 
 .. hint::
     
-    For an improved view deactivate the solid or minimize the opacity (double-click on the number of the object to change the opacity: **Parameter Panel** → **Setup Panel** → **Display**).
+    For an improved view of the reconstruction result deactivate the solid or minimize the opacity (double-click on the number of the object to change the opacity: **Parameter Panel** → **Setup Panel** → **Display**).
 
 .. _AdvancedSubsubsection:
 
 Advanced
 ^^^^^^^^
 
-By marking **Only selected objects** you can include chosen objects of your assembly in the simulation. 
+By marking **Only selected objects** you can include chosen objects of your assembly in the CT simulation. 
 That means the selected objects rotate and the others do not. 
 
 .. note::
 
    To do this, you should select the corresponding components in the :ref:`Parameter Panel <ParameterPanel>` beforehand. Select a single object by clicking on it. 
-   Select two or more by holding down the :kbd:`Ctrl` key and clicking on the other components to be included in the simulation. 
+   Select two or more by holding down the :kbd:`Ctrl` key and clicking on the other components to be included in the CT simulation. 
    The components are selected when they are highlighted in blue.
 
 * **Direction** is used to choose between clockwise or counterclockwise direction.
 * **Scattering** is used to choose between off or McRay scatter-attitude.
-* **Interval [°]** sets the interval for using the same scatter image (to save some time by not recalculating for each projection).
+* **Interval [°]** sets the interval for using the same scatter image (to save computing time by not recalculating the scatter contribution for each projection).
  
 .. _FeldkampSubsection:
 
 Feldkamp
 --------
 
-Set the parameters for reconstruction on the second tab - the :guilabel:`Feldkamp` (:numref:`modules-cttfeldk`). 
+Set the parameters for the reconstruction on the second tab - the :guilabel:`Feldkamp` (:numref:`modules-cttfeldk`). 
 Check the **Run Feldkamp** box on the first page - the :guilabel:`Setup` - to start reconstruction automatically after the necessary data has been acquired. 
 
 .. _OptionsSubsubsection:
@@ -113,7 +113,7 @@ Enable or disable **Interpolation** or/and the **Use of GPU**, with **Use multip
 Output
 ^^^^^^
 
-You can choose between different **File type**: :class:`BAM CT`, :class:`VTK` and :class:`RAW` as :class:`8bit`, :class:`16bit`, :class:`32bit` or :class:`float`.
+You can choose between different **File type**: :class:`BAM CT`, :class:`VTK`, and :class:`RAW` as :class:`8bit`, :class:`16bit`, :class:`32bit` or :class:`float`.
 
 .. _modules-cttfeldk:
 .. figure:: pictures/modules-cttfeldk.*
@@ -127,14 +127,14 @@ You can choose between different **File type**: :class:`BAM CT`, :class:`VTK` an
 Volume View
 -----------
 
-With the tab :guilabel:`Volume View` (:numref:`modules-cttvv`) it is possible to show sectional image of the finished tomogram in :ref:`Image Viewer <ImageViewerSection>` directly after reconstruction. 
-Alternatively, you may load previously acquired data. Supported file types are: :code:`.bd`, :code:`.raw`, :code:`.bin`, :code:`.vtk`.
+With the tab :guilabel:`Volume View` (:numref:`modules-cttvv`) it is possible to show sectional image of the finished tomogram in the :ref:`Image Viewer <ImageViewerSection>` directly after reconstruction. 
+Alternatively, you may load previously acquired data with a click on the file symbol |16x16_document-open-folder|. Supported file types are: :code:`.bd`, :code:`.raw`, :code:`.bin`, and :code:`.vtk`.
 Press the :guilabel:`Show` button on this page or the first page to start the calculation. This will take a few seconds. 
-Then you can view the 3D-Scan of the part in the scene. Deactivate the part or minimize the opacity for an improved view of the 3D-Scan.
-With the option **Slice View** → **Show plane** a sectional image of the part for the respectively axis (**X**, **Y** or **Z**) will appear in :ref:`Image Viewer <ImageViewerSection>`. 
+Then you can view the 3D-Scan of the part(s) in the scene. Deactivate the part(s) or minimize the opacity for an improved view of the 3D-Scan.
+With the option **Slice View** → **Show plane** a sectional image of the part(s) for the respectively axis (**X**, **Y** or **Z**) will appear in :ref:`Image Viewer <ImageViewerSection>`. 
 If **Show slice** is activated, borders of the object can be seen in the plane. Choose an **Axis** and move the plane with the slider to see a sectional image of the part.
 
-Settings for Volume View:
+The following settings for the Volume View are available:
 
 * **Minimum**
 * **Maximum**
@@ -143,7 +143,7 @@ Settings for Volume View:
 * Activate/Deactivate **Use 3D texture**
 * **Gradient**/ **GradientROI** → choose between **All**, **Min/Max** or **Level/Contrast**
 
-In **Positioning**, the scene is affected. It is possible to **Position** the voxel packet. With **Spacing**, the size of the scene can be influenced (in X, Y, Z).
+In **Positioning**, the scene is affected. It is possible to **Position** the reconstructed voxel packet. With **Spacing**, the size of the scene can be influenced (in X, Y, Z).
 
 .. _modules-cttvv:
 .. figure:: pictures/modules-cttvv.png
