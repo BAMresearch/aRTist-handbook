@@ -5,7 +5,7 @@
 |32x32_icon-solid| Solid
 ========================
 
-The |16x16_icon-solid| **Solid** module can be used to generate triangulated surfaces of simple geometric solids like spheres, cuboids, etc. and also 3D letters with customizable text (:numref:`modules-solid1`). 
+The |16x16_icon-solid| **Solid** module can be used to generate triangulated surfaces of simple geometric solids like ellipsoids, cuboids, etc. and also 3D letters with customizable text (:numref:`modules-solid1`). 
 The created solids are loaded into the scene and contribute to the assembly of parts. 
 
 .. _modules-solid1:
@@ -32,7 +32,7 @@ Under **Geometry** you can select the **Type**. The following types are availabl
 Dimensions
 ----------
 
-The size of the solid can be defined by the **X**, **Y** and **Z** extent of its bounding box. By activating the checkbox **X=Y** (**=Z**) you can force equal values for **X [mm]**, **Y [mm]** and **Z [mm]**. 
+The size of the solid can be defined by the **X**, **Y**, and **Z** extent of its bounding box. By activating the checkbox **X=Y** (**=Z**) you can force equal values for **X [mm]**, **Y [mm]**, and **Z [mm]**. 
 
 The **W** defines the wall thickness of a tube, or the final thickness (in Z dimension) of a wedge (**Z** sets the initial thickness).
 The **Phi steps** and **Theta steps** control the accuracy of the faceting of the ellipsoid, cylinder and cone.
@@ -49,7 +49,7 @@ For an ellipsoid, you can additionally decide whether to use facetting in a **re
     
     Latitude/longitude tesselation (left) and geodesic tesselation of equal-sized triangles (right).
 
-For ellipsoid, cylinder and cone, you can activate the **volume correction**, where the facetted solid will be scaled up to meet the exact volume of the ideal solid. 
+For ellipsoid, cylinder, and cone, you can activate the **volume correction**, where the facetted solid will be scaled up to meet the exact volume of the ideal solid. 
 
 .. note::
 
