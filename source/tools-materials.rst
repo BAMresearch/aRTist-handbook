@@ -9,16 +9,16 @@ The |22x22_edit-materials| **Materials** editor lists all materials that are ava
 It provides the following possibilities to edit materials:
 
 * Edit selected material. Click on an entry you wish to edit, for example density or composition. Press :kbd:`enter` when finished.
-* |16x16_list-add| is used to append a new material definition.
+* |16x16_list-add| is used to add a new material definition.
 * |16x16_list-remove| Delete is used to erase currently selected material.
 * |16x16_choose-color| Edit display is used to revise material display parameters for currently selected material.
-* |16x16_show-attenuation| Attenuation plots attenuation data for currently selected material
-* :guilabel:`Apply` is used to update material database with table contents.
+* |16x16_show-attenuation| **Attenuation** plots the attenuation data for the currently selected material (for details see :ref:`Attenuation Data <AttenuationDataSection>`)
+* :guilabel:`Apply` is used to update material database with table of content.
 * :guilabel:`Refresh` is used to reload table contents from material database.
 
 .. note::
     
-    Densities are given in g/cm³. The composition must be of the form: H2O 0.96 NaCl 0.04. The fractional numbers are mass ratios.
+    Densities are given in g/cm³. The composition can be given bei the chemical formula, e.g., H2O plus density for water, or by the chemical elements and the mass ratio between the elements, e.g., N2 0.756 O2 0.231 Ar 0.013 plus density for air. The sum of the mass ratios of all chemical elements should be one. If not, |artist| will automatically normalize the sum of the mass rations to one.
 
 .. _tools-materialseditor1:
 .. figure:: pictures/tools-materialseditor1.jpg
