@@ -5,7 +5,7 @@
 Graphs
 ======
 
-Throughout the program you will come across several graphs like the one in the left of :numref:`tools-graph_nebeneinander`. Those graph displays are all designed the same in that you can choose visualization options:
+Throughout the program you will come across several graphs like the one in the left of :numref:`tools-graph_nebeneinander`, e.g., in the :ref:`Spectrum Section <SpectrumSection>`. Those graph displays are all designed the same layout in that visualization options can be choosen:
 
 * log x
 * log y
