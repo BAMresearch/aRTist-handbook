@@ -65,9 +65,9 @@ Activation request
 
 The activation request requires information about your |artist| installation. The necessary information can be collected at the license information dialog of |artist| (:guilabel:`Help` menu → :guilabel:`License information`) at section "License activation". There are options to apply for node-locked or network licensing and to request an evaluation period.
 
-.. note:: To request a network license, a shared network folder has to be prepared in advance. It is required to store the common license file in this folder.
+.. note:: To request a network license, a shared network folder must be created in advance. This folder will be used to store the common license file.
 
-.. note:: All users of the network license need to have write permission for the license file.
+.. note:: All users of a network license need to have write permission for the license file.
 
 Press the button :guilabel:`Generate activation request` to display the activation request (it will also be copied to your clipboard). Please email this request to `aRTist@bam.de <mailto:aRTist@bam.de>`_.
 
