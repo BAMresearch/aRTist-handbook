@@ -119,18 +119,20 @@
              
   <section id="mcray">
 <span id="mcraysection"></span><h1>McRay<a class="headerlink" href="#mcray" title="Permalink to this heading"></a></h1>
-<p><strong>McRay</strong> is a Monte Carlo raytracing implementation of electron and photon transport.
-This module forms a graphical interface for McRay, in order to configure and run simulations using it from within <em>aRT</em>ist.
+<p><strong>McRay</strong> is a Monte Carlo ray tracing implementation for photon and electron transport.</p>
+<p>For photon transport <strong>McRay</strong> solves the stationary Bolzmann equation. It describes not only the attenuation of photons as the exponential attenuations law, giving the part of the photon that do no interact with die object, but also counts for contributions of Compton and Rayleigh scattering as well as for pair production. Additionally internal sources as X-ray fluorescence (emission of photons as a result of the photo absorption), electron-positron annihilation (emission of two photons with exactely 511 keV in opposite direction as a result of pair production), and Bresmstrahlung production can be considered.</p>
+<p>Additional the <strong>McRay</strong> module can trace electrons which is for most of the application of <em>aRT</em>ist not necessary and consumes a very large amount of computing resources.</p>
+<p>This module forms a graphical interface for <strong>McRay</strong> in order to configure and run simulations using it from within <em>aRT</em>ist.
 If you activate the inline help icon <a class="reference internal" href="_images/16x16_system-help.png"><img alt="16x16_system-help" src="_images/16x16_system-help.png" style="width: 16px;" /></a> an additional tab <span class="guilabel">Help</span> will appear (see: <a class="reference internal" href="gui-menu-bar.html#helpmenusubsection"><span class="std std-ref">Help menu</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In this user guide, the McRay module topics <span class="guilabel">Expert</span>, <span class="guilabel">Manual</span>, <span class="guilabel">Cluster</span> and <span class="guilabel">Interactive</span> are not being explained.</p>
+<p>In this user guide, the <strong>McRay</strong> module topics <span class="guilabel">Expert</span>, <span class="guilabel">Manual</span>, <span class="guilabel">Cluster</span>, and <span class="guilabel">Interactive</span> are not being explained. The topics <span class="guilabel">Expert</span> requires detailed knowledge about the underlaying physics and the Monte Carlo method. The topic  <span class="guilabel">Manual</span> require detaild knowledge aubout the implementation of the ray tracer. The topic <span class="guilabel">Cluster</span> war created to run <strong>McRay</strong> on a computer cluster under linux for parallel computing. The actual implementation runs also on multi processor multi core Windows systems. The topic <span class="guilabel">Interactive</span> summarizes the simulation and the calculation process, i.e., is just informative.</p>
 </div>
-<p>A <span class="guilabel">Run</span> or <span class="guilabel">Stop</span> button and a progress bar are located at bottom of module window. The first four tabs expose the configuration in order of increasing complexity.</p>
+<p>A <span class="guilabel">Run</span> or alternately a <span class="guilabel">Stop</span> button and a progress bar are located at bottom of module window. To start the calculation press the <span class="guilabel">Run</span> button. After this the <span class="guilabel">Run</span> button turns to the <span class="guilabel">Stop</span> button to stop the running calculation.</p>
 <section id="basic">
 <span id="mcraybasicsubsection"></span><h2><span class="guilabel">Basic</span><a class="headerlink" href="#basic" title="Permalink to this heading"></a></h2>
 <p>This page contains everything necessary to run a Monte Carlo simulation with the default settings (<a class="reference internal" href="#mcrayy"><span class="std std-numref">Fig. 29</span></a>).
-At the top there are two buttons, <span class="guilabel">Set defaults</span> to reset all settings to the default, and <span class="guilabel">View default output</span> to load the images normally resulting from a successful simulation run.</p>
+At the top there are two buttons, <span class="guilabel">Set defaults</span> to reset all settings to the default one, and <span class="guilabel">View default output</span> to load the images normally resulting from a successful simulation.</p>
 <figure class="align-default" id="id1">
 <span id="mcrayy"></span><a class="reference internal image-reference" href="_images/modules-mcrayy.png"><img alt="McRay: Basic" src="_images/modules-mcrayy.png" style="width: 71.3%;" /></a>
 <figcaption>
@@ -140,32 +142,31 @@ At the top there are two buttons, <span class="guilabel">Set defaults</span> to 
 <section id="options">
 <span id="mcraybasicoptionssubsubsection"></span><h3>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h3>
 <ul>
-<li><p><strong>Number of particles</strong> is used to specify the desired number of particles (photons / electrons).</p></li>
-<li><p><strong>Data energy resolution [keV]</strong> is used to influence the energy resolution of these structures (by this parameter).</p>
+<li><p><strong>Number of particles</strong> is used to specify the desired number of particles (photons / electrons) to be started for the simulation.</p></li>
+<li><p><strong>Data energy resolution [keV]</strong> is used to set the energy resolution for the simulation.</p>
 <blockquote>
 <div><div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>Internally most material data (attenuation-coefficients, differential scatter cross-sections, etc.) is kept in lookup structures for fast access.
-The default value of 1 keV does not normally need to be changed, but for low-energy calculations, especially including fluorescence, a smaller value of e.g. 0.1 keV may be advisable.</p>
+The default value of 1 keV does not normally need to be changed, but for low-energy calculations, for instance if fluorescence is included, a smaller value of, e.g., 0.1 keV may be advisable.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>File prefix</strong> is used to set a project name in this field. Default name is <code class="xref py py-class docutils literal notranslate"><span class="pre">New</span></code>.</p></li>
+<li><p><strong>File prefix</strong> is used as the base name for the output files, it defaults to the name of the current <em>aRT</em>ist project.</p></li>
 </ul>
 </section>
 <section id="output-directory">
 <span id="mcraybasicoutputsubsubsection"></span><h3>Output directory<a class="headerlink" href="#output-directory" title="Permalink to this heading"></a></h3>
-<p>Here you may change and inspect the <strong>Output directory</strong>, which will hold the configuration files, data files, and all output files (images, spectra, etc.).
-The four buttons at the top allow you to <span class="guilabel">Choose</span> the directory via a graphical dialog, <span class="guilabel">Open</span> it in an external file browser, or <span class="guilabel">Clear</span> all contained files (but not subdirectories).
-With the <span class="guilabel">Default</span> button it is possible to reset the settings to the default values.</p>
+<p>Here you may change and view the <strong>Output directory</strong>, which will hold the configuration files, data files, and all output files (images, spectra, etc.).
+The four buttons at the top allow you to <span class="guilabel">Choose</span> the directory via a graphical dialog, <span class="guilabel">Open</span> it in an external file browser, or <span class="guilabel">Clear</span> to delete all files in the output directory and in all subdirectories.
+With the <span class="guilabel">Default</span> button it is possible to reset the settings to the default values. The default value for the output directory is #McRay/&lt;File prefix&gt;. After the calculation has been finished an additional subdirectory named Results is created, where all simulation results are stored.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You may also change the directory by typing or pasting into the text field below the buttons.</p>
+<p>You may also change the directory by typing into the text field below the buttons.</p>
 </div>
-<p>The remaining space is filled by the file listing and associated buttons. A double click in the listing will open the currently selected files with their associated application,
-as will pressing the <span class="guilabel">Open</span> button. <span class="guilabel">Show Image</span>, <span class="guilabel">Scatter Image</span>, and <span class="guilabel">TraceView</span> will load the currently selected files in the <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">ImageViewer</span></a> module, as the scatter image for subsequent
-calculations, and in the TraceView module (if installed) respectively. The TraceView module is intended to visualize trajectories saved by McRay in the 3D scene view.
-<span class="guilabel">View Spectrum</span> will attempt to pass the selected file to the included spectrum plotter.</p>
+<p>The remaining space is filled by the file list and associated buttons. A double click in the list will open this file with its associated application (standard file explorer functionality),
+just like pressing the <span class="guilabel">Open</span> button. To view the content of the subdirectories press the <strong>+</strong> in front of the subdirectory name. <span class="guilabel">Show Image</span> will load the currently selected file in the <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">ImageViewer</span></a>. <span class="guilabel">Scatter Image</span> will load this image as scatter image for the scattering mode <em>External file</em> of the general <em>aRT</em>ist workflow (see parameter panel <strong>Scattering</strong>). <span class="guilabel">TraceView</span> will open the selected file with the TraceView module. The TraceView module is intended to visualize trajectories saved by McRay if <em>Safe trajectories</em> is selected in the <a class="reference internal" href="#mcrayadvancedsubsection"><span class="std std-ref">Advanced</span></a> tab (see below) in the 3D scene view.
+<span class="guilabel">View Spectrum</span> will open the selected file with the spectrum viewer of <em>aRT</em>ist.</p>
 </section>
 </section>
 <section id="advanced">
@@ -173,7 +174,7 @@ calculations, and in the TraceView module (if installed) respectively. The Trace
 <section id="simulation-options">
 <span id="mcrayadvancedsimulationoptionssubsubsection"></span><h3>Simulation Options<a class="headerlink" href="#simulation-options" title="Permalink to this heading"></a></h3>
 <p>The options on the left hand side are mostly concerned with physical effects and geometry handling. The right hand side allows configuration of the output to produce (<a class="reference internal" href="#mcrayy1"><span class="std std-numref">Fig. 30</span></a>).
-If the command is selected it is necessary to change the number. While if the command is not selected the default setting will be set.</p>
+If the command is selected it is necessary to change the number right to the selected option. If the command is not selected the default setting will be set.</p>
 <figure class="align-default" id="id2">
 <span id="mcrayy1"></span><a class="reference internal image-reference" href="_images/modules-mcrayy1.png"><img alt="McRay: Advanced" src="_images/modules-mcrayy1.png" style="width: 71.3%;" /></a>
 <figcaption>
@@ -183,59 +184,54 @@ If the command is selected it is necessary to change the number. While if the co
 <section id="left-hand-side-of-simlulation-options">
 <h4>Left hand side of Simlulation Options:<a class="headerlink" href="#left-hand-side-of-simlulation-options" title="Permalink to this heading"></a></h4>
 <ul>
-<li><p><strong>Photo effect</strong> considers photoabsorption when elected. Should almost always be selected.</p>
+<li><p><strong>Photo effect</strong> considers photoabsorption when selected. Should almost always be selected.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This photoemission is the emission of electrons or other free carriers when light is shone onto a material.</p>
+<p>The photoabsorption results in the emission of an electron when electromagnetic radiation is absorbed in the material. The emitted the photoelectron obtains a kinetic energy given by the difference between the photon?s energy and the binding energy of that particular electron. The photoelectron produces Bremsstrahlung radiation with energies smaller or equal to the kinetic energy of the electron. Additionally, recombination processes within the electron shell yield to X-ray fluorescence.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Rayleigh scattering</strong> considers Rayleigh scattering when elected.</p>
+<li><p><strong>Rayleigh scattering</strong> considers Rayleigh scattering when selected.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This electromagnetic interaction is the mostly elastic scattering of light or other electromagnetic radiation by particles (atoms or molecules) much smaller than the wavelength of the radiation. Rayleigh scattering is a parametric process.</p>
+<p>The coherent or Rayleigh scattering is an elastic process and involves no energy loss of the X-ray photon but continues to travel through the material along an altered path upon being scattered by an atom. It is only a photon process that does not produce electrons.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Compton scattering</strong> considers Compton scattering when elected.</p>
+<li><p><strong>Compton scattering</strong> considers Compton scattering when selected.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Compton scattering occurs when the incident X-ray photon is deflected from its original path by an interaction with an electron.
+<p>Compton scattering occurs when the incident X-ray photon is deflected from its original path by an interaction with an outer shell electron.
 The electron is ejected from its orbital position and the X-ray photon loses energy because of the interaction but continues to travel through the material along an altered path.
-Energy and momentum are conserved in this process. The energy shift depends on the angle of scattering and not on the nature of the scattering medium.
-Since the scattered X-ray photon has less energy, it has a longer wavelength and less penetrating than the incident photon.</p>
+Energy and momentum are conserved in this process. The energy shift depends on the angle of scattering and not on the nature of the scattering medium if considering scattering at a free electron. In reality, the scattering occurs at a bound electron that has to be considered in the scattering cross section, i.e., it depends on the scattering medium.
+As for the photoabsoption Bremsstrahlung radiation with energies smaller or equal to the kinetic energy of the electron is produced as secondary effect.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Pair production</strong> considers pair production when elected.</p>
+<li><p><strong>Pair production</strong> considers pair production when selected, i.e., the production of an electron-positron pair.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Pair production often refers specifically to a photon creating an electron-positron pair near a nucleus but can more generally refer to any neutral boson creating a
-particle-antiparticle pair. In order for pair production to occur, the incoming energy of the interaction must be above a threshold in order to create the pair - at least the total
-rest mass energy of the two particles - and that the situation allows both energy and momentum to be conserved.</p>
+<p>If the photon energy exceeds double the electron mass of rest, i.e., if its energy is larger than 1.022 MeV, the photon is converted in the electrical field of the nucleus into an electron and a positron. This process is called pair production. Photons with lower energy are not able to produce an electron positron pair. The photon energy that exceeds the needed minimal energy for producing an electron positron pair appears as kinetic energy of the pair. The produced pair loses its kinetic energy within a very short time of about 10 power -12 s. The remaining resting electron positron pair has a lifetime of about 10 power -9 s before annihilation. As result of annihilation two gamma photons are emitted in opposite direction because of momentum conservation both with energy of exactly 511 keV.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Fluorescence</strong> considers flourescence when elected. Photons, and electrons if enabled, can excite the bound electrons of the material’s atoms. During relaxation fluorescence photons, fluorescence electrons, and Auger electrons may be emitted.</p>
+<li><p><strong>Fluorescence</strong> considers X-ray flourescence when selected. Photons, and electrons if enabled, can excite or eject bound electrons of the material’s electron shell. During the recombination in the electron shell X-ray fluorescence photons, fluorescence electrons, and Auger electrons may be emitted.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Fluorescence is the emission of light by a substance that has absorbed light or other electromagnetic radiation.
-It is a form of luminescence and in most cases, the emitted light has a longer wavelength, and therefore lower energy, than the absorbed radiation.</p>
+<p>X-ray fluorescence is the emission of characteristic or fluorescent X-rays from a material that has been excited by being exposed with high-energy X-rays or gamma rays, ionization of their component atoms may take place. Ionization consists of the ejection of one or more electrons from the atom, and may occur if the atom is exposed to radiation with an energy greater than its ionization energy. Each element has electronic orbitals of characteristic energy. Following removal of an inner electron by an high-energy photon provided by a primary radiation source, an electron from an outer shell drops into its place. Each of the possible transitions yields a X-ray fluorescence photon with a characteristic energy equal to the difference in energy of the initial and final orbital.</p>
 </div>
 </div></blockquote>
 </li>
-<li><p><strong>Electron transport</strong> considers electron transport when elected. When fluorescence or bremsstrahlung is enabled, secondary particles will be created.</p>
+<li><p><strong>Electron transport</strong> considers electron transport when selected. When fluorescence or bremsstrahlung radiation is enabled, secondary particles will be created.</p>
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Monte Carlo method for electron transport is a semiclassical Monte Carlo (MC) approach of modeling semiconductor transport.
-Assuming the carrier motion consists of free flights interrupted by scattering mechanisms, a computer is utilized to simulate the trajectories of particles as they move across
-the device under the influence of an electric field using classical mechanics. The scattering events and the duration of particle flight is determined through the use of random numbers.</p>
+<p>The transport of electrons and other charged particles is fundamentally different from that of uncharced particles, such as neutrons and photons. The transport of electrons is dominated by the long-range Coulomb force, resulting in large numbers of individual interactions. Elastig and inelastic interactions of electrons with matter are considered: Elastic scattering, ionisation, excitation, and radiative energy loss (Bremsstrahlung radiation) are considerd. In the <em>aRT</em>ist Monte Carlo implementetion of the electron transport the model of individual collitions (MIC) is used. The energy-loss fluctuations are  taken into account according to the Landau theory.</p>
 </div>
 </div></blockquote>
 </li>
@@ -243,34 +239,34 @@ the device under the influence of an electric field using classical mechanics. T
 <blockquote>
 <div><div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The braking radiation or deceleration radiation is electromagnetic radiation produced by the deceleration of a charged particle when deflected by another charged particle,
-typically an electron by an atomic nucleus. The moving particle loses kinetic energy, which is converted into a photon, thus satisfying the law of conservation of energy.
+<p>Bremsstrahlung radiation is an electromagnetic radiation produced by the deceleration of a charged particle when deflected by another charged particle,
+typically an electron by an atomic nucleus. The moving particle loses kinetic energy, which is converted into one photon or more, thus satisfying the law of conservation of energy.
 The term is also used to refer to the process of producing the radiation. Bremsstrahlung has a continuous spectrum, which becomes more intense and whose peak intensity shifts toward
-higher frequencies as the change of the energy of the decelerated particles increases.</p>
+higher energies as the change of the energy of the decelerated particles increases.</p>
 </div>
 </div></blockquote>
 </li>
 <li><p><strong>Noninteractive</strong> starts/stops calculation without further user interaction.</p></li>
-<li><p><strong>Photonsplitting</strong> applies variance reduction scheme. Photonsplitting takes into account the possible interaction process when a photon is penetrated by a medium.</p></li>
+<li><p><strong>Photonsplitting</strong> applies a variance reduction scheme. Photonsplitting takes into account the possible interaction processes when a photon is penetrating a medium.</p></li>
 <li><p><strong>Check object overlap</strong> notes the overlapping of parts when elected.</p></li>
-<li><p><strong>Save trajectories</strong> writes trajectory segments to disk (slow).</p></li>
+<li><p><strong>Save trajectories</strong> writes trajectory segments to disk (slow depending on the number of photon to be considered).</p></li>
 <li><p><strong>Target pixels</strong> aims photons toward each pixel (mostly for visualization purpose).</p></li>
 </ul>
 </section>
 <section id="right-hand-side-of-simlulation-options">
 <h4>right hand side of Simlulation Options:<a class="headerlink" href="#right-hand-side-of-simlulation-options" title="Permalink to this heading"></a></h4>
 <ul class="simple">
-<li><p><strong>Image type</strong> is used to choose between different image types: TIFF, Isee, RAW, PGM or TXT. The default setting is TIFF.</p></li>
-<li><p><strong>Pixel type</strong> is used to choose between different pixel types: UInt 16, Float, Double. Usually the Float is used.</p></li>
+<li><p><strong>Image type</strong> is used to choose between different image types: TIFF, ISee, RAW, PGM or TXT. The default setting is TIFF.</p></li>
+<li><p><strong>Pixel type</strong> is used to choose between different pixel types: UInt 16, Float, Double. Usually Float is used.</p></li>
 <li><p><strong>Pixel columns</strong> enters the number of pixel in columns.</p></li>
 <li><p><strong>Pixel rows</strong> enters the number of pixel in rows.</p></li>
 <li><p><strong>Normalize Errors</strong> normalizes a relative error of 1 to this value (relative statistically error).</p></li>
 <li><p><strong>Detector model</strong> is used to choose between different detector models: aRTist, Photons, Leptons, Electrons, Positrons or All. The default detector model is aRTist.</p></li>
 <li><p><strong>Scatter data</strong> registers data for this many scatter events separately.</p></li>
-<li><p><strong>Spectrum bins</strong> sets the number of spectrum bins. The maximum energy divide by the number of bins reveals the spectrum for each energy.</p></li>
+<li><p><strong>Spectrum bins</strong> sets the number of spectrum bins. The maximum energy divide by the number of bins gives the spectrum resolution in keV for each energy.</p></li>
 <li><p><strong>Max threads</strong> sets the maximum number of threads.</p></li>
 <li><p><strong>Batch size</strong> sets the batch size of trajectories.</p></li>
-<li><p><strong>Random seed</strong> sets the random seed.</p></li>
+<li><p><strong>Random seed</strong> sets the random seed. The random seed is a number used to initilize a pseudo random number generator. A pseudorandom number generator’s number sequence is completely determined by the seed: thus, if a pseudorandom number generator is reinitialized with the same seed, it will produce the same sequence of numbers. If the seed is not set a random seed is used, i.e., it will not produce the same sequence of random number, which is recommended.</p></li>
 </ul>
 </section>
 </section>
@@ -282,7 +278,7 @@ You can choose between <code class="xref py py-class docutils literal notranslat
 <p class="admonition-title">Hint</p>
 <p>As calculations can potentially take a long time, a reduced priority is generally advisable (default setting: <code class="xref py py-class docutils literal notranslate"><span class="pre">Below</span></code>).</p>
 </div>
-<p>Set the <strong>Number of threads</strong>.</p>
+<p>Set the <strong>Number of threads</strong> to be executed for the Monte Carlo simulation. Default: <strong>0</strong>, utilizing one thread per logical processor.</p>
 </section>
 </section>
 </section>

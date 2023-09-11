@@ -118,7 +118,7 @@
              
   <section id="x32-image-radiography-image-viewer">
 <span id="imageviewersection"></span><h1><a class="reference internal" href="_images/32x32_image-radiography.png"><img alt="32x32_image-radiography" src="_images/32x32_image-radiography.png" style="width: 32px;" /></a> Image Viewer<a class="headerlink" href="#x32-image-radiography-image-viewer" title="Permalink to this heading"></a></h1>
-<p>The <a class="reference internal" href="_images/16x16_image-radiography.png"><img alt="16x16_image-radiography" src="_images/16x16_image-radiography.png" style="width: 16px;" /></a> <strong>Image Viewer</strong> module displays the simulation results.</p>
+<p>The <a class="reference internal" href="_images/16x16_image-radiography.png"><img alt="16x16_image-radiography" src="_images/16x16_image-radiography.png" style="width: 16px;" /></a> <strong>Image Viewer</strong> module displays the simulation results (<a class="reference internal" href="#imageviewerpic1"><span class="std std-numref">Fig. 21</span></a>).</p>
 <figure class="align-default" id="id1">
 <span id="imageviewerpic1"></span><a class="reference internal image-reference" href="_images/modules-imageviewer-ViewerPic1.png"><img alt="View of the Image Viewer at program start" src="_images/modules-imageviewer-ViewerPic1.png" style="width: 71.3%;" /></a>
 <figcaption>
@@ -132,33 +132,37 @@
 <p><a class="reference internal" href="_images/16x16_image-final.png"><img alt="16x16_image-final" src="_images/16x16_image-final.png" style="width: 16px;" /></a> : Run <a class="reference internal" href="_images/16x16_aRTist.png"><img alt="16x16_aRTist" src="_images/16x16_aRTist.png" style="width: 16px;" /></a> the simulation and a green tick will appear indicating that the simulation was successful.</p>
 <p>The drop-down menu to the right of the icon offers different images of the simulation steps (<code class="xref py py-class docutils literal notranslate"><span class="pre">energy</span> <span class="pre">density</span> <span class="pre">J/m²</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">primary</span> <span class="pre">intensities</span></code>).
 The available options depend on the current settings.</p>
-<p>The three grey fields next to the drop down menu display the mouse position (first grey field: X-axis, second grey field: Y-axis)
-and the energy density [in J/m²] or primary intensities in grey value or thickness [in mm] (third grey field) at that position. Those figures are also displayed in the status bar (see: <a class="reference internal" href="gui.html#guimainwindow"><span class="std std-numref">Fig. 4</span></a>).</p>
+<p>The three gray fields next to the drop-down menu show the mouse position (first gray field: X-axis, second gray field: Y-axis)
+and the intensity value of the displayed image at this position, where the unit dependents on the image type.</p>
 </section>
 <section id="lower-toolbar">
 <span id="lowerbarsubsection"></span><h2>Lower toolbar<a class="headerlink" href="#lower-toolbar" title="Permalink to this heading"></a></h2>
-<p><strong>display range</strong> indicates min. and max. grey value/thickness of the current image. If needed, you may change those values with your keyboard. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> when finished.</p>
-<p><a class="reference internal" href="_images/16x16_optimize-contrast.png"><img alt="16x16_optimize-contrast" src="_images/16x16_optimize-contrast.png" style="width: 16px;" /></a> Optimize display range (dependent on current image).</p>
-<p><a class="reference internal" href="_images/16x16_reset-contrast.png"><img alt="16x16_reset-contrast" src="_images/16x16_reset-contrast.png" style="width: 16px;" /></a> Reset display to default range (Maximum and minimum output depends on the detector).</p>
-<p><a class="reference internal" href="_images/16x16_image-invert.png"><img alt="16x16_image-invert" src="_images/16x16_image-invert.png" style="width: 16px;" /></a> Display inverted to a negative of the image and back.</p>
+<p>The <strong>display range</strong> controls indicate the minimum and maximum pixel value (intensity or thickness) used to display the current image. For manual contrast control, you may change those values with your keyboard. Press <kbd class="kbd docutils literal notranslate">Enter</kbd> when finished.</p>
+<p><a class="reference internal" href="_images/16x16_optimize-contrast.png"><img alt="16x16_optimize-contrast" src="_images/16x16_optimize-contrast.png" style="width: 16px;" /></a> <strong>Optimize</strong>: If this function is activated, the display area is always automatically adjusted to the pixel value range of the current image. You can select a rectangular box of the image by mouse to limit the adjustment to the pixel value range within that ROI.</p>
+<p><a class="reference internal" href="_images/16x16_reset-contrast.png"><img alt="16x16_reset-contrast" src="_images/16x16_reset-contrast.png" style="width: 16px;" /></a> <strong>Reset</strong>: Resets the display to the default range. The default settings depend on the image type, e.g., 0 … 65535 for 16bit images, or 0.5 … 3.5 for the optical density of X-ray films.</p>
+<p><a class="reference internal" href="_images/16x16_image-invert.png"><img alt="16x16_image-invert" src="_images/16x16_image-invert.png" style="width: 16px;" /></a> <strong>Invert</strong>: Inverts the display to a negative of the image.</p>
 <blockquote>
 <div></div></blockquote>
-<p><img alt="ImageViewer-Zoomfit" src="_images/modules-ImageViewer-Zoomfit.png" /> <strong>Zoom</strong> in and out with the up-down control of the spin box. Alternatively, you may use the mouse wheel or the right mouse button. Default: Fit (zoom fits window).</p>
-<p><a class="reference internal" href="_images/16x16_zoom-original.png"><img alt="16x16_zoom-original" src="_images/16x16_zoom-original.png" style="width: 16px;" /></a> Show in actual size shows a 1:1 depiction of the current image.</p>
-<p><a class="reference internal" href="_images/16x16_zoom-fit-best.png"><img alt="16x16_zoom-fit-best" src="_images/16x16_zoom-fit-best.png" style="width: 16px;" /></a> Zoom to fit window resets zoom to fit window after zooming in or out.</p>
-<p><a class="reference internal" href="_images/16x16_zoom-select.png"><img alt="16x16_zoom-select" src="_images/16x16_zoom-select.png" style="width: 16px;" /></a> Zoom to selection enlarges to a selected part of the image. Select the desired part with the left mouse button.</p>
+<p><img alt="ImageViewer-Zoomfit" src="_images/modules-ImageViewer-Zoomfit.png" /> <strong>Zoom</strong> in and out with the up-down arrows right to the displayed zoom factor or by typing in the zoom factor. Alternatively, you may use the mouse wheel or the right mouse button. Default: <em>Fit</em>, image fits to window (automatic zoom factor).</p>
+<p><a class="reference internal" href="_images/16x16_zoom-original.png"><img alt="16x16_zoom-original" src="_images/16x16_zoom-original.png" style="width: 16px;" /></a> Show the current image in actual size: one millimeter in the actual image corresponds to one millimeter on the display (1:1), or in <a class="reference internal" href="_images/16x16_zoom-pixel-by-pixel.png"><img alt="16x16_zoom-pixel-by-pixel" src="_images/16x16_zoom-pixel-by-pixel.png" style="width: 16px;" /></a> <em>pixel for pixel mode</em>: one pixel in the actual image corresponds to one pixel on the display.</p>
+<p><a class="reference internal" href="_images/16x16_zoom-fit-best.png"><img alt="16x16_zoom-fit-best" src="_images/16x16_zoom-fit-best.png" style="width: 16px;" /></a> Activates automatic zooming to fit the current image to the window.</p>
+<p><a class="reference internal" href="_images/16x16_zoom-select.png"><img alt="16x16_zoom-select" src="_images/16x16_zoom-select.png" style="width: 16px;" /></a> Zoom enlarges th current image to a selected part of the image. Draw a box with the mouse beforehand to select the desired ROI.</p>
 </section>
 <section id="right-toolbar">
 <span id="barontherightsubsection"></span><h2>Right toolbar<a class="headerlink" href="#right-toolbar" title="Permalink to this heading"></a></h2>
 <p><a class="reference internal" href="_images/16x16_document-save.png"><img alt="16x16_document-save" src="_images/16x16_document-save.png" style="width: 16px;" /></a> Save the current image.</p>
-<p><a class="reference internal" href="_images/16x16_document-preview.png"><img alt="16x16_document-preview" src="_images/16x16_document-preview.png" style="width: 16px;" /></a> Show in external viewer opens the current image in an external viewer.</p>
-<p><a class="reference internal" href="_images/16x16_latitude-warning.png"><img alt="16x16_latitude-warning" src="_images/16x16_latitude-warning.png" style="width: 16px;" /></a> Display exposure latitude warning (de)activates warning for over- or underexposure. Overexposed areas will be marked red, underexposed areas will be marked blue.</p>
-<p><a class="reference internal" href="_images/16x16_zoom-pixel-by-pixel.png"><img alt="16x16_zoom-pixel-by-pixel" src="_images/16x16_zoom-pixel-by-pixel.png" style="width: 16px;" /></a> Pixel for pixel mode changes between actual pixel size and screen pixel size. This option is only active when Zoom = Fit.</p>
+<p><a class="reference internal" href="_images/16x16_document-preview.png"><img alt="16x16_document-preview" src="_images/16x16_document-preview.png" style="width: 16px;" /></a> Opens the current image in an external viewer. Under <span class="xref std std-ref">Settings</span> any suitable external viewer can be configured. Default: software ISee!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the implementation of <em>aRT</em>ist the software ISee! v1.11.1-free is provided as an external viewer. The free version lacks all saving facilities - you can load images and can do everything inside the program, but the saving of measurement results or filtered/transformed images is missing. Both, the free and licensed versions you can find here: <a class="reference external" href="http://www.uzscherpel.de/BAM/ic/index.html">http://www.uzscherpel.de/BAM/ic/index.html</a>.</p>
+</div>
+<p><a class="reference internal" href="_images/16x16_latitude-warning.png"><img alt="16x16_latitude-warning" src="_images/16x16_latitude-warning.png" style="width: 16px;" /></a> Displays the exposure latitude warning for over- or underexposed regions. Overexposed areas will be marked in red whereas underexposed areas will be marked in blue.</p>
+<p><a class="reference internal" href="_images/16x16_zoom-pixel-by-pixel.png"><img alt="16x16_zoom-pixel-by-pixel" src="_images/16x16_zoom-pixel-by-pixel.png" style="width: 16px;" /></a> The pixel for pixel mode changes between actual pixel size and screen pixel size. This option effects the zoom and the ruler.</p>
 <p><a class="reference internal" href="_images/16x16_object-flip-turn.png"><img alt="16x16_object-flip-turn" src="_images/16x16_object-flip-turn.png" style="width: 16px;" /></a> Change image orientation opens a menu with different options to mirror or rotate the image.</p>
 <ul>
 <li><p><strong>Reset</strong> is used for resetting the settings in the image orientation.</p></li>
 <li><p><strong>Mirror X/Mirror Y</strong> is used to reflect the image orientation on X-axis or Y-axis.</p></li>
-<li><p><strong>Rotate CW/Rotate CCW</strong> is used to spin the image clockwise or counter-clockwise.</p></li>
+<li><p><strong>Rotate CW/Rotate CCW</strong> is used to rotate the image clockwise or counter-clockwise.</p></li>
 <li><p><strong>0°</strong> / <strong>90°</strong> / <strong>180°</strong> / <strong>270°</strong>  is used to orientate the image (between four different angles).</p>
 <blockquote>
 <div><div class="admonition seealso">
@@ -174,19 +178,19 @@ and the energy density [in J/m²] or primary intensities in grey value or thickn
 <p><span class="caption-number">Fig. 22 </span><span class="caption-text">Image View: Change image orientation.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p><a class="reference internal" href="_images/16x16_lineal.png"><img alt="16x16_lineal" src="_images/16x16_lineal.png" style="width: 16px;" /></a> Show ruler displays a ruler on the bottom of the image. It measures the image width in millimeters by default. If the ruler is turned on, you can also measure in pixels. To do this press the icon for pixel mode <a class="reference internal" href="_images/16x16_zoom-pixel-by-pixel.png"><img alt="16x16_zoom-pixel-by-pixel" src="_images/16x16_zoom-pixel-by-pixel.png" style="width: 16px;" /></a>.</p>
-<p><a class="reference internal" href="_images/16x16_legend.png"><img alt="16x16_legend" src="_images/16x16_legend.png" style="width: 16px;" /></a> Show legend opens a legend with grey or thickness values. Minimum and maximum values are determined by the display range. Height, width and position of the legend are adjustable.</p>
+<p><a class="reference internal" href="_images/16x16_lineal.png"><img alt="16x16_lineal" src="_images/16x16_lineal.png" style="width: 16px;" /></a> <strong>Show ruler</strong>: An adjustable ruler is displayed over the image. It measures in millimeters or in pixels depending on <a class="reference internal" href="_images/16x16_zoom-pixel-by-pixel.png"><img alt="16x16_zoom-pixel-by-pixel" src="_images/16x16_zoom-pixel-by-pixel.png" style="width: 16px;" /></a> pixel for pixel mode.</p>
+<p><a class="reference internal" href="_images/16x16_legend.png"><img alt="16x16_legend" src="_images/16x16_legend.png" style="width: 16px;" /></a> <strong>Show legend</strong> opens an adjustable legend with the grey or thickness values. The minimum and maximum values correspond to the display range.</p>
 </section>
 <section id="tools-menu-image-viewer">
 <span id="imageviewertoolsmenusubsection"></span><h2>Tools Menu: Image Viewer<a class="headerlink" href="#tools-menu-image-viewer" title="Permalink to this heading"></a></h2>
-<p>In the following every command of the Image Viewer submenu from the Tools Menu (<a class="reference internal" href="#imageviewtoolsneu"><span class="std std-numref">Fig. 23</span></a>) will be explained.</p>
+<p>In the following every command of the <a class="reference internal" href="#imageviewersection"><span class="std std-ref">Image Viewer</span></a> submenu from the <a class="reference internal" href="gui-menu-bar.html#toolsmenusubsection"><span class="std std-ref">Tools Menu</span></a> (<a class="reference internal" href="#imageviewtoolsneu"><span class="std std-numref">Fig. 23</span></a>) will be explained.</p>
 <figure class="align-default" id="id3">
 <span id="imageviewtoolsneu"></span><a class="reference internal image-reference" href="_images/modules-ImageView-tools_neu.png"><img alt="Tools Menu, Image Viewer Menu" src="_images/modules-ImageView-tools_neu.png" style="width: 41.3%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 23 </span><span class="caption-text">Tools Menu,  Image Viewer Menu.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>This submenu offers specific settings for <a class="reference internal" href="#imageviewersection"><span class="std std-ref">Image Viewer</span></a> and consists of different additional submenus:</p>
+<p>This submenu offers specific settings for the <a class="reference internal" href="#imageviewersection"><span class="std std-ref">Image Viewer</span></a> and consists of different additional submenus:</p>
 <ul class="simple">
 <li><p>File</p></li>
 <li><p>Image</p></li>
@@ -194,7 +198,7 @@ and the energy density [in J/m²] or primary intensities in grey value or thickn
 </ul>
 <section id="file">
 <span id="filesubsubsection"></span><h3>File<a class="headerlink" href="#file" title="Permalink to this heading"></a></h3>
-<p>It consists of three additional submenus: Under File you can find commands to open a new image file, save the current simulation
+<p>It consists of three additional submenus where you can find commands to open a new image from file, save the current simulation
 (you may also use the Save button <a class="reference internal" href="_images/16x16_document-save.png"><img alt="16x16_document-save" src="_images/16x16_document-save.png" style="width: 16px;" /></a> in  Image Viewer) or clear the image list (<a class="reference internal" href="#image-viewer1"><span class="std std-numref">Fig. 24</span></a>).</p>
 <figure class="align-default" id="id4">
 <span id="image-viewer1"></span><a class="reference internal image-reference" href="_images/modules-image_viewer1.jpg"><img alt="Image Viewer, File Menu" src="_images/modules-image_viewer1.jpg" style="width: 30.3%;" /></a>
@@ -205,7 +209,7 @@ and the energy density [in J/m²] or primary intensities in grey value or thickn
 </section>
 <section id="image">
 <span id="imagesubsubsection"></span><h3>Image<a class="headerlink" href="#image" title="Permalink to this heading"></a></h3>
-<p>Under Image you can find different filters and options to mirror or rotate the current image (<a class="reference internal" href="#image-viewer2"><span class="std std-numref">Fig. 25</span></a>).</p>
+<p>Under Image you can find different filters and different options to mirror or rotate the current image (<a class="reference internal" href="#image-viewer2"><span class="std std-numref">Fig. 25</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Please note that changes made with commands from this submenu are permanent (for example when saving the image).
@@ -218,11 +222,11 @@ For non-permanent modifications use commands from the View submenu.</p>
 </figcaption>
 </figure>
 <ul>
-<li><p><strong>Gradient</strong>, <strong>Laplacian</strong> and <strong>Smooth</strong> are used to choose between corresponding filters</p>
+<li><p><strong>Gradient</strong>, <strong>Laplacian</strong>, and <strong>Smooth</strong> are used to apply the corresponding filters.</p>
 <blockquote>
 <div></div></blockquote>
 </li>
-<li><p><strong>Scale</strong> is used to fill in the output values for X and Y (<a class="reference internal" href="#imageview-toolsscale"><span class="std std-numref">Fig. 26</span></a>). Next to the output fields is a button <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" />. When you click this button, the symbol changes, once into an open chain <img alt="modules-ImageViewer-openSymbole" src="_images/modules-ImageViewer-openSymbole.png" /> and once into a closed chain <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" />. The closed symbol <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" /> gives a square image. The open symbol <img alt="modules-ImageViewer-openSymbole" src="_images/modules-ImageViewer-openSymbole.png" /> allows rectangular pixels, as X and Y can have different values.</p></li>
+<li><p><strong>Scale</strong> is used to fill in the values for X and Y scaling/resampling (<a class="reference internal" href="#imageview-toolsscale"><span class="std std-numref">Fig. 26</span></a>). Next to the output fields is a button <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" />. When you click on this button, the symbol changes into an open chain <img alt="modules-ImageViewer-openSymbole" src="_images/modules-ImageViewer-openSymbole.png" /> or into a closed chain <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" />. The closed chain mode <img alt="modules-ImagViewerScale-closedSymbol" src="_images/modules-ImagViewerScale-closedSymbol.png" /> indicates to preserve the aspect ratio of the image, i.e., when changing the X or Y value, the other value will be adjusted automatically.</p></li>
 </ul>
 <figure class="align-default" id="id6">
 <span id="imageview-toolsscale"></span><a class="reference internal image-reference" href="_images/modules-ImageView-toolsscale.png"><img alt="Image Viewer, Image, Scale" src="_images/modules-ImageView-toolsscale.png" style="width: 25.3%;" /></a>
@@ -231,11 +235,33 @@ For non-permanent modifications use commands from the View submenu.</p>
 </figcaption>
 </figure>
 <ul>
-<li><p><strong>Mirror X/Y</strong> reflects the current image on X-axis or Y-axis.</p></li>
-<li><p><strong>Rotate CW/CCW</strong> spins the current image in 90 degree steps clockwise or counter-clockwise.</p></li>
-<li><p><strong>Math</strong> opens the ImageMath window (<a class="reference internal" href="#imagemath1"><span class="std std-numref">Fig. 27</span></a>). It offers several arithmetic operations and point operations that can be applied the current image.</p>
+<li><p><strong>Mirror X/Y</strong> refinverts the pixel order in X or Y direction.</p></li>
+<li><p><strong>Rotate CW/CCW</strong> rotates the current image in 90 degree steps clockwise or counter-clockwise.</p></li>
+<li><p><strong>Math</strong> opens the <strong>ImageMath</strong> dialog (<a class="reference internal" href="#imagemath1"><span class="std std-numref">Fig. 27</span></a>). It offers several arithmetic and point operations that can be applied to the current image.</p>
 <blockquote>
-<div><p>The first drop-down menu of the ImageMath offers the following arithmetic operations. In order for them to work the input field for <strong>C</strong> or <strong>K</strong> has to be filled in. Except for the first two functions, <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiplyByK</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">AddConstant</span></code>, the actual number is not important. Press <span class="guilabel">Compute</span> to run the operation and <span class="guilabel">Cancel</span> to reverse it:</p>
+<div><p>The first drop-down menu of the <strong>ImageMath</strong> offers the following arithmetic or point operations. In order for them to work the input field for <strong>C</strong> or <strong>K</strong> has to be filled in. Except for the first two operations, <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiplyByK</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">AddConstant</span></code>, the actual numbers are not important. Press <span class="guilabel">Compute</span> to run the operation and <span class="guilabel">Cancel</span> to reverse it:</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiplyByK</span></code> is used for the pointwise multiplication of each pixel with the value <strong>K</strong>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AddConstant</span></code> is used for the pointwise addition of each pixel with the constant <strong>C</strong>.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Exp</span></code> takes the exponential of each pixel (<em>e</em> raised to the powr of the pixel value, where <em>e</em> is the base of a natural log).</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Log</span></code> takes the natural log of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Invert</span></code> inverts the current image.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AbsoluteValue</span></code> takes the absolute value of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> squares the value of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareRoot</span></code> takes the square root of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Sin</span></code> calculates the sine of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Cos</span></code> calculates the cosine of each pixel.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ATAN</span></code> calculates the arctangent of each pixel.</p></li>
+</ul>
+<p>The following operations calculate a new image out of two images therefore the third drop-down menu is enabled. Hint: <strong>C</strong> and <strong>K</strong> may be left empty.</p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Add</span></code> sums the corresponding pixel values of the two images.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Subtract</span></code> substracts the corresponding pixel values of the second image from the first image.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Multiply</span></code> multiplies the corresponding pixel values of the two images.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Divide</span></code> divides the corresponding pixel values of the first image by the second image.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Min</span></code> shows the minimum grey values of the two images.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Max</span></code> shows the maximum grey values of the two images.</p></li>
+</ul>
 </div></blockquote>
 </li>
 </ul>
@@ -245,39 +271,13 @@ For non-permanent modifications use commands from the View submenu.</p>
 <p><span class="caption-number">Fig. 27 </span><span class="caption-text">Image Viewer, Image, Math.</span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<ul class="simple">
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiplyByK</span></code> is used for pointwise multiplication of each pixel with K.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AddConstant</span></code> is used for pointwise addition of each pixel and C.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Exp</span></code> is point operator based on the exponential function and changes the dynamic range of the image.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Log</span></code> is point operator based on the log function and changes the dynamic range of the image.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Invert</span></code> inverts the current picture.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">AbsoluteValue</span></code> takes the absolute value of each pixel.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Square</span></code> squares the value of each pixel.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SquareRoot</span></code> takes the square root of each pixel.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Sin</span></code> calculates the sine of each pixel.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Cos</span></code> calculates the cosine of each pixel.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">ATAN</span></code> calculates the arctangent of each pixel.</p></li>
-</ul>
-<p>The following operations calculate a new image out of two images therefore the third drop-down menu is enabled.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><strong>C</strong> and <strong>K</strong> may be left empty.</p>
-</div>
-<ul class="simple">
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Add</span></code> sums every corresponding pixel value of the two images.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Subtract</span></code> deducts every corresponding pixel value of the second image from the first image.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Multiply</span></code> multiplies every corresponding pixel value of the two images.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Divide</span></code> divides every pixel value of the first image by corresponding pixel value of the second image.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Min</span></code> shows minimum grey values of the two images.</p></li>
-<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Max</span></code> shows maximum grey values of the two images.</p></li>
-</ul>
 </section>
 <section id="view">
 <span id="viewsubsubsection"></span><h3>View<a class="headerlink" href="#view" title="Permalink to this heading"></a></h3>
-<p>Under View you can find the same four mirror and rotate commands explained under Image and additional options (<a class="reference internal" href="#image-viewer3"><span class="std std-numref">Fig. 28</span></a>).</p>
+<p>Under <strong>View</strong> you will find commands to change the display, but not the content of an image(<a class="reference internal" href="#image-viewer3"><span class="std std-numref">Fig. 28</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Please note that the changes will not be visible when you save the image or open it in an external viewer as opposed to the commands found in the Image submenu.</p>
+<p>Please note that the changes made here are non-permanent modifications and will not be visible when you save the image or open it in an external viewer as opposed to the commands found in the Image submenu.</p>
 </div>
 <figure class="align-default" id="id8">
 <span id="image-viewer3"></span><a class="reference internal image-reference" href="_images/modules-image_viewer3.jpg"><img alt="Image Viewer, View, Orientation Menu" src="_images/modules-image_viewer3.jpg" style="width: 41.3%;" /></a>
@@ -286,8 +286,8 @@ For non-permanent modifications use commands from the View submenu.</p>
 </figcaption>
 </figure>
 <p><strong>Interpolate</strong> activates/deactivates interpolation. <em>aRT</em>ist uses linear interpolation.</p>
-<p><strong>Logarithmic</strong> is point operator based on the log function and changes the dynamic range of the image.</p>
-<p><strong>Orientation</strong> is used for the following commands, which also access with this button <a class="reference internal" href="_images/16x16_object-flip-turn.png"><img alt="16x16_object-flip-turn" src="_images/16x16_object-flip-turn.png" style="width: 16px;" /></a> in the  Image Viewer (see: <a class="reference internal" href="#barontherightsubsection"><span class="std std-ref">Bar on the right</span></a>).</p>
+<p><strong>Logarithmic</strong> is a point operator based on the log function and changes the dynamic range of the image.</p>
+<p><strong>Orientation</strong> is used for the commands, which also can be accessed with the <a class="reference internal" href="_images/16x16_object-flip-turn.png"><img alt="16x16_object-flip-turn" src="_images/16x16_object-flip-turn.png" style="width: 16px;" /></a> button in the  Image Viewer (see: <a class="reference internal" href="#barontherightsubsection"><span class="std std-ref">Bar on the right</span></a>).</p>
 </section>
 </section>
 </section>

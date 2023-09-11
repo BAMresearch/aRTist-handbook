@@ -107,7 +107,7 @@
              
   <section id="digrad">
 <span id="digradsection"></span><h1>DigRad<a class="headerlink" href="#digrad" title="Permalink to this heading"></a></h1>
-<p>The <strong>DigRad</strong> module can be used to generate new detector modells for a CR (Computed Radiography) systenm or a DDA (Digital Detectr Array). The input parameters are related to the standarts for detector characterisation (ASTM E 2445, ASTM E 2597, ISO 16371-1).</p>
+<p>The <strong>DigRad</strong> module (<a class="reference internal" href="#digradcalculator"><span class="std std-numref">Fig. 19</span></a>) can be used to generate new detector modells for a CR (Computed Radiography) system or a DDA (Digital Detector Array). The <strong>DigRad</strong> module is a simplified detector model compared to the model used in the <a class="reference internal" href="modules-detectorcalc.html#detectorcalcsection"><span class="std std-ref">DetectorCalc</span></a> module. The input parameters are related to the standards for detector characterisation (ASTM E 2446-16 <em>Standard Practice for Manufacturing Characterization of Computed Radiography Systems</em>, ASTM E 2597-22 <em>Standard Practice for Manufacturing Characterization of Digital Detector Arrays</em>, and DIN EN ISO 16371-1:2011 <em>Non-destructive testing ? Industrial computed radiography with storage phosphor imaging plates ? Part 1: Classification of systems</em>).</p>
 <figure class="align-default" id="id1">
 <span id="digradcalculator"></span><a class="reference internal image-reference" href="_images/modules-digrad1.jpg"><img alt="DigRad calculator" src="_images/modules-digrad1.jpg" style="width: 60.3%;" /></a>
 <figcaption>
@@ -115,18 +115,30 @@
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p><strong>Pixel size (mm)</strong></p></li>
-<li><p><strong>Basic spatial resolution SRb (mm)</strong> The double SRb is used as unsharpness of the aRTist detector model.</p></li>
-<li><p><strong>Internal scatter radiation ISR (%)</strong> Scattered radiation within the detector. The percentage can be determined on an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
-<li><p><strong>ISR correlation length (mm)</strong> The double correlation length is used as long range unsharpness of the aRTist detector model (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
-<li><p><strong>Gray response (GV/mGy)</strong></p></li>
-<li><p><strong>SNRn,max</strong></p></li>
-<li><p><strong>Efficiency (SNRn/mGy^0.5)</strong></p></li>
+<li><p><strong>Pixel size (mm)</strong> to set the pixel size of the detector.</p></li>
+<li><p><strong>Basic spatial resolution SRb (mm)</strong> to set the basic spatial resolution (SRb) of the detector, measured according to ASTM E 2002-22 <em>Standard Practice for Determining Image Unsharpness and Basic Spatial Resolution in Radiography and Radioscopy</em> or DIN EN ISO 19232-5:2018 <em>Non-destructive testing ? Image quality of radiographs ? Part 5: Determination of the image unsharpness and basic spatial resolution value using duplex wire-type image quality indicators</em>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The basic spatial resolution (SRb) of an X-ray detector is typically larger than the pixel size, but never smaller. The detector unsharpeness value is the double of the SRb measuered according to ASTM E 2002-22.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Internal scatter radiation ISR (%)</strong> to set the internal scatter radiation ISR (%) describing the scattered radiation contribution generated within the detector. The percentage can be determined from an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
+<li><p><strong>ISR correlation length (mm)</strong> to set the the ISR correlation length which describes the mean internal extention of the scattered radiation generated within the detector applying only for imaging plates and flat panel detectors.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Two times the ISR correlation length gives the long range unsharpness of the aRTist detector model. The ISR correlation length of the detector can be determined from an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p>
+</div>
+<ul class="simple">
+<li><p><strong>Gray response (GV/mGy)</strong> to set the gray response given in GV/mGy, i.e., the increase in gray values for a dose increase of 1 mGy.</p></li>
+<li><p><strong>SNRn,max</strong> to set the maximum normalilzed signal to noise ratio as limited by the detector correction image.</p></li>
+<li><p><strong>Efficiency (SNRn/mGy^0.5)</strong> to set the normalized SNR of the detector output at 1 mGy dose input.</p></li>
 </ul>
 <figure class="align-default" id="id2">
-<span id="digradedgeprofile"></span><a class="reference internal image-reference" href="_images/modules-digrad-edge_profile.svg"><img alt="Edge profile indicating internal scatter radiation" src="_images/modules-digrad-edge_profile.svg" width="100.0%" /></a>
+<span id="digradedgeprofile"></span><a class="reference internal image-reference" href="_images/modules-digrad-edge_profile.svg"><img alt="Edge profile indicating internal scatter radiation" src="_images/modules-digrad-edge_profile.svg" width="100%" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Edge profile indicating internal scatter radiation. Simulation of an edge penetration with a DigRad detector model with 5 % ISR and 5 mm correlation length. Right: Edge profile with reading of the ISR measurands (ISR = (2 * a / b) * 100 %; correlation length = c).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Edge profile indicating internal scattered radiation. Simulation of an edge penetration with a DigRad detector model with 5 % ISR and 5 mm correlation length. Right: Edge profile with reading of the ISR measurands (ISR = (2 * a / b) * 100 %; ISR correlation length = c).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 </section>

@@ -9,6 +9,8 @@ Authors
 | Bellon, Carsten `BAM`:superscript:
 | Binder, Felix `Institute of Manufacturing Metrology (FMT), Friedrich-Alexander-University Erlangen-Nuremberg (FAU)`:superscript:
 | Plotzki, David `BAM`:superscript:
+| Janczynski, Jessica `BAM`:superscript:
+| Jaenisch, Gerd-Rüdiger `BAM`:superscript:
 
 Acknowledgment
 ---------------

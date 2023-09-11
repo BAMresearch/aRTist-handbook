@@ -122,19 +122,19 @@
   <section id="ctscan">
 <span id="ctscansection"></span><h1>CtScan<a class="headerlink" href="#ctscan" title="Permalink to this heading"></a></h1>
 <p>The <strong>CtScan</strong> module can be used to simulate cone beam <abbr title="computerized tomography">CT</abbr> scans, applying the conventional circular scanning trajectory.
-The module is accomplished by Feldkamp reconstruction and volume visualization.
+The module is accomplished by a Feldkamp reconstruction and volume visualization.
 The simulated projections can be processed in the same way as experimental CT projections by external reconstruction programs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is recommended to use the <abbr title="Tagged Image File Format">TIFF</abbr> file format for easy data exchange, while the internal Feldkamp reconstruction requires projections in <em>BAM CT</em> format.</p>
 </div>
-<p>The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the <strong>Setup</strong>, the <strong>Feldkamp</strong> and the <strong>Volume View</strong> (<a class="reference internal" href="#modules-ctscan1"><span class="std std-numref">Fig. 14</span></a>).
+<p>The CtScan module consists of three separate pages that can be navigated using the tabs at the top of the window - the <strong>Setup</strong>, the <strong>Feldkamp</strong>, and the <strong>Volume View</strong> (<a class="reference internal" href="#modules-ctscan1"><span class="std std-numref">Fig. 14</span></a>).
 At bottom of module window, you can find a <span class="guilabel">Run</span> button to start or to <span class="guilabel">Stop</span> the simulation and a progress bar.
 The first two pages offer settings for the scan and for reconstruction (<em>aRT</em>ist uses the Feldkamp algorithm for reconstruction).
 The finished tomogram can be viewed in the scene with the help of the first (<strong>Setup</strong>) or third (<strong>Volume View</strong>) tab by clicking on the <span class="guilabel">Show</span> button.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a> the sectional image can be seen with the Slice View in the third (Volume View) tab.</p>
+<p>In the <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a> the sectional image can be seen selcted by the Slice View in the third (Volume View) tab.</p>
 </div>
 <p>All three pages will be explained in detail below.</p>
 <figure class="align-default" id="id2">
@@ -145,18 +145,18 @@ The finished tomogram can be viewed in the scene with the help of the first (<st
 </figure>
 <section id="setup">
 <span id="setupsubsection"></span><h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading"></a></h2>
-<p>The <span class="guilabel">Setup</span> tab is used to configure the CT.</p>
+<p>The <span class="guilabel">Setup</span> tab is used to configure the CT (<a class="reference internal" href="#modules-ctscan1"><span class="std std-numref">Fig. 14</span></a>).</p>
 <section id="scan-parameters">
 <span id="scanparameterssubsubsection"></span><h3>Scan Parameters<a class="headerlink" href="#scan-parameters" title="Permalink to this heading"></a></h3>
-<p>The adjustable <strong>Scan Parameters</strong> are <strong>Total Angle [°]</strong>, <strong>Number of Steps</strong> and
-<strong>Angle Step Size [°]</strong>.</p>
+<p>The adjustable <strong>Scan Parameters</strong> are <strong>Total Angle [°]</strong>, <strong>Number of Steps</strong>, and
+<strong>Angle Step Size [°]</strong>. The <strong>Total Angle [°]</strong> is preset to 360°. When setting the <strong>Number of Steps</strong>, the <strong>Angle Step Size [°]</strong> is automatically updated and cannot be set by the user.</p>
 </section>
 <section id="output">
 <span id="outputsubsubsection"></span><h3>Output<a class="headerlink" href="#output" title="Permalink to this heading"></a></h3>
-<p>At the <strong>Output</strong> choose <strong>Directory</strong> and <strong>File Type</strong> and put in a <strong>File Name</strong>. The <strong>File Type</strong> can be chosen between <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">TIFF</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">16</span> <span class="pre">bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p>At the <strong>Output</strong> choose the <strong>Directory</strong> and the <strong>File Type</strong> and set a <strong>File Name</strong>. The <strong>File Type</strong> can be chosen between <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">TIFF</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">16</span> <span class="pre">bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> with the two pull-down menus.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If fields are left blank they will be filled in automatically.</p>
+<p>If fields are left empty, they will be filled in automatically. For example, the <strong>File Name</strong> is derived from the current project name.</p>
 </div>
 <p>If you wish to start reconstruction directly after the scan is finished check the corresponding box, <strong>Run Feldkamp</strong>.
 You may set the parameters for Feldkamp on the second page. Press the <span class="guilabel">Run</span> button on either one of the three pages when finished with the settings.
@@ -164,42 +164,39 @@ If you choose not to check the <strong>Run Feldkamp</strong> box before starting
 Click on the <span class="guilabel">Show</span> button when the simulation is finished to see the tomogram in the scene.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>For an improved view deactivate the solid or minimize the opacity (double-click on the number of the object to change the opacity: <strong>Parameter Panel</strong> → <strong>Setup Panel</strong> → <strong>Display</strong>).</p>
+<p>For an improved view of the reconstruction result deactivate the part or minimize its opacity (<strong>Parameter Panel</strong> → <strong>Setup</strong> → <strong>Assembly List</strong>).</p>
 </div>
 </section>
 <section id="advanced">
 <span id="advancedsubsubsection"></span><h3>Advanced<a class="headerlink" href="#advanced" title="Permalink to this heading"></a></h3>
-<p>By marking <strong>Only selected objects</strong> you can include chosen objects of your assembly in the simulation.
-That means the selected objects rotate and the others do not.</p>
+<p>By marking <strong>Only selected objects</strong> you can exclude parts from moving during CT simulation.
+This means that only the selected objects rotate and the others do not.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To do this, you should select the corresponding components in the <span class="xref std std-ref">Parameter Panel</span> beforehand. Select a single object by clicking on it.
-Select two or more by holding down the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key and clicking on the other components to be included in the simulation.
+Select two or more by holding down the <kbd class="kbd docutils literal notranslate">Ctrl</kbd> key and clicking on the other components to be included in the CT simulation.
 The components are selected when they are highlighted in blue.</p>
 </div>
 <ul class="simple">
 <li><p><strong>Direction</strong> is used to choose between clockwise or counterclockwise direction.</p></li>
-<li><p><strong>Scattering</strong> is used to choose between off or McRay scatter-attitude.</p></li>
-<li><p><strong>Interval [°]</strong> sets the interval for using the same scatter image (to save some time by not recalculating for each projection).</p></li>
+<li><p><strong>Scattering</strong> is used to control the scattered radiation simulation, where “as configured” uses the general settings (<strong>Parameter Panel</strong> → <strong>Scattering</strong>) as they are, and “force McRay” overrides the general settings to enable Monte Carlo scatter-simulation.</p></li>
+<li><p><strong>Interval [°]</strong> sets the interval for using the same scatter image (to save computing time by not recalculating the scatter contribution for each projection).</p></li>
 </ul>
 </section>
 </section>
 <section id="feldkamp">
 <span id="feldkampsubsection"></span><h2>Feldkamp<a class="headerlink" href="#feldkamp" title="Permalink to this heading"></a></h2>
-<p>Set the parameters for reconstruction on the second tab - the <span class="guilabel">Feldkamp</span> (<a class="reference internal" href="#modules-cttfeldk"><span class="std std-numref">Fig. 15</span></a>).
-Check the <strong>Run Feldkamp</strong> box on the first page - the <span class="guilabel">Setup</span> - to start reconstruction automatically after the necessary data has been acquired.</p>
+<p>This tap <span class="guilabel">Feldkamp</span> (<a class="reference internal" href="#modules-cttfeldk"><span class="std std-numref">Fig. 15</span></a>) presents the parameters for the CT reconstruction.
+You may start the reconstruction manually by pressing the <span class="guilabel">Reconstruct</span> button in the lower half of the <span class="guilabel">Feldkamp</span> page. But generally there is no need to start the reconstruction manually as there is the <strong>Run Feldkamp</strong> check box on the <span class="guilabel">Setup</span> page to start the reconstruction automatically after the necessary data has been acquired.</p>
 <section id="options">
 <span id="optionssubsubsection"></span><h3>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h3>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Otherwise, you may start reconstruction manually by pressing the <span class="guilabel">Reconstruct</span> button in the lower half of the <span class="guilabel">Feldkamp</span> page.</p>
-</div>
-<p><strong>File name</strong>: You may load previously acquired data with a click on the file symbol <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> or use the recently acquired data.</p>
+<p><strong>File name</strong> specifies the file in BAM CT format with the projection data to be processed.</p>
 <p>Enable or disable <strong>Interpolation</strong> or/and the <strong>Use of GPU</strong>, with <strong>Use multiple textures</strong> or/and <strong>Use half precision</strong>.</p>
 </section>
 <section id="outputfeldsubsubsection">
 <span id="id1"></span><h3>Output<a class="headerlink" href="#outputfeldsubsubsection" title="Permalink to this heading"></a></h3>
-<p>You can choose between different <strong>File type</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VTK</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">RAW</span></code> as <code class="xref py py-class docutils literal notranslate"><span class="pre">8bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">16bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">32bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<p><strong>File name</strong> will show the path of the output file, which is derived from the path of the projection date file.</p>
+<p>You can choose between different <strong>File type</strong>: <code class="xref py py-class docutils literal notranslate"><span class="pre">BAM</span> <span class="pre">CT</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VTK</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">RAW</span></code> as <code class="xref py py-class docutils literal notranslate"><span class="pre">8bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">16bit</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">32bit</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>.</p>
 <figure class="align-default" id="id3">
 <span id="modules-cttfeldk"></span><a class="reference internal image-reference" href="_images/modules-cttfeldk.png"><img alt="Feldkamp" src="_images/modules-cttfeldk.png" style="width: 71.3%;" /></a>
 <figcaption>
@@ -210,22 +207,17 @@ Check the <strong>Run Feldkamp</strong> box on the first page - the <span class=
 </section>
 <section id="volume-view">
 <span id="volumeviewsubsection"></span><h2>Volume View<a class="headerlink" href="#volume-view" title="Permalink to this heading"></a></h2>
-<p>With the tab <span class="guilabel">Volume View</span> (<a class="reference internal" href="#modules-cttvv"><span class="std std-numref">Fig. 16</span></a>) it is possible to show sectional image of the finished tomogram in <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a> directly after reconstruction.
-Alternatively, you may load previously acquired data. Supported file types are: <code class="code docutils literal notranslate"><span class="pre">.bd</span></code>, <code class="code docutils literal notranslate"><span class="pre">.raw</span></code>, <code class="code docutils literal notranslate"><span class="pre">.bin</span></code>, <code class="code docutils literal notranslate"><span class="pre">.vtk</span></code>.
-Press the <span class="guilabel">Show</span> button on this page or the first page to start the calculation. This will take a few seconds.
-Then you can view the 3D-Scan of the part in the scene. Deactivate the part or minimize the opacity for an improved view of the 3D-Scan.
-With the option <strong>Slice View</strong> → <strong>Show plane</strong> a sectional image of the part for the respectively axis (<strong>X</strong>, <strong>Y</strong> or <strong>Z</strong>) will appear in <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a>.
-If <strong>Show slice</strong> is activated, borders of the object can be seen in the plane. Choose an <strong>Axis</strong> and move the plane with the slider to see a sectional image of the part.</p>
-<p>Settings for Volume View:</p>
+<p>This tab <span class="guilabel">Volume View</span> (<a class="reference internal" href="#modules-cttvv"><span class="std std-numref">Fig. 16</span></a>) contains the parameters to control the vizualization of the reconstructed volume.
+When the <span class="guilabel">Show</span> button is enabled, the reconstructed volume is rendered in the scene view as well as an orthogonal slice of the volume is displayed in the <a class="reference internal" href="modules-imageviewer.html#imageviewersection"><span class="std std-ref">Image Viewer</span></a>.</p>
+<p><strong>File</strong> specifies the volume data to read in. Supported file types are: <code class="code docutils literal notranslate"><span class="pre">.bd</span></code> (BAM CT), <code class="code docutils literal notranslate"><span class="pre">.raw</span></code>, <code class="code docutils literal notranslate"><span class="pre">.bin</span></code>, and <code class="code docutils literal notranslate"><span class="pre">.vtk</span></code>.</p>
+<p>The following settings for the Volume View are available:</p>
 <ul class="simple">
-<li><p><strong>Minimum</strong></p></li>
-<li><p><strong>Maximum</strong></p></li>
-<li><p><strong>Level</strong></p></li>
-<li><p><strong>Contrast</strong></p></li>
-<li><p>Activate/Deactivate <strong>Use 3D texture</strong></p></li>
-<li><p><strong>Gradient</strong>/ <strong>GradientROI</strong> → choose between <strong>All</strong>, <strong>Min/Max</strong> or <strong>Level/Contrast</strong></p></li>
+<li><p><strong>Minimum</strong>, <strong>Maximum</strong>, <strong>Level</strong>, and <strong>Contrast</strong> are controls for the opacity of the volume view.</p></li>
+<li><p><strong>Use 3D texture</strong> provides an alternative view mode.</p></li>
 </ul>
-<p>In <strong>Positioning</strong>, the scene is affected. It is possible to <strong>Position</strong> the voxel packet. With <strong>Spacing</strong>, the size of the scene can be influenced (in X, Y, Z).</p>
+<p>Press the <span class="guilabel">Show</span> button to read in the volume data. This may take a few seconds.</p>
+<p>With the <strong>Slice View</strong> → <strong>Show plane</strong> option, the slice shown in the image viewer is additionally visualized in the scene. Additional controls are available for selecting the slice to be displayed. Select an <strong>axis</strong> and move the slider accordingly.</p>
+<p>The <strong>Positioning</strong> controls are used to define the <strong>Position</strong> of the voxel packet center in the scene and the <strong>Spacing</strong> (size) of the voxels.</p>
 <figure class="align-default" id="id4">
 <span id="modules-cttvv"></span><a class="reference internal image-reference" href="_images/modules-cttvv.png"><img alt="Feldkamp" src="_images/modules-cttvv.png" style="width: 71.3%;" /></a>
 <figcaption>
