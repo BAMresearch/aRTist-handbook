@@ -98,7 +98,7 @@ Reference exposure features:
 
     The basic spatial resolution (SRb) of an X-ray detector is usually larger than the pixel size. Two times the SRb gives the inner unsharpness of the detector. 
 
-* **Long range unsharpness (mm)** to set the long range detector unsharpness applying only for imaging plates and flat panel detectors.
+* **Long range unsharpness (mm)** to set the long range detector unsharpness from internal scatter radiation applying only for imaging plates and flat panel detectors. The extent can be determined on an edge profile (see also :ref:`DigRad <DigRadSection>` for more details).
 * **Unsharpness ratio (%)** to set the internal scatter radiation ISR (%) describing the scatter radiation within the detector. The percentage can be determined on an edge profile (see also :ref:`DigRad <DigRadSection>` for more details). 
 
 .. note::

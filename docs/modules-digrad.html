@@ -107,7 +107,7 @@
              
   <section id="digrad">
 <span id="digradsection"></span><h1>DigRad<a class="headerlink" href="#digrad" title="Permalink to this heading"></a></h1>
-<p>The <strong>DigRad</strong> module (<a class="reference internal" href="#digradcalculator"><span class="std std-numref">Fig. 19</span></a>) can be used to generate new detector modells for a CR (Computed Radiography) system or a DDA (Digital Detector Array). The <strong>DigRad</strong> module is a simplified detector model compared to the model used in the <a class="reference internal" href="modules-detectorcalc.html#detectorcalcsection"><span class="std std-ref">DetectorCalc</span></a> module. The input parameters are related to the standards for detector characterisation (ASTM E 2446-16 <em>Standard Practice for Manufacturing Characterization of Computed Radiography Systems</em>, ASTM E 2597-22 <em>Standard Practice for Manufacturing Characterization of Digital Detector Arrays</em>, and DIN EN ISO 16371-1:2011 <em>Non-destructive testing ? Industrial computed radiography with storage phosphor imaging plates ? Part 1: Classification of systems</em>).</p>
+<p>The <strong>DigRad</strong> module (<a class="reference internal" href="#digradcalculator"><span class="std std-numref">Fig. 19</span></a>) can be used to generate new detector modells for a CR (Computed Radiography) system or a DDA (Digital Detector Array). The <strong>DigRad</strong> module is a simplified detector model compared to the model used in the <a class="reference internal" href="modules-detectorcalc.html#detectorcalcsection"><span class="std std-ref">DetectorCalc</span></a> module. The input parameters are related to the standards for detector characterisation (ASTM E 2446-16 <em>Standard Practice for Manufacturing Characterization of Computed Radiography Systems</em>, ASTM E 2597-22 <em>Standard Practice for Manufacturing Characterization of Digital Detector Arrays</em>, and DIN EN ISO 16371-1:2011 <em>Non-destructive testing - Industrial computed radiography with storage phosphor imaging plates - Part 1: Classification of systems</em>).</p>
 <figure class="align-default" id="id1">
 <span id="digradcalculator"></span><a class="reference internal image-reference" href="_images/modules-digrad1.jpg"><img alt="DigRad calculator" src="_images/modules-digrad1.jpg" style="width: 60.3%;" /></a>
 <figcaption>
@@ -116,7 +116,7 @@
 </figure>
 <ul class="simple">
 <li><p><strong>Pixel size (mm)</strong> to set the pixel size of the detector.</p></li>
-<li><p><strong>Basic spatial resolution SRb (mm)</strong> to set the basic spatial resolution (SRb) of the detector, measured according to ASTM E 2002-22 <em>Standard Practice for Determining Image Unsharpness and Basic Spatial Resolution in Radiography and Radioscopy</em> or DIN EN ISO 19232-5:2018 <em>Non-destructive testing ? Image quality of radiographs ? Part 5: Determination of the image unsharpness and basic spatial resolution value using duplex wire-type image quality indicators</em>.</p></li>
+<li><p><strong>Basic spatial resolution SRb (mm)</strong> to set the basic spatial resolution (SRb) of the detector, measured according to ASTM E 2002-22 <em>Standard Practice for Determining Image Unsharpness and Basic Spatial Resolution in Radiography and Radioscopy</em> or DIN EN ISO 19232-5:2018 <em>Non-destructive testing - Image quality of radiographs - Part 5: Determination of the image unsharpness and basic spatial resolution value using duplex wire-type image quality indicators</em>.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -124,11 +124,11 @@
 </div>
 <ul class="simple">
 <li><p><strong>Internal scatter radiation ISR (%)</strong> to set the internal scatter radiation ISR (%) describing the scattered radiation contribution generated within the detector. The percentage can be determined from an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
-<li><p><strong>ISR correlation length (mm)</strong> to set the the ISR correlation length which describes the mean internal extention of the scattered radiation generated within the detector applying only for imaging plates and flat panel detectors.</p></li>
+<li><p><strong>ISR correlation length (mm)</strong> to set the the ISR correlation length which describes the mean internal extension of the scattered radiation generated within the detector applying only for imaging plates and flat panel detectors. The ISR correlation length of the detector can be determined from an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Two times the ISR correlation length gives the long range unsharpness of the aRTist detector model. The ISR correlation length of the detector can be determined from an edge profile (<a class="reference internal" href="#digradedgeprofile"><span class="std std-numref">Fig. 20</span></a>).</p>
+<p>Two times the ISR correlation length gives the long range unsharpness of the aRTist detector model.</p>
 </div>
 <ul class="simple">
 <li><p><strong>Gray response (GV/mGy)</strong> to set the gray response given in GV/mGy, i.e., the increase in gray values for a dose increase of 1 mGy.</p></li>
