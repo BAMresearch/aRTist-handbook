@@ -93,7 +93,7 @@ Left hand side of Simlulation Options:
 
     .. note::
     
-        The photoabsorption results in the emission of an electron when electromagnetic radiation is absorbed in the material. The emitted the photoelectron obtains a kinetic energy given by the difference between the photon’s energy and the binding energy of that particular electron. The photoelectron produces Bremsstrahlung radiation with energies smaller or equal to the kinetic energy of the electron. Additionally, recombination processes within the electron shell yield to X-ray fluorescence.
+        The photoabsorption results in the emission of an electron when electromagnetic radiation is absorbed in the material. The emitted the photoelectron obtains a kinetic energy given by the difference between the photon's energy and the binding energy of that particular electron. The photoelectron produces Bremsstrahlung radiation with energies smaller or equal to the kinetic energy of the electron. Additionally, recombination processes within the electron shell yield to X-ray fluorescence.
 
 * **Rayleigh scattering** considers Rayleigh scattering when selected.
 
