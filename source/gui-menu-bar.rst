@@ -14,7 +14,7 @@ File menu
 ^^^^^^^^^
 
 
-The :guilabel:`File` drop-down menu comprises commands referring to the current project.
+The :guilabel:`File` drop-down menu (:numref:`guiFileMenu`) contains commands referring to the current project.
 
 .. _guiFileMenu:
 .. figure:: pictures/gui-menu-file.png
@@ -23,18 +23,20 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
     File menu.
 
-* **New Project** opens a new |artist| scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
-* |16x16_document-open-folder| **Open** is used to search for existing files. Then select a file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`. For supported file formats see section **File Formats**.
+* **New Project** opens a new |artist| scheme. This can also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program is opening a promt requirering save or discard the changes in the current project if there are any.
+* |16x16_document-open-folder| **Open** is used to search for existing files. Then a file can be selected the dialog boxes that follow. This can also be done by pressing :kbd:`ctrl` + :kbd:`o`. For supported file formats see section **File Formats**.
 * |16x16_library| **Open Library**  is used to load something from the collection of example parts, projects, Image Quality Indicators (IQIs), and spectra. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
-* |16x16_document-save| **Save** is used to save the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
-* |16x16_document-save-as| **Save As** renames a project or changes the location of where you want to save it. Additionally you can save the current image, the scene view, selected parts, the spectrum, the used detector description, and the |artist| scene. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
-* **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.
+* |16x16_document-save| **Save** is used to save the current project to a single file. The |artist| ares using the file name extension ``.artist``. This can be done by pressing :kbd:`ctrl` + :kbd:`s`.
+* |16x16_document-save-as| **Save As** is used to rename a project or changes the location of where it is saved. Additionally, the current image, the scene view, selected parts, the spectrum, the used detector description, and the |artist| scene can be saved. This can also be done by pressing :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
+* **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There file versions from the project or the file system can be choosen in the dialog box that follow.
 * **Last Directories** shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.
 * **Open New Window** starts a new, additional instance of |artist|.
-* **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
-* |16x16_window-close| **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
+* **Restart** reboots the program. Before restarting, the program is opening a promt requirering save or discard the changes in the current project if there are any.
+* |16x16_window-close| **Quit** terminates the program. Before quitting the program is opening a promt requirering save or discard the changes in the current project if there are any. This can be also done by pressing :kbd:`ctrl` + :kbd:`q`.
 
-.. note:: The functionalities of |16x16_document-open-folder| **Open**, |16x16_document-save| **Save**, and |16x16_library| **Open Library** can also be accessed via the **Toolbar**.
+.. note:: 
+    
+    The functionalities of |16x16_document-open-folder| **Open**, |16x16_document-save| **Save**, and |16x16_library| **Open Library** can also be accessed via the **Toolbar**.
 
 .. _EditMenuSubsection:
 
@@ -42,7 +44,7 @@ Edit menu
 ^^^^^^^^^
 
 
-The :guilabel:`Edit` menu contains undo/redo functionalities with the project's history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.
+The :guilabel:`Edit` menu (:numref:`guiEditMenu`) contains undo/redo functionalities with the project's history, whereas the usual commands (cut, copy, paste and delete) refer to parts in the assembly.
 
 .. _guiEditMenu:
 .. figure:: pictures/gui-menu-edit.png
@@ -51,13 +53,19 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 
     Edit menu.
 
-* |16x16_edit-undo| **Undo** erases the last change done to the project reverting it to its previous state. Alternatively, press :kbd:`ctrl` + :kbd:`z`.
-* |16x16_edit-redo| **Redo** reverses the Undo or advances the buffer to its former state. Alternatively, press :kbd:`ctrl` + :kbd:`y`. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.
-* **History** displays the chronology of your recent actions and lets you revert back to any previous state. Alternatively, press :kbd:`ctrl` + :kbd:`h` to open the history.
-* |16x16_edit-cut| **Cut** removes parts from the assembly and keeps them in the clipboard. In the scene or in the *Assembly list* (in the *Parameter panel*), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the :kbd:`ctrl` key pressed on the keyboard.
-* |16x16_edit-copy| **Copy** can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the *Assembly List* (of *Parameter Panel*). The selected parts are kept in the clipboard.
-* |16x16_edit-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
-* |16x16_edit-delete| **Delete** removes selected parts from the *Assembly List*.
+* |16x16_edit-undo| **Undo** reverses the last change(s) done to the project reverting it to its previous state(s). If several changings have been done to the project they can be successively reverted. Alternatively, this can be also done by pressing :kbd:`ctrl` + :kbd:`z`.
+
+.. note:: 
+    
+    By holding down the |16x16_edit-undo| **Undo** button in the **Toolbar** the complete history of changes is shown which can be successively reverted.
+
+
+* |16x16_edit-redo| **Redo** reverses the Undo or advances the buffer to its former state. Alternatively, this can be also done by pressing :kbd:`ctrl` + :kbd:`y`. The opposite of Undo is Redo. The Undo and Redo commands are restricted to an incremental sequence of changes.
+* **History** displays the chronology of recent actions done and allows to revert back to any previous state. Alternatively, this can be also done by pressing :kbd:`ctrl` + :kbd:`h` to open the history.
+* |16x16_edit-cut| **Cut** removes parts from the assembly and keeps them in the clipboard. In the scene or in the :ref:`Assembly list <SetupAssemblyListSubSection>` (in the :ref:`Parameter panel <ParameterPanel>`), any part(s) can be selected by left mouse click that should be cut. Multiple parts can be selected by keeping the :kbd:`ctrl` key pressed on the keyboard and clicking on several parts.
+* |16x16_edit-copy| **Copy** can create a duplicate of the selected part(s). First, the part(s) can be selected by keeping the :kbd:`ctrl` key pressed on the keyboard and clicking on several parts either in the scene or in the :ref:`Assembly list <SetupAssemblyListSubSection>` (in the :ref:`Parameter panel <ParameterPanel>`). The selected parts are kept in the clipboard.
+* |16x16_edit-paste| **Paste** adds parts from the clipboard to the :ref:`Assembly list <SetupAssemblyListSubSection>`.
+* |16x16_edit-delete| **Delete** removes selected parts from the :ref:`Assembly list <SetupAssemblyListSubSection>`.
 
 .. note:: The functionalities of |16x16_edit-undo| **Undo**, |16x16_edit-redo| **Redo**, |16x16_edit-cut| **Cut**, |16x16_edit-copy| **Copy**, |16x16_edit-paste| **Paste**, and |16x16_edit-delete| **Delete** can also be accessed via the **Toolbar**.
 
@@ -67,7 +75,7 @@ Geometry menu
 ^^^^^^^^^^^^^
 
 
-The :guilabel:`Geometry` menu includes all functions regarding the geometry application for parts from the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange* and *Pick Destination*) for creating and arranging more complicated parts are described more deatiled below.
+The :guilabel:`Geometry` menu (:numref:`guiGeometryMenu`) includes all functions regarding the geometry application for parts in the assembly. |artist|'s functionality regarding "Geometry Manipulation" (→ *Union, Intersection, Difference, Arrange*, and *Pick Destination*) for creating and arranging more complicated parts are described more detailed below.
 
 .. _guiGeometryMenu:
 .. figure:: pictures/gui-menu-geometry.png
@@ -76,8 +84,8 @@ The :guilabel:`Geometry` menu includes all functions regarding the geometry appl
 
     Geometry menu.
 
-* |16x16_center-new| **Center New Parts** positions newly loaded parts (.stl or .ply files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.
-* **Isolate** deactivates all parts in the scene except the selected ones. Alternatively you can deactivate or activate a part with a click on the |16x16_object-visible-on| eye symbol at the *Parameter Panel* → *Setup* → *Assembly List*.
+* |16x16_center-new| **Center New Parts** arranges newly loaded parts (``.stl`` or ``.ply`` files) at the origin of the global coordinate system, if activated. If deactivated, new parts will be placed at their native, original coordinates.
+* **Isolate** deactivates all parts in the scene except the selected ones. Alternatively parts can be deactivated or activated with a click on the |16x16_object-visible-on| eye symbol at the :ref:`Parameter panel <ParameterPanel>` → :ref:`Setup <SetupAssemblyListSubSection>` → :ref:`Assembly list <SetupAssemblyListSubSection>`.
 * **Activate/Deactivate** selected item(s) of the assembly. If you deactivate an item, it will be ignored during simulation and be nearly invisible in the scene. Please note that you have to select the respective item first. Otherwise you may use the |16x16_object-visible-on| eye symbol in the *Assembly List* of the *Parameter Panel* to achieve the same effect.
 * **Set Material** changes the material of a selected part. As an alternative, you may click on the material name of a part in the *Assembly List* of the parameter panel to open a drop-down menu with the same options.
 * |16x16_boolean-union| **Union,** |16x16_boolean-intersection| **Intersection** and |16x16_boolean-difference| **Difference** can be used to create complex parts in the scene. For these commands, parts have to be created (e.g. with the |16x16_icon-solid| *Solid* module) and placed in the scene, so that they overlap. Then, select parts by using the :kbd:`Ctrl` key on the keyboard and click on them with the left mouse. The first selected part can be recognized by its yellow corners. All subsequent parts will be marked with white corners. The so-called *Geometry Manipulation* commands are explained more detailed in another section.
@@ -96,7 +104,7 @@ Compute menu
 ^^^^^^^^^^^^^
 
 
-The :guilabel:`Compute` menu includes the button to start a simulation and offers different options for the simulation.
+The :guilabel:`Compute` menu (:numref:`guiComputeMenu`) includes the button to start a simulation and offers different options for the simulation.
 
 .. _guiComputeMenu:
 .. figure:: pictures/gui-menu-compute.png
@@ -119,7 +127,7 @@ Modules menu
 ^^^^^^^^^^^^^
 
 
-The :guilabel:`Modules` menu offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
+The :guilabel:`Modules` menu (:numref:`guiModulesMenu`) offers the selection of the available extension modules. Modules extent the program functionality with an additional graphical dialog. These module windows can be embedded by the user in the docking area of the main window or used as a separate window. Below you will find brief introductory information on some of the individual modules. For more information see :ref:`Modules <Modules>`.
 
 .. _guiModulesMenu:
 .. figure:: pictures/gui-menu-modules.png
@@ -146,7 +154,7 @@ Tools menu
 ^^^^^^^^^^
 
 
-The :guilabel:`Tools` menu provides several dialogs to control the program.
+The :guilabel:`Tools` menu (:numref:`guiToolsMenu`) provides several dialogs to control the program.
 
 .. _guiToolsMenu:
 .. figure:: pictures/gui-menu-tools.png
@@ -174,7 +182,7 @@ View menu
 ^^^^^^^^^^^^^
 
 
-The :guilabel:`View` menu provides commands ot control the various rendering and display parameters. 
+The :guilabel:`View` menu (:numref:`guiViewMenu`) provides commands ot control the various rendering and display parameters. 
 
 .. _guiViewMenu:
 .. figure:: pictures/gui-menu-view.png
@@ -213,7 +221,7 @@ Help menu
 ^^^^^^^^^
 
 
-The :guilabel:`Help` menu provides information about the program itself, its installation and its license status.
+The :guilabel:`Help` menu (:numref:`guiHelpMenu`) provides information about the program itself, its installation and its license status.
 
 .. _guiHelpMenu:
 .. figure:: pictures/gui-menu-help.png
