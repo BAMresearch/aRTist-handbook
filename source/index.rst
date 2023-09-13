@@ -63,7 +63,7 @@ Publisher
 .. toctree::
    :maxdepth: 2
    :caption: Appendix:
-      
+
    faq
    references
    acknowledgments

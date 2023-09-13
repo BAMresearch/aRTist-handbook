@@ -50,7 +50,7 @@ The following options are available:
         Internally most material data (attenuation-coefficients, differential scatter cross-sections, etc.) is privided in lookup tables for fast access. 
         The default value of 1 keV does not normally need to be changed, but for low-energy calculations, for instance if fluorescence is included, a smaller value of, e.g., 0.1 keV may be advisable.
 
-* **File prefix** is used to set the project name in this field. Default name is :class:`New`.
+* **File prefix** is used as the base name for the output files, it defaults to the name of the current |aRTist| project.
 
 .. _McRayBasicOutputSubsubSection:
 
@@ -59,14 +59,14 @@ Output directory
 
 Here the **Output directory** may be changed and viewed, which will hold the configuration files and the subdirectories for the *Geometry*, the *MaterialData*, and after successful simulation the *Results* for all output files (images, spectra, etc.). 
 The four buttons at the top allow to :guilabel:`Choose` the directory via a graphical dialog, :guilabel:`Open` the directory in an external file browser, or :guilabel:`Clear` to delete all files in the output directory including all subdirectories. 
-With the :guilabel:`Default` button it is possible to reset the settings to the default values. The default value for the output directory is :class:`#McRay/New`. After the calculation has been successfully finished an additional subdirectory named *Results* is created, where all simulation results are stored.
+With the :guilabel:`Default` button it is possible to reset the settings to the default values. The default value for the output directory is :class:`#McRay/<File prefix>`. After the calculation has been successfully finished an additional subdirectory named *Results* is created, where all simulation results are stored.
 
 .. note::
-    The directory may also be changed by typing or pasting the directory into the text field below the buttons.
+    You may also change the directory by typing into the text field below the buttons.
 
-The remaining space is filled by the file listing and associated buttons. A double click in the list will open the currently selected files with their associated application, 
-as while pressing the :guilabel:`Open` button. To view the content of the subdirectories (*Geometry*, *MaterialData*, and *Results*) the **+** infromt of the subdirectory name must be pressed. :guilabel:`Show Image` and :guilabel:`Scatter Image` (**Remark: by pressing the button** :guilabel:`Scatter Image` **no image will automatically loaded**) are to load the currently selected image files in the :ref:`ImageViewer <ImageViewerSection>` module. The :guilabel:`TraceView` is build to visualize trajectories saved by **McRay** if *Safe trajectories* is selected in the :ref:`Advanced <McRayAdvancedSubSection>` tab (see below) in the 3D scene viewer. In :guilabel:`TraceView` a dialog will be opend to filter trajectories to be visualized. In 
-:guilabel:`View Spectrum` the spectrum used for the Monte Carlo simulation is shown in the included spectrum plotter.
+The remaining space is filled by the file list and associated buttons. A double click in the list will open this file with its associated application (standard file explorer functionality), 
+just like pressing the :guilabel:`Open` button. To view the content of the subdirectories press the **+** in front of the subdirectory name. :guilabel:`Show Image` will load the currently selected file in the :ref:`ImageViewer <ImageViewerSection>`. :guilabel:`Scatter Image` will load this image as scatter image for the scattering mode *External file* of the general |aRTist| workflow (see parameter panel **Scattering**). :guilabel:`TraceView` will open the selected file with the TraceView module. The TraceView module is intended to visualize trajectories saved by McRay if *Safe trajectories* is selected in the :ref:`Advanced <McRayAdvancedSubSection>` tab (see below) in the 3D scene view. 
+:guilabel:`View Spectrum` will open the selected file with the spectrum viewer of |aRTist|.
 
 .. _McRayAdvancedSubSection:
 
@@ -190,4 +190,4 @@ It can be choosen between :class:`Idle`, :class:`Below`, :class:`Normal`, :class
     
     As calculations can potentially take a long time, a reduced priority is generally advisable (default setting: :class:`Below`).
 
-Set the **Number of threads** to be executed for the Monte Carlo simulation.
+Set the **Number of threads** to be executed for the Monte Carlo simulation. Default: **0**, utilizing one thread per logical processor.

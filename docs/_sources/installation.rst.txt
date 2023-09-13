@@ -6,7 +6,7 @@ Installation
 System requirements
 -------------------
 
-The |artist| program comes as a Microsoft Windows application. The system requirements narrow down to the required platform: Microsoft Windows 7 or superior. The program is provided as 64-bit application.
+The |artist| program comes as a Microsoft Windows application. The system requirements narrow down to the required platform: Microsoft Windows 7 or higher. The program is provided as 64-bit application.
 
 It is possible to use |artist| on low prize netbook hardware. But it is recommended to run it on computers with multi (core) processor and accelerated graphical processing unit (OpenGL 2.1) to have the necessary calculation speed for treating ambitious simulation tasks efficiently.
 
@@ -65,9 +65,9 @@ Activation request
 
 The activation request requires information about your |artist| installation. The necessary information can be collected at the license information dialog of |artist| (:guilabel:`Help` menu → :guilabel:`License information`) at section "License activation". There are options to apply for node-locked or network licensing and to request an evaluation period.
 
-.. note:: To request a network license, a shared network folder has to be prepared in advance. It is required to store the common license file.
+.. note:: To request a network license, a shared network folder must be created in advance. This folder will be used to store the common license file.
 
-.. note:: All users of the network license need to have write permission for the license file.
+.. note:: All users of a network license need to have write permission for the license file.
 
 Press the button :guilabel:`Generate activation request` to display the activation request (it will also be copied to your clipboard). Please email this request to `aRTist@bam.de <mailto:aRTist@bam.de>`_.
 
@@ -88,7 +88,7 @@ The final step in activating a license is to install the license file provided i
 
 .. note:: Just Drag'n'Drop the license file over the |artist| window/icon to install it.
 
-A license file for network licensing also only needs to be installed once. One, first computer with an |artist| installation is used to finally install the license file (copy the license file to the network share). Opening a network license file in |artist| will show a dialog **"Use (not install) this network license?"** which needs to be answered with :guilabel:`No` to initiate the installation. a subsequent dialog will ask for the location of the common license file. It is important to enter the path of the activation request, as the license file was activated for exactly this path. To use this license at other computers in the network, the location of the license file has to be configured. A procedure similar to the license file installation can be used, see :ref:`configurenetworklicensing`.
+A license file for network licensing also only needs to be installed once. One, first computer with an |artist| installation is used to finally install the license file (copy the license file to the network share). Opening a network license file in |artist| will show a dialog **"Use (not install) this network license?"** which needs to be answered with :guilabel:`No` to initiate the installation. A subsequent dialog will ask for the location of the common license file. It is important to enter the path of the activation request, as the license file was activated for exactly this path. To use this license at other computers in the network, the location of the license file has to be configured. A procedure similar to the license file installation can be used, see :ref:`configurenetworklicensing`.
 
 .. _configurenetworklicensing:
 

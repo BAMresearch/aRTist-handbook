@@ -116,10 +116,10 @@
              
   <section id="detectorcalc">
 <span id="detectorcalcsection"></span><h1>DetectorCalc<a class="headerlink" href="#detectorcalc" title="Permalink to this heading"></a></h1>
-<p>The <strong>DetectorCalc</strong> can be used to generate new detector models for digital detectors.</p>
+<p>The <strong>DetectorCalc</strong> module can be used to generate detector models for digital detectors (<a class="reference internal" href="#detectorcalcsettingsgeneral"><span class="std std-numref">Fig. 17</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In addition to the more general DetectorCalc there is a simplified detector calculator: <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a>.</p>
+<p>In addition to the more general DetectorCalc module there is a simplified detector model calculator: <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a>.</p>
 </div>
 <figure class="align-default" id="id1">
 <span id="detectorcalcsettingsgeneral"></span><a class="reference internal image-reference" href="_images/modules-artist-detectorcalc-settings.png"><img alt="Detector calculator module" src="_images/modules-artist-detectorcalc-settings.png" style="width: 60.3%;" /></a>
@@ -133,30 +133,30 @@
 <span id="detectorcalcgeneralsettingssubsubsection"></span><h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this heading"></a></h3>
 <p>Set the general settings for your new detector:</p>
 <ul class="simple">
-<li><p><strong>Name</strong></p></li>
-<li><p><strong>Pixel size (mm)</strong></p></li>
-<li><p><strong>Pixel count X</strong></p></li>
-<li><p><strong>Pixel count Y</strong></p></li>
-<li><p><strong>Maximum grey value</strong></p></li>
-<li><p><strong>Grey value quantum (GV)</strong></p></li>
+<li><p><strong>Name</strong> to select the name of the detector.</p></li>
+<li><p><strong>Pixel size (mm)</strong> to set the pixel size of the detector.</p></li>
+<li><p><strong>Pixel count X</strong> to choose the number of pixel in X direction (optional). If the pixel count is set, the choosen number will be set if this detector is selected.</p></li>
+<li><p><strong>Pixel count Y</strong> to choose the number of pixel in Y direction (optional). If the pixel count is set, the choosen number will be set if this detector is selected.</p></li>
+<li><p><strong>Maximum grey value</strong> to set the maximum grey value (for a 16 bit detector the maximum grey value is given bei 2 power 16 = 65635 starting with a minimal grey value of 0)</p></li>
+<li><p><strong>Grey value quantum (GV)</strong> indicates the smallest unit: 1 == integer; 0.1 == one decimal digit.</p></li>
 </ul>
 </section>
 <section id="sensitivity">
 <span id="detectorcalcgeneralsensitivitysubsubsection"></span><h3>Sensitivity<a class="headerlink" href="#sensitivity" title="Permalink to this heading"></a></h3>
 <p>Set the sensitivity for your new detector:</p>
 <ul>
-<li><p><strong>Material</strong></p></li>
-<li><p><strong>Thickness (mm)</strong></p></li>
-<li><p><strong>Steps</strong></p>
+<li><p><strong>Material</strong> to set the detector material from the list of already defined materials (pull down menu). You can add any material to the list with help of the materials editor <a class="reference internal" href="_images/16x16_edit-materials.png"><img alt="16x16_edit-materials" src="_images/16x16_edit-materials.png" style="width: 16px;" /></a> <strong>Materials</strong> in the tools menu which also can be accessed via the <strong>Toolbar</strong>.</p></li>
+<li><p><strong>Thickness (mm)</strong> to set the thickness of the selected detector material.</p></li>
+<li><p><strong>Steps</strong> to set the number of steps for the layer model.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The amount of Steps are relevant for the layer model. The more steps you set, the more accurate the simulation will be.
-Thereby the execution time will increase. Typically two steps will be enough.</p>
+Accordingly, the execution time will increase. Typically two steps are enough for sufficient accuracy.</p>
 </div>
 </li>
-<li><p><strong>Min Energy (keV)</strong></p></li>
-<li><p><strong>Max Energy (keV)</strong></p></li>
-<li><p><strong>Signal Type</strong></p></li>
+<li><p><strong>Min Energy (keV)</strong> to set the minimal energy to be count for. The default value is 0 keV.</p></li>
+<li><p><strong>Max Energy (keV)</strong> to set the maximal energy to be count for. The default value is Infinity.</p></li>
+<li><p><strong>Signal Type</strong> to set the signal type. The following options are available via the pull down menu: Average Energy, Photon Count, and Energy Contribution.</p></li>
 </ul>
 </section>
 <section id="filtration">
@@ -171,18 +171,36 @@ Thereby the execution time will increase. Typically two steps will be enough.</p
 </section>
 <section id="exposure-reference-shot">
 <span id="detectorcalcexposuresubsection"></span><h2>Exposure - Reference shot<a class="headerlink" href="#exposure-reference-shot" title="Permalink to this heading"></a></h2>
-<p>For creating a new detector it is necessary to set reference values. With those, the new detector will be calibrated (with available detector settings) and considered for calculations.</p>
-<p>Set the reference values for your new detector:</p>
+<p>A reference image taken with the X-ray detector in question is used to fit the model for just that detector. This reference image can be an image without a sample, since the most important reference values are the gray value and the noise under free-beam conditions. To create the new detector model, the settings and some selected features of the reference exposure must be specified.  (<a class="reference internal" href="#detectorcalc-exposure"><span class="std std-numref">Fig. 18</span></a>).</p>
+<p>Reference exposure settings:</p>
 <ul class="simple">
-<li><p><strong>Spectrum</strong></p></li>
-<li><p><strong>Current (mA)</strong></p></li>
-<li><p><strong>Exposure time (s)</strong></p></li>
-<li><p><strong>Number of frames</strong></p></li>
-<li><p><strong>Distance (mm)</strong></p></li>
-<li><p><strong>Long range unsharpness (mm)</strong></p></li>
-<li><p><strong>Unsharpness ratio (%)</strong></p></li>
-<li><p><strong>Grey value</strong></p></li>
-<li><p><strong>SNR unnormalized</strong></p></li>
+<li><p><strong>Spectrum</strong> to select the source spectrum used for the reference shot. A precalculated or measured spectrum can be loaded by <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> <span class="guilabel">Load</span>.</p></li>
+<li><p><strong>Current (mA)</strong> to set the reference current.</p></li>
+<li><p><strong>Exposure time (s)</strong> to set the reference exposure time.</p></li>
+<li><p><strong>Number of frames</strong> to set the number of frames.</p></li>
+<li><p><strong>Source detector distance (mm)</strong> to set the source to detector distance.</p></li>
+<li><p><strong>Filter spectrum …</strong> to filter the source spectrum for the source to detector distance.</p></li>
+</ul>
+<p>Reference exposure features:</p>
+<ul class="simple">
+<li><p><strong>Modulation tranfer function</strong> to provide a <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file with a MTF, which will used instead of <strong>Basic spatial resolution (mm)</strong> and <strong>Long range unsharpness (mm)</strong>. Default: empty.</p></li>
+<li><p><strong>Basic spatial resolution (mm)</strong> to set the basic spatial resolution (SRb) of the detector, measured according to ASTM-E2002 - 2022 <em>Standard Practice for Determining Image Unsharpness and Basic Spatial Resolution in Radiography and Radioscopy</em> or DIN EN ISO 19232-5:2018 <em>Non-destructive testing — Image quality of radiographs — Part 5: Determination of the image unsharpness and basic spatial resolution value using duplex wire-type image quality indicators</em>.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The basic spatial resolution (SRb) of an X-ray detector is usually larger than the pixel size. Two times the SRb gives the inner unsharpness of the detector.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Long range unsharpness (mm)</strong> to set the long range detector unsharpness from internal scatter radiation applying only for imaging plates and flat panel detectors. The extent can be determined on an edge profile (see also <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a> for more details).</p></li>
+<li><p><strong>Unsharpness ratio (%)</strong> to set the internal scatter radiation ISR (%) describing the scatter radiation within the detector. The percentage can be determined on an edge profile (see also <a class="reference internal" href="modules-digrad.html#digradsection"><span class="std std-ref">DigRad</span></a> for more details).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The unsharpness values usually have to be determined in advance, since they are normally not measurable in the reference exposure considered here.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Grey value</strong> to set the reference grey value, e.g., the grey value at the center of the reference shot.</p></li>
+<li><p><strong>SNR unnormalized</strong> to set the reference unnormalilzed signal to noise ratio, e.g., the SNR at the center of the reference shot.</p></li>
 </ul>
 <figure class="align-default" id="id2">
 <span id="detectorcalc-exposure"></span><a class="reference internal image-reference" href="_images/modules-artist-detectorcalc-exposure.png"><img alt="Detector calculator, Exposure" src="_images/modules-artist-detectorcalc-exposure.png" style="width: 60.3%;" /></a>
@@ -190,11 +208,12 @@ Thereby the execution time will increase. Typically two steps will be enough.</p
 <p><span class="caption-number">Fig. 18 </span><span class="caption-text">Detector calculator, Exposure.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
-<p>Press <span class="guilabel">Run</span> to apply these settings and save them as an <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file or <span class="guilabel">Default</span> to reset them.
-Afterwards the new detector can be loaded <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> <span class="guilabel">Load</span> and applied at <strong>Parameter Panel</strong> → <strong>Detector</strong> → <strong>Characteristic</strong> → <strong>detector type</strong> → <strong>Extern</strong>.</p>
+<p>Press <span class="guilabel">Run</span> to apply these settings and save the new detector model as an <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file.
+To restore the <strong>DetectorCalc</strong> settings stored in an <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file press <a class="reference internal" href="_images/16x16_document-open-folder.png"><img alt="16x16_document-open-folder" src="_images/16x16_document-open-folder.png" style="width: 16px;" /></a> <span class="guilabel">Load</span> and choose the file.
+Press <span class="guilabel">Default</span> to reset the <strong>DetectorCalc</strong> settings.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Another possibility is that the new detector with the file extension <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> can also be drop-in to the <em>aRT</em>ist scene.</p>
+<p>To apply the detector model of a <code class="code docutils literal notranslate"><span class="pre">.aRTdet</span></code> file, simply open the file in <em>aRT</em>ist.</p>
 </div>
 </section>
 </section>

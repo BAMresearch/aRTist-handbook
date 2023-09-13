@@ -3,11 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. _artistHandbook:
+
 ===================
  |artist| Handbook
 ===================
-
-.. _artistHandbook:
 
 .. figure:: pictures/artist_truecolor_256.png
     :figwidth: 20%
@@ -20,12 +20,12 @@ The information in this manual is for reference and informational use only. We a
 .. note:: This manual refers to |artist| version **2.12**.
 
 Contact
--------
+=======
 
 `aRTist@bam.de <mailto:aRTist@bam.de>`_
 
 Publisher
----------
+=========
 
 | Bundesanstalt für Materialforschung und -prüfung (BAM)
 | Unter den Eichen 87, 12205 Berlin, Germany

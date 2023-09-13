@@ -112,7 +112,7 @@
              
   <section id="x32-icon-solid-solid">
 <span id="solidsection"></span><h1><a class="reference internal" href="_images/32x32_icon-solid.png"><img alt="32x32_icon-solid" src="_images/32x32_icon-solid.png" style="width: 32px;" /></a> Solid<a class="headerlink" href="#x32-icon-solid-solid" title="Permalink to this heading"></a></h1>
-<p>The <a class="reference internal" href="_images/16x16_icon-solid.png"><img alt="16x16_icon-solid" src="_images/16x16_icon-solid.png" style="width: 16px;" /></a> <strong>Solid</strong> module can be used to generate triangulated surfaces of simple geometric solids like spheres, cuboids, etc. and also 3D letters with customizable text (<a class="reference internal" href="#modules-solid1"><span class="std std-numref">Fig. 31</span></a>).
+<p>The <a class="reference internal" href="_images/16x16_icon-solid.png"><img alt="16x16_icon-solid" src="_images/16x16_icon-solid.png" style="width: 16px;" /></a> <strong>Solid</strong> module can be used to generate triangulated surfaces of simple geometric solids like ellipsoids, cuboids, etc. and also 3D letters with customizable text (<a class="reference internal" href="#modules-solid1"><span class="std std-numref">Fig. 31</span></a>).
 The created solids are loaded into the scene and contribute to the assembly of parts.</p>
 <figure class="align-default" id="id1">
 <span id="modules-solid1"></span><a class="reference internal image-reference" href="_images/modules-solid1.png"><img alt="Solid" src="_images/modules-solid1.png" style="width: 60%;" /></a>
@@ -136,14 +136,20 @@ The created solids are loaded into the scene and contribute to the assembly of p
 </section>
 <section id="dimensions">
 <h2>Dimensions<a class="headerlink" href="#dimensions" title="Permalink to this heading"></a></h2>
-<p>The size of the solid can be defined by the <strong>X</strong>, <strong>Y</strong> and <strong>Z</strong> extent of its bounding box. By activating the checkbox <strong>X=Y</strong> (<strong>=Z</strong>) you can force equal values for <strong>X [mm]</strong>, <strong>Y [mm]</strong> and <strong>Z [mm]</strong>.</p>
+<p>The size of the solid can be defined by the <strong>X</strong>, <strong>Y</strong>, and <strong>Z</strong> extent of its bounding box. By activating the checkbox <strong>X=Y</strong> (<strong>=Z</strong>) you can force equal values for <strong>X [mm]</strong>, <strong>Y [mm]</strong>, and <strong>Z [mm]</strong>.</p>
 <p>The <strong>W</strong> defines the wall thickness of a tube, or the final thickness (in Z dimension) of a wedge (<strong>Z</strong> sets the initial thickness).
 The <strong>Phi steps</strong> and <strong>Theta steps</strong> control the accuracy of the faceting of the ellipsoid, cylinder and cone.</p>
 </section>
 <section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this heading"></a></h2>
-<p>For an ellipsoid, you can additionally decide whether to use facetting in a <strong>regular ellipsoid grid</strong> using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles.</p>
-<p>For ellipsoid, cylinder and cone, you can activate the <strong>volume correction</strong>, where the facetted solid will be scaled up to meet the exact volume of the ideal solid.</p>
+<p>For an ellipsoid, you can additionally decide whether to use facetting in a <strong>regular ellipsoid grid</strong> using a latitude/longitude tesselation or a geodesic tesselation of equal-sized triangles (see <a class="reference internal" href="#modules-solid2"><span class="std std-numref">Fig. 32</span></a>).</p>
+<figure class="align-default" id="id2">
+<span id="modules-solid2"></span><a class="reference internal image-reference" href="pictures/modules-solid2.png"><img alt="Solid" src="pictures/modules-solid2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Latitude/longitude tesselation (left) and geodesic tesselation of equal-sized triangles (right).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For ellipsoid, cylinder, and cone, you can activate the <strong>volume correction</strong>, where the facetted solid will be scaled up to meet the exact volume of the ideal solid.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default material for new parts is <code class="xref py py-class docutils literal notranslate"><span class="pre">Fe</span></code> and can be adjusted at <span class="guilabel">Menu Bar</span> → <strong>Tools</strong> → <strong>Settings…</strong> → <strong>Advanced</strong> → <strong>Geometry</strong>. But <strong>text</strong> is always created with material <code class="xref py py-class docutils literal notranslate"><span class="pre">Pb</span></code>.</p>
