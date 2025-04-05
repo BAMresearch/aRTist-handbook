@@ -19,16 +19,16 @@ The :guilabel:`File` drop-down menu comprises commands referring to the current 
 
     File menu.
 
-* **New Project** opens a new |artist| scheme. This may also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program will ask you if you want to save the changes on your current project.
-* |16x16_document-open-folder| **Open** is used to search an existing project. Then select a project file in the dialog boxes that follow. Alternatively, press :kbd:`ctrl` + :kbd:`o`.
-* |16x16_library| **Open Library**  is used to load something from the collection of example parts and projects. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
-* |16x16_document-save| **Save** the current project to a single file. Alternatively, press :kbd:`ctrl` + :kbd:`s`.
-* |16x16_document-save-as| **Save As** renames a project or changes the location of where you want to save it. Alternatively, press :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
-* **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There you can choose file versions from the project or the file system in the dialog box that follow.
+* **New Project** opens a new |artist| scheme. This can also be done by pressing :kbd:`ctrl` + :kbd:`n`. The program is opening a prompt requiring save or discard the changes in the current project if there are any.
+* |16x16_document-open-folder| **Open** is used to search for existing files. Then a file can be selected the dialog boxes that follow. This can also be done by pressing :kbd:`ctrl` + :kbd:`o`. For supported file formats see section **File Formats**.
+* |16x16_library| **Open Library**  is used to load something from the collection of example parts, projects, Image Quality Indicators (IQIs), and spectra. It can also be opened by pressing :kbd:`ctrl` + :kbd:`l`.
+* |16x16_document-save| **Save** is used to save the current project to a single file. The |artist| ares using the file name extension ``.artist``. This can be done by pressing :kbd:`ctrl` + :kbd:`s`.
+* |16x16_document-save-as| **Save As** is used to rename a project or changes the location of where it is saved. Additionally, the current image, the scene view, selected parts, the spectrum, the used detector description, and the |artist| scene can be saved. This can also be done by pressing :kbd:`ctrl` + :kbd:`shift` + :kbd:`s`.
+* **Reload External Files** serves to check and update external dependencies (incorporated data files) of the current project. There file versions from the project or the file system can be chosen in the dialog box that follow.
 * **Last Directories** shows a list of recently opened directories. By clicking on an entry, a file open dialog for this directory will pop up.
 * **Open New Window** starts a new, additional instance of |artist|.
-* **Restart** reboots the program. Before restarting, the program will ask you if you want to save any changes to your current project.
-* |16x16_window-close| **Quit** terminates the program. Before quitting the program will ask you if you want to save any changes on your current project. Alternatively, press :kbd:`ctrl` + :kbd:`q`.
+* **Restart** reboots the program. Before restarting, the program is opening a prompt requiring save or discard the changes in the current project if there are any.
+* |16x16_window-close| **Quit** terminates the program. Before quitting the program is opening a prompt requiring save or discard the changes in the current project if there are any. This can be also done by pressing :kbd:`ctrl` + :kbd:`q`.
 
 
 
@@ -45,13 +45,7 @@ The :guilabel:`Edit` menu contains undo/redo functionalities with the project's 
 
     Edit menu.
 
-* |16x16_edit-undo| **Undo** erases the last change done to the project reverting it to its previous state. Alternatively, press :kbd:`ctrl` + :kbd:`z`.
-* |16x16_edit-redo| **Redo** reverses the Undo or advances the buffer to its former state. Alternatively, press :kbd:`ctrl` + :kbd:`y`. The opposite of Undo is Redo. The Undo and Redo commands restrict you to an incremental sequence of changes.
-* **History** displays the chronology of your recent actions and lets you revert back to any previous state. Alternatively, press :kbd:`ctrl` + :kbd:`h` to open the history.
-* |16x16_edit-cut| **Cut** removes parts from the assembly and keeps them in the clipboard. In the scene or in the *Assembly list* (in the *Parameter panel*), you can left-click to select any part(s) that you want to cut. Select multiple parts by keeping the :kbd:`ctrl` key pressed on the keyboard.
-* |16x16_edit-copy| **Copy** can create a duplicate of the selected part(s). First, select the part(s) you want to copy by using the Ctrl key on the keyboard and click on them with the left mouse either in the scene or in the *Assembly List* (of *Parameter Panel*). The selected parts are kept in the clipboard.
-* |16x16_edit-paste| **Paste** appends parts from the clipboard to the *Assembly List*.
-* |16x16_edit-delete| **Delete** removes selected parts from the *Assembly List*.
+* |16x16_edit-undo| **Undo** reverses the last change(s) done to the project reverting it to its previous state(s). If several changes have been made to a project, these can be undone one after the other. Alternatively, this can be also done by pressing :kbd:`ctrl` + :kbd:`z`.
 
 
 Geometry menu
@@ -139,7 +133,7 @@ The :guilabel:`Tools` menu provides several dialogs to control the program.
 * **Show Console** opens the |artist| console, a dialog window with a TCL command shell. This is the command-line interface of aRTist. Status and debug information can be observed here including potential warnings and error messages at simulation runs. 
 * **Show VTK Log** calls module LogViewer to displays internal messages by aRTist and its components.
 * **Enable remote access** opens a TCP/IP port to control |artist| from another program, e.g. Python. 
-* **Opening Angle** calculates the angular aperature of the cone beam enclosing the detector at the present setup. It will be displayed at the status bar.
+* **Opening Angle** calculates the angular aperture of the cone beam enclosing the detector at the present setup. It will be displayed at the **status bar**.
 * **Attenuation Data** opens a viewer of the energy-dependent attenuation coefficients used by the program.
 * **Detector Properties** opens a viewer of the currently used detector model.
 * **Image Viewer** provides the menu bar of the image viewer module (lacking a nice way to directly attach it to the module window).
